@@ -18,4 +18,11 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.05";
+
+  # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm
+  programs.git.enable = true;
+  programs.git.userName = "Vanilla";
+  programs.git.userEmail = "neko@hydev.org";
+
+  home.packages = [ pkgs.nixpkgs-fmt ];
 }
