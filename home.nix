@@ -24,5 +24,11 @@
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
 
-  home.packages = [ pkgs.nixpkgs-fmt ];
+  home.packages = [
+    pkgs.nixpkgs-fmt
+
+    # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
+    (import ./qv2ray-pre.nix)
+    pkgs.v2ray
+  ];
 }
