@@ -24,11 +24,22 @@
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
 
+  # https://github.com/justjanne/powerline-go#fish
+  programs.fish.enable = true;
+  programs.fish.shellInit = ''
+    function fish_prompt
+        eval powerline-go -error $status -jobs (jobs -p | wc -l)
+    end
+  '';
+
   home.packages = [
     pkgs.nixpkgs-fmt
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (import ./qv2ray-pre.nix)
     pkgs.v2ray
+
+    pkgs.xfce.terminal
+    pkgs.powerline-go
   ];
 }
