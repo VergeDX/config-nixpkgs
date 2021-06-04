@@ -58,5 +58,10 @@
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+
+    # nixpkgs.config.allowUnfree = true;
+    pkgs.google-chrome
   ];
+
+  nixpkgs.config.allowUnfree = true;
 }
