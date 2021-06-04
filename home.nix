@@ -73,6 +73,7 @@
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
+    (pkgs.steam.override { withPrimus = true; })
   ];
 
   nixpkgs.config.allowUnfree = true;
