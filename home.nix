@@ -41,5 +41,16 @@
 
     pkgs.xfce.terminal
     pkgs.powerline-go
+
+    pkgs.gnome.gnome-tweak-tool
+    pkgs.gnomeExtensions.unite
+    pkgs.gnomeExtensions.runcat
+    pkgs.gnomeExtensions.jiggle
+    pkgs.gnomeExtensions.espresso
+    pkgs.gnomeExtensions.blur-me
+    pkgs.gnomeExtensions.openweather
+    pkgs.gnomeExtensions.tray-icons
+    pkgs.gnomeExtensions.screenshot-tool
+    pkgs.gnomeExtensions.simple-net-speed
   ];
 }
