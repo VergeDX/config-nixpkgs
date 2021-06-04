@@ -46,6 +46,9 @@
     (pkgs.proxychains.overrideAttrs (old: { configureScript = "./configure --sysconfdir=.config"; }))
 
     pkgs.gnome.gnome-tweak-tool
+    (import ./layan-gtk-theme.nix)
+    pkgs.breeze-gtk
+    pkgs.tela-icon-theme
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.jiggle
