@@ -42,6 +42,8 @@
 
     pkgs.xfce.terminal
     pkgs.powerline-go
+    # https://github.com/rofl0r/proxychains-ng
+    (pkgs.proxychains.overrideAttrs (old: { configureScript = "./configure --sysconfdir=.config"; }))
 
     pkgs.gnome.gnome-tweak-tool
     pkgs.gnomeExtensions.unite
@@ -64,4 +66,10 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  # https://github.com/yrashk/nix-home/blob/master/home.nix#L269
+  home.file.".config/proxychains.conf".text = ''
+    [ProxyList]
+    socks5  127.0.0.1 1089
+  '';
 }
