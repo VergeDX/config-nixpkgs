@@ -32,8 +32,14 @@
     end
   '';
 
+  # https://github.com/nix-community/home-manager/issues/605
+  fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.nixpkgs-fmt
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-extra
+    pkgs.noto-fonts-emoji
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (import ./qv2ray-pre.nix)
@@ -44,6 +50,7 @@
     pkgs.powerline-go
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: { configureScript = "./configure --sysconfdir=.config"; }))
+    pkgs.neovim
 
     pkgs.gnome.gnome-tweak-tool
     (import ./layan-gtk-theme.nix)
