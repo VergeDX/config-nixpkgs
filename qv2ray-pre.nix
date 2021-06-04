@@ -1,7 +1,8 @@
 let
   pkgs = import <nixpkgs> { };
   qv2ray-pre = pkgs.qv2ray.overrideAttrs (old: {
-    version = "dev";
+    version = "v2.7.0-pre2";
+
     src = pkgs.fetchgit {
       url = "https://github.com/Qv2ray/Qv2ray.git";
       rev = "v2.7.0-pre2";
