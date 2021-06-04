@@ -37,6 +37,7 @@
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (import ./qv2ray-pre.nix)
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = (import ./qv2ray-pre.nix); })
     pkgs.v2ray
 
     pkgs.xfce.terminal
@@ -52,5 +53,10 @@
     pkgs.gnomeExtensions.tray-icons
     pkgs.gnomeExtensions.screenshot-tool
     pkgs.gnomeExtensions.simple-net-speed
+
+
+    # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
+    pkgs.tdesktop
+    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
   ];
 }
