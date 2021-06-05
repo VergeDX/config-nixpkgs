@@ -23,6 +23,9 @@
   programs.git.enable = true;
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
+  # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
+  # http://cms-sw.github.io/tutorial-proxy.html
+  programs.git.extraConfig = { http.proxy = "socks5://localhost:1089"; };
 
   # https://github.com/justjanne/powerline-go#fish
   programs.fish.enable = true;
@@ -57,7 +60,7 @@
         # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/tools/networking/proxychains/default.nix#L23
         sed -i '$ d' $out/etc/proxychains.conf
         sed -i '$ d' $out/etc/proxychains.conf
-        echo "socks5 127.0.0.1 1089" >> $out/etc/proxychains.conf
+        printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
       '';
     }))
     pkgs.neovim
