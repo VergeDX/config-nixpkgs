@@ -40,6 +40,7 @@
     pkgs.noto-fonts-cjk
     pkgs.noto-fonts-extra
     pkgs.noto-fonts-emoji
+    pkgs.noto-fonts-emoji-blob-bin
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (import ./qv2ray-pre.nix)
@@ -66,6 +67,8 @@
     pkgs.gnomeExtensions.screenshot-tool
     pkgs.gnomeExtensions.simple-net-speed
 
+    pkgs.arion
+    pkgs.apfs-fuse
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
@@ -74,6 +77,7 @@
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
     (pkgs.steam.override { withPrimus = true; })
+    pkgs.vscode
   ];
 
   nixpkgs.config.allowUnfree = true;
