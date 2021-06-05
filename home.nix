@@ -86,7 +86,7 @@
     # https://nixos.wiki/wiki/Node.js
     pkgs.nodePackages.yarn
     pkgs.yarn2nix
-    (import ./packages/pxder.nix)
+    (import ./packages/pxder/pxder.nix)
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop

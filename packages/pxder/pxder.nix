@@ -12,7 +12,7 @@ let
 
     packageJSON = "${src}/package.json";
     yarnLock = "${src}/yarn.lock";
-    yarnNix = ./_pxder-yarn.nix;
+    yarnNix = ./yarn.nix;
   };
 
 in
