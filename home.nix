@@ -43,8 +43,8 @@
     pkgs.noto-fonts-emoji-blob-bin
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
-    (import ./qv2ray-pre.nix)
-    (pkgs.makeAutostartItem { name = "qv2ray"; package = (import ./qv2ray-pre.nix); })
+    (import ./packages/qv2ray-pre.nix)
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = (import ./packages/qv2ray-pre.nix); })
     pkgs.v2ray
 
     pkgs.xfce.terminal
@@ -64,7 +64,7 @@
     pkgs.mr
 
     pkgs.gnome.gnome-tweak-tool
-    (import ./layan-gtk-theme.nix)
+    (import ./packages/layan-gtk-theme.nix)
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
     pkgs.gnomeExtensions.unite
