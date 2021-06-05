@@ -85,6 +85,7 @@
 
     pkgs.arion
     pkgs.apfs-fuse
+    (import ./packages/navicat-keygen-tools.nix)
 
     pkgs.nodejs
     pkgs.nodePackages.npm
