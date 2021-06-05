@@ -61,6 +61,7 @@
       '';
     }))
     pkgs.neovim
+    pkgs.mr
 
     pkgs.gnome.gnome-tweak-tool
     (import ./layan-gtk-theme.nix)
@@ -78,6 +79,11 @@
 
     pkgs.arion
     pkgs.apfs-fuse
+
+    pkgs.nodejs
+    pkgs.nodePackages.npm
+    pkgs.nodePackages.npm-check-updates
+    pkgs.nodePackages.node2nix
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
