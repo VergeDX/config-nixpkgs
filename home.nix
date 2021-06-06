@@ -100,6 +100,9 @@
     pkgs.google-chrome
     (pkgs.steam.override { withPrimus = true; })
     pkgs.vscode
+
+    pkgs.wpsoffice
+    pkgs.steam-run
   ];
 
   nixpkgs.config.allowUnfree = true;
