@@ -82,6 +82,8 @@
 
     pkgs.arion
     pkgs.apfs-fuse
+    # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
+    pkgs.appimagekit
     (import ./packages/navicat-keygen-tools.nix)
 
     pkgs.nodejs
