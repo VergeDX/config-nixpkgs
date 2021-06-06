@@ -11,7 +11,8 @@ let
     };
 
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/doc/how-to-build.md#1-prerequisites
-    buildInputs = [ pkgs.openssl pkgs.capstone pkgs.keystone ];
+    buildInputs = [ pkgs.openssl pkgs.capstone pkgs.keystone pkgs.rapidjson ];
+    buildPhase = "make all";
     # https://nixos.org/manual/nixpkgs/stable/#ssec-controlling-phases
     installPhase = "mkdir -p $out/bin && cp -r bin/* $out/bin";
   };
