@@ -74,11 +74,11 @@
     pkgs.gnomeExtensions.blur-me
     pkgs.gnomeExtensions.openweather
     pkgs.gnomeExtensions.tray-icons
-    pkgs.gnomeExtensions.screenshot-tool
-    pkgs.gjs # Required by screenshot-tool.
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     pkgs.gnomeExtensions.extension-list
+    # Credit: @Cyunrei
+    pkgs.gnomeExtensions.bluetooth-quick-connect
 
     pkgs.arion
     pkgs.apfs-fuse
