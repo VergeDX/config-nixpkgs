@@ -86,6 +86,12 @@
     (import ./packages/navicat-keygen-tools.nix)
     pkgs.appimage-run
 
+    pkgs.unzip
+    # https://nixos.wiki/wiki/Wine
+    pkgs.wineWowPackages.stable
+    pkgs.wineWowPackages.fonts
+    pkgs.winetricks
+
     pkgs.nodejs
     pkgs.nodePackages.npm
     pkgs.nodePackages.npm-check-updates
@@ -97,6 +103,12 @@
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+
+    pkgs.gimp-with-plugins
+    pkgs.alacritty
+
+    pkgs.android-studio
+    pkgs.android-tools
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
