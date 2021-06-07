@@ -85,6 +85,7 @@
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
     pkgs.appimagekit
     (import ./packages/navicat-keygen-tools.nix)
+    pkgs.appimage-run
 
     pkgs.nodejs
     pkgs.nodePackages.npm
