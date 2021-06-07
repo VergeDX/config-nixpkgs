@@ -60,7 +60,6 @@
         printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
       '';
     }))
-    pkgs.neovim
     pkgs.mr
 
     pkgs.gnome.gnome-tweak-tool
