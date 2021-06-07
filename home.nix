@@ -134,4 +134,12 @@
       </alias>
     </fontconfig>
   '';
+
+  # https://wiki.archlinux.org/title/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+  home.file.".profile".text = ''
+    export GTK_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    ibus-daemon -d -x
+  '';
 }
