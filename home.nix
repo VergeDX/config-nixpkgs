@@ -90,7 +90,7 @@
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
     pkgs.wineWowPackages.fonts
-    pkgs.winetricks
+    (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
 
     pkgs.nodejs
     pkgs.nodePackages.npm
