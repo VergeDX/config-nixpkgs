@@ -78,6 +78,7 @@
     pkgs.gnomeExtensions.extension-list
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
+    pkgs.gnomeExtensions.extensions-in-system-menu
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -87,6 +88,9 @@
     pkgs.appimage-run
 
     pkgs.unzip
+    pkgs.nmap
+    pkgs.scrcpy
+
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
     pkgs.wineWowPackages.fonts
@@ -106,17 +110,31 @@
 
     pkgs.gimp-with-plugins
     pkgs.alacritty
+    pkgs.remmina
 
     pkgs.android-studio
     pkgs.android-tools
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
-    (pkgs.steam.override { withPrimus = true; })
+    (pkgs.steam.override {
+      withPrimus = true;
+      # https://github.com/NixOS/nixpkgs/pull/126142
+      # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/games/steam/fhsenv.nix#L241
+      extraLibraries = pkgs: [ pkgs.pipewire.lib ];
+    })
     pkgs.vscode
 
     pkgs.wpsoffice
     pkgs.steam-run
+
+    pkgs.jetbrains.rider
+    pkgs.msbuild
+    pkgs.jetbrains.idea-ultimate
+    pkgs.jdk11
+
+    pkgs.maven
+    pkgs.gradle
   ];
 
   nixpkgs.config.allowUnfree = true;
