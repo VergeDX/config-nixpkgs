@@ -86,6 +86,7 @@
     pkgs.appimagekit
     (import ./packages/navicat-keygen-tools.nix)
     pkgs.appimage-run
+    pkgs.texlive.combined.scheme-full
 
     pkgs.unzip
     pkgs.nmap
