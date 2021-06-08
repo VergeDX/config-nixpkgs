@@ -66,6 +66,7 @@
     (import ./packages/layan-gtk-theme.nix)
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
+    (import ./packages/flat-remix-gnome.nix)
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.jiggle
