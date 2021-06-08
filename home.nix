@@ -35,6 +35,10 @@
     end
   '';
 
+  programs.zsh.enable = true;
+  # https://github.com/nix-community/home-manager/issues/1338
+  programs.zsh.initExtra = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
   home.packages = [
@@ -49,6 +53,8 @@
 
     pkgs.xfce.terminal
     pkgs.powerline-go
+    pkgs.powerline-fonts
+    pkgs.powerline-symbols
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: {
       configureScript = "./configure --sysconfdir=.config";
@@ -60,6 +66,9 @@
         printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
       '';
     }))
+
+    pkgs.zsh-powerlevel10k
+    pkgs.meslo-lgs-nf
 
     pkgs.gnome.gnome-tweak-tool
     (import ./packages/layan-gtk-theme.nix)
