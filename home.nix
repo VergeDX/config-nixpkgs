@@ -76,6 +76,7 @@
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     pkgs.gnomeExtensions.extension-list
+    pkgs.gnomeExtensions.eclipse
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
     pkgs.gnomeExtensions.extensions-in-system-menu
