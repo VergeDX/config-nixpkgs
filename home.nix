@@ -60,7 +60,6 @@
         printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
       '';
     }))
-    pkgs.mr
 
     pkgs.gnome.gnome-tweak-tool
     (import ./packages/layan-gtk-theme.nix)
@@ -91,6 +90,9 @@
     pkgs.unzip
     pkgs.nmap
     pkgs.scrcpy
+    pkgs.glxinfo
+    pkgs.mr
+    pkgs.tree
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -125,9 +127,9 @@
       extraLibraries = pkgs: [ pkgs.pipewire.lib ];
     })
     pkgs.vscode
-
     pkgs.wpsoffice
     pkgs.steam-run
+    pkgs.osu-lazer
 
     pkgs.jetbrains.rider
     pkgs.msbuild
