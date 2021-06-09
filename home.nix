@@ -63,10 +63,12 @@
 
   programs.zsh.enable = true;
   # https://github.com/nix-community/home-manager/issues/1338
-  programs.zsh.initExtra = ''
-    source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-  '';
+  programs.zsh.initExtra = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  # https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#L230
+  home.sessionVariables = {
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
+    CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+  };
 
   programs.neovim =
     let doki-theme-vim = (import ./packages/doki-theme-vim.nix);
@@ -184,6 +186,12 @@
 
     pkgs.android-studio
     pkgs.android-tools
+    pkgs.flutter
+    # (pkgs.flutter.override (prev: { buildFHSUserEnv = { targetPkgs, ... }@args: prev.buildFHSUserEnv (args // { targetPkgs = p: (targetPkgs p) ++ [ pkgs.gtk3 pkgs.lzma ];});}))
+    pkgs.clang
+    pkgs.cmake
+    pkgs.ninja
+    pkgs.pkg-config
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
@@ -235,11 +243,5 @@
     </fontconfig>
   '';
 
-  # https://wiki.archlinux.org/title/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  home.file.".profile".text = ''
-    export GTK_IM_MODULE=ibus
-    export XMODIFIERS=@im=ibus
-    export QT_IM_MODULE=ibus
-    ibus-daemon -d -x
-  '';
+  home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
 }
