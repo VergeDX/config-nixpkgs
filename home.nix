@@ -37,7 +37,10 @@
 
   programs.zsh.enable = true;
   # https://github.com/nix-community/home-manager/issues/1338
-  programs.zsh.initExtra = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  programs.zsh.initExtra = ''
+    source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+  '';
 
   programs.neovim.configure =
     let doki-theme-vim = (import ./packages/doki-theme-vim.nix);
