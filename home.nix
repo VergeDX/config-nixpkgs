@@ -39,6 +39,22 @@
   # https://github.com/nix-community/home-manager/issues/1338
   programs.zsh.initExtra = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
+  programs.neovim.configure =
+    let doki-theme-vim = (import ./packages/doki-theme-vim.nix);
+    in
+    {
+      # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
+      packages.doki-theme-vim = { opt = [ doki-theme-vim ]; };
+
+      # https://github.com/doki-theme/doki-theme-vim#installation
+      # https://github.com/doki-theme/doki-theme-vim/tree/master/colors
+      customRC = ''
+        packadd! ${doki-theme-vim.pkadd-name}
+        syntax enable
+        colorscheme emilia_dark
+      '';
+    };
+
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
   home.packages = [
@@ -104,6 +120,7 @@
     pkgs.glxinfo
     pkgs.mr
     pkgs.tree
+    pkgs.translate-shell
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
