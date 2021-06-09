@@ -42,16 +42,17 @@
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
   '';
 
-  programs.neovim.configure =
+  programs.neovim =
     let doki-theme-vim = (import ./packages/doki-theme-vim.nix);
     in
     {
+      enable = true;
       # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
-      packages.doki-theme-vim = { opt = [ doki-theme-vim ]; };
+      plugins = [ doki-theme-vim ];
 
       # https://github.com/doki-theme/doki-theme-vim#installation
       # https://github.com/doki-theme/doki-theme-vim/tree/master/colors
-      customRC = ''
+      extraConfig = ''
         packadd! ${doki-theme-vim.pkadd-name}
         syntax enable
         colorscheme emilia_dark
