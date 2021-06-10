@@ -11,12 +11,20 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn }: {
-    homeConfigurations."vanilla@nixos" = home-manager.lib.homeManagerConfiguration {
-      system = "x86_64-linux";
-      username = "vanilla";
-      homeDirectory = "/home/vanilla";
-      configuration = { ... }: { imports = [ ./home.nix ]; };
+  outputs = { self, home-manager, nixpkgs, nixos-cn }:
+    let system = "x86_64-linux";
+    in
+    {
+      homeConfigurations."vanilla@nixos" = home-manager.lib.homeManagerConfiguration {
+        inherit system;
+        username = "vanilla";
+        homeDirectory = "/home/vanilla";
+        configuration = { ... }: {
+          imports = [ ./home.nix ];
+          home.packages = with nixos-cn.legacyPackages.${system}; [
+            netease-cloud-music
+          ];
+        };
+      };
     };
-  };
 }
