@@ -134,6 +134,7 @@
     pkgs.gnomeExtensions.proxy-switcher
     pkgs.gnomeExtensions.extension-list
     pkgs.gnomeExtensions.eclipse
+    pkgs.gnomeExtensions.screenshot-tool
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
     pkgs.gnomeExtensions.extensions-in-system-menu
