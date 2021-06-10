@@ -23,6 +23,7 @@
           imports = [ ./home.nix ];
           home.packages = with nixos-cn.legacyPackages.${system}; [
             netease-cloud-music
+            (wine-wechat.override { scopedMount = false; })
           ];
         };
       };

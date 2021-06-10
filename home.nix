@@ -154,6 +154,8 @@
     pkgs.mr
     pkgs.tree
     pkgs.translate-shell
+    pkgs.wget
+    pkgs.htop
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -186,7 +188,11 @@
     pkgs.remmina
 
     pkgs.android-studio
+    pkgs.androidStudioPackages.canary
     pkgs.android-tools
+    pkgs.apktool
+    pkgs.dex2jar
+    pkgs.jd-gui
     pkgs.flutter
     # (pkgs.flutter.override (prev: { buildFHSUserEnv = { targetPkgs, ... }@args: prev.buildFHSUserEnv (args // { targetPkgs = p: (targetPkgs p) ++ [ pkgs.gtk3 pkgs.lzma ];});}))
     pkgs.clang
