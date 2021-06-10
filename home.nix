@@ -17,7 +17,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "20.09";
 
   # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm
   programs.git.enable = true;
@@ -71,7 +71,7 @@
   };
 
   programs.neovim =
-    let doki-theme-vim = (import ./packages/doki-theme-vim.nix);
+    let doki-theme-vim = (pkgs.callPackage ./packages/doki-theme-vim.nix) { };
     in
     {
       enable = true;
@@ -95,8 +95,8 @@
     pkgs.source-han-serif-simplified-chinese
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
-    (import ./packages/qv2ray-pre.nix)
-    (pkgs.makeAutostartItem { name = "qv2ray"; package = (import ./packages/qv2ray-pre.nix); })
+    (pkgs.callPackage ./packages/qv2ray-pre.nix { })
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/qv2ray-pre.nix) { }; })
     pkgs.v2ray
 
     pkgs.xfce.terminal
@@ -119,10 +119,10 @@
     pkgs.meslo-lgs-nf
 
     pkgs.gnome.gnome-tweak-tool
-    (import ./packages/layan-gtk-theme.nix)
+    (pkgs.callPackage ./packages/layan-gtk-theme.nix { })
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
-    (import ./packages/flat-remix-gnome.nix)
+    (pkgs.callPackage ./packages/flat-remix-gnome.nix { })
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.jiggle
@@ -142,7 +142,7 @@
     pkgs.apfs-fuse
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
     pkgs.appimagekit
-    (import ./packages/navicat-keygen-tools.nix)
+    (pkgs.callPackage ./packages/navicat-keygen-tools.nix { })
     pkgs.appimage-run
     pkgs.texlive.combined.scheme-full
 
@@ -165,7 +165,7 @@
     # https://nixos.wiki/wiki/Node.js
     pkgs.nodePackages.yarn
     pkgs.yarn2nix
-    (import ./packages/pxder/pxder.nix)
+    (pkgs.callPackage ./packages/pxder/pxder.nix { })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
@@ -210,6 +210,7 @@
     pkgs.msbuild
     pkgs.jetbrains.idea-ultimate
     pkgs.jdk11
+    pkgs.kotlin
 
     pkgs.maven
     pkgs.gradle
