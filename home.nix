@@ -211,6 +211,7 @@
     pkgs.wpsoffice
     pkgs.steam-run
     pkgs.osu-lazer
+    (pkgs.callPackage ./packages/olympus.nix { })
 
     pkgs.jetbrains.rider
     pkgs.msbuild
