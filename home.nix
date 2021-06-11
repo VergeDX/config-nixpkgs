@@ -166,7 +166,7 @@
     pkgs.nodePackages.npm
     pkgs.nodePackages.npm-check-updates
     # https://nixos.wiki/wiki/Node.js
-    pkgs.nodePackages.yarn
+    pkgs.yarn
     pkgs.yarn2nix
     (pkgs.callPackage ./packages/pxder/pxder.nix { })
 
@@ -194,7 +194,6 @@
     pkgs.dex2jar
     pkgs.jd-gui
     pkgs.flutter
-    # (pkgs.flutter.override (prev: { buildFHSUserEnv = { targetPkgs, ... }@args: prev.buildFHSUserEnv (args // { targetPkgs = p: (targetPkgs p) ++ [ pkgs.gtk3 pkgs.lzma ];});}))
     pkgs.clang
     pkgs.cmake
     pkgs.ninja
