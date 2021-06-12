@@ -10,5 +10,5 @@ stdenv.mkDerivation rec {
   };
 
   unpackPhase = "mkdir $out && cp ${src} $out";
-  installPhase = " cd $out && mv *.dict ${fileName}";
+  installPhase = "cd $out && mv *.dict ${fileName}";
 }

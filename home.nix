@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  zhwiki = (pkgs.callPackage ./packages/fcitx5-dict/zhwiki.nix) { };
-  moegirl = (pkgs.callPackage ./packages/fcitx5-dict/moegirl.nix) { };
+  zhwiki = (pkgs.callPackage ./packages/fcitx5/zhwiki.nix) { };
+  moegirl = (pkgs.callPackage ./packages/fcitx5/moegirl.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -75,7 +75,7 @@ in
   };
 
   programs.neovim =
-    let doki-theme-vim = (pkgs.callPackage ./packages/doki-theme-vim.nix) { };
+    let doki-theme-vim = (pkgs.callPackage ./packages/themes/doki-theme-vim.nix) { };
     in
     {
       enable = true;
@@ -123,10 +123,10 @@ in
     pkgs.meslo-lgs-nf
 
     pkgs.gnome.gnome-tweak-tool
-    (pkgs.callPackage ./packages/layan-gtk-theme.nix { })
+    (pkgs.callPackage ./packages/themes/layan-gtk-theme.nix { })
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
-    (pkgs.callPackage ./packages/flat-remix-gnome.nix { })
+    (pkgs.callPackage ./packages/themes/flat-remix-gnome.nix { })
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.jiggle
