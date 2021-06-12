@@ -162,6 +162,7 @@ in
     pkgs.translate-shell
     pkgs.wget
     pkgs.htop
+    (pkgs.callPackage ./packages/fcitx/ssf2fcitx.nix { })
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
