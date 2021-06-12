@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-let zhwiki = (pkgs.callPackage ./packages/zhwiki.nix) { };
+let
+  zhwiki = (pkgs.callPackage ./packages/fcitx5-dict/zhwiki.nix) { };
+  moegirl = (pkgs.callPackage ./packages/fcitx5-dict/moegirl.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -261,4 +263,6 @@ in
   # https://nixos.wiki/wiki/Home_Manager
   home.file.".local/share/fcitx5/pinyin/dictionaries/${zhwiki.fileName}".source =
     "${zhwiki}/${zhwiki.fileName}";
+  home.file.".local/share/fcitx5/pinyin/dictionaries/${moegirl.fileName}".source =
+    "${moegirl}/${moegirl.fileName}";
 }
