@@ -3,6 +3,7 @@
 let
   zhwiki = (pkgs.callPackage ./packages/fcitx5/zhwiki.nix) { };
   moegirl = (pkgs.callPackage ./packages/fcitx5/moegirl.nix) { };
+  fcitx5-nord = (pkgs.callPackage ./packages/fcitx5/fcitx5-nord.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -265,4 +266,5 @@ in
     "${zhwiki}/${zhwiki.fileName}";
   home.file.".local/share/fcitx5/pinyin/dictionaries/${moegirl.fileName}".source =
     "${moegirl}/${moegirl.fileName}";
+  home.file.".local/share/fcitx5/themes/".source = "${fcitx5-nord}";
 }
