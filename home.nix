@@ -149,7 +149,7 @@ in
     pkgs.apfs-fuse
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
     pkgs.appimagekit
-    (pkgs.callPackage ./packages/navicat-keygen-tools.nix { })
+    (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
     pkgs.appimage-run
     pkgs.texlive.combined.scheme-full
 
@@ -163,6 +163,7 @@ in
     pkgs.wget
     pkgs.htop
     (pkgs.callPackage ./packages/fcitx/ssf2fcitx.nix { })
+    (pkgs.callPackage ./packages/cli/checkra1n.nix { })
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -194,6 +195,7 @@ in
     pkgs.alacritty
     pkgs.remmina
     (pkgs.callPackage ./packages/motrix.nix { })
+    pkgs.zoom-us
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -201,7 +203,13 @@ in
     pkgs.apktool
     pkgs.dex2jar
     pkgs.jd-gui
-    pkgs.flutter
+    (pkgs.flutter.override (prev: {
+      buildFHSUserEnv = { targetPkgs, ... }@args:
+        prev.buildFHSUserEnv (args // {
+          targetPkgs = p: with p;
+            (targetPkgs p) ++ [ gtk3.dev glib.dev ];
+        });
+    }))
     pkgs.clang
     pkgs.cmake
     pkgs.ninja
