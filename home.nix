@@ -4,6 +4,7 @@ let
   zhwiki = (pkgs.callPackage ./packages/fcitx5/zhwiki.nix) { };
   moegirl = (pkgs.callPackage ./packages/fcitx5/moegirl.nix) { };
   fcitx5-nord = (pkgs.callPackage ./packages/fcitx5/fcitx5-nord.nix) { };
+  fcitx5_dicts = (pkgs.callPackage ./packages/fcitx5/fcitx5_dicts.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -267,4 +268,6 @@ in
   home.file.".local/share/fcitx5/pinyin/dictionaries/${moegirl.fileName}".source =
     "${moegirl}/${moegirl.fileName}";
   home.file.".local/share/fcitx5/themes/".source = "${fcitx5-nord}";
+  home.file.".local/share/fcitx5/pinyin/dictionaries/${fcitx5_dicts.fileName}".source =
+    "${fcitx5_dicts}/${fcitx5_dicts.fileName}";
 }
