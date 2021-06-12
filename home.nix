@@ -101,8 +101,8 @@ in
     pkgs.source-han-serif-simplified-chinese
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
-    (pkgs.callPackage ./packages/qv2ray-pre.nix { })
-    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/qv2ray-pre.nix) { }; })
+    (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray-pre.nix) { }; })
     pkgs.v2ray
 
     pkgs.xfce.terminal
@@ -194,7 +194,7 @@ in
     pkgs.gimp-with-plugins
     pkgs.alacritty
     pkgs.remmina
-    (pkgs.callPackage ./packages/motrix.nix { })
+    (pkgs.callPackage ./packages/gui/motrix.nix { })
     pkgs.zoom-us
 
     pkgs.android-studio
@@ -227,7 +227,7 @@ in
     pkgs.wpsoffice
     pkgs.steam-run
     pkgs.osu-lazer
-    (pkgs.callPackage ./packages/olympus.nix { })
+    (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.minecraft
     pkgs.multimc
 
