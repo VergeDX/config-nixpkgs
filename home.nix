@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  zhwiki = (pkgs.callPackage ./packages/fcitx5/zhwiki.nix) { };
-  moegirl = (pkgs.callPackage ./packages/fcitx5/moegirl.nix) { };
-  fcitx5-nord = (pkgs.callPackage ./packages/fcitx5/fcitx5-nord.nix) { };
-  fcitx5_dicts = (pkgs.callPackage ./packages/fcitx5/fcitx5_dicts.nix) { };
+  zhwiki = (pkgs.callPackage ./packages/fcitx/zhwiki.nix) { };
+  moegirl = (pkgs.callPackage ./packages/fcitx/moegirl.nix) { };
+  fcitx5-nord = (pkgs.callPackage ./packages/fcitx/fcitx5-nord.nix) { };
+  fcitx5_dicts = (pkgs.callPackage ./packages/fcitx/fcitx5_dicts.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
