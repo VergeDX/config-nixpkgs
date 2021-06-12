@@ -192,6 +192,7 @@ in
     pkgs.gimp-with-plugins
     pkgs.alacritty
     pkgs.remmina
+    (pkgs.callPackage ./packages/motrix.nix { })
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -218,6 +219,8 @@ in
     pkgs.steam-run
     pkgs.osu-lazer
     (pkgs.callPackage ./packages/olympus.nix { })
+    pkgs.minecraft
+    pkgs.multimc
 
     pkgs.jetbrains.rider
     pkgs.msbuild
