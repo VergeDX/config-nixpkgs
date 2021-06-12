@@ -1,7 +1,7 @@
 {
   # https://github.com/nix-community/home-manager#nix-flakes
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
     home-manager.url = "github:nix-community/home-manager";
 
     # https://github.com/nixos-cn/flakes#%E4%BD%BF%E7%94%A8

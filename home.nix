@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let zhwiki = (pkgs.callPackage ./packages/zhwiki.nix) { };
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -255,4 +257,8 @@
 
   # https://wiki.archlinux.org/title/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # home.file.".config/ibus/rime/default.custom.yaml".text = "";
+  # https://github.com/felixonmars/fcitx5-pinyin-zhwiki
+  # https://nixos.wiki/wiki/Home_Manager
+  home.file.".local/share/fcitx5/pinyin/dictionaries/${zhwiki.fileName}".source =
+    "${zhwiki}/${zhwiki.fileName}";
 }
