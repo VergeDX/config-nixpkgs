@@ -1,6 +1,6 @@
-{ pkgs }:
-
+{ pkgs, makeDesktopItem }:
 let
+  # pkgs = import <nixpkgs> { };
   olympus = pkgs.stdenv.mkDerivation rec {
     pname = "olympus";
     version = "2134";
@@ -21,6 +21,7 @@ let
 
       echo y | XDG_DATA_HOME="$out/share/" bash install.sh
       sed -i "/ldconfig/d" ./love && rm ./usr/lib/libSDL2-2.0.so.0
+      sed -i "s/Exec=.*/Exec=olympus %u/g" ../../share/applications/Olympus.desktop
     '';
   };
 in
@@ -36,4 +37,8 @@ pkgs.buildFHSUserEnv {
     pkgs.gtk3
     pkgs.glib
   ];
+
+  # https://github.com/EverestAPI/Olympus/blob/main/lib-linux/olympus.desktop
+  # https://stackoverflow.com/questions/8822097/how-to-replace-a-whole-line-with-sed
+  extraInstallCommands = ''cp -r "${olympus}/share/" $out'';
 }
