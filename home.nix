@@ -99,6 +99,7 @@ in
     pkgs.nixpkgs-fmt
     pkgs.source-han-sans-simplified-chinese
     pkgs.source-han-serif-simplified-chinese
+    (pkgs.callPackage ./packages/fonts/sf-pro.nix { })
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
