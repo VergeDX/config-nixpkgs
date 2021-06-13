@@ -203,6 +203,9 @@ in
     pkgs.remmina
     (pkgs.callPackage ./packages/gui/motrix.nix { })
     pkgs.zoom-us
+    pkgs.google-play-music-desktop-player
+    pkgs.tor-browser-bundle-bin
+    pkgs.qbittorrent
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -224,6 +227,7 @@ in
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
+    pkgs.chromium
     (pkgs.steam.override {
       withPrimus = true;
       # https://github.com/NixOS/nixpkgs/pull/126142
@@ -237,6 +241,7 @@ in
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.minecraft
     pkgs.multimc
+    pkgs.stellarium
 
     pkgs.jetbrains.rider
     pkgs.msbuild
