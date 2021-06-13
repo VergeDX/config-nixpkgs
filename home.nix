@@ -27,6 +27,7 @@ in
 
   # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm
   programs.git.enable = true;
+  programs.git.lfs.enable = true;
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
   # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
