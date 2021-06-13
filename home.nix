@@ -103,6 +103,7 @@ in
     (pkgs.callPackage ./packages/fonts/sf-compact.nix { })
     (pkgs.callPackage ./packages/fonts/sf-mono.nix { })
     (pkgs.callPackage ./packages/fonts/sf-arabic-beta.nix { })
+    (pkgs.callPackage ./packages/fonts/new-york.nix { })
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
