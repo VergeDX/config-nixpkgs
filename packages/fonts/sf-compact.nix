@@ -1,5 +1,4 @@
 { stdenv, fetchurl, p7zip }:
-
 stdenv.mkDerivation rec {
   name = "sf-compact";
   src = fetchurl {
