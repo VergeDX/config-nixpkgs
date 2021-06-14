@@ -106,6 +106,11 @@ in
     (pkgs.callPackage ./packages/fonts/sf-arabic-beta.nix { })
     (pkgs.callPackage ./packages/fonts/new-york.nix { })
     (pkgs.callPackage ./packages/fonts/ms-fonts.nix { })
+    pkgs.roboto
+    pkgs.roboto-slab
+    pkgs.roboto-mono
+    # https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+    pkgs.dejavu_fonts
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
@@ -255,33 +260,6 @@ in
   ];
 
   nixpkgs.config.allowUnfree = true;
-  # https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  # https://github.com/yrashk/nix-home/blob/master/home.nix#L285
-  home.file.".fonts.conf".text = ''
-    <?xml version="1.0"?>
-    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-    <fontconfig>
-      <alias>
-        <family>sans-serif</family>
-        <prefer>
-          <family>Source Han Sans SC</family>
-          <family>Source Han Sans TC</family>
-          <family>Source Han Sans HW</family>
-          <family>Source Han Sans K</family>
-        </prefer>
-      </alias>
-      <alias>
-        <family>monospace</family>
-        <prefer>
-          <family>Source Han Sans SC</family>
-          <family>Source Han Sans TC</family>
-          <family>Source Han Sans HW</family>
-          <family>Source Han Sans K</family>
-        </prefer>
-      </alias>
-    </fontconfig>
-  '';
-
   home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
 
   # https://wiki.archlinux.org/title/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
