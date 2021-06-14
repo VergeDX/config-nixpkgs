@@ -181,6 +181,7 @@ in
     (pkgs.callPackage ./packages/cli/checkra1n.nix { })
     pkgs.p7zip
     (pkgs.callPackage ./packages/cli/slides.nix { })
+    pkgs.file
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -193,7 +194,7 @@ in
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
     pkgs.yarn2nix
-    (pkgs.callPackage ./packages/pxder/pxder.nix { })
+    (pkgs.callPackage ./packages/cli/pxder/pxder.nix { })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
@@ -216,6 +217,7 @@ in
     pkgs.google-play-music-desktop-player
     pkgs.tor-browser-bundle-bin
     pkgs.qbittorrent
+    pkgs.obs-studio
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
