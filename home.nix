@@ -9,6 +9,7 @@ let
   # https://metroforsteam.com/
   # metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix) { };
   gitalias = (pkgs.callPackage ./packages/resources/gitalias.nix) { };
+  tabnine-vim = (pkgs.callPackage ./packages/resources/tabnine-vim.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -104,7 +105,9 @@ in
       plugins = [
         doki-theme-vim
         pkgs.vimPlugins.vim-airline
+        pkgs.vimPlugins.vim-airline-themes
         pkgs.vimPlugins.vim-polyglot
+        pkgs.vimPlugins.vim-lastplace
       ];
 
       # https://github.com/doki-theme/doki-theme-vim#installation
@@ -114,7 +117,9 @@ in
         packadd! ${doki-theme-vim.pkadd-name}
         syntax enable
         colorscheme emilia_dark
+        
         set number
+        set rtp+=${tabnine-vim.out}/${tabnine-vim.name}
       '';
     };
 
