@@ -37,12 +37,22 @@ in
   # http://cms-sw.github.io/tutorial-proxy.html
   programs.git.extraConfig = { http.proxy = "socks5://localhost:1089"; };
 
-  # https://github.com/justjanne/powerline-go#fish
   programs.fish.enable = true;
   programs.fish.shellInit = ''
     function fish_prompt
-        eval powerline-go -error $status -jobs (jobs -p | wc -l)
+        # https://github.com/justjanne/powerline-go#fish
+        # eval powerline-go -error $status -jobs (jobs -p | wc -l)
+
+        # https://github.com/jD91mZM2/powerline-rs#fish
+        powerline-rs --shell bare $status
     end
+
+      # https://github.com/starship/starship#fish
+      # starship init fish | source
+
+      # https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html?highlight=fish#fish-prompt
+      # set fish_function_path $fish_function_path "${pkgs.powerline.out}/lib/python3.8/site-packages/powerline/bindings/fish"
+      # powerline-setup
   '';
   programs.fish.plugins = [
     {
@@ -121,9 +131,12 @@ in
     pkgs.v2ray
 
     pkgs.xfce.terminal
+    pkgs.powerline
     pkgs.powerline-go
     pkgs.powerline-fonts
     pkgs.powerline-symbols
+    pkgs.powerline-rs
+    pkgs.starship
     pkgs.alacritty
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: {
