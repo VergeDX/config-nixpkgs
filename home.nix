@@ -96,6 +96,9 @@ in
     CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
   };
 
+  # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
+  programs.chromium.enable = true;
+  programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
   programs.neovim =
     let doki-theme-vim = (pkgs.callPackage ./packages/themes/doki-theme-vim.nix) { };
     in
@@ -113,12 +116,13 @@ in
       # https://github.com/doki-theme/doki-theme-vim#installation
       # https://github.com/doki-theme/doki-theme-vim/tree/master/colors
       # https://medium.com/@hql287/10-vim-tips-to-ease-the-learning-curve-c8234cbdafa5
+      # https://vimjc.com/vim-powerline.html
       extraConfig = ''
         packadd! ${doki-theme-vim.pkadd-name}
         syntax enable
         colorscheme emilia_dark
-        
         set number
+        set showtabline=2
         set rtp+=${tabnine-vim.out}/${tabnine-vim.name}
       '';
     };
@@ -189,6 +193,7 @@ in
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
     pkgs.gnomeExtensions.extensions-in-system-menu
+    (pkgs.callPackage ./packages/gnome/dash-to-dock-gnome40.nix { })
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -214,6 +219,8 @@ in
     pkgs.file
     pkgs.ncdu
     pkgs.lsd
+    pkgs.screen
+    pkgs.tmux
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -249,6 +256,7 @@ in
     pkgs.tor-browser-bundle-bin
     pkgs.qbittorrent
     pkgs.obs-studio
+    pkgs.gnome3.baobab
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -270,7 +278,6 @@ in
 
     # nixpkgs.config.allowUnfree = true;
     pkgs.google-chrome
-    pkgs.chromium
     (pkgs.steam.override {
       withPrimus = true;
       # https://github.com/NixOS/nixpkgs/pull/126142
