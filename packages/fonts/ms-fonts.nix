@@ -2,11 +2,11 @@
 stdenv.mkDerivation rec {
   name = "ms-fonts";
 
-  # Extract from "cn_windows_10_consumer_editions_version_21h1_x64_dvd_1baf479d.iso".
-  # Telegram: @My_Aim_Sucks
-  src = ../MS-Fonts.tar.gz;
+  # see https://aur.archlinux.org/packages/ttf-ms-fonts/
+  # Download all the sources exe, extract them and grab .ttf
+  src = ../resources/ms-fonts.tar.gz;
   installPhase = ''
-    mkdir -p $out/share/fonts/opentype/${name}
-    cp * $out/share/fonts/opentype/${name}/
+    mkdir -p $out/share/fonts/${name}
+    cp * $out/share/fonts/${name}
   '';
 }
