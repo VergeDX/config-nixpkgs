@@ -8,6 +8,7 @@ let
 
   # https://metroforsteam.com/
   # metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix) { };
+  gitalias = (pkgs.callPackage ./packages/resources/gitalias.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -35,7 +36,11 @@ in
   programs.git.userEmail = "neko@hydev.org";
   # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
   # http://cms-sw.github.io/tutorial-proxy.html
-  programs.git.extraConfig = { http.proxy = "socks5://localhost:1089"; };
+  programs.git.extraConfig = {
+    http.proxy = "socks5://localhost:1089";
+    # https://github.com/GitAlias/gitalias#install-with-typical-usage
+    include.path = "${gitalias.out}/${gitalias.fileName}";
+  };
 
   programs.fish.enable = true;
   programs.fish.shellInit = ''
@@ -96,14 +101,20 @@ in
     {
       enable = true;
       # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
-      plugins = [ doki-theme-vim ];
+      plugins = [
+        doki-theme-vim
+        pkgs.vimPlugins.vim-airline
+        pkgs.vimPlugins.vim-polyglot
+      ];
 
       # https://github.com/doki-theme/doki-theme-vim#installation
       # https://github.com/doki-theme/doki-theme-vim/tree/master/colors
+      # https://medium.com/@hql287/10-vim-tips-to-ease-the-learning-curve-c8234cbdafa5
       extraConfig = ''
         packadd! ${doki-theme-vim.pkadd-name}
         syntax enable
         colorscheme emilia_dark
+        set number
       '';
     };
 
@@ -197,6 +208,7 @@ in
     (pkgs.callPackage ./packages/cli/slides.nix { })
     pkgs.file
     pkgs.ncdu
+    pkgs.lsd
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
