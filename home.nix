@@ -265,6 +265,32 @@ in
 
   nixpkgs.config.allowUnfree = true;
   home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
+  # https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+  # https://github.com/yrashk/nix-home/blob/master/home.nix#L285
+  home.file.".fonts.conf".text = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+      <alias>
+        <family>sans-serif</family>
+        <prefer>
+          <family>Source Han Sans SC</family>
+          <family>Source Han Sans TC</family>
+          <family>Source Han Sans HW</family>
+          <family>Source Han Sans K</family>
+        </prefer>
+      </alias>
+      <alias>
+        <family>monospace</family>
+        <prefer>
+          <family>Source Han Sans SC</family>
+          <family>Source Han Sans TC</family>
+          <family>Source Han Sans HW</family>
+          <family>Source Han Sans K</family>
+        </prefer>
+      </alias>
+    </fontconfig>
+  '';
 
   # https://wiki.archlinux.org/title/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # home.file.".config/ibus/rime/default.custom.yaml".text = "";
