@@ -5,6 +5,9 @@ let
   moegirl = (pkgs.callPackage ./packages/fcitx/moegirl.nix) { };
   fcitx5-nord = (pkgs.callPackage ./packages/fcitx/fcitx5-nord.nix) { };
   fcitx5_dicts = (pkgs.callPackage ./packages/fcitx/fcitx5_dicts.nix) { };
+
+  # https://metroforsteam.com/
+  # metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -273,4 +276,6 @@ in
   home.file.".local/share/fcitx5/themes/".source = "${fcitx5-nord}";
   home.file.".local/share/fcitx5/pinyin/dictionaries/${fcitx5_dicts.fileName}".source =
     "${fcitx5_dicts}/${fcitx5_dicts.fileName}";
+  # home.file.".steam/root/skins/${metro-for-steam.folderName}".source =
+  #   "${metro-for-steam}/${metro-for-steam.folderName}";
 }
