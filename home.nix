@@ -230,7 +230,7 @@ in
     pkgs.binutils
     pkgs.exiftool
     pkgs.zsteg
-    # pkgs.jetbrains.jdk
+    (pkgs.callPackage ./packages/gui/stegsolve.nix { })
     (pkgs.callPackage ./packages/gui/idafree.nix { })
     pkgs.gdb
 
@@ -312,6 +312,8 @@ in
     pkgs.kotlin
     pkgs.jetbrains.goland
     pkgs.go
+    pkgs.jetbrains.pycharm-professional
+    pkgs.python3Full
 
     pkgs.maven
     pkgs.gradle
