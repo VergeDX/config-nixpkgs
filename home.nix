@@ -204,7 +204,6 @@ in
     pkgs.texlive.combined.scheme-full
 
     pkgs.unzip
-    pkgs.nmap
     pkgs.scrcpy
     pkgs.glxinfo
     pkgs.mr
@@ -221,6 +220,10 @@ in
     pkgs.lsd
     pkgs.screen
     pkgs.tmux
+
+    pkgs.nmap
+    pkgs.metasploit
+    (pkgs.callPackage ./packages/gui/armitage.nix { })
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
