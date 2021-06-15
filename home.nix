@@ -314,6 +314,9 @@ in
     pkgs.go
     pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
+    pkgs.jetbrains.clion
+    pkgs.cmake
+    pkgs.gnumake
 
     pkgs.maven
     pkgs.gradle
