@@ -10,6 +10,7 @@ let
   # metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix) { };
   gitalias = (pkgs.callPackage ./packages/resources/gitalias.nix) { };
   tabnine-vim = (pkgs.callPackage ./packages/resources/tabnine-vim.nix) { };
+  peda = (pkgs.callPackage ./packages/resources/peda.nix) { };
 in
 {
   # Let Home Manager install and manage itself.
@@ -231,6 +232,7 @@ in
     pkgs.zsteg
     # pkgs.jetbrains.jdk
     (pkgs.callPackage ./packages/gui/idafree.nix { })
+    pkgs.gdb
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -389,4 +391,7 @@ in
         cyan:    '#99faf2'
         white:   '#ffffff'
   '';
+
+  # https://github.com/longld/peda#installation
+  home.file.".gdbinit".text = "source ${peda.out}/${peda.name}/peda.py";
 }
