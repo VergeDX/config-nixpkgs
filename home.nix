@@ -224,6 +224,13 @@ in
     pkgs.nmap
     pkgs.metasploit
     (pkgs.callPackage ./packages/gui/armitage.nix { })
+    pkgs.binwalk
+    pkgs.gnome.ghex
+    pkgs.binutils
+    pkgs.exiftool
+    pkgs.zsteg
+    # pkgs.jetbrains.jdk
+    (pkgs.callPackage ./packages/gui/idafree.nix { })
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
