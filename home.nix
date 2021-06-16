@@ -98,7 +98,7 @@ in
   };
 
   # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
-  programs.chromium.enable = true;
+  programs.chromium.enable = true; # AdGuard
   programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
   programs.neovim =
     let doki-theme-vim = (pkgs.callPackage ./packages/themes/doki-theme-vim.nix) { };
@@ -233,6 +233,7 @@ in
     (pkgs.callPackage ./packages/gui/stegsolve.nix { })
     (pkgs.callPackage ./packages/gui/idafree.nix { })
     pkgs.gdb
+    pkgs.pwntools
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -272,7 +273,7 @@ in
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
-    pkgs.android-tools
+    # pkgs.android-tools
     pkgs.apktool
     pkgs.dex2jar
     pkgs.jd-gui
