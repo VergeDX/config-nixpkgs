@@ -312,7 +312,8 @@ in
     (pkgs.callPackage ./packages/gui/google-earth-pro.nix { })
 
     pkgs.jetbrains.rider
-    pkgs.msbuild
+    pkgs.dotnet-sdk
+    pkgs.mono
     pkgs.jetbrains.idea-ultimate
     pkgs.jdk11
     pkgs.kotlin
