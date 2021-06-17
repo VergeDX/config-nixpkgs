@@ -221,6 +221,9 @@ in
     pkgs.lsd
     pkgs.screen
     pkgs.tmux
+    pkgs.idevicerestore
+    pkgs.usbutils
+    (pkgs.callPackage ./packages/cli/xsp.nix { })
 
     pkgs.nmap
     pkgs.metasploit
@@ -270,6 +273,7 @@ in
     pkgs.qbittorrent
     pkgs.obs-studio
     pkgs.gnome3.baobab
+    pkgs.virt-manager
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -305,6 +309,7 @@ in
     pkgs.minecraft
     pkgs.multimc
     pkgs.stellarium
+    (pkgs.callPackage ./packages/gui/google-earth-pro.nix { })
 
     pkgs.jetbrains.rider
     pkgs.msbuild
