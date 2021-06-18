@@ -195,6 +195,9 @@ in
     pkgs.gnomeExtensions.bluetooth-quick-connect
     pkgs.gnomeExtensions.extensions-in-system-menu
     (pkgs.callPackage ./packages/gnome/dash-to-dock-gnome40.nix { })
+    # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
+    pkgs.gnomeExtensions.arcmenu
+    pkgs.gnomeExtensions.gsconnect
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -237,6 +240,10 @@ in
     (pkgs.callPackage ./packages/gui/idafree.nix { })
     pkgs.gdb
     pkgs.pwntools
+    pkgs.ltrace
+    pkgs.bind
+    pkgs.postman
+    pkgs.sqlmap
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
