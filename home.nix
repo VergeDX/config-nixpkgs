@@ -145,6 +145,7 @@ in
     pkgs.roboto-mono
     # https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
     pkgs.dejavu_fonts
+    pkgs.vistafonts
 
     # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
@@ -173,6 +174,9 @@ in
 
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
+    pkgs.libsForQt5.yakuake
+    (pkgs.makeAutostartItem { name = "org.kde.yakuake"; package = pkgs.libsForQt5.yakuake; })
+    pkgs.libsForQt5.kglobalaccel
 
     pkgs.gnome.gnome-tweak-tool
     (pkgs.callPackage ./packages/themes/layan-gtk-theme.nix { })
@@ -281,6 +285,8 @@ in
     pkgs.obs-studio
     pkgs.gnome3.baobab
     pkgs.virt-manager
+    pkgs.albert
+    (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -301,6 +307,7 @@ in
     pkgs.pkg-config
 
     # nixpkgs.config.allowUnfree = true;
+    pkgs.firefox
     pkgs.google-chrome
     (pkgs.steam.override {
       withPrimus = true;
