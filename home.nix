@@ -160,6 +160,8 @@ in
     pkgs.powerline-rs
     pkgs.starship
     pkgs.alacritty
+    pkgs.screenfetch
+    pkgs.neofetch
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: {
       configureScript = "./configure --sysconfdir=.config";
@@ -202,6 +204,10 @@ in
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
     pkgs.gnomeExtensions.arcmenu
     pkgs.gnomeExtensions.gsconnect
+    # https://extensions.gnome.org/
+    pkgs.gnomeExtensions.sound-output-device-chooser
+    pkgs.gnomeExtensions.status-area-horizontal-spacing
+    pkgs.gnomeExtensions.window-is-ready-notification-remover
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -317,6 +323,7 @@ in
     })
     pkgs.vscode
     pkgs.wpsoffice
+    pkgs.libreoffice
     pkgs.steam-run
     pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
