@@ -139,7 +139,6 @@ in
     (pkgs.callPackage ./packages/fonts/sf-mono.nix { })
     (pkgs.callPackage ./packages/fonts/sf-arabic-beta.nix { })
     (pkgs.callPackage ./packages/fonts/new-york.nix { })
-    (pkgs.callPackage ./packages/fonts/ms-fonts.nix { })
     pkgs.roboto
     pkgs.roboto-slab
     pkgs.roboto-mono
