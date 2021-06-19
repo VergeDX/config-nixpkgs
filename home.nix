@@ -176,9 +176,8 @@ in
 
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
-    pkgs.libsForQt5.yakuake
-    (pkgs.makeAutostartItem { name = "org.kde.yakuake"; package = pkgs.libsForQt5.yakuake; })
-    pkgs.libsForQt5.kglobalaccel
+    pkgs.guake
+    (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
 
     pkgs.gnome.gnome-tweak-tool
     (pkgs.callPackage ./packages/themes/layan-gtk-theme.nix { })
@@ -237,6 +236,7 @@ in
     pkgs.idevicerestore
     pkgs.usbutils
     (pkgs.callPackage ./packages/cli/xsp.nix { })
+    pkgs.hub
 
     pkgs.nmap
     pkgs.metasploit
