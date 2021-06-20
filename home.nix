@@ -327,8 +327,11 @@ in
         url = "https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb";
         sha256 = "sha256-jKYIRChpPIGDP2/fE0QqnqkFJjjVvcDk11EgdfQAB8M";
       };
+      postFixup = old.postFixup + ''
+        cd $out/share/applications/
+        sed -i 's/Exec=/Exec=steam-run /g' *.desktop
+      '';
     }))
-    pkgs.libreoffice
     pkgs.steam-run
     pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
