@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  gitalias = (pkgs.callPackage ./packages/resources/gitalias.nix) { };
   tabnine-vim = (pkgs.callPackage ./packages/resources/tabnine-vim.nix) { };
   peda = (pkgs.callPackage ./packages/resources/peda.nix) { };
 in
@@ -23,19 +22,6 @@ in
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
-
-  # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm
-  programs.git.enable = true;
-  programs.git.lfs.enable = true;
-  programs.git.userName = "Vanilla";
-  programs.git.userEmail = "neko@hydev.org";
-  # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
-  # http://cms-sw.github.io/tutorial-proxy.html
-  programs.git.extraConfig = {
-    http.proxy = "socks5://localhost:1089";
-    # https://github.com/GitAlias/gitalias#install-with-typical-usage
-    include.path = "${gitalias.out}/${gitalias.fileName}";
-  };
 
   programs.fish.enable = true;
   programs.fish.shellInit = ''
@@ -426,5 +412,8 @@ in
     gtk-theme-name = Layan-light-solid
   '';
 
-  imports = [ ./config/fcitx5_config.nix ];
+  imports = [
+    ./config/fcitx5_config.nix
+    ./config/git_config.nix
+  ];
 }
