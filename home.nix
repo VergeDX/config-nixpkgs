@@ -329,9 +329,9 @@ in
   '';
 
   imports = [
-    ./config/fcitx5_config.nix
-    ./config/git_config.nix
-    ./config/fish_config.nix
-    ./config/neovim_config.nix
+    ./config/fcitx5.nix
+    ./config/git.nix
+    ./config/fish.nix
+    ./config/neovim.nix
   ];
 }
