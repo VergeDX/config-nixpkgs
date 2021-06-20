@@ -207,6 +207,8 @@ in
     pkgs.gnomeExtensions.status-area-horizontal-spacing
     pkgs.gnomeExtensions.window-is-ready-notification-remover
     (pkgs.callPackage ./packages/gnome/lockkeys.nix { })
+    pkgs.gnomeExtensions.disconnect-wifi
+    pkgs.conky
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -294,6 +296,7 @@ in
     pkgs.virt-manager-qt
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
+    (pkgs.callPackage ./packages/gui/edex-ui.nix { })
 
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
