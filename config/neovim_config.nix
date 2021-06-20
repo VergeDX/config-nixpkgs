@@ -4,8 +4,8 @@ let
   tabnine-vim = (pkgs.callPackage ../packages/resources/tabnine-vim.nix) { };
 in
 {
+  programs.neovim.enable = true;
   programs.neovim = {
-    enable = true;
     # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
     plugins = [
       doki-theme-vim
