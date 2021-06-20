@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  zhwiki = (pkgs.callPackage ./packages/fcitx/zhwiki.nix) { };
-  moegirl = (pkgs.callPackage ./packages/fcitx/moegirl.nix) { };
-  fcitx5-nord = (pkgs.callPackage ./packages/fcitx/fcitx5-nord.nix) { };
-  fcitx5_dicts = (pkgs.callPackage ./packages/fcitx/fcitx5_dicts.nix) { };
-
-  # https://metroforsteam.com/
-  # metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix) { };
   gitalias = (pkgs.callPackage ./packages/resources/gitalias.nix) { };
   tabnine-vim = (pkgs.callPackage ./packages/resources/tabnine-vim.nix) { };
   peda = (pkgs.callPackage ./packages/resources/peda.nix) { };
@@ -392,20 +385,6 @@ in
     </fontconfig>
   '';
 
-  # https://wiki.archlinux.org/title/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  # home.file.".config/ibus/rime/default.custom.yaml".text = "";
-  # https://github.com/felixonmars/fcitx5-pinyin-zhwiki
-  # https://nixos.wiki/wiki/Home_Manager
-  home.file.".local/share/fcitx5/pinyin/dictionaries/${zhwiki.fileName}".source =
-    "${zhwiki}/${zhwiki.fileName}";
-  home.file.".local/share/fcitx5/pinyin/dictionaries/${moegirl.fileName}".source =
-    "${moegirl}/${moegirl.fileName}";
-  home.file.".local/share/fcitx5/themes/".source = "${fcitx5-nord}";
-  home.file.".local/share/fcitx5/pinyin/dictionaries/${fcitx5_dicts.fileName}".source =
-    "${fcitx5_dicts}/${fcitx5_dicts.fileName}";
-  # home.file.".steam/root/skins/${metro-for-steam.folderName}".source =
-  #   "${metro-for-steam}/${metro-for-steam.folderName}";
-
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
   home.file.".config/alacritty/alacritty.yml".text = ''
     # Colors (iTerm 2 default theme)
@@ -446,4 +425,6 @@ in
     gtk-icon-theme-name = Tela-pink
     gtk-theme-name = Layan-light-solid
   '';
+
+  imports = [ ./config/fcitx5_config.nix ];
 }
