@@ -206,6 +206,7 @@ in
     pkgs.gnomeExtensions.sound-output-device-chooser
     pkgs.gnomeExtensions.status-area-horizontal-spacing
     pkgs.gnomeExtensions.window-is-ready-notification-remover
+    (pkgs.callPackage ./packages/gnome/lockkeys.nix { })
 
     pkgs.arion
     pkgs.apfs-fuse
@@ -290,6 +291,7 @@ in
     pkgs.obs-studio
     pkgs.gnome3.baobab
     pkgs.virt-manager
+    pkgs.virt-manager-qt
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
 
