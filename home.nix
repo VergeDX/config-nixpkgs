@@ -28,14 +28,6 @@
     pkgs.wineWowPackages.fonts
     (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
 
-    pkgs.nodejs
-    pkgs.nodePackages.npm
-    pkgs.nodePackages.npm-check-updates
-    # https://nixos.wiki/wiki/Node.js
-    pkgs.yarn
-    pkgs.yarn2nix
-    (pkgs.callPackage ./packages/cli/pxder/pxder.nix { })
-
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
@@ -54,24 +46,6 @@
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
     (pkgs.callPackage ./packages/gui/edex-ui.nix { })
-
-    pkgs.android-studio
-    pkgs.androidStudioPackages.canary
-    # pkgs.android-tools
-    pkgs.apktool
-    pkgs.dex2jar
-    pkgs.jd-gui
-    (pkgs.flutter.override (prev: {
-      buildFHSUserEnv = { targetPkgs, ... }@args:
-        prev.buildFHSUserEnv (args // {
-          targetPkgs = p: with p;
-            (targetPkgs p) ++ [ gtk3.dev glib.dev ];
-        });
-    }))
-    pkgs.clang
-    pkgs.cmake
-    pkgs.ninja
-    pkgs.pkg-config
 
     (pkgs.steam.override {
       withPrimus = true;
@@ -98,28 +72,9 @@
     pkgs.multimc
     pkgs.stellarium
     (pkgs.callPackage ./packages/gui/google-earth-pro.nix { })
-
-    pkgs.jetbrains.rider
-    pkgs.dotnet-sdk
-    pkgs.mono
-    pkgs.jetbrains.idea-ultimate
-    pkgs.jdk11
-    pkgs.kotlin
-    pkgs.jetbrains.goland
-    pkgs.go
-    pkgs.jetbrains.pycharm-professional
-    pkgs.python3Full
-    pkgs.jetbrains.clion
-    pkgs.cmake
-    pkgs.gnumake
-
-    pkgs.maven
-    pkgs.gradle
   ];
 
   nixpkgs.config.allowUnfree = true;
-  home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
-
   imports = [
     ./config/fcitx5.nix
     ./config/git.nix
@@ -133,5 +88,6 @@
     ./pkgs/browser.nix
     ./pkgs/terminal.nix
     ./pkgs/cli.nix
+    ./pkgs/develop.nix
   ];
 }

@@ -31,5 +31,13 @@
     pkgs.usbutils
     (pkgs.callPackage ../packages/cli/xsp.nix { })
     pkgs.hub
+
+    pkgs.nodejs
+    pkgs.nodePackages.npm
+    pkgs.nodePackages.npm-check-updates
+    # https://nixos.wiki/wiki/Node.js
+    pkgs.yarn
+    pkgs.yarn2nix
+    (pkgs.callPackage ../packages/cli/pxder/pxder.nix { })
   ];
 }
