@@ -1,0 +1,35 @@
+{ home, pkgs, ... }:
+{
+  home.packages = [
+    # https://nixos.wiki/wiki/Nvidia
+    (pkgs.writeShellScriptBin "nvidia-offload" ''
+      export __NV_PRIME_RENDER_OFFLOAD=1
+      export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export __VK_LAYER_NV_optimus=NVIDIA_only
+      exec -a "$0" "$@"
+    '')
+
+    pkgs.unzip
+    pkgs.scrcpy
+    pkgs.glxinfo
+    pkgs.mr
+    pkgs.tree
+    pkgs.translate-shell
+    pkgs.wget
+    pkgs.htop
+    (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
+    (pkgs.callPackage ../packages/cli/checkra1n.nix { })
+    pkgs.p7zip
+    (pkgs.callPackage ../packages/cli/slides.nix { })
+    pkgs.file
+    pkgs.ncdu
+    pkgs.lsd
+    pkgs.screen
+    pkgs.tmux
+    pkgs.idevicerestore
+    pkgs.usbutils
+    (pkgs.callPackage ../packages/cli/xsp.nix { })
+    pkgs.hub
+  ];
+}

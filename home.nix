@@ -23,28 +23,6 @@
     pkgs.appimage-run
     pkgs.texlive.combined.scheme-full
 
-    pkgs.unzip
-    pkgs.scrcpy
-    pkgs.glxinfo
-    pkgs.mr
-    pkgs.tree
-    pkgs.translate-shell
-    pkgs.wget
-    pkgs.htop
-    (pkgs.callPackage ./packages/fcitx/ssf2fcitx.nix { })
-    (pkgs.callPackage ./packages/cli/checkra1n.nix { })
-    pkgs.p7zip
-    (pkgs.callPackage ./packages/cli/slides.nix { })
-    pkgs.file
-    pkgs.ncdu
-    pkgs.lsd
-    pkgs.screen
-    pkgs.tmux
-    pkgs.idevicerestore
-    pkgs.usbutils
-    (pkgs.callPackage ./packages/cli/xsp.nix { })
-    pkgs.hub
-
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
     pkgs.wineWowPackages.fonts
@@ -61,15 +39,6 @@
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
-
-    # https://nixos.wiki/wiki/Nvidia
-    (pkgs.writeShellScriptBin "nvidia-offload" ''
-      export __NV_PRIME_RENDER_OFFLOAD=1
-      export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export __VK_LAYER_NV_optimus=NVIDIA_only
-      exec -a "$0" "$@"
-    '')
 
     pkgs.gimp-with-plugins
     pkgs.remmina
@@ -163,5 +132,6 @@
     ./pkgs/gnome.nix
     ./pkgs/browser.nix
     ./pkgs/terminal.nix
+    ./pkgs/cli.nix
   ];
 }
