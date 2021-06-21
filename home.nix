@@ -7,14 +7,6 @@
   home.username = "vanilla";
   home.homeDirectory = "/home/vanilla";
 
-  home.sessionVariables = {
-    CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-  };
-
-  # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
-  programs.chromium.enable = true; # AdGuard
-  programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
-
   home.packages = [
     pkgs.nixpkgs-fmt
 
@@ -138,9 +130,6 @@
     pkgs.ninja
     pkgs.pkg-config
 
-    # nixpkgs.config.allowUnfree = true;
-    pkgs.firefox
-    pkgs.google-chrome
     (pkgs.steam.override {
       withPrimus = true;
       # https://github.com/NixOS/nixpkgs/pull/126142
@@ -237,5 +226,6 @@
     ./pkgs/ctf.nix
     ./pkgs/fonts.nix
     ./pkgs/gnome.nix
+    ./pkgs/browser.nix
   ];
 }
