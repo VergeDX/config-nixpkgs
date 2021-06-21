@@ -15,32 +15,6 @@
     (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray-pre.nix) { }; })
     pkgs.v2ray
 
-    pkgs.xfce.terminal
-    pkgs.powerline
-    pkgs.powerline-go
-    pkgs.powerline-fonts
-    pkgs.powerline-symbols
-    pkgs.powerline-rs
-    pkgs.starship
-    pkgs.alacritty
-    pkgs.screenfetch
-    pkgs.neofetch
-    # https://github.com/rofl0r/proxychains-ng
-    (pkgs.proxychains.overrideAttrs (old: {
-      configureScript = "./configure --sysconfdir=.config";
-      postInstall = old.postInstall + ''
-        # https://stackoverflow.com/questions/4881930/remove-the-last-line-from-a-file-in-bash
-        # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/tools/networking/proxychains/default.nix#L23
-        sed -i '$ d' $out/etc/proxychains.conf
-        sed -i '$ d' $out/etc/proxychains.conf
-        printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
-      '';
-    }))
-
-    pkgs.meslo-lgs-nf
-    pkgs.guake
-    (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
-
     pkgs.arion
     pkgs.apfs-fuse
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
@@ -177,38 +151,6 @@
   nixpkgs.config.allowUnfree = true;
   home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
 
-  # https://github.com/alacritty/alacritty/wiki/Color-schemes
-  home.file.".config/alacritty/ala}critty.yml".text = ''
-    # Colors (iTerm 2 default theme)
-    colors:
-      # Default colors
-      primary:
-        background: '#101421'
-        foreground: '#fffbf6'
-
-     # Normal colors
-      normal:
-        black:   '#2e2e2e'
-        red:     '#eb4129'
-        green:   '#abe047'
-        yellow:  '#f6c744'
-        blue:    '#47a0f3'
-        magenta: '#7b5cb0'
-        cyan:    '#64dbed'
-        white:   '#e5e9f0'
-
-     # Bright colors
-      bright:
-        black:   '#565656'
-        red:     '#ec5357'
-        green:   '#c0e17d'
-        yellow:  '#f9da6a'
-        blue:    '#49a4f8'
-        magenta: '#a47de9'
-        cyan:    '#99faf2'
-        white:   '#ffffff'
-  '';
-
   # https://wiki.archlinux.org/title/GTK_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   home.file.".config/gtk-3.0/settings.ini".text = ''
     [Settings]
@@ -227,5 +169,6 @@
     ./pkgs/fonts.nix
     ./pkgs/gnome.nix
     ./pkgs/browser.nix
+    ./pkgs/terminal.nix
   ];
 }

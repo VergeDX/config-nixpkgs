@@ -8,4 +8,6 @@
   home.sessionVariables = {
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
   };
+
+  home.packages = [ pkgs.meslo-lgs-nf ];
 }
