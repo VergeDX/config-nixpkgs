@@ -49,6 +49,8 @@
     pkgs.mpv
 
     (pkgs.callPackage ./packages/cutefish/calculator.nix { })
+    (pkgs.callPackage ./packages/cutefish/dock.nix { })
+    (pkgs.callPackage ./packages/cutefish/filemanager.nix { })
   ];
 
   nixpkgs.config.allowUnfree = true;
