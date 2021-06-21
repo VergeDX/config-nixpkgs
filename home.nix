@@ -52,6 +52,7 @@
     (pkgs.callPackage ./packages/cutefish/dock.nix { })
     (pkgs.callPackage ./packages/cutefish/filemanager.nix { })
     (pkgs.callPackage ./packages/cutefish/statusbar.nix { })
+    (pkgs.callPackage ./packages/cutefish/settings.nix { })
   ];
 
   nixpkgs.config.allowUnfree = true;
