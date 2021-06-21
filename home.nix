@@ -54,13 +54,13 @@
     ./config/neovim.nix
     ./config/zsh.nix
 
-    ./pkgs/ctf.nix
-    ./pkgs/fonts.nix
-    ./pkgs/gnome.nix
-    ./pkgs/browser.nix
-    ./pkgs/terminal.nix
-    ./pkgs/cli.nix
-    ./pkgs/develop.nix
-    ./pkgs/gui.nix
+    ./config/ctf.nix
+    ./config/fonts.nix
+    ./config/gnome.nix
+    ./config/browser.nix
+    ./config/terminal.nix
+    ./config/cli.nix
+    ./config/develop.nix
+    ./config/gui.nix
   ];
 }
