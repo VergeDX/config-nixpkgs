@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  peda = (pkgs.callPackage ./packages/resources/peda.nix) { };
-in
 {
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
@@ -134,23 +131,6 @@ in
     pkgs.usbutils
     (pkgs.callPackage ./packages/cli/xsp.nix { })
     pkgs.hub
-
-    pkgs.nmap
-    pkgs.metasploit
-    (pkgs.callPackage ./packages/gui/armitage.nix { })
-    pkgs.binwalk
-    pkgs.gnome.ghex
-    pkgs.binutils
-    pkgs.exiftool
-    pkgs.zsteg
-    (pkgs.callPackage ./packages/gui/stegsolve.nix { })
-    (pkgs.callPackage ./packages/gui/idafree.nix { })
-    pkgs.gdb
-    pkgs.pwntools
-    pkgs.ltrace
-    pkgs.bind
-    pkgs.postman
-    pkgs.sqlmap
 
     # https://nixos.wiki/wiki/Wine
     pkgs.wineWowPackages.stable
@@ -319,8 +299,6 @@ in
         white:   '#ffffff'
   '';
 
-  # https://github.com/longld/peda#installation
-  home.file.".gdbinit".text = "source ${peda.out}/${peda.name}/peda.py";
   # https://wiki.archlinux.org/title/GTK_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   home.file.".config/gtk-3.0/settings.ini".text = ''
     [Settings]
@@ -333,5 +311,7 @@ in
     ./config/git.nix
     ./config/fish.nix
     ./config/neovim.nix
+
+    ./pkgs/ctf.nix
   ];
 }
