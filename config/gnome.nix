@@ -2,26 +2,29 @@
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
+    pkgs.qt5ct
+
     (pkgs.callPackage ../packages/themes/layan-gtk-theme.nix { })
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
     (pkgs.callPackage ../packages/themes/flat-remix-gnome.nix { })
+
     pkgs.gnomeExtensions.unite
-    pkgs.gnomeExtensions.runcat
-    pkgs.gnomeExtensions.jiggle
-    pkgs.gnomeExtensions.espresso
-    pkgs.gnomeExtensions.blur-me
-    pkgs.gnomeExtensions.openweather
-    pkgs.gnomeExtensions.tray-icons
-    pkgs.gnomeExtensions.simple-net-speed
-    pkgs.gnomeExtensions.proxy-switcher
-    pkgs.gnomeExtensions.extension-list
-    pkgs.gnomeExtensions.eclipse
-    pkgs.gnomeExtensions.screenshot-tool
+    pkgs.gnomeExtensions.gnome-shell-extension-runcat
+    pkgs.gnomeExtensions.gnome-shell-extension-jiggle
+    pkgs.gnomeExtensions.gnome-shell-extension-espresso
+    pkgs.gnomeExtensions.gnome-shell-extension-blur-me
+    pkgs.gnomeExtensions.gnome-shell-extension-openweather
+    pkgs.gnomeExtensions.gnome-shell-extension-tray-icons
+    pkgs.gnomeExtensions.gnome-shell-extension-simple-net-speed
+    pkgs.gnomeExtensions.gnome-shell-extension-proxy-switcher
+    pkgs.gnomeExtensions.gnome-shell-extension-extension-list
+    pkgs.gnomeExtensions.gnome-shell-extension-eclipse
+    pkgs.gnomeExtensions.gnome-shell-extension-screenshot-tool
 
     # Credit: @Cyunrei
-    pkgs.gnomeExtensions.bluetooth-quick-connect
-    pkgs.gnomeExtensions.extensions-in-system-menu
+    pkgs.gnomeExtensions.gnome-shell-extension-bluetooth-quick-connect
+    pkgs.gnomeExtensions.gnome-shell-extension-extensions-in-system-menu
     (pkgs.callPackage ../packages/gnome/dash-to-dock-gnome40.nix { })
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
@@ -30,10 +33,10 @@
 
     # https://extensions.gnome.org/
     pkgs.gnomeExtensions.sound-output-device-chooser
-    pkgs.gnomeExtensions.status-area-horizontal-spacing
-    pkgs.gnomeExtensions.window-is-ready-notification-remover
+    pkgs.gnomeExtensions.gnome-shell-extension-status-area-horizontal-spacing
+    pkgs.gnomeExtensions.gnome-shell-extension-window-is-ready-notification-remover
     (pkgs.callPackage ../packages/gnome/lockkeys.nix { })
-    pkgs.gnomeExtensions.disconnect-wifi
+    pkgs.gnomeExtensions.gnome-shell-extension-disconnect-wifi
     pkgs.conky
   ];
 
