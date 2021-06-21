@@ -7,12 +7,7 @@
   home.username = "vanilla";
   home.homeDirectory = "/home/vanilla";
 
-  programs.zsh.enable = true;
-  # https://github.com/nix-community/home-manager/issues/1338
-  programs.zsh.initExtra = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-  # https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#L230
   home.sessionVariables = {
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
     CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
   };
 
@@ -50,7 +45,6 @@
       '';
     }))
 
-    pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
     pkgs.guake
     (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
@@ -227,7 +221,7 @@
   home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
-  home.file.".config/alacritty/alacritty.yml".text = ''
+  home.file.".config/alacritty/ala}critty.yml".text = ''
     # Colors (iTerm 2 default theme)
     colors:
       # Default colors
@@ -270,6 +264,7 @@
     ./config/git.nix
     ./config/fish.nix
     ./config/neovim.nix
+    ./config/zsh.nix
 
     ./pkgs/ctf.nix
     ./pkgs/fonts.nix
