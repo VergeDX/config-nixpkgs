@@ -44,6 +44,11 @@
     pkgs.minecraft
     pkgs.multimc
     pkgs.stellarium
+
+    pkgs.vlc
+    pkgs.mpv
+
+    (pkgs.callPackage ./packages/cutefish/calculator.nix { })
   ];
 
   nixpkgs.config.allowUnfree = true;
