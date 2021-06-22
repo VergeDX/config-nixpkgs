@@ -1,6 +1,5 @@
 { pkgs, home, ... }:
-let
-  peda = (pkgs.callPackage ../packages/resources/peda.nix) { };
+let peda = (pkgs.callPackage ../packages/resources/peda.nix) { };
 in
 {
   home.packages = [

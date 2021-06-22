@@ -38,6 +38,7 @@
     pkgs.gnomeExtensions.gnome-shell-extension-window-is-ready-notification-remover
     (pkgs.callPackage ../packages/gnome/lockkeys.nix { })
     pkgs.gnomeExtensions.gnome-shell-extension-disconnect-wifi
+
     pkgs.conky
   ];
 

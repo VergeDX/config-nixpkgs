@@ -2,10 +2,11 @@
 {
   home.packages = [
     pkgs.xfce.terminal
-    pkgs.starship
     pkgs.alacritty
+
     pkgs.screenfetch
     pkgs.neofetch
+
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: {
       configureScript = "./configure --sysconfdir=.config";

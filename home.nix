@@ -53,6 +53,10 @@
     (pkgs.callPackage ./packages/cutefish/filemanager.nix { })
     (pkgs.callPackage ./packages/cutefish/statusbar.nix { })
     (pkgs.callPackage ./packages/cutefish/settings.nix { })
+
+    pkgs.gnome.dconf-editor
+    pkgs.libsForQt5.qtstyleplugin-kvantum
+    pkgs.amule
   ];
 
   nixpkgs.config.allowUnfree = true;

@@ -31,6 +31,7 @@
     pkgs.usbutils
     (pkgs.callPackage ../packages/cli/xsp.nix { })
     pkgs.hub
+    pkgs.du-dust
 
     pkgs.nodejs
     pkgs.nodePackages.npm

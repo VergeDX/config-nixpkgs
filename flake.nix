@@ -17,8 +17,10 @@
     {
       homeConfigurations."vanilla@nixos" = home-manager.lib.homeManagerConfiguration {
         inherit system;
+
         username = "vanilla";
         homeDirectory = "/home/vanilla";
+
         configuration = { pkgs, ... }: {
           imports = [ ./home.nix ];
 

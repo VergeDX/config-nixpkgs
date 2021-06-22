@@ -19,6 +19,7 @@
     (pkgs.callPackage ../packages/gui/edex-ui.nix { })
 
     pkgs.vscode
+    pkgs.libreoffice
     (pkgs.wpsoffice.overrideAttrs (old: {
       version = "11.1.0.10161";
       src = pkgs.fetchurl {

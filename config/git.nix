@@ -1,6 +1,5 @@
 { pkgs, programs, ... }:
-let
-  gitalias = (pkgs.callPackage ../packages/resources/gitalias.nix) { };
+let gitalias = (pkgs.callPackage ../packages/resources/gitalias.nix) { };
 in
 {
   # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm

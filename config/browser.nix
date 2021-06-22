@@ -4,9 +4,7 @@
   programs.chromium.enable = true; # AdGuard
   programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
 
-  home.sessionVariables = {
-    CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-  };
+  home.sessionVariables = { CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable"; };
 
   home.packages = [
     pkgs.firefox
