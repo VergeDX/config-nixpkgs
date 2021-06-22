@@ -1,12 +1,20 @@
-{ programs, powerline, pkgs, ... }:
+{ programs, home, pkgs, ... }:
 {
   programs.fish.enable = true;
   programs.fish.shellInit = ''
     function fish_prompt
-        # https://github.com/jD91mZM2/powerline-rs#fish
-        powerline-rs --shell bare $status
+        # https://github.com/justjanne/powerline-go#fish
+        eval powerline-go -error $status -jobs (jobs -p | wc -l)
     end
   '';
+
+  home.packages = [
+    pkgs.powerline
+    pkgs.powerline-go
+    pkgs.powerline-fonts
+    pkgs.powerline-symbols
+    pkgs.powerline-rs
+  ];
 
   programs.fish.plugins = [
     {

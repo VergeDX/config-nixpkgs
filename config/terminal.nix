@@ -2,11 +2,6 @@
 {
   home.packages = [
     pkgs.xfce.terminal
-    pkgs.powerline
-    pkgs.powerline-go
-    pkgs.powerline-fonts
-    pkgs.powerline-symbols
-    pkgs.powerline-rs
     pkgs.starship
     pkgs.alacritty
     pkgs.screenfetch
