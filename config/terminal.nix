@@ -24,7 +24,7 @@
   ];
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
-  home.file.".config/alacritty/ala}critty.yml".text = ''
+  home.file.".config/alacritty/alacritty.yml".text = ''
     # Colors (iTerm 2 default theme)
     colors:
       # Default colors
