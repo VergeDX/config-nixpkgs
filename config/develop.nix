@@ -8,6 +8,7 @@
     pkgs.dex2jar
     pkgs.jd-gui
 
+    pkgs.dart
     (pkgs.flutter.override (prev: {
       buildFHSUserEnv = { targetPkgs, ... }@args:
         prev.buildFHSUserEnv (args // {
@@ -15,6 +16,13 @@
             (targetPkgs p) ++ [
               pkgs.util-linux.dev
               pkgs.lzma.dev
+              pkgs.gtk3.dev
+              pkgs.glib.dev
+              pkgs.pango.dev
+              pkgs.harfbuzz.dev
+              pkgs.cairo.dev
+              pkgs.gdk-pixbuf.dev
+              pkgs.atk.dev
             ];
         });
     }))
