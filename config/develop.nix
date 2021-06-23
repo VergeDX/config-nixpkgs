@@ -16,6 +16,8 @@
             (targetPkgs p) ++ [
               pkgs.util-linux.dev
               pkgs.lzma.dev
+
+              # GTK 3.0 & itals dependencies.
               pkgs.gtk3.dev
               pkgs.glib.dev
               pkgs.pango.dev
@@ -23,6 +25,24 @@
               pkgs.cairo.dev
               pkgs.gdk-pixbuf.dev
               pkgs.atk.dev
+
+              # `flutter build linux` needs these.
+              pkgs.pcre.dev
+              pkgs.libffi.dev
+              pkgs.freetype.dev
+              pkgs.zlib.dev
+              pkgs.libselinux.dev
+              pkgs.libsepol.dev
+              pkgs.bzip2.dev
+              pkgs.libpng.dev
+              pkgs.graphite2
+              pkgs.fribidi
+              pkgs.libthai.dev
+              pkgs.libdatrie.dev
+              pkgs.fontconfig.dev
+              pkgs.expat.dev
+              pkgs.pkgs.xorg.libXrender.dev
+              pkgs.xlibs.xorgproto
             ];
         });
     }))
