@@ -4,12 +4,20 @@
   home.packages = [
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
-    # pkgs.android-tools
     pkgs.apktool
     pkgs.dex2jar
     pkgs.jd-gui
 
-    pkgs.flutter
+    (pkgs.flutter.override (prev: {
+      buildFHSUserEnv = { targetPkgs, ... }@args:
+        prev.buildFHSUserEnv (args // {
+          targetPkgs = p: with p;
+            (targetPkgs p) ++ [
+              pkgs.util-linux.dev
+              pkgs.lzma.dev
+            ];
+        });
+    }))
     pkgs.clang
     pkgs.cmake
     pkgs.ninja
