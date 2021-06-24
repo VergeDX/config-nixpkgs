@@ -74,6 +74,10 @@ in
   home.sessionVariables = {
     PKG_CONFIG_PATH = "${home_dir}/.nix-profile/lib/pkgconfig:${home_dir}/.nix-profile/share/pkgconfig";
     CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+
+    # https://mirrors.bfsu.edu.cn/help/flutter/
+    FLUTTER_STORAGE_BASE_URL = "https://mirrors.bfsu.edu.cn/flutter";
+    PUB_HOSTED_URL = "https://mirrors.bfsu.edu.cn/dart-pub";
   };
 
   home.packages = [
