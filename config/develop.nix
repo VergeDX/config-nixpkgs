@@ -5,7 +5,11 @@ let linkShareToLib = ''
 '';
 in
 {
-  home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
+  home.file.".config/flutter/settings".text = ''{
+    "enable-linux-desktop": true,
+    "android-sdk": "${pkgs.androidenv.androidPkgs_9_0.platform-tools}libexec/"
+  }'';
+
   home.packages = [
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
@@ -14,7 +18,7 @@ in
     pkgs.jd-gui
 
     pkgs.dart
-    (pkgs.flutter.override (prev: {
+    ((pkgs.flutter.override (prev: {
       buildFHSUserEnv = { targetPkgs, ... }@args:
         prev.buildFHSUserEnv (args // {
           targetPkgs = p: with p;
@@ -72,6 +76,11 @@ in
               pkgs.at_spi2_core.dev
             ];
         });
+    })).overrideAttrs (old: {
+      startScript = ''
+        #! ${pkgs.bash}/bin/bash
+        export CHROME_EXECUTABLE="${pkgs.google-chrome}/bin/google-chrome-stable";
+      '' + old.startScript;
     }))
     pkgs.clang
     pkgs.cmake
