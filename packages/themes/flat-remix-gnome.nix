@@ -1,7 +1,7 @@
 { stdenv, fetchgit, dconf, glib }:
 stdenv.mkDerivation rec {
   name = "flat-remix-gnome";
-  version = "20210524";
+  version = "20210623";
 
   buildInputs = [ dconf glib ];
   installPhase = ''
@@ -16,6 +16,6 @@ stdenv.mkDerivation rec {
     url = "https://github.com/daniruiz/flat-remix-gnome";
     rev = "${version}";
     fetchSubmodules = false;
-    sha256 = "sha256-FKoQ+coJlmd4Gm/dw032R3VdeQeE+PPPL5AJX2txMhw=";
+    sha256 = "sha256-FKsbAvjhXb2ipe3XqACM6OwGYwbBbzvDjsUQYCIQ8NM=";
   };
 }
