@@ -1,4 +1,9 @@
 { home, pkgs, ... }:
+let linkShareToLib = ''
+  cd $out && mkdir lib
+  ln -s ../share/pkgconfig/ ./lib
+'';
+in
 {
   home.file.".config/flutter/settings".text = ''{ "enable-linux-desktop": true }'';
   home.packages = [
@@ -42,7 +47,29 @@
               pkgs.fontconfig.dev
               pkgs.expat.dev
               pkgs.pkgs.xorg.libXrender.dev
-              pkgs.xlibs.xorgproto
+              (pkgs.xlibs.xorgproto.overrideAttrs (old: { fixupPhase = linkShareToLib; }))
+              pkgs.xlibs.libX11.dev
+              pkgs.xlibs.libxcb.dev
+              pkgs.xlibs.libXau.dev
+              pkgs.xlibs.libXdmcp.dev
+              pkgs.xlibs.libXft.dev
+              pkgs.xlibs.pixman
+              pkgs.libGL.dev
+              pkgs.xlibs.libXext.dev
+              pkgs.libtiff.dev
+              pkgs.xlibs.libXi.dev
+              pkgs.xlibs.libXfixes.dev
+              pkgs.xlibs.libXrandr.dev
+              pkgs.xlibs.libXcursor.dev
+              pkgs.xlibs.libXcomposite.dev
+              pkgs.xlibs.libXinerama.dev
+              pkgs.wayland-scanner.dev
+              (pkgs.wayland-protocols.overrideAttrs (old: { fixupPhase = linkShareToLib; }))
+              pkgs.libxkbcommon.dev
+              pkgs.epoxy.dev
+              pkgs.at_spi2_atk
+              pkgs.dbus_libs.dev
+              pkgs.at_spi2_core.dev
             ];
         });
     }))
