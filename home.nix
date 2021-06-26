@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-{
+let anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+in
+rec {
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
 
@@ -83,4 +85,16 @@
     vo=gpu
     profile=gpu-hq
   '';
+  # https://github.com/bloc97/Anime4K/blob/master/GLSL_Instructions.md
+  home.file.".config/mpv/input.conf".text = (builtins.replaceStrings [ "~~" ] [ "${anime4k}" ] (
+    ''
+      CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 480/720p (Faithful)"
+      CTRL+2 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 480/720p (Perceptual Quality)"
+      CTRL+3 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_Deblur_DoG.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 480/720p (Perceptual Quality and Deblur)"
+      CTRL+4 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 1080p (Faithful)"
+      CTRL+5 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 1080p (Perceptual Quality)"
+      CTRL+6 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_Deblur_DoG.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 1080p (Perceptual Quality and Deblur)"
+      CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
+    ''
+  ));
 }
