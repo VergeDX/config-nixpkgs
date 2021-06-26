@@ -29,6 +29,7 @@
           home.packages = with nixos-cn.legacyPackages.${system}; [
             netease-cloud-music
             (wine-wechat.override { scopedMount = false; })
+            re-export.feeluown
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src
