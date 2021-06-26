@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, dconf, glib }:
+{ stdenv, fetchgit, dconf, glib, lib }:
 stdenv.mkDerivation rec {
   name = "flat-remix-gnome";
   version = "20210623";
@@ -17,5 +17,11 @@ stdenv.mkDerivation rec {
     rev = "${version}";
     fetchSubmodules = false;
     sha256 = "sha256-FKsbAvjhXb2ipe3XqACM6OwGYwbBbzvDjsUQYCIQ8NM=";
+  };
+
+  meta = with lib; {
+    homepage = "https://github.com/daniruiz/flat-remix-gnome";
+    license = with licenses; [ cc-by-nc-sa-40 ];
+    maintainers = [ maintainers.vanilla ];
   };
 }
