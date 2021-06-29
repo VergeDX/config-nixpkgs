@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
-let anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+let
+  anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+  discord-with-proxy = pkgs.runCommandLocal "Discord" { nativeBuildInputs = [ pkgs.makeWrapper ]; }
+    ''
+      mkdir -p $out
+      ${pkgs.xorg.lndir}/bin/lndir -silent ${pkgs.discord} $out
+      wrapProgram $out/opt/Discord/Discord \
+        --add-flags '--proxy-server=http://127.0.0.1:8889'
+    '';
 in
 rec {
   programs.home-manager.enable = true;
@@ -59,6 +67,11 @@ rec {
     pkgs.gnome.dconf-editor
     pkgs.libsForQt5.qtstyleplugin-kvantum
     pkgs.amule
+    pkgs.gnome.polari
+
+    discord-with-proxy
+    pkgs.betterdiscord-installer
+    pkgs.betterdiscordctl
   ];
 
   nixpkgs.config.allowUnfree = true;
