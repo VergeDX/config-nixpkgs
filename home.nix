@@ -2,13 +2,25 @@
 
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
-  discord-with-proxy = pkgs.runCommandLocal "Discord" { nativeBuildInputs = [ pkgs.makeWrapper ]; }
-    ''
-      mkdir -p $out
-      ${pkgs.xorg.lndir}/bin/lndir -silent ${pkgs.discord} $out
-      wrapProgram $out/opt/Discord/Discord \
-        --add-flags '--proxy-server=http://127.0.0.1:8889'
-    '';
+
+  wrapElectronWithProxy = ({ package, binaryName, binaryPath }:
+    pkgs.runCommandLocal binaryName { nativeBuildInputs = [ pkgs.makeWrapper ]; }
+      ''
+        mkdir -p $out
+        ${pkgs.xorg.lndir}/bin/lndir -silent ${package} $out
+        wrapProgram $out/${binaryPath}/${binaryName} \
+          --add-flags '--proxy-server=http://127.0.0.1:8889'
+      '');
+  discord-with-proxy = (wrapElectronWithProxy rec {
+    package = pkgs.discord;
+    binaryName = "Discord";
+    binaryPath = "opt/${binaryName}";
+  });
+  element-desktop-with-proxy = (wrapElectronWithProxy rec {
+    package = pkgs.element-desktop;
+    binaryPath = "bin";
+    binaryName = "element-desktop";
+  });
 in
 rec {
   programs.home-manager.enable = true;
@@ -72,6 +84,9 @@ rec {
     discord-with-proxy
     pkgs.betterdiscord-installer
     pkgs.betterdiscordctl
+    pkgs.emacs
+    pkgs.nodePackages.http-server
+    element-desktop-with-proxy
   ];
 
   nixpkgs.config.allowUnfree = true;
