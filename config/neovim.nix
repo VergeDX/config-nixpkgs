@@ -19,6 +19,7 @@ in
           sha256 = "sha256-/9qjUunyFZ7uWwdAZCb/p2Pyn6U5GOvjuM8yFwYNKjM=";
         };
       })
+      pkgs.vimPlugins.YouCompleteMe
     ];
 
     # https://github.com/doki-theme/doki-theme-vim#installation
