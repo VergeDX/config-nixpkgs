@@ -36,7 +36,7 @@
     pkgs.gnomeExtensions.sound-output-device-chooser
     pkgs.gnomeExtensions.status-area-horizontal-spacing
     pkgs.gnomeExtensions.window-is-ready-notification-remover
-    (pkgs.callPackage ../packages/gnome/lockkeys.nix { })
+    pkgs.gnomeExtensions.lock-keys
     pkgs.gnomeExtensions.disconnect-wifi
 
     pkgs.conky
