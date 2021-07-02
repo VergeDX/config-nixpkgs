@@ -1,7 +1,5 @@
 { programs, pkgs, ... }:
-let
-  doki-theme-vim = (pkgs.callPackage ../packages/themes/doki-theme-vim.nix) { };
-  tabnine-vim = (pkgs.callPackage ../packages/resources/tabnine-vim.nix) { };
+let doki-theme-vim = (pkgs.callPackage ../packages/themes/doki-theme-vim.nix) { };
 in
 {
   programs.neovim.enable = true;
@@ -13,6 +11,14 @@ in
       pkgs.vimPlugins.vim-airline-themes
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
+      (pkgs.vimUtils.buildVimPlugin rec {
+        name = "tabnine-vim";
+        src = pkgs.fetchgit {
+          url = "https://github.com/codota/${name}";
+          rev = "2.10.0";
+          sha256 = "sha256-/9qjUunyFZ7uWwdAZCb/p2Pyn6U5GOvjuM8yFwYNKjM=";
+        };
+      })
     ];
 
     # https://github.com/doki-theme/doki-theme-vim#installation
@@ -25,7 +31,6 @@ in
       colorscheme emilia_dark
       set number
       set showtabline=2
-      set rtp+=${tabnine-vim.out}/${tabnine-vim.name}
     '';
   };
 }
