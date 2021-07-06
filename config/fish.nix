@@ -1,12 +1,9 @@
 { programs, home, pkgs, ... }:
+let silver = pkgs.callPackage ../packages/resources/silver.nix { };
+in
 {
   programs.fish.enable = true;
-  programs.fish.shellInit = ''
-    function fish_prompt
-        # https://github.com/justjanne/powerline-go#fish
-        eval powerline-go -error $status -jobs (jobs -p | wc -l)
-    end
-  '';
+  # programs.fish.shellInit = "starship init fish | source";
 
   home.packages = [
     pkgs.powerline
@@ -14,6 +11,9 @@
     pkgs.powerline-fonts
     pkgs.powerline-symbols
     pkgs.powerline-rs
+
+    pkgs.starship
+    silver
   ];
 
   programs.fish.plugins = [
@@ -41,5 +41,40 @@
         sha256 = "sha256-A8ydBX4LORk+nutjHurqNNWFmW6LIiBPQcxS3x4nbeQ=";
       };
     }
+    {
+      name = "fish";
+      src = pkgs.fetchgit {
+        url = "https://github.com/silver-prompt/fish";
+        rev = "c1a31f16a2739998241e181c8f453999321b4c67";
+        sha256 = "sha256-hzCn760N4+NZDjtLj+0ZoO0IgV61yOzRAHvj2MQOqd4=";
+      };
+    }
   ];
+
+  home.file.".config/silver/silver.toml".text = ''
+    [[left]]
+    name = "dir"
+    color.background = "blue"
+    color.foreground = "black"
+
+    [[left]]
+    name = "git"
+    color.background = "green"
+    color.foreground = "black"
+
+    [[right]]
+    name = "status"
+    color.background = "white"
+    color.foreground = "black"
+
+    [[right]]
+    name = "cmdtime"
+    color.background = "magenta"
+    color.foreground = "black"
+
+    [[right]]
+    name = "shell"
+    color.background = "green"
+    color.foreground = "black"
+  '';
 }
