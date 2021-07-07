@@ -87,6 +87,28 @@ rec {
     pkgs.emacs
     pkgs.nodePackages.http-server
     element-desktop-with-proxy
+
+    pkgs.woeusb
+    pkgs.ntfs3g
+    pkgs.wimlib
+
+    pkgs.act
+    pkgs.drone-cli
+
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.zeal
+
+    pkgs.pstree
+    pkgs.jq
+
+    pkgs.evcxr
+    pkgs.scenebuilder
+    pkgs.eclipses.eclipse-platform
+    pkgs.etcher
+
+    pkgs.minecraft-server
+    pkgs.nix-index
   ];
 
   nixpkgs.config.allowUnfree = true;

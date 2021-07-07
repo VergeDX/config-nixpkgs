@@ -102,7 +102,7 @@ in
     pkgs.mono
     (pkgs.hiPrio pkgs.msbuild)
     pkgs.jetbrains.idea-ultimate
-    pkgs.jdk11
+    pkgs.jetbrains.jdk
     pkgs.kotlin
     pkgs.jetbrains.goland
     pkgs.go
