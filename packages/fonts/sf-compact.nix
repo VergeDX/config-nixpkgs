@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   name = "sf-compact";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg";
-    sha256 = "sha256-6dn4J0/fDR8+vR64paBIePuRcmMgi3oJ4ieRJa2CJPU=";
+    sha256 = "sha256-U3F91nQki5W1vpb7Yitvr3mPK7b5eyqkGv8iJynVdPI=";
   };
 
   buildInputs = [ p7zip ];

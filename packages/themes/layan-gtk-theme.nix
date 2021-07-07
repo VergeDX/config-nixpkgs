@@ -1,11 +1,12 @@
 { stdenv, fetchgit }:
 stdenv.mkDerivation rec {
   pname = "layan-gtk-theme";
-  version = "master";
+  version = "2021-06-30";
 
   src = fetchgit {
     url = "https://github.com/vinceliuice/Layan-gtk-theme";
-    sha256 = "sha256:0b637di3ihw34gm61jh6snj0446xymmz7mf7va7vyz8ybnhqh46r";
+    rev = version;
+    sha256 = "sha256-FI8+AJlcPHGOzxN6HUKLtPGLe8JTfTQ9Az9NsvVUK7g=";
   };
 
   # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/data/themes/vimix/default.nix#L26

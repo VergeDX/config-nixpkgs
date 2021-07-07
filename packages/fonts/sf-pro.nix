@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   name = "sf-pro";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
-    sha256 = "sha256-ORNdkJYTM2nkuI5eQ1N1TRfeS842bZMqpAclPgX+qe4=";
+    sha256 = "sha256-P69DHx/V0NoDcI6jrZdlhbpjrdHo8DEGT+2yg5jYw/M=";
   };
 
   buildInputs = [ p7zip ];
