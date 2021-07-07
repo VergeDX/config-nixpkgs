@@ -7,7 +7,6 @@
     (pkgs.callPackage ../packages/themes/layan-gtk-theme.nix { })
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
-    (pkgs.callPackage ../packages/cutefish/icons.nix { })
     (pkgs.callPackage ../packages/themes/flat-remix-gnome.nix { })
 
     pkgs.gnomeExtensions.unite
