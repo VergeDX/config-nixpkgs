@@ -6,7 +6,6 @@
     (pkgs.callPackage ../packages/gui/motrix.nix { })
     pkgs.zoom-us
     pkgs.google-play-music-desktop-player
-    pkgs.tor-browser-bundle-bin
     pkgs.qbittorrent
     pkgs.obs-studio
     pkgs.gnome3.baobab

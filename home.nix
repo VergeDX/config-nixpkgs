@@ -103,6 +103,7 @@ rec {
 
     pkgs.minecraft-server
     pkgs.nix-index
+    pkgs.mkvtoolnix
   ];
 
   nixpkgs.config.allowUnfree = true;
