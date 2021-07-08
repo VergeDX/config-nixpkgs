@@ -25,6 +25,7 @@
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
   home.file.".config/alacritty/alacritty.yml".text = ''
+    # https://github.com/alacritty/alacritty/wiki/Color-schemes
     # Colors (iTerm 2 default theme)
     colors:
       # Default colors
@@ -53,5 +54,27 @@
         magenta: '#a47de9'
         cyan:    '#99faf2'
         white:   '#ffffff'
+
+    # https://wiki.gentoo.org/wiki/Alacritty#Font_configuration
+    # Font configuration (changes require restart)
+    font:
+      # The normal (roman) font face to use.
+      normal:
+        family: Hack
+        # Style can be specified to pick a specific face.
+        style: Regular
+
+      # The bold font face
+      bold:
+        family: Hack
+        # Style can be specified to pick a specific face.
+        # style: Bold
+
+      # The italic font face
+      italic:
+        family: Hack
+        # Style can be specified to pick a specific face.
+        # style: Italic
+      size: 11.0
   '';
 }
