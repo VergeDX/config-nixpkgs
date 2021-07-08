@@ -2,14 +2,8 @@
 let silver = pkgs.callPackage ../packages/resources/silver.nix { };
 in
 {
+  # https://github.com/IlanCosman/tide
   programs.fish.enable = true;
-  programs.fish.shellInit = ''
-    function fish_prompt
-        # https://github.com/justjanne/powerline-go#fish
-        eval powerline-go -error $status -jobs (jobs -p | wc -l)
-    end
-  '';
-
   home.packages = [
     pkgs.powerline
     pkgs.powerline-go
