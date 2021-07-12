@@ -12,6 +12,7 @@
 
     pkgs.virt-manager
     pkgs.virt-manager-qt
+    pkgs.virtualbox
 
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })

@@ -40,5 +40,6 @@
     pkgs.yarn
     pkgs.yarn2nix
     (pkgs.callPackage ../packages/cli/pxder/pxder.nix { })
+    pkgs.gh
   ];
 }

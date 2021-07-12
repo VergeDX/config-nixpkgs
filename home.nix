@@ -104,6 +104,8 @@ rec {
     pkgs.minecraft-server
     pkgs.nix-index
     pkgs.mkvtoolnix
+    pkgs.testdisk
+    pkgs.gnome.gnome-boxes
   ];
 
   nixpkgs.config.allowUnfree = true;
