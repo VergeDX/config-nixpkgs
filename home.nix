@@ -106,6 +106,8 @@ rec {
     pkgs.mkvtoolnix
     pkgs.testdisk
     pkgs.gnome.gnome-boxes
+
+    (pkgs.callPackage ./packages/unstable/helvum.nix { })
   ];
 
   nixpkgs.config.allowUnfree = true;
