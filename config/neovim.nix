@@ -19,6 +19,7 @@
       })
       pkgs.vimPlugins.YouCompleteMe
       pkgs.vimPlugins.doki-theme-vim
+      pkgs.vimPlugins.editorconfig-vim
     ];
 
     # https://github.com/doki-theme/doki-theme-vim#installation

@@ -39,6 +39,14 @@
   programs.vscode.extensions = [
     (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
       mktplcRef = {
+        publisher = "tobiasalthoff";
+        name = "atom-material-theme";
+        version = "1.10.7";
+        sha256 = "sha256-t5CKrDEbDCuo28wN+hiWrvkt3C9vQAPfV/nd3QBGQ/s=";
+      };
+    })
+    (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+      mktplcRef = {
         publisher = "github";
         name = "copilot";
         version = "1.1.1959";
@@ -58,7 +66,10 @@
   ];
 
   programs.vscode.userSettings = {
+    "editor.fontSize" = 16;
     "editor.inlineSuggest.enabled" = true;
+    "editor.letterSpacing" = 0.5;
+    "editor.lineHeight" = 1.5;
     "github.copilot.autocomplete.enable" = true;
     "github.copilot.enable" = {
       "*" = true;
