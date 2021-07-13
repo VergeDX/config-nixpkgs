@@ -130,6 +130,19 @@ in
 
     # https://github.com/microsoft/vscode/blob/1.58.0/src/vs/editor/common/config/editorOptions.ts#L3857
     "editor.fontFamily" = "'Jetbrains Mono', 'Hack'";
+
+    # https://dartcode.org/docs/recommended-settings/
+    "debug.openDebug" = "openOnDebugBreak";
+    "[dart]" = {
+      "editor.formatOnSave" = true;
+      "editor.formatOnType" = true;
+      "editor.rulers" = [ 80 ];
+      "editor.selectionHighlight" = false;
+      "editor.suggest.snippetsPreventQuickSuggestions" = false;
+      "editor.suggestSelection" = "first";
+      "editor.tabCompletion" = "onlySnippets";
+      "editor.wordBasedSuggestions" = false;
+    };
   };
   home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
