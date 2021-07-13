@@ -92,11 +92,11 @@ in
   ];
 
   programs.vscode.userSettings = {
-    "editor.fontFamily" = "'Jetbrains Mono', 'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'";
-    "editor.fontSize" = 16;
+    # https://github.com/doki-theme/doki-theme-vscode/tree/master/buildSrc/assets/themes/reZero
+    "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
+
+    # https://copilot.github.com/
     "editor.inlineSuggest.enabled" = true;
-    "editor.letterSpacing" = 0.5;
-    "editor.lineHeight" = 1.5;
     "github.copilot.autocomplete.enable" = true;
     "github.copilot.enable" = {
       "*" = true;
@@ -104,7 +104,14 @@ in
       "plaintext" = true;
       "markdown" = false;
     };
-    "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
+
+    # https://github.com/microsoft/vscode/blob/1.58.0/src/vs/editor/common/config/editorOptions.ts#L3857
+    "editor.fontFamily" = "'Jetbrains Mono', 'Hack'";
+
+    # https://github.com/tobiasalthoff/vscode-atom-material-theme#recommended-settings
+    "editor.fontSize" = 16;
+    "editor.lineHeight" = 1.5;
+    "editor.letterSpacing" = 0.5;
   };
   home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
