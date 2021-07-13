@@ -7,7 +7,7 @@
     (pkgs.callPackage ../packages/themes/layan-gtk-theme.nix { })
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
-    (pkgs.callPackage ../packages/themes/flat-remix-gnome.nix { })
+    pkgs.flat-remix-gnome
 
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
@@ -39,7 +39,7 @@
     pkgs.gnomeExtensions.disconnect-wifi
 
     pkgs.conky
-    (pkgs.callPackage ../packages/gnome/gpick.nix { })
+    pkgs.gpick
   ];
 
   # https://wiki.archlinux.org/title/GTK_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)

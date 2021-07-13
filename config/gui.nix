@@ -31,7 +31,8 @@
       '';
     }))
 
-    (pkgs.callPackage ../packages/gui/google-earth-pro.nix { })
+    pkgs.googleearth
+    # pkgs.googleearth-pro
   ];
 
   programs.vscode.enable = true;
@@ -52,6 +53,8 @@
         sha256 = "sha256-UL/j15dY5Y6FI/2Dr4HG4rAE/BXv3kDHuOc++UATL14=";
       };
     })
+    pkgs.vscode-extensions.bbenoist.Nix
+    pkgs.vscode-extensions.jnoortheen.nix-ide
   ];
 
   programs.vscode.userSettings = {

@@ -21,7 +21,7 @@
     (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
     (pkgs.callPackage ../packages/cli/checkra1n.nix { })
     pkgs.p7zip
-    (pkgs.callPackage ../packages/cli/slides.nix { })
+    pkgs.slides
     pkgs.file
     pkgs.ncdu
     pkgs.lsd
