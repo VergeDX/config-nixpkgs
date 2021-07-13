@@ -16,6 +16,15 @@ let
       sha256 = "sha256-DuYJb1lzqITEpitEFyyXAs7H5NB9o3yXhSBV3CQ0YsI=";
     };
   });
+  tabnine-ai-code-completion = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
+      publisher = "TabNine";
+      name = "tabnine-vscode";
+      version = "3.4.13";
+      sha256 = "sha256-xsfujEvzAcuHzZL5K6ER6NyEkjaBX1s9gTnCn8wbIWA=";
+    };
+  });
   terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "formulahendry";
@@ -77,6 +86,7 @@ in
     eamodio.gitlens
     bbenoist.Nix
     jnoortheen.nix-ide
+    tabnine-ai-code-completion
     terminal
     the-doki-theme
   ];
