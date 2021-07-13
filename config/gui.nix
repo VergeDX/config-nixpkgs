@@ -95,4 +95,8 @@ in
     };
     "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
   };
+  home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
+    sha256 = "sha256-9nSphycIil5pM0INU6SDzVlqm43LCD5Y9CbQbhVENpQ=";
+  };
 }
