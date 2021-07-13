@@ -97,6 +97,7 @@ in
     pkgs.ninja
     pkgs.pkg-config
 
+    pkgs.jetbrains-mono
     pkgs.jetbrains.rider
     pkgs.dotnet-sdk
     pkgs.mono
