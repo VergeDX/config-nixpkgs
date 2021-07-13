@@ -107,7 +107,7 @@ rec {
     pkgs.testdisk
     pkgs.gnome.gnome-boxes
 
-    (pkgs.callPackage ./packages/unstable/helvum.nix { })
+    pkgs.helvum
   ];
 
   nixpkgs.config.allowUnfree = true;
