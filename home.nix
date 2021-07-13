@@ -50,10 +50,6 @@ rec {
     pkgs.wineWowPackages.fonts
     (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
 
-    # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    pkgs.tdesktop
-    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
-
     (pkgs.steam.override {
       withPrimus = true;
       # https://github.com/NixOS/nixpkgs/pull/126142
