@@ -70,12 +70,13 @@ in
   ];
 
   programs.vscode.enable = true;
-  programs.vscode.extensions = [
+  programs.vscode.extensions = with pkgs.vscode-extensions; [
     atom-material-theme
-    pkgs.vscode-extensions.editorconfig.editorconfig
+    editorconfig.editorconfig
     github-copilot
-    pkgs.vscode-extensions.bbenoist.Nix
-    pkgs.vscode-extensions.jnoortheen.nix-ide
+    eamodio.gitlens
+    bbenoist.Nix
+    jnoortheen.nix-ide
     terminal
     the-doki-theme
   ];
