@@ -8,6 +8,22 @@ let
       sha256 = "sha256-t5CKrDEbDCuo28wN+hiWrvkt3C9vQAPfV/nd3QBGQ/s=";
     };
   });
+  dart = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "dart-code";
+      name = "dart-code";
+      version = "3.24.2";
+      sha256 = "sha256-jSI7zifM62/QfupE1LK2adUJKVhHv4/OCtvuh/qAbbA=";
+    };
+  });
+  flutter = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "dart-code";
+      name = "flutter";
+      version = "3.24.0";
+      sha256 = "sha256-fEFh9idvYYmi/7/VB9pDr2Div3JpqFDaJqHNI9jXClw=";
+    };
+  });
   github-copilot = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "github";
@@ -81,7 +97,9 @@ in
   programs.vscode.enable = true;
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     atom-material-theme
+    dart
     editorconfig.editorconfig
+    flutter
     github-copilot
     eamodio.gitlens
     bbenoist.Nix
@@ -105,13 +123,13 @@ in
       "markdown" = false;
     };
 
-    # https://github.com/microsoft/vscode/blob/1.58.0/src/vs/editor/common/config/editorOptions.ts#L3857
-    "editor.fontFamily" = "'Jetbrains Mono', 'Hack'";
-
     # https://github.com/tobiasalthoff/vscode-atom-material-theme#recommended-settings
     "editor.fontSize" = 16;
     "editor.lineHeight" = 1.5;
     "editor.letterSpacing" = 0.5;
+
+    # https://github.com/microsoft/vscode/blob/1.58.0/src/vs/editor/common/config/editorOptions.ts#L3857
+    "editor.fontFamily" = "'Jetbrains Mono', 'Hack'";
   };
   home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
