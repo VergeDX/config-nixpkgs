@@ -143,7 +143,10 @@ in
       "editor.tabCompletion" = "onlySnippets";
       "editor.wordBasedSuggestions" = false;
     };
+
+    "dart.flutterSdkPath" = "${(pkgs.callPackage ../packages/resources/flutter-vscode.nix { })}";
   };
+
   home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
     sha256 = "sha256-9nSphycIil5pM0INU6SDzVlqm43LCD5Y9CbQbhVENpQ=";
