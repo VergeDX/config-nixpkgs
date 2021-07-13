@@ -32,6 +32,14 @@ let
       sha256 = "sha256-DuYJb1lzqITEpitEFyyXAs7H5NB9o3yXhSBV3CQ0YsI=";
     };
   });
+  slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "antfu";
+      name = "slidev";
+      version = "0.3.2";
+      sha256 = "sha256-vzmByEiKZIkd707Bs4RGQrMII5sghYlkQI6aAJOHFcY=";
+    };
+  });
   tabnine-ai-code-completion = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
@@ -104,6 +112,7 @@ in
     eamodio.gitlens
     bbenoist.Nix
     jnoortheen.nix-ide
+    slidev
     tabnine-ai-code-completion
     terminal
     the-doki-theme
