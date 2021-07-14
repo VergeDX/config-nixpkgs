@@ -129,7 +129,7 @@ in
       "*" = true;
       "yaml" = false;
       "plaintext" = true;
-      "markdown" = false;
+      "markdown" = true;
     };
 
     # https://github.com/tobiasalthoff/vscode-atom-material-theme#recommended-settings

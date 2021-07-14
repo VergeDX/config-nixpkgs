@@ -6,6 +6,7 @@
 
     pkgs.screenfetch
     pkgs.neofetch
+    pkgs.lolcat
 
     # https://github.com/rofl0r/proxychains-ng
     (pkgs.proxychains.overrideAttrs (old: {

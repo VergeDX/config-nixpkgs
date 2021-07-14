@@ -34,7 +34,7 @@
     # https://extensions.gnome.org/
     pkgs.gnomeExtensions.sound-output-device-chooser
     pkgs.gnomeExtensions.status-area-horizontal-spacing
-    pkgs.gnomeExtensions.window-is-ready-notification-remover
+    pkgs.gnomeExtensions.window-is-ready-remover
     pkgs.gnomeExtensions.lock-keys
     pkgs.gnomeExtensions.disconnect-wifi
 
