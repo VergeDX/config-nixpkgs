@@ -54,5 +54,13 @@ in
         sha256 = "sha256-XTpkjQOdFXBO9NlEwOMX26bbuxojVmdtxDcfLKXFUdE=";
       };
     }
+    {
+      name = "nix-completions.fish";
+      src = pkgs.fetchgit {
+        url = "https://github.com/kidonng/nix-completions.fish";
+        rev = "eacfeb1e537052f05c5a867cb39f84ac2adf267f";
+        sha256 = "sha256-6kj9c0eOU9pa8vwuz1ce4z7jgrCkNTm1pbs3AiZNbPY=";
+      };
+    }
   ];
 }

@@ -17,6 +17,7 @@ in
   };
 
   home.packages = [
+    pkgs.android-tools
     pkgs.android-studio
     pkgs.androidStudioPackages.canary
     pkgs.apktool
