@@ -104,6 +104,7 @@ rec {
     pkgs.gnome.gnome-boxes
 
     pkgs.helvum
+    (pkgs.callPackage ./packages/gui/qtscrcpy.nix { })
   ];
 
   nixpkgs.config.allowUnfree = true;
