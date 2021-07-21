@@ -35,7 +35,7 @@ in
     pkgs.jetbrains.rider
     pkgs.dotnet-sdk
     pkgs.mono
-    (pkgs.hiPrio pkgs.msbuild)
+    # (pkgs.hiPrio pkgs.msbuild)
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.jdk
     pkgs.kotlin

@@ -1,10 +1,11 @@
-{ stdenv, fetchgit, openssl, capstone, keystone, rapidjson }:
+{ stdenv, fetchFromGitHub, openssl, capstone, keystone, rapidjson }:
 stdenv.mkDerivation rec {
   pname = "navicat-keygen-tools";
   version = "20200226";
 
-  src = fetchgit {
-    url = "https://github.com/HeQuanX/navicat-keygen-tools";
+  src = fetchFromGitHub {
+    owner = "HeQuanX";
+    repo = "navicat-keygen-tools";
     rev = "${version}";
     sha256 = "sha256:11zbnlky2zvldq6kf7qmc69qwhhwcjg4gz72w7ka7a0kz1wymla6";
   };

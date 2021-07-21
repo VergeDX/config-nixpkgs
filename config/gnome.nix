@@ -28,7 +28,7 @@
     (pkgs.callPackage ../packages/gnome/dash-to-dock-gnome40.nix { })
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
-    pkgs.gnomeExtensions.arcmenu
+    # pkgs.gnomeExtensions.arcmenu
     pkgs.gnomeExtensions.gsconnect
 
     # https://extensions.gnome.org/

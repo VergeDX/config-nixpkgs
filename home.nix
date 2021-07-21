@@ -50,6 +50,10 @@ rec {
     pkgs.wineWowPackages.fonts
     (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
 
+    # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
+    pkgs.tdesktop
+    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+
     (pkgs.steam.override {
       withPrimus = true;
       # https://github.com/NixOS/nixpkgs/pull/126142
@@ -57,7 +61,7 @@ rec {
       extraLibraries = pkgs: [ pkgs.pipewire.lib ];
     })
     pkgs.steam-run
-    pkgs.osu-lazer
+    # pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.minecraft
     pkgs.multimc
