@@ -61,7 +61,7 @@ rec {
       extraLibraries = pkgs: [ pkgs.pipewire.lib ];
     })
     pkgs.steam-run
-    # pkgs.osu-lazer
+    pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.minecraft
     pkgs.multimc
