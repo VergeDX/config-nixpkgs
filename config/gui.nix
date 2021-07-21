@@ -99,8 +99,10 @@ in
     }))
 
     pkgs.googleearth
-    # pkgs.googleearth-pro
+    (pkgs.hiPrio pkgs.googleearth-pro)
   ];
+
+  nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
 
   programs.vscode.enable = true;
   programs.vscode.extensions = with pkgs.vscode-extensions; [
