@@ -101,6 +101,7 @@ in
     pkgs.googleearth
     (pkgs.hiPrio pkgs.googleearth-pro)
     pkgs.wireshark
+    pkgs.skypeforlinux
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
