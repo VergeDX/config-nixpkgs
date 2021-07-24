@@ -107,7 +107,7 @@ rec {
     pkgs.testdisk
     pkgs.gnome.gnome-boxes
 
-    pkgs.helvum
+    # pkgs.helvum
     (pkgs.callPackage ./packages/gui/qtscrcpy.nix { })
   ];
 

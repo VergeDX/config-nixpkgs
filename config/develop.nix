@@ -18,8 +18,8 @@ in
 
   home.packages = [
     pkgs.android-tools
-    pkgs.android-studio
-    pkgs.androidStudioPackages.canary
+    # pkgs.android-studio
+    # pkgs.androidStudioPackages.canary
     pkgs.apktool
     pkgs.dex2jar
     pkgs.jd-gui
