@@ -9,9 +9,12 @@
     # https://github.com/nixos-cn/flakes#%E4%BD%BF%E7%94%A8
     nixos-cn.url = "github:nixos-cn/flakes";
     nixos-cn.inputs.nixpkgs.follows = "nixpkgs";
+
+    # https://github.com/nix-community/NUR#flake-support
+    nur.url = github:nix-community/NUR;
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay }:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur }:
     let system = "x86_64-linux";
     in
     {
@@ -25,7 +28,7 @@
           imports = [ ./home.nix ];
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
-          nixpkgs.overlays = [ rust-overlay.overlay ];
+          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay ];
           home.packages = with nixos-cn.legacyPackages.${system}; [
             netease-cloud-music
             (wine-wechat.override { scopedMount = false; })

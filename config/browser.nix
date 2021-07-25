@@ -4,8 +4,10 @@
   programs.chromium.enable = true; # AdGuard
   programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
 
-  home.packages = [
-    pkgs.firefox
-    pkgs.google-chrome
+  programs.firefox.enable = true;
+  programs.firefox.extensions = [
+    pkgs.nur.repos.rycee.firefox-addons.bitwarden
   ];
+
+  home.packages = [ pkgs.google-chrome ];
 }
