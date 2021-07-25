@@ -1,6 +1,4 @@
 { programs, home, pkgs, ... }:
-let silver = pkgs.callPackage ../packages/resources/silver.nix { };
-in
 {
   programs.fish.enable = true;
   programs.fish.shellInit = ''
@@ -18,7 +16,7 @@ in
     pkgs.powerline-rs
 
     pkgs.starship
-    silver
+    pkgs.nur.repos.ilya-fedin.silver
   ];
 
   programs.fish.plugins = [
