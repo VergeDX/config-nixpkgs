@@ -21,7 +21,7 @@
     }))
 
     pkgs.guake
-    (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
+    # (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
   ];
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
