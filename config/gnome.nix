@@ -9,6 +9,9 @@
     pkgs.tela-icon-theme
     pkgs.flat-remix-gnome
 
+    pkgs.whitesur-gtk-theme
+    pkgs.whitesur-icon-theme
+
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.jiggle
