@@ -14,6 +14,7 @@ in
 {
   # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
   programs.chromium.enable = true; # AdGuard
+  programs.chromium.package = pkgs.ungoogled-chromium;
   programs.chromium.extensions = [ "bgnkhhnnamicmpeenaelnjfhikgbkllg" ];
 
   programs.firefox.enable = true;
