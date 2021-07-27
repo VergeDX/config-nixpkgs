@@ -4,7 +4,7 @@
     pkgs.gnome.gnome-tweak-tool
     pkgs.qt5ct
 
-    (pkgs.callPackage ../packages/themes/layan-gtk-theme.nix { })
+    pkgs.layan-gtk-theme
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
     pkgs.flat-remix-gnome
