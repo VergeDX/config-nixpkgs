@@ -42,5 +42,9 @@
     (pkgs.callPackage ../packages/cli/pxder/pxder.nix { })
     pkgs.gh
     pkgs.speedtest-cli
+
+    pkgs.pciutils
+    pkgs.gping
+    (pkgs.callPackage ../packages/cli/startrinity.nix { })
   ];
 }
