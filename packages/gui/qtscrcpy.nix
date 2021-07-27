@@ -28,9 +28,10 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/bin/
+    mkdir -p $out/bin/ && mkdir -p $out/share/pixmaps/
     cp /build/source/output/linux/release/QtScrcpy $out/bin/
     cp /build/source/third_party/scrcpy-server $out/
+    cp /build/source/backup/logo.png $out/share/pixmaps/${pname}.png
     runHook postInstall
   '';
 
