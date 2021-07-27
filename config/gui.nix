@@ -120,6 +120,11 @@ in
     tabnine-ai-code-completion
     terminal
     the-doki-theme
+  ] ++ [
+    # https://www.youtube.com/watch?v=jQXtpwsWRas
+    streetsidesoftware.code-spell-checker
+    esbenp.prettier-vscode
+    coenraads.bracket-pair-colorizer-2
   ];
 
   programs.vscode.userSettings = {
