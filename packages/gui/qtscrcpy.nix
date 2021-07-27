@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
     (makeDesktopItem {
       name = pname;
       type = "Application";
-      icon = "qtscrcpy";
+      icon = pname;
       desktopName = "QtScrcpy";
       exec = "QtScrcpy";
       terminal = false;
