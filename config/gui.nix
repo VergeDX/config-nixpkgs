@@ -116,33 +116,6 @@ in
     eamodio.gitlens
     bbenoist.Nix
     jnoortheen.nix-ide
-  ] ++ [
-    (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-      mktplcRef = {
-        publisher = "swellaby";
-        name = "rust-pack";
-        version = "0.2.29";
-        sha256 = "sha256-X+0wAX8hvHwd73azIfWESnVXy2WV5IJlliJ0BLucAvk=";
-      };
-    })
-    (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-      mktplcRef = {
-        publisher = "rust-lang";
-        name = "rust";
-        version = "0.7.8";
-        sha256 = "sha256-Y33agSNMVmaVCQdYd5mzwjiK5JTZTtzTkmSGTQrSNg0=";
-      };
-    })
-    (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-      mktplcRef = {
-        publisher = "bungcip";
-        name = "better-toml";
-        version = "0.3.2";
-        sha256 = "sha256-g+LfgjAnSuSj/nSmlPdB0t29kqTmegZB5B1cYzP8kCI=";
-      };
-    })
-    pkgs.vscode-extensions.serayuzgur.crates
-  ] ++ [
     slidev
     tabnine-ai-code-completion
     terminal
