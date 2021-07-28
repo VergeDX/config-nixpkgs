@@ -24,5 +24,5 @@ in
     proxy_switchyomega
   ];
 
-  # home.packages = [ pkgs.google-chrome ];
+  home.packages = [ pkgs.google-chrome ];
 }
