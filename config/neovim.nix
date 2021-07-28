@@ -9,14 +9,7 @@
       pkgs.vimPlugins.vim-airline-themes
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
-      (pkgs.vimUtils.buildVimPlugin rec {
-        name = "tabnine-vim";
-        src = pkgs.fetchgit {
-          url = "https://github.com/codota/${name}";
-          rev = "2.10.0";
-          sha256 = "sha256-/9qjUunyFZ7uWwdAZCb/p2Pyn6U5GOvjuM8yFwYNKjM=";
-        };
-      })
+      pkgs.vimPlugins.tabnine-vim
       pkgs.vimPlugins.YouCompleteMe
       pkgs.vimPlugins.doki-theme-vim
       pkgs.vimPlugins.editorconfig-vim
