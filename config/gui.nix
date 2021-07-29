@@ -114,7 +114,7 @@ in
     flutter
     github-copilot
     eamodio.gitlens
-    bbenoist.Nix
+    bbenoist.nix
     jnoortheen.nix-ide
     slidev
     tabnine-ai-code-completion
