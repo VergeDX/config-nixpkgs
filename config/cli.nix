@@ -39,7 +39,7 @@
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
     pkgs.yarn2nix
-    (pkgs.callPackage ../packages/cli/pxder/pxder.nix { })
+    pkgs.nodePackages.pxder
     pkgs.gh
     pkgs.speedtest-cli
 
