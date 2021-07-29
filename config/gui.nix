@@ -102,6 +102,14 @@ in
     (pkgs.hiPrio pkgs.googleearth-pro)
     pkgs.wireshark
     pkgs.skypeforlinux
+
+    # https://www.bilibili.com/video/BV17U4y1H7w1
+    pkgs.retroarch
+    pkgs.dolphinEmu
+    pkgs.mame
+    pkgs.dosbox
+
+    pkgs.goverlay
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
