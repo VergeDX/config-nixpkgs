@@ -163,6 +163,7 @@ in
     };
 
     "dart.flutterSdkPath" = "${(pkgs.callPackage ../packages/resources/flutter-vscode.nix { })}";
+    # "cSpell.enableFiletypes" = [ "nix" ];
   };
 
   home.file.".config/Code/User/keybindings.json".source = pkgs.fetchurl {
