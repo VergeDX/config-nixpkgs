@@ -52,8 +52,17 @@
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
-  home.file.".config/nvchecker/nvchecker.toml".source = (pkgs.formats.toml { }).generate "nvchecker.toml" {
-    nvchecker = { source = "github"; github = "lilydjwg/nvchecker"; };
-    python-toml = { source = "pypi"; pypi = "toml"; };
-  };
+  # https://nvchecker.readthedocs.io/en/latest/usage.html#check-github
+  home.file.".config/nvchecker/nvchecker.toml".source =
+    let source-github = g: { source = "github"; github = g; use_max_tag = true; };
+    in
+    (pkgs.formats.toml { }).generate "nvchecker.toml" {
+      nvchecker = source-github "lilydjwg/nvchecker";
+      python-toml = { source = "pypi"; pypi = "toml"; };
+
+      # https://github.com/NixOS/nixpkgs/search?q=maintainers.vanilla
+      gpick = source-github "thezbyg/gpick";
+      layan-gtk-theme = source-github "vinceliuice/Layan-gtk-theme";
+      flat-remix-gnome = source-github "daniruiz/flat-remix-gnome";
+    };
 }
