@@ -46,5 +46,14 @@
     pkgs.pciutils
     pkgs.gping
     (pkgs.callPackage ../packages/cli/startrinity.nix { })
+
+    pkgs.nvchecker
+    pkgs.nvfetcher
   ];
+
+  # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
+  home.file.".config/nvchecker/nvchecker.toml".source = (pkgs.formats.toml { }).generate "nvchecker.toml" {
+    nvchecker = { source = "github"; github = "lilydjwg/nvchecker"; };
+    python-toml = { source = "pypi"; pypi = "toml"; };
+  };
 }
