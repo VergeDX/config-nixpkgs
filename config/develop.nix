@@ -2,10 +2,11 @@
 let home_dir = "/home/vanilla";
 in
 {
-  home.file.".config/flutter/settings".text = ''{
-    "enable-linux-desktop": true,
-    "android-sdk": "${pkgs.androidenv.androidPkgs_9_0.platform-tools}libexec/"
-  }'';
+  # https://nixos.org/manual/nix/unstable/expressions/builtins.html
+  home.file.".config/flutter/settings".text = builtins.toJSON {
+    "enable-linux-desktop" = true;
+    "android-sdk" = "${pkgs.androidenv.androidPkgs_9_0.platform-tools}libexec/";
+  };
 
   home.sessionVariables = {
     PKG_CONFIG_PATH = "${home_dir}/.nix-profile/lib/pkgconfig:${home_dir}/.nix-profile/share/pkgconfig";

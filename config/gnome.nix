@@ -1,4 +1,4 @@
-{ home, pkgs, ... }:
+{ home, pkgs, lib, ... }:
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -55,9 +55,11 @@
   ];
 
   # https://wiki.archlinux.org/title/GTK_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  home.file.".config/gtk-3.0/settings.ini".text = ''
-    [Settings]
-    gtk-icon-theme-name = Tela-pink
-    gtk-theme-name = Layan-light-solid
-  '';
+  # https://github.com/NixOS/nixpkgs/blob/master/doc/functions/generators.section.md
+  home.file.".config/gtk-3.0/settings.ini".text = lib.generators.toINI { } {
+    Settings = {
+      gtk-icon-theme-name = "Tela-pink";
+      gtk-theme-name = "Layan-light-solid";
+    };
+  };
 }

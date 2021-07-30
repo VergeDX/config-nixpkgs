@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
@@ -130,9 +130,9 @@ rec {
   ];
 
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
-  home.file.".config/mpv/mpv.conf".text = ''
-    hwdec=auto-safe
-    vo=gpu
-    profile=gpu-hq
-  '';
+  home.file.".config/mpv/mpv.conf".text = lib.generators.toKeyValue { } {
+    hwdec = "auto-safe";
+    vo = "gpu";
+    profile = "gpu-hq";
+  };
 }
