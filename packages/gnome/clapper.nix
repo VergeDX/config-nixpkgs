@@ -39,6 +39,10 @@ stdenv.mkDerivation rec {
     gjs
     glib
     libsoup
+
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
   ];
 
   # https://github.com/NixOS/nixpkgs/issues/36468
