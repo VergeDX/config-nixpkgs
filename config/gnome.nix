@@ -7,12 +7,7 @@
     pkgs.layan-gtk-theme
     pkgs.breeze-gtk
     pkgs.tela-icon-theme
-    # https://github.com/NixOS/nixpkgs/pull/132032
-    (pkgs.flat-remix-gnome.overrideAttrs (old: {
-      version = "20210716";
-      src = old.src.overrideAttrs (old: { outputHash = "sha256-UAWi4MyqtuSzp5TEkVLYJF7+2tzH/aT60ObNOimCJ4o="; });
-    }))
-
+    pkgs.flat-remix-gnome
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-icon-theme
 
