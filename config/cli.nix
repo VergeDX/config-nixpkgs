@@ -68,4 +68,8 @@
       layan-gtk-theme = source-github "vinceliuice/Layan-gtk-theme";
       flat-remix-gnome = source-github "daniruiz/flat-remix-gnome";
     };
+
+  # https://nix-community.github.io/home-manager/options.html
+  programs.exa.enable = true;
+  programs.exa.enableAliases = true;
 }
