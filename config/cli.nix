@@ -88,4 +88,8 @@
   # https://github.com/chinanf-boy/bat-zh
   programs.bat.enable = true;
   programs.fish.shellAliases = { cat = "bat"; };
+
+  # https://github.com/Canop/broot
+  programs.broot.enable = true;
+  programs.broot.enableFishIntegration = true;
 }
