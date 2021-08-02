@@ -1,6 +1,5 @@
 { pkgs, makeDesktopItem }:
 let
-  # pkgs = import <nixpkgs> { };
   olympus = pkgs.stdenv.mkDerivation rec {
     pname = "olympus";
     version = "2134";

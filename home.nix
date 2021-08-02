@@ -32,7 +32,6 @@ rec {
   home.packages = [
     pkgs.nixpkgs-fmt
 
-    # /nix/store/jz2fqzfq4z664q5dcpmxk5kd7l0phgrd-v2ray-assets
     (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
     (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray-pre.nix) { }; })
     pkgs.v2ray

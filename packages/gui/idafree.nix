@@ -1,4 +1,3 @@
-# with import <nixpkgs> { };
 { fetchurl, steam-run-native, runCommand, makeWrapper }:
 let
   file = fetchurl {
