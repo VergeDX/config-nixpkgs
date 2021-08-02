@@ -50,6 +50,8 @@
 
     pkgs.nvchecker
     pkgs.nvfetcher
+
+    pkgs.dolt
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run

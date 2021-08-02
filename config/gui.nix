@@ -110,6 +110,9 @@ in
     pkgs.dosbox
 
     pkgs.goverlay
+    pkgs.okular
+    pkgs.zim
+    pkgs.kiwix
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
