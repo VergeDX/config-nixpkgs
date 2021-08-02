@@ -78,4 +78,14 @@
         # style: Italic
       size: 11.0
   '';
+
+  # https://sw.kovidgoyal.net/kitty/
+  programs.kitty.enable = true;
+  programs.kitty.font = { package = pkgs.hack-font; name = "Hack"; };
+  # https://github.com/dexpota/kitty-themes
+  programs.kitty.extraConfig = "include ./theme.conf";
+  home.file.".config/kitty/theme.conf".source = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Solarized_Light.conf";
+    sha256 = "sha256-1UN/jP63IqA0L3848pAjoeeG/uyoVD91zBexXzD3tvU=";
+  };
 }
