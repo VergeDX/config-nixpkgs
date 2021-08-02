@@ -72,4 +72,7 @@
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
   programs.exa.enableAliases = true;
+
+  manual.html.enable = true;
+  manual.manpages.enable = true;
 }
