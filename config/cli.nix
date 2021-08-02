@@ -33,8 +33,9 @@
     pkgs.hub
     pkgs.du-dust
 
-    pkgs.nodejs
-    pkgs.nodePackages.npm
+    # pkgs.nodejs
+    pkgs.nodejs-16_x
+    # pkgs.nodePackages.npm
     pkgs.nodePackages.npm-check-updates
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
