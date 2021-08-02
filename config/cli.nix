@@ -75,4 +75,8 @@
 
   manual.html.enable = true;
   manual.manpages.enable = true;
+
+  # https://github.com/chinanf-boy/bat-zh
+  programs.bat.enable = true;
+  programs.fish.shellAliases = { cat = "bat"; };
 }
