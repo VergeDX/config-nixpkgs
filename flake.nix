@@ -12,9 +12,14 @@
 
     # https://github.com/nix-community/NUR#flake-support
     nur.url = github:nix-community/NUR;
+
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur }:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs }:
     let system = "x86_64-linux";
     in
     {
@@ -28,7 +33,7 @@
           imports = [ ./home.nix ];
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
-          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay ];
+          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ];
           home.packages = with nixos-cn.legacyPackages.${system}; [
             netease-cloud-music
             (wine-wechat.override { scopedMount = false; })
@@ -36,7 +41,7 @@
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src
-          ];
+          ] ++ [ pkgs.deploy-rs.deploy-rs ];
         };
       };
     };
