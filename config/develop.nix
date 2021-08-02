@@ -40,8 +40,6 @@ in
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.jdk
     pkgs.kotlin
-    pkgs.jetbrains.goland
-    pkgs.go
     pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
     pkgs.jetbrains.clion
