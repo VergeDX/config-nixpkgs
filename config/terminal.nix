@@ -27,34 +27,39 @@
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
   home.file.".config/alacritty/alacritty.yml".text = ''
     # https://github.com/alacritty/alacritty/wiki/Color-schemes
-    # Colors (iTerm 2 default theme)
+    # Colors (Solarized Light)
     colors:
       # Default colors
       primary:
-        background: '#101421'
-        foreground: '#fffbf6'
+        background: '#fdf6e3' # base3
+        foreground: '#657b83' # base00
 
-     # Normal colors
+      # Cursor colors
+      cursor:
+        text:   '#fdf6e3' # base3
+        cursor: '#657b83' # base00
+
+      # Normal colors
       normal:
-        black:   '#2e2e2e'
-        red:     '#eb4129'
-        green:   '#abe047'
-        yellow:  '#f6c744'
-        blue:    '#47a0f3'
-        magenta: '#7b5cb0'
-        cyan:    '#64dbed'
-        white:   '#e5e9f0'
+        black:   '#073642' # base02
+        red:     '#dc322f' # red
+        green:   '#859900' # green
+        yellow:  '#b58900' # yellow
+        blue:    '#268bd2' # blue
+        magenta: '#d33682' # magenta
+        cyan:    '#2aa198' # cyan
+        white:   '#eee8d5' # base2
 
-     # Bright colors
+      # Bright colors
       bright:
-        black:   '#565656'
-        red:     '#ec5357'
-        green:   '#c0e17d'
-        yellow:  '#f9da6a'
-        blue:    '#49a4f8'
-        magenta: '#a47de9'
-        cyan:    '#99faf2'
-        white:   '#ffffff'
+        black:   '#002b36' # base03
+        red:     '#cb4b16' # orange
+        green:   '#586e75' # base01
+        yellow:  '#657b83' # base00
+        blue:    '#839496' # base0
+        magenta: '#6c71c4' # violet
+        cyan:    '#93a1a1' # base1
+        white:   '#fdf6e3' # base3
 
     # https://wiki.gentoo.org/wiki/Alacritty#Font_configuration
     # Font configuration (changes require restart)
