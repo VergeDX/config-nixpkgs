@@ -51,6 +51,7 @@
     pkgs.nvfetcher
 
     pkgs.dolt
+    (pkgs.callPackage ../packages/cli/colorized-logs.nix { })
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
