@@ -49,12 +49,7 @@
     (pkgs.callPackage ../packages/cutefish/icons.nix { })
   ];
 
-  # https://wiki.archlinux.org/title/GTK_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  # https://github.com/NixOS/nixpkgs/blob/master/doc/functions/generators.section.md
-  home.file.".config/gtk-3.0/settings.ini".text = lib.generators.toINI { } {
-    Settings = {
-      gtk-icon-theme-name = "Tela-pink";
-      gtk-theme-name = "Layan-light-solid";
-    };
-  };
+  gtk.enable = true;
+  gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
+  gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 }
