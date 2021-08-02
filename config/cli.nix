@@ -52,6 +52,15 @@
 
     pkgs.dolt
     (pkgs.callPackage ../packages/cli/colorized-logs.nix { })
+    pkgs.niv
+
+    pkgs.youtube-dl
+    pkgs.you-get
+    pkgs.mps-youtube
+
+    pkgs.libva-utils
+    pkgs.vdpauinfo
+    pkgs.lshw
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
