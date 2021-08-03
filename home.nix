@@ -67,7 +67,6 @@ rec {
     pkgs.stellarium
 
     pkgs.vlc
-    pkgs.mpv
 
     pkgs.gnome.dconf-editor
     pkgs.libsForQt5.qtstyleplugin-kvantum
@@ -130,7 +129,8 @@ rec {
   ];
 
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
-  home.file.".config/mpv/mpv.conf".text = lib.generators.toKeyValue { } {
+  programs.mpv.enable = true;
+  programs.mpv.config = {
     hwdec = "auto-safe";
     vo = "gpu";
     profile = "gpu-hq";
