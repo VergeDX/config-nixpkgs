@@ -48,6 +48,14 @@
       };
     }
     {
+      name = "replay.fish";
+      src = pkgs.fetchgit {
+        url = "https://github.com/jorgebucaran/replay.fish";
+        rev = "1.2.0";
+        sha256 = "sha256-Q/9YVdiRSJw1SdcfQv2h7Lj6EyFustRk+kmh1eRRQ6k=";
+      };
+    }
+    {
       name = "tide";
       src = pkgs.fetchgit {
         url = "https://github.com/IlanCosman/tide";
@@ -59,8 +67,8 @@
       name = "nix-completions.fish";
       src = pkgs.fetchgit {
         url = "https://github.com/kidonng/nix-completions.fish";
-        rev = "eacfeb1e537052f05c5a867cb39f84ac2adf267f";
-        sha256 = "sha256-6kj9c0eOU9pa8vwuz1ce4z7jgrCkNTm1pbs3AiZNbPY=";
+        rev = "dcb15c4f7d3e85d8f7cd3eb09b3014ccd278aab8";
+        sha256 = "sha256-3HHcaX2yVZXrRjOeSlI8tPhSjRR2tPU6AWq6eU5nPOs=";
       };
     }
   ];
