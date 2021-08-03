@@ -21,7 +21,9 @@
     }))
 
     pkgs.guake
-    # (pkgs.makeAutostartItem { name = "guake"; package = pkgs.guake; })
+    pkgs.terminator
+    pkgs.termite
+    pkgs.rxvt-unicode
   ];
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
