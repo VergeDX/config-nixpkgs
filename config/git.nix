@@ -18,5 +18,11 @@ in
   programs.git.extraConfig = {
     http.proxy = "socks5://localhost:1089";
     core.editor = "nvim";
+
+    # https://github.com/so-fancy/diff-so-fancy#usage
+    # core.pager = "diff-so-fancy | less --tabs=4 -RFX";
+    # interactive.diffFilter = "diff-so-fancy --patch";
   };
+
+  home.packages = [ pkgs.diff-so-fancy ];
 }
