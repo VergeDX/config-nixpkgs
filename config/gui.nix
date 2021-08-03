@@ -185,4 +185,8 @@ in
   # https://github.com/flightlessmango/MangoHud
   programs.mangohud.enable = true;
   programs.mangohud.enableSessionWide = true;
+
+  qt.enable = true;
+  qt.platformTheme = "gnome";
+  qt.style = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 }
