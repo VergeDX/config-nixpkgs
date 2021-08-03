@@ -181,4 +181,8 @@ in
     url = "https://raw.githubusercontent.com/kasecato/vscode-intellij-idea-keybindings/master/resource/default/Linux/VSCode.json";
     sha256 = "sha256-9nSphycIil5pM0INU6SDzVlqm43LCD5Y9CbQbhVENpQ=";
   };
+
+  # https://github.com/flightlessmango/MangoHud
+  programs.mangohud.enable = true;
+  programs.mangohud.enableSessionWide = true;
 }
