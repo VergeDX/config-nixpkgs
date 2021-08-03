@@ -92,4 +92,9 @@
   # https://github.com/Canop/broot
   programs.broot.enable = true;
   programs.broot.enableFishIntegration = true;
+
+  # https://github.com/jesseduffield/lazygit
+  programs.lazygit.enable = true;
+  programs.lazygit.settings = { gui.theme = { lightTheme = true; }; };
+  programs.fish.shellAliases = { lg = "lazygit"; };
 }
