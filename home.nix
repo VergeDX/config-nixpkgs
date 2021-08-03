@@ -113,9 +113,8 @@ rec {
   imports = [
     ./config/fcitx5.nix
     ./config/git.nix
-    ./config/fish.nix
+    ./config/shells.nix
     ./config/neovim.nix
-    ./config/zsh.nix
 
     ./config/ctf.nix
     ./config/fonts.nix
