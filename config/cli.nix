@@ -61,6 +61,8 @@
     pkgs.libva-utils
     pkgs.vdpauinfo
     pkgs.lshw
+
+    pkgs.ncspot
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
@@ -97,4 +99,8 @@
   programs.lazygit.enable = true;
   programs.lazygit.settings = { gui.theme = { lightTheme = true; }; };
   programs.fish.shellAliases = { lg = "lazygit"; };
+
+  # https://github.com/bennofs/nix-index
+  programs.nix-index.enable = true;
+  programs.nix-index.enableFishIntegration = true;
 }

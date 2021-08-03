@@ -100,7 +100,6 @@ rec {
     pkgs.etcher
 
     pkgs.minecraft-server
-    pkgs.nix-index
     pkgs.mkvtoolnix
     pkgs.testdisk
     pkgs.gnome.gnome-boxes
