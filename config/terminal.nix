@@ -96,6 +96,5 @@
 
   # https://github.com/cantino/mcfly
   programs.mcfly.enable = true;
-  programs.mcfly.enableFishIntegration = true;
   programs.mcfly.enableLightTheme = true;
 }

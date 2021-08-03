@@ -93,7 +93,6 @@
 
   # https://github.com/Canop/broot
   programs.broot.enable = true;
-  programs.broot.enableFishIntegration = true;
 
   # https://github.com/jesseduffield/lazygit
   programs.lazygit.enable = true;
@@ -102,5 +101,4 @@
 
   # https://github.com/bennofs/nix-index
   programs.nix-index.enable = true;
-  programs.nix-index.enableFishIntegration = true;
 }
