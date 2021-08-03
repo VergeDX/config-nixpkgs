@@ -1,10 +1,10 @@
 { programs, home, pkgs, ... }:
 {
   programs.fish.enable = true;
-  programs.fish.shellInit = ''
+  programs.fish.promptInit = ''
     function fish_prompt
         # https://github.com/justjanne/powerline-go#fish
-        eval powerline-go -error $status -jobs (jobs -p | wc -l)
+        eval ${pkgs.powerline-go}/bin/powerline-go -error $status -jobs (jobs -p | wc -l)
     end
   '';
 
