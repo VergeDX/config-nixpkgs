@@ -63,6 +63,8 @@
     pkgs.lshw
 
     pkgs.ncspot
+    pkgs.unrar
+    pkgs.hydra-check
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run

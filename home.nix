@@ -107,6 +107,9 @@ rec {
     # pkgs.helvum
     (pkgs.callPackage ./packages/gui/qtscrcpy.nix { })
     (pkgs.callPackage ./packages/gnome/clapper.nix { })
+
+    pkgs.lutris
+    pkgs.playonlinux
   ];
 
   nixpkgs.config.allowUnfree = true;

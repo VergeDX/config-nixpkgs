@@ -113,6 +113,7 @@ in
     pkgs.okular
     pkgs.zim
     pkgs.kiwix
+    pkgs.zathura
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
