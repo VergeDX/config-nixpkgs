@@ -13,6 +13,14 @@ in
   # https://github.com/GitAlias/gitalias#install-with-typical-usage
   programs.git.includes = [{ path = "${gitalias}/${gitalias.fileName}"; }];
 
+  # https://nixos.wiki/wiki/Git
+  programs.git.extraConfig = {
+    pack = {
+      windowMemory = "2g";
+      packSizeLimit = "1g";
+    };
+  };
+
   # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
   # http://cms-sw.github.io/tutorial-proxy.html
   programs.git.extraConfig = {
