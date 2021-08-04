@@ -36,7 +36,7 @@
           nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ];
           home.packages = with nixos-cn.legacyPackages.${system}; [
             netease-cloud-music
-            (wine-wechat.override { scopedMount = false; })
+            # (wine-wechat.override { scopedMount = false; })
             re-export.feeluown
           ] ++ [
             pkgs.rust-bin.stable.latest.default

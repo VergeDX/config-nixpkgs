@@ -98,8 +98,8 @@ in
       '';
     }))
 
-    pkgs.googleearth
-    (pkgs.hiPrio pkgs.googleearth-pro)
+    # pkgs.googleearth
+    pkgs.googleearth-pro
     pkgs.wireshark
     pkgs.skypeforlinux
 
