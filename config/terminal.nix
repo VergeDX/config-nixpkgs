@@ -24,6 +24,8 @@
     pkgs.terminator
     pkgs.termite
     pkgs.rxvt-unicode
+
+    pkgs.libnotify
   ];
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
@@ -90,7 +92,12 @@
   programs.kitty.enable = true;
   programs.kitty.font = { package = pkgs.hack-font; name = "Hack"; };
   # https://github.com/dexpota/kitty-themes
-  programs.kitty.extraConfig = "include ./theme.conf";
+  # https://sw.kovidgoyal.net/kitty/conf/
+  # https://askubuntu.com/questions/703611/how-to-call-desktop-notifications-on-ubuntu-gnome
+  programs.kitty.extraConfig = ''
+    include ./theme.conf
+    command_on_bell "notify-send foo bar"
+  '';
   home.file.".config/kitty/theme.conf".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Solarized_Light.conf";
     sha256 = "sha256-1UN/jP63IqA0L3848pAjoeeG/uyoVD91zBexXzD3tvU=";
