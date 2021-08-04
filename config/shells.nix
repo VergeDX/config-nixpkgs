@@ -1,13 +1,6 @@
 { programs, home, pkgs, ... }:
 {
   programs.fish.enable = true;
-  # programs.fish.promptInit = ''
-  #   function fish_prompt
-  #       # https://github.com/justjanne/powerline-go#fish
-  #       eval ${pkgs.powerline-go}/bin/powerline-go -error $status -jobs (jobs -p | wc -l)
-  #   end
-  # '';
-
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
   programs.starship.enable = true;
   programs.starship.settings = {
