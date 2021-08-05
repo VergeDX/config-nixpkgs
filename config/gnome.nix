@@ -13,7 +13,6 @@
 
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.runcat
-    pkgs.gnomeExtensions.jiggle
     pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.blur-me
     pkgs.gnomeExtensions.openweather
@@ -41,6 +40,9 @@
     pkgs.gnomeExtensions.window-is-ready-remover
     pkgs.gnomeExtensions.lock-keys
     pkgs.gnomeExtensions.disconnect-wifi
+
+    # https://askubuntu.com/questions/1234742/automatic-light-dark-mode
+    pkgs.gnomeExtensions.night-theme-switcher
 
     pkgs.conky
     pkgs.gpick
