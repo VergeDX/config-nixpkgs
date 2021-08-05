@@ -15,7 +15,7 @@ in
   # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
   programs.chromium.enable = true;
   # https://github.com/nix-community/home-manager/issues/2216
-  programs.chromium.package = pkgs.ungoogled-chromium;
+  # programs.chromium.package = pkgs.ungoogled-chromium;
   programs.chromium.extensions = [
     # https://chrome.google.com/webstore/category/extensions
     "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard
