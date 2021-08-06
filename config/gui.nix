@@ -131,6 +131,7 @@ in
     tabnine-ai-code-completion
     terminal
     the-doki-theme
+    dotjoshjohnson.xml
   ] ++ [
     # https://www.youtube.com/watch?v=jQXtpwsWRas
     streetsidesoftware.code-spell-checker
