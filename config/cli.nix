@@ -65,6 +65,9 @@
     pkgs.ncspot
     pkgs.unrar
     pkgs.hydra-check
+
+    # https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer
+    pkgs.gptfdisk
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
