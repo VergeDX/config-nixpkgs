@@ -41,4 +41,13 @@ in
     user = "git";
     proxyCommand = "nc -X connect -x localhost:8889 %h %p";
   };
+
+  # https://superuser.com/questions/954509/what-are-the-correct-permissions-for-the-gnupg-enclosing-folder-gpg-warning
+  programs.gpg.enable = true;
+  services.gpg-agent.enable = true;
+  services.gpg-agent.pinentryFlavor = "curses";
+
+  # https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key
+  programs.git.signing.key = "4DFA2BDD7305E739";
+  programs.git.signing.signByDefault = true;
 }
