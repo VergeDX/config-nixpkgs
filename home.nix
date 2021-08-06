@@ -136,4 +136,6 @@ rec {
     vo = "gpu";
     profile = "gpu-hq";
   };
+
+  home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
 }
