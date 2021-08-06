@@ -104,12 +104,4 @@
 
   # https://github.com/bennofs/nix-index
   programs.nix-index.enable = true;
-
-  # https://gist.github.com/coin8086/7228b177221f6db913933021ac33bb92
-  programs.ssh.enable = true;
-  programs.ssh.matchBlocks."git@github.com" = {
-    host = "github.com";
-    user = "git";
-    proxyCommand = "nc -X connect -x localhost:8889 %h %p";
-  };
 }
