@@ -10,7 +10,6 @@
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
       pkgs.vimPlugins.tabnine-vim
-      pkgs.vimPlugins.YouCompleteMe
       pkgs.vimPlugins.doki-theme-vim
       pkgs.vimPlugins.editorconfig-vim
     ];
