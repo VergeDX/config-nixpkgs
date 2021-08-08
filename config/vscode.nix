@@ -123,5 +123,7 @@ in
       "editor.tabCompletion" = "onlySnippets";
       "editor.wordBasedSuggestions" = false;
     };
+
+    "update.mode" = "none";
   };
 }
