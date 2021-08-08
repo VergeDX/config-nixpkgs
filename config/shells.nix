@@ -16,7 +16,7 @@
     pkgs.powerline-rs
 
     pkgs.starship
-    pkgs.nur.repos.ilya-fedin.silver
+    # pkgs.nur.repos.ilya-fedin.silver
 
     pkgs.meslo-lgs-nf
     pkgs.nushell
