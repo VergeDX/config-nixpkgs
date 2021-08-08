@@ -20,7 +20,6 @@
     # https://vimjc.com/vim-powerline.html
     extraConfig = ''
       syntax enable
-      colorscheme emilia_light
       set number
       set showtabline=2
     '';
