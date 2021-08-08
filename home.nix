@@ -127,6 +127,7 @@ rec {
     ./config/cli.nix
     ./config/develop.nix
     ./config/gui.nix
+    ./config/vscode.nix
   ];
 
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
