@@ -123,8 +123,5 @@ in
       "editor.tabCompletion" = "onlySnippets";
       "editor.wordBasedSuggestions" = false;
     };
-
-    "dart.flutterSdkPath" = "${(pkgs.callPackage ../packages/resources/flutter-vscode.nix { })}";
-    # "cSpell.enableFiletypes" = [ "nix" ];
   };
 }
