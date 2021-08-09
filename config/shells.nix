@@ -11,16 +11,17 @@
   home.packages = [
     pkgs.powerline
     pkgs.powerline-go
-    pkgs.powerline-fonts
-    pkgs.powerline-symbols
     pkgs.powerline-rs
 
     pkgs.starship
     # pkgs.nur.repos.ilya-fedin.silver
 
-    pkgs.meslo-lgs-nf
     pkgs.nushell
-  ];
+  ] ++ (if pkgs.stdenv.isDarwin then [ ] else [
+    pkgs.powerline-fonts
+    pkgs.powerline-symbols
+    pkgs.meslo-lgs-nf
+  ]);
 
   programs.fish.plugins = [
     {
