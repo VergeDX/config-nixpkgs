@@ -9,7 +9,6 @@
   };
 
   home.packages = [
-    pkgs.powerline
     pkgs.powerline-go
     pkgs.powerline-rs
 
@@ -19,7 +18,7 @@
     pkgs.nushell
   ] ++ (if pkgs.stdenv.isDarwin then [ ] else [
     pkgs.powerline-fonts
-    pkgs.powerline-symbols
+    pkgs.powerline # pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
   ]);
 
