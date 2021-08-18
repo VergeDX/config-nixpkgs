@@ -68,6 +68,11 @@ let
 in
 {
   programs.vscode.enable = true;
+  programs.vscode.package =
+    if pkgs.stdenv.isDarwin # Using nix-darwin install gui programs.
+    then (pkgs.runCommand "" { pname = "vscodium"; } "mkdir $out")
+    else pkgs.vscodium;
+
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     atom-material-theme
     dart
