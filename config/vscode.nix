@@ -133,5 +133,9 @@ in
     };
 
     "update.mode" = "none";
+
+    # https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
+    telemetry.enableTelemetry = false;
+    workbench.enableExperiments = false;
   };
 }
