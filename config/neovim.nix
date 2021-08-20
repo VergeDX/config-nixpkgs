@@ -21,7 +21,10 @@
       pkgs.vimPlugins.nvim-lspconfig
       # https://github.com/NvChad/NvChad
       # pkgs.vimPlugins.lspkind-nvim
-      # pkgs.vimPlugins.nvim-tree-lua
+
+      # https://github.com/kyazdani42/nvim-tree.lua#install
+      pkgs.vimPlugins.nvim-web-devicons
+      pkgs.vimPlugins.nvim-tree-lua
 
       # https://github.com/nvim-telescope/telescope.nvim#installation
       pkgs.vimPlugins.plenary-nvim
