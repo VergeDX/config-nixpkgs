@@ -137,7 +137,6 @@ in
     # https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
     "telemetry.enableTelemetry" = false;
     "workbench.enableExperiments" = false;
-    "enable-crash-reporter" = false;
     "extensions.autoUpdate" = false;
   };
 }
