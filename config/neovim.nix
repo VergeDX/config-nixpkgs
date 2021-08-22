@@ -30,11 +30,14 @@
       set number
       set showtabline=2
 
+      " https://github.com/kyazdani42/nvim-tree.lua/issues/549
+      set shell=${pkgs.bash}/bin/bash
+
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
       lua require'lspconfig'.rnix.setup{}
     '';
   };
 
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
-  home.packages = [ pkgs.rnix-lsp ];
+  home.packages = with pkgs; [ rnix-lsp bash ];
 }
