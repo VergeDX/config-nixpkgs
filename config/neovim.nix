@@ -1,5 +1,13 @@
 { programs, pkgs, home, ... }:
 let
+  sudormrfbin-cheatsheet-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "sudormrfbin-cheatsheet-nvim";
+    src = pkgs.fetchgit {
+      url = "https://github.com/sudormrfbin/cheatsheet.nvim";
+      sha256 = "sha256-17PddcrUpgOzlSG2xaddDpdfRMtjCH5XYpZoSsmrWKo=";
+    };
+  };
+
   terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin {
     name = "terrortylor-nvim-comment";
     src = pkgs.fetchgit {
@@ -69,6 +77,11 @@ in
       pkgs.vimPlugins.neoformat
       # https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
       pkgs.vimPlugins.telescope-fzf-native-nvim
+      # https://github.com/sudormrfbin/cheatsheet.nvim#installation
+      sudormrfbin-cheatsheet-nvim
+      pkgs.vimPlugins.popup-nvim
+      pkgs.vimPlugins.plenary-nvim
+      pkgs.vimPlugins.telescope-nvim
       # https://github.com/lewis991/gitsigns.nvim#installation
       pkgs.vimPlugins.plenary-nvim
       pkgs.vimPlugins.gitsigns-nvim
@@ -125,6 +138,8 @@ in
       " https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
       lua require('telescope').setup { extensions = { fzf = { fuzzy = true } } }
       lua require('telescope').load_extension('fzf')
+      " https://github.com/sudormrfbin/cheatsheet.nvim#configuration
+      lua require("cheatsheet").setup()
       " https://github.com/lewis6991/gitsigns.nvim#usage
       lua require('gitsigns').setup { current_line_blame = true }
       " https://github.com/windwp/nvim-autopairs/
