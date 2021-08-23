@@ -56,14 +56,6 @@
       };
     }
     {
-      name = "tide";
-      src = pkgs.fetchgit {
-        url = "https://github.com/IlanCosman/tide";
-        rev = "v5.0.1";
-        sha256 = "sha256-EjEVyWwAtVqPFDEo9QUUAQXlAMlmEmaO0sqmjZSKI5M=";
-      };
-    }
-    {
       name = "nix-completions.fish";
       src = pkgs.fetchgit {
         url = "https://github.com/kidonng/nix-completions.fish";
