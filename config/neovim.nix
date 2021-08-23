@@ -1,4 +1,23 @@
 { programs, pkgs, home, ... }:
+let
+  terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin {
+    name = "terrortylor-nvim-comment";
+    src = pkgs.fetchgit {
+      url = "https://github.com/terrortylor/nvim-comment";
+      sha256 = "sha256-wv4scKfo4EyHLnP7zOHOhQ4Z7ok8lOvB/NS4RpX9Lg0=";
+    };
+
+    preBuild = "rm ./Makefile";
+  };
+
+  Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "Pocco81-AutoSave-nvim";
+    src = pkgs.fetchgit {
+      url = "https://github.com/Pocco81/AutoSave.nvim";
+      sha256 = "sha256-+CENz+8nE90kjqiaH1e2Bg3y4wQ5Q8KiDi2FddBXFAo=";
+    };
+  };
+in
 {
   programs.neovim.enable = true;
   programs.neovim = {
@@ -41,6 +60,30 @@
       pkgs.vimPlugins.nvim-web-devicons
       # [8] https://github.com/nvim-treesitter/nvim-treesitter#installation
       # pkgs.vimPlugins.nvim-treesitter
+    ] ++ [
+      # https://github.com/norcalli/nvim-colorizer.lua#installation-and-usage
+      # pkgs.vimPlugins.nvim-colorizer-lua
+      # https://github.com/ray-x/lsp_signature.nvim#install
+      # pkgs.vimPlugins.lsp_signature-nvim
+      # https://github.com/sbdchd/neoformat/#install
+      pkgs.vimPlugins.neoformat
+      # https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
+      pkgs.vimPlugins.telescope-fzf-native-nvim
+      # https://github.com/lewis991/gitsigns.nvim#installation
+      pkgs.vimPlugins.plenary-nvim
+      pkgs.vimPlugins.gitsigns-nvim
+      # https://github.com/windwp/nvim-autopairs
+      pkgs.vimPlugins.nvim-autopairs
+      # https://github.com/terrortylor/nvim-comment#via-a-plugin-manager
+      terrortylor-nvim-comment
+      # https://github.com/glepnir/dashboard-nvim#install
+      pkgs.vimPlugins.dashboard-nvim
+      # https://github.com/Pocco81/AutoSave.nvim#adding-the-plugin
+      Pocco81-AutoSave-nvim
+      # https://github.com/karb94/neoscroll.nvim#installation
+      pkgs.vimPlugins.neoscroll-nvim
+      # https://github.com/tpope/vim-fugitive
+      pkgs.vimPlugins.vim-fugitive
     ];
 
     # https://github.com/doki-theme/doki-theme-vim#installation
@@ -69,12 +112,29 @@
       " https://github.com/tzachar/compe-tabnine#install
       let g:compe.source.tabnine = v:true
 
-      " https://github.com/NvChad/NvChad/blob/v1.0/lua/plugins/nvimtree.lua#L9
-      lua vim.o.termguicolors = false
-
+      " https://github.com/glepnir/dashboard-nvim#faq
+      let g:indentLine_fileTypeExclude = ['dashboard']
       " https://github.com/akinsho/bufferline.nvim#usage
       " lua vim.opt.termguicolors = true
       lua require("bufferline").setup{}
+    '' + ''
+      " https://github.com/norcalli/nvim-colorizer.lua#installation-and-usage
+      " lua require'colorizer'.setup()
+      " https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
+      " require "lsp_signature".setup()
+      " https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
+      lua require('telescope').setup { extensions = { fzf = { fuzzy = true } } }
+      lua require('telescope').load_extension('fzf')
+      " https://github.com/lewis6991/gitsigns.nvim#usage
+      lua require('gitsigns').setup { current_line_blame = true }
+      " https://github.com/windwp/nvim-autopairs/
+      lua require('nvim-autopairs').setup{}
+      " https://github.com/terrortylor/nvim-comment#configure
+      lua require('nvim_comment').setup()
+      " https://github.com/Pocco81/AutoSave.nvim#setup-configuration
+      lua require("autosave").setup({ enabled = true })
+      " https://github.com/karb94/neoscroll.nvim#quickstart
+      lua require('neoscroll').setup()
     '';
   };
 
