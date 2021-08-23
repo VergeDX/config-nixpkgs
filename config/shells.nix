@@ -59,8 +59,8 @@
       name = "tide";
       src = pkgs.fetchgit {
         url = "https://github.com/IlanCosman/tide";
-        rev = "v4.3.4";
-        sha256 = "sha256-XTpkjQOdFXBO9NlEwOMX26bbuxojVmdtxDcfLKXFUdE=";
+        rev = "v5.0.1";
+        sha256 = "sha256-EjEVyWwAtVqPFDEo9QUUAQXlAMlmEmaO0sqmjZSKI5M=";
       };
     }
     {
