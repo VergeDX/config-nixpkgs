@@ -45,7 +45,6 @@
 
     pkgs.pciutils
     pkgs.gping
-    (pkgs.callPackage ../packages/cli/startrinity.nix { })
 
     pkgs.nvchecker
     pkgs.nvfetcher
