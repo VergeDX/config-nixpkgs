@@ -8,18 +8,6 @@
     pkgs.neofetch
     pkgs.lolcat
 
-    # https://github.com/rofl0r/proxychains-ng
-    (pkgs.proxychains.overrideAttrs (old: {
-      configureScript = "./configure --sysconfdir=.config";
-      postInstall = old.postInstall + ''
-        # https://stackoverflow.com/questions/4881930/remove-the-last-line-from-a-file-in-bash
-        # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/tools/networking/proxychains/default.nix#L23
-        sed -i '$ d' $out/etc/proxychains.conf
-        sed -i '$ d' $out/etc/proxychains.conf
-        printf "socks5 127.0.0.1 1089\n\n" >> $out/etc/proxychains.conf
-      '';
-    }))
-
     pkgs.guake
     pkgs.terminator
     pkgs.termite
