@@ -62,7 +62,7 @@ in
       # pkgs.vimPlugins.nvim-web-devicons | lua
       # pkgs.vimPlugins.vim-devicons | vimscript
       # [6] https://github.com/akinsho/bufferline.nvim#installation
-      pkgs.vimPlugins.nvim-bufferline-lua
+      pkgs.vimPlugins.bufferline-nvim
       pkgs.vimPlugins.nvim-web-devicons
       # [7] https://github.com/kyazdani42/nvim-web-devicons#installation
       pkgs.vimPlugins.nvim-web-devicons
