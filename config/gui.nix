@@ -1,5 +1,4 @@
 { home, pkgs, ... }:
-in
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -47,6 +46,12 @@ in
     pkgs.zim
     pkgs.kiwix
     pkgs.zathura
+
+    pkgs.yubioath-desktop
+    pkgs.yubikey-manager
+    pkgs.yubikey-manager-qt
+    pkgs.yubikey-personalization
+    pkgs.yubikey-personalization-gui
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
