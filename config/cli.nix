@@ -93,8 +93,8 @@
 
   # https://github.com/chinanf-boy/bat-zh
   programs.bat.enable = true;
-  programs.bat.config = { theme = "Solarized (light)"; };
-  programs.fish.shellAliases = { cat = "bat"; };
+  # programs.bat.config = { theme = "Solarized (light)"; };
+  # programs.fish.shellAliases = { cat = "bat"; };
 
   # https://github.com/Canop/broot
   programs.broot.enable = true;
