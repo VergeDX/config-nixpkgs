@@ -67,6 +67,8 @@
 
     # https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer
     pkgs.gptfdisk
+
+    pkgs.dmg2img
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
