@@ -4,7 +4,7 @@ in
 {
   home.packages = [
     pkgs.nmap
-    pkgs.metasploit
+    # pkgs.metasploit
     (pkgs.callPackage ../packages/gui/armitage.nix { })
     pkgs.binwalk
     pkgs.gnome.ghex
