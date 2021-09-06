@@ -52,6 +52,9 @@
     pkgs.yubikey-manager-qt
     pkgs.yubikey-personalization
     pkgs.yubikey-personalization-gui
+
+    pkgs.fontforge
+    pkgs.fontforge-gtk
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
