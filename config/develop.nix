@@ -33,15 +33,20 @@ in
     pkgs.pkg-config
 
     pkgs.jetbrains-mono
+
     pkgs.jetbrains.rider
     pkgs.dotnet-sdk
     pkgs.mono
     (pkgs.hiPrio pkgs.msbuild)
+    pkgs.dotnetPackages.Nuget
+
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.jdk
     pkgs.kotlin
+
     pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
+
     pkgs.jetbrains.clion
     pkgs.cmake
     pkgs.gnumake
