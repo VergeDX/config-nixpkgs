@@ -55,6 +55,8 @@
 
     pkgs.fontforge
     pkgs.fontforge-gtk
+    pkgs.gnome-network-displays
+    pkgs.miraclecast
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
