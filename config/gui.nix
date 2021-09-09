@@ -60,6 +60,8 @@
 
     pkgs.spotify
     pkgs.spotify-qt
+
+    pkgs.mumble
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
