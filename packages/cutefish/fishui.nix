@@ -21,6 +21,18 @@ let
       pkgs.libsForQt5.kwindowsystem
       pkgs.extra-cmake-modules
     ];
+
+    # https://github.com/cutefishos/fishui/blob/0.4/CMakeLists.txt#L49-L57
+    installPhase = ''
+      make install
+
+      cd /build/qtbase-everywhere-src-5.15.2/
+      mv '$(out)' qt && cd qt
+      mv '$(qtQmlPrefix)' qml
+
+      cd $out/lib
+      mv /build/qtbase-everywhere-src-5.15.2/qt .
+    '';
   };
 in
 fishui
