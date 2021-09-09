@@ -32,8 +32,8 @@ rec {
   home.packages = [
     pkgs.nixpkgs-fmt
 
-    (pkgs.callPackage ./packages/gui/qv2ray-pre.nix { })
-    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray-pre.nix) { }; })
+    (pkgs.callPackage ./packages/gui/qv2ray.nix { })
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray.nix) { }; })
     pkgs.v2ray
 
     pkgs.arion
