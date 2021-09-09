@@ -96,10 +96,7 @@ in
 
   programs.vscode.userSettings = {
     # https://github.com/doki-theme/doki-theme-vscode/tree/master/buildSrc/assets/themes/reZero
-    # "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
-    "window.autoDetectColorScheme" = true;
-    "workbench.preferredLightColorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
-    "workbench.preferredDarkColorTheme" = "696de7c1-3a8e-4445-83ee-3eb7e9dca47f";
+    "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
 
     # https://copilot.github.com/
     "editor.inlineSuggest.enabled" = true;
