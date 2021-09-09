@@ -31,6 +31,7 @@ rec {
 
   home.packages = [
     pkgs.nixpkgs-fmt
+    pkgs.update-nix-fetchgit
 
     (pkgs.callPackage ./packages/gui/qv2ray.nix { })
     (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray.nix) { }; })
