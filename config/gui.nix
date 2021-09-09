@@ -57,6 +57,9 @@
     pkgs.fontforge-gtk
     pkgs.gnome-network-displays
     pkgs.miraclecast
+
+    pkgs.spotify
+    pkgs.spotify-qt
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
