@@ -48,7 +48,7 @@ in
 
       # https://github.com/NvChad/NvChad/tree/v1.0
       # [1] https://github.com/onsails/lspkind-nvim
-      # pkgs.vimPlugins.lspkind-nvim
+      pkgs.vimPlugins.lspkind-nvim
       # [2] https://github.com/kyazdani42/nvim-tree.lua#install
       pkgs.vimPlugins.nvim-web-devicons
       pkgs.vimPlugins.nvim-tree-lua
@@ -72,7 +72,7 @@ in
       # https://github.com/norcalli/nvim-colorizer.lua#installation-and-usage
       # pkgs.vimPlugins.nvim-colorizer-lua
       # https://github.com/ray-x/lsp_signature.nvim#install
-      # pkgs.vimPlugins.lsp_signature-nvim
+      pkgs.vimPlugins.lsp_signature-nvim
       # https://github.com/sbdchd/neoformat/#install
       pkgs.vimPlugins.neoformat
       # https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
@@ -107,8 +107,11 @@ in
       set number
       set showtabline=2
 
+      " https://github.com/onsails/lspkind-nvim#configuration
+      lua require('lspkind').init()
+
       " https://github.com/kyazdani42/nvim-tree.lua/issues/549
-      set shell=${pkgs.bash}/bin/bash
+      set shell=sh
 
       " https://github.com/hrsh7th/nvim-compe/#prerequisite
       set completeopt=menuone,noselect
@@ -124,6 +127,12 @@ in
       lua require'lspconfig'.rnix.setup{}
       " https://github.com/tzachar/compe-tabnine#install
       let g:compe.source.tabnine = v:true
+      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
+      lua require'lspconfig'.bashls.setup{}
+      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
+      lua require'lspconfig'.hls.setup{}
+      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
+      lua require'lspconfig'.tsserver.setup{}
 
       " https://github.com/glepnir/dashboard-nvim#faq
       let g:indentLine_fileTypeExclude = ['dashboard']
@@ -134,7 +143,9 @@ in
       " https://github.com/norcalli/nvim-colorizer.lua#installation-and-usage
       " lua require'colorizer'.setup()
       " https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
-      " require "lsp_signature".setup()
+      lua require "lsp_signature".setup()
+      " https://github.com/ray-x/lsp_signature.nvim/issues/1
+      lua require'lsp_signature'.on_attach()
       " https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
       lua require('telescope').setup { extensions = { fzf = { fuzzy = true } } }
       lua require('telescope').load_extension('fzf')
@@ -154,5 +165,10 @@ in
   };
 
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
-  home.packages = with pkgs; [ rnix-lsp bash ];
+  home.packages = with pkgs; [
+    rnix-lsp
+    nodePackages.bash-language-server
+    haskell-language-server
+    pkgs.nodePackages.typescript-language-server
+  ];
 }
