@@ -49,6 +49,9 @@
 
     pkgs.gnome.nautilus
     pkgs.gnome.sushi
+
+    # Debug packages/cutefish/cutefish-statusbar.nix.
+    pkgs.gnomeExtensions.hide-top-bar
   ];
 
   gtk.enable = true;
