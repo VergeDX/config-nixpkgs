@@ -24,6 +24,14 @@ let
       sha256 = "sha256-vzmByEiKZIkd707Bs4RGQrMII5sghYlkQI6aAJOHFcY=";
     };
   });
+  mvllow.rose-pine = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "mvllow";
+      name = "rose-pine";
+      version = "1.3.6";
+      sha256 = "sha256-pKrwiA/ZArBfumT0VTauhINSDEbABWgBBzTZEE07wzk=";
+    };
+  });
   TabNine.tabnine-vscode = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
@@ -53,6 +61,7 @@ in
     bbenoist.nix
     jnoortheen.nix-ide
     antfu.slidev
+    mvllow.rose-pine
     TabNine.tabnine-vscode
     formulahendry.terminal
     dotjoshjohnson.xml
@@ -64,7 +73,8 @@ in
   ];
 
   programs.vscode.userSettings = {
-    "workbench.colorTheme" = "";
+    # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
+    "workbench.colorTheme" = "Rosé Pine Dawn";
 
     # https://copilot.github.com/
     "editor.inlineSuggest.enabled" = true;
