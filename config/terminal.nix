@@ -81,13 +81,8 @@
   programs.kitty.font = { package = pkgs.hack-font; name = "Hack"; };
   # https://github.com/dexpota/kitty-themes
   # https://sw.kovidgoyal.net/kitty/conf/
-  # https://askubuntu.com/questions/703611/how-to-call-desktop-notifications-on-ubuntu-gnome
-  programs.kitty.extraConfig = ''
-    include ./theme.conf
-    command_on_bell "notify-send foo bar"
-  '';
-  home.file.".config/kitty/theme.conf".source = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Solarized_Light.conf";
-    sha256 = "sha256-1UN/jP63IqA0L3848pAjoeeG/uyoVD91zBexXzD3tvU=";
-  };
+  programs.kitty.extraConfig = "include ${pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/rose-pine/kitty/main/rose-pine-dawn.conf";
+    sha256 = "sha256-Y7lb3VKXDqbMhnzu1BRsm5RAY6MwM11i38EiTtdRH/s=";
+  }}";
 }
