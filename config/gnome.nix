@@ -47,9 +47,6 @@
     pkgs.conky
     pkgs.gpick
 
-    # https://github.com/cutefishos
-    (pkgs.callPackage ../packages/cutefish/icons.nix { })
-
     pkgs.gnome.nautilus
     pkgs.gnome.sushi
   ];
