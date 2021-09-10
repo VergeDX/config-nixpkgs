@@ -56,6 +56,7 @@ in
     atom-material-theme
     editorconfig.editorconfig
     github-copilot
+    github.vscode-pull-request-github
     eamodio.gitlens
     bbenoist.nix
     jnoortheen.nix-ide
