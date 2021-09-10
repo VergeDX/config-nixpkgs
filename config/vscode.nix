@@ -41,14 +41,6 @@ let
       sha256 = "sha256-9hGkD/mWGhwH0ACA3nUD75/XCIi6A8DiDVagfHwPRz4=";
     };
   });
-  the-doki-theme = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "unthrottled";
-      name = "doki-theme";
-      version = "15.3.0";
-      sha256 = "sha256-uQfPN0NVrRh0a5owfrhKJU7w1Ci6N08/JjbqEM3sVps=";
-    };
-  });
 in
 {
   programs.vscode.enable = true;
@@ -63,7 +55,6 @@ in
     slidev
     tabnine-ai-code-completion
     terminal
-    the-doki-theme
     dotjoshjohnson.xml
   ] ++ [
     # https://www.youtube.com/watch?v=jQXtpwsWRas
@@ -73,8 +64,7 @@ in
   ];
 
   programs.vscode.userSettings = {
-    # https://github.com/doki-theme/doki-theme-vscode/tree/master/buildSrc/assets/themes/reZero
-    "workbench.colorTheme" = "e828aaae-aa8c-4084-8993-d64697146930";
+    "workbench.colorTheme" = "";
 
     # https://copilot.github.com/
     "editor.inlineSuggest.enabled" = true;
