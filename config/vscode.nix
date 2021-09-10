@@ -1,6 +1,6 @@
 { home, pkgs, ... }:
 let
-  atom-material-theme = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  tobiasalthoff.atom-material-theme = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "tobiasalthoff";
       name = "atom-material-theme";
@@ -8,7 +8,7 @@ let
       sha256 = "sha256-t5CKrDEbDCuo28wN+hiWrvkt3C9vQAPfV/nd3QBGQ/s=";
     };
   });
-  github-copilot = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  GitHub.copilot = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "github";
       name = "copilot";
@@ -16,7 +16,7 @@ let
       sha256 = "sha256-yhzM3d8yZMARAZVmO3zqgD8ucusiBOZVaI7NPlcaddM=";
     };
   });
-  slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  antfu.slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "antfu";
       name = "slidev";
@@ -24,7 +24,7 @@ let
       sha256 = "sha256-vzmByEiKZIkd707Bs4RGQrMII5sghYlkQI6aAJOHFcY=";
     };
   });
-  tabnine-ai-code-completion = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  TabNine.tabnine-vscode = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
       publisher = "TabNine";
@@ -33,7 +33,7 @@ let
       sha256 = "sha256-OEdc03X8EX9k2V8dO8gOOLpIaNrlituunRewZtcvlBI=";
     };
   });
-  terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  formulahendry.terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "formulahendry";
       name = "terminal";
@@ -45,16 +45,16 @@ in
 {
   programs.vscode.enable = true;
   programs.vscode.extensions = with pkgs.vscode-extensions; [
-    atom-material-theme
+    tobiasalthoff.atom-material-theme
     editorconfig.editorconfig
-    github-copilot
+    GitHub.copilot
     github.vscode-pull-request-github
     eamodio.gitlens
     bbenoist.nix
     jnoortheen.nix-ide
-    slidev
-    tabnine-ai-code-completion
-    terminal
+    antfu.slidev
+    TabNine.tabnine-vscode
+    formulahendry.terminal
     dotjoshjohnson.xml
   ] ++ [
     # https://www.youtube.com/watch?v=jQXtpwsWRas
