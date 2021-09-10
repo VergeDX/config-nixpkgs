@@ -94,8 +94,6 @@ in
     # https://github.com/microsoft/vscode/blob/1.58.0/src/vs/editor/common/config/editorOptions.ts#L3857
     "editor.fontFamily" = "'Jetbrains Mono', 'Hack'";
 
-    "update.mode" = "none";
-
     # https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
     "telemetry.enableTelemetry" = false;
     "workbench.enableExperiments" = false;
