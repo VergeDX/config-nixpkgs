@@ -33,7 +33,6 @@
     # pkgs.googleearth
     pkgs.googleearth-pro
     pkgs.wireshark
-    pkgs.skypeforlinux
 
     # https://www.bilibili.com/video/BV17U4y1H7w1
     pkgs.retroarch
