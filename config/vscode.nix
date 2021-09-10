@@ -52,11 +52,6 @@ let
 in
 {
   programs.vscode.enable = true;
-  programs.vscode.package =
-    if pkgs.stdenv.isDarwin # Using nix-darwin install gui programs.
-    then (pkgs.runCommand "" { pname = "vscode"; } "mkdir $out")
-    else pkgs.vscode;
-
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     atom-material-theme
     editorconfig.editorconfig
