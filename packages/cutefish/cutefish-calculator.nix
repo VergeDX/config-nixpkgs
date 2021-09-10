@@ -14,7 +14,8 @@ let
     buildInputs = [
       pkgs.pkgs.libsForQt5.qt5.qtquickcontrols2
       pkgs.libsForQt5.qt5.qttools
-      (import ./fishui.nix)
+
+      (pkgs.callPackage ./fishui.nix { })
       pkgs.libsForQt5.qt5.qtgraphicaleffects
     ];
 
