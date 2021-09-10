@@ -12,8 +12,8 @@ let
     mktplcRef = {
       publisher = "github";
       name = "copilot";
-      version = "1.1.1959";
-      sha256 = "sha256-DuYJb1lzqITEpitEFyyXAs7H5NB9o3yXhSBV3CQ0YsI=";
+      version = "1.4.2635";
+      sha256 = "sha256-yhzM3d8yZMARAZVmO3zqgD8ucusiBOZVaI7NPlcaddM=";
     };
   });
   slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -29,8 +29,8 @@ let
       # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
       publisher = "TabNine";
       name = "tabnine-vscode";
-      version = "3.4.13";
-      sha256 = "sha256-xsfujEvzAcuHzZL5K6ER6NyEkjaBX1s9gTnCn8wbIWA=";
+      version = "3.4.26";
+      sha256 = "sha256-OEdc03X8EX9k2V8dO8gOOLpIaNrlituunRewZtcvlBI=";
     };
   });
   terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -45,8 +45,8 @@ let
     mktplcRef = {
       publisher = "unthrottled";
       name = "doki-theme";
-      version = "14.0.0";
-      sha256 = "sha256-UL/j15dY5Y6FI/2Dr4HG4rAE/BXv3kDHuOc++UATL14=";
+      version = "15.3.0";
+      sha256 = "sha256-uQfPN0NVrRh0a5owfrhKJU7w1Ci6N08/JjbqEM3sVps=";
     };
   });
 in
