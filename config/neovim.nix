@@ -25,16 +25,23 @@ let
       sha256 = "sha256-+CENz+8nE90kjqiaH1e2Bg3y4wQ5Q8KiDi2FddBXFAo=";
     };
   };
+
+  rose-pine-neovim = pkgs.vimUtils.buildVimPlugin {
+    name = "rose-pine-neovim";
+    src = pkgs.fetchgit {
+      url = "https://github.com/rose-pine/neovim";
+      rev = "v0.0.1";
+      sha256 = "sha256-OLlutTnMQiCYLmnwkAXiyuhp62DBmpxq3z0No3buHcg=";
+    };
+  };
 in
 {
   programs.neovim.enable = true;
   programs.neovim = {
     # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
     plugins = [
-      pkgs.vimPlugins.doki-theme-vim
-      pkgs.vimPlugins.vim-airline
-      pkgs.vimPlugins.vim-airline-clock
-      pkgs.vimPlugins.vim-airline-themes
+      rose-pine-neovim
+      pkgs.vimPlugins.lualine-nvim
 
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
@@ -99,13 +106,18 @@ in
       pkgs.vimPlugins.vim-fugitive
     ];
 
-    # https://github.com/doki-theme/doki-theme-vim#installation
     # https://medium.com/@hql287/10-vim-tips-to-ease-the-learning-curve-c8234cbdafa5
     # https://vimjc.com/vim-powerline.html
     extraConfig = ''
       syntax enable
       set number
       set showtabline=2
+
+      " https://github.com/rose-pine/neovim#usage
+      colorscheme rose-pine
+      lua require('lualine').setup({ options = { theme = 'rose-pine' } })
+      " https://github.com/rose-pine/neovim#functions
+      lua require('rose-pine.functions').select_variant('dawn')
 
       " https://github.com/onsails/lspkind-nvim#configuration
       lua require('lspkind').init()
