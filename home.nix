@@ -54,12 +54,6 @@ rec {
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
 
-    (pkgs.steam.override {
-      withPrimus = true;
-      # https://github.com/NixOS/nixpkgs/pull/126142
-      # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/pkgs/games/steam/fhsenv.nix#L241
-      extraLibraries = pkgs: [ pkgs.pipewire.lib ];
-    })
     pkgs.steam-run
     pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
