@@ -113,11 +113,11 @@ in
       set number
       set showtabline=2
 
+      " https://github.com/rose-pine/neovim#options
+      lua vim.g.rose_pine_variant = 'dawn'
+      lua vim.cmd('colorscheme rose-pine')
       " https://github.com/rose-pine/neovim#usage
-      colorscheme rose-pine
       lua require('lualine').setup({ options = { theme = 'rose-pine' } })
-      " https://github.com/rose-pine/neovim#functions
-      lua require('rose-pine.functions').select_variant('dawn')
 
       " https://github.com/onsails/lspkind-nvim#configuration
       lua require('lspkind').init()
