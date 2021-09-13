@@ -18,7 +18,7 @@ in
   # programs.chromium.package = pkgs.ungoogled-chromium;
   programs.chromium.extensions = [
     # https://chrome.google.com/webstore/category/extensions
-    "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard
+    "gighmmpiobklfepjocnamgkkbiglidom" # AdBlock
     "fngmhnnpilhplaeedifhccceomclgfbg" # EditThisCookie
   ];
 
