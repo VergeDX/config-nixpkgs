@@ -61,6 +61,7 @@
     pkgs.spotify-qt
 
     pkgs.mumble
+    (pkgs.callPackage ../packages/gui/clapper.nix { })
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];

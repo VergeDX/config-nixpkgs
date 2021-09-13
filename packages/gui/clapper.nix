@@ -57,10 +57,8 @@ pkgs.stdenv.mkDerivation rec {
     gst_all_1.gst-plugins-ugly
   ];
 
-  mesonFlags = [
-    # TODO: https://github.com/NixOS/nixpkgs/issues/36468
-    "-Dc_args=-I${glib.dev}/include/gio-unix-2.0"
-  ];
+  # TODO: https://github.com/NixOS/nixpkgs/issues/36468
+  mesonFlags = [ "-Dc_args=-I${glib.dev}/include/gio-unix-2.0" ];
 
   postInstall = ''
     cp ${src}/data/icons/*.svg $out/share/icons/hicolor/scalable/apps/
