@@ -112,7 +112,6 @@ rec {
     ./config/shells.nix
     ./config/neovim.nix
 
-    ./config/ctf.nix
     ./config/fonts.nix
     ./config/gnome.nix
     ./config/browser.nix
