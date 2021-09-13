@@ -9,7 +9,6 @@
     pkgs.translate-shell
     pkgs.wget
     pkgs.htop
-    (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
     (pkgs.callPackage ../packages/cli/checkra1n.nix { })
     pkgs.p7zip
     pkgs.slides
