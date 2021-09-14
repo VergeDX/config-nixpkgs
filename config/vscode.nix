@@ -58,6 +58,7 @@ in
     GitHub.copilot
     github.vscode-pull-request-github
     eamodio.gitlens
+    ms-vsliveshare.vsliveshare
     bbenoist.nix
     jnoortheen.nix-ide
     antfu.slidev
