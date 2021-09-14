@@ -8,7 +8,11 @@
     line_break = { disabled = true; };
   };
 
+  # https://github.com/nvbn/thefuck/wiki/Shell-aliases#fish
+  programs.fish.shellInit = "thefuck --alias | source";
   home.packages = [
+    pkgs.thefuck
+
     pkgs.powerline-go
     pkgs.powerline-rs
 
