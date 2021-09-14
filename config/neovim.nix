@@ -1,36 +1,47 @@
 { programs, pkgs, home, ... }:
 let
-  sudormrfbin-cheatsheet-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "sudormrfbin-cheatsheet-nvim";
+  sudormrfbin-cheatsheet-nvim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "sudormrfbin-cheatsheet-nvim";
+    version = "7d83f02";
+
     src = pkgs.fetchgit {
       url = "https://github.com/sudormrfbin/cheatsheet.nvim";
+      rev = "${version}176287436acc06428ded782fe4bc08b94";
       sha256 = "sha256-17PddcrUpgOzlSG2xaddDpdfRMtjCH5XYpZoSsmrWKo=";
     };
   };
 
-  terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin {
-    name = "terrortylor-nvim-comment";
+  terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "terrortylor-nvim-comment";
+    version = "6363118";
+
     src = pkgs.fetchgit {
       url = "https://github.com/terrortylor/nvim-comment";
+      rev = "${version}acf86824ed11c2238292b72dc5ef8bdde";
       sha256 = "sha256-wv4scKfo4EyHLnP7zOHOhQ4Z7ok8lOvB/NS4RpX9Lg0=";
     };
 
     preBuild = "rm ./Makefile";
   };
 
-  Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "Pocco81-AutoSave-nvim";
+  Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "Pocco81-AutoSave-nvim";
+    version = "b1df927";
+
     src = pkgs.fetchgit {
       url = "https://github.com/Pocco81/AutoSave.nvim";
+      rev = "abe94790b4fd1d423ac825c2ac09898e8";
       sha256 = "sha256-+CENz+8nE90kjqiaH1e2Bg3y4wQ5Q8KiDi2FddBXFAo=";
     };
   };
 
-  rose-pine-neovim = pkgs.vimUtils.buildVimPlugin {
-    name = "rose-pine-neovim";
+  rose-pine-neovim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "rose-pine-neovim";
+    version = "v0.0.1";
+
     src = pkgs.fetchgit {
       url = "https://github.com/rose-pine/neovim";
-      rev = "v0.0.1";
+      rev = version;
       sha256 = "sha256-OLlutTnMQiCYLmnwkAXiyuhp62DBmpxq3z0No3buHcg=";
     };
   };
