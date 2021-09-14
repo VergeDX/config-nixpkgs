@@ -40,6 +40,7 @@ in
 
     pkgs.maven
     pkgs.gradle
+    pkgs.telnet
   ];
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
