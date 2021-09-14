@@ -41,4 +41,12 @@ in
     pkgs.maven
     pkgs.gradle
   ];
+
+  # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
+  home.file.".gradle/gradle.properties".text = ''
+    systemProp.http.proxyHost=127.0.0.1
+    systemProp.http.proxyPort=8889
+    systemProp.https.proxyHost=127.0.0.1
+    systemProp.https.proxyPort=8889
+  '';
 }
