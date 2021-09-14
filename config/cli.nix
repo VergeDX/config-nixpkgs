@@ -8,7 +8,10 @@
     pkgs.tree
     pkgs.translate-shell
     pkgs.wget
+
     pkgs.htop
+    pkgs.bpytop
+
     (pkgs.callPackage ../packages/cli/checkra1n.nix { })
     pkgs.p7zip
     pkgs.slides
