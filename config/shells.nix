@@ -13,7 +13,7 @@
     pkgs.powerline-rs
 
     pkgs.starship
-    # pkgs.nur.repos.ilya-fedin.silver
+    pkgs.nur.repos.ilya-fedin.silver
 
     pkgs.nushell
   ] ++ (if pkgs.stdenv.isDarwin then [ ] else [
