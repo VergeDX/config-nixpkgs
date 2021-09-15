@@ -45,6 +45,17 @@ let
       sha256 = "sha256-OLlutTnMQiCYLmnwkAXiyuhp62DBmpxq3z0No3buHcg=";
     };
   };
+
+  tzachar-cmp-tabnine = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "tzachar-cmp-tabnine";
+    version = "c3a168e";
+
+    src = pkgs.fetchgit {
+      url = "https://github.com/tzachar/cmp-tabnine";
+      rev = "${version}d3f27ddaa8e05e623bea65f99cd7be7e6";
+      sha256 = "sha256-CNvqT9Z5YGMnehulgPIuZIkhSboyuAGFdIDf47xyEYc=";
+    };
+  };
 in
 {
   programs.neovim.enable = true;
@@ -60,8 +71,14 @@ in
       # pkgs.vimPlugins.tabnine-vim
       pkgs.vimPlugins.editorconfig-vim
 
-      pkgs.vimPlugins.nvim-compe
-      pkgs.vimPlugins.compe-tabnine
+      # https://github.com/tzachar/compe-tabnine/#warning
+      # https://github.com/hrsh7th/nvim-cmp#install
+      pkgs.vimPlugins.nvim-cmp
+      # https://github.com/hrsh7th/vim-vsnip/#1-install
+      pkgs.vimPlugins.vim-vsnip
+      pkgs.vimPlugins.vim-vsnip-integ
+      pkgs.vimPlugins.cmp-buffer
+      tzachar-cmp-tabnine
       pkgs.vimPlugins.nvim-lspconfig
 
       # https://github.com/NvChad/NvChad/tree/v1.0
@@ -136,20 +153,17 @@ in
       " https://github.com/kyazdani42/nvim-tree.lua/issues/549
       set shell=sh
 
-      " https://github.com/hrsh7th/nvim-compe/#prerequisite
-      set completeopt=menuone,noselect
-      " https://github.com/hrsh7th/nvim-compe/#vim-script-config
-      let g:compe = {}
-      let g:compe.enabled = v:true
-      let g:compe.source = {}
-      let g:compe.source.nvim_lsp = v:true
-      " https://github.com/hrsh7th/nvim-compe/#highlight
-      highlight link CompeDocumentation NormalFloat
+      " https://github.com/hrsh7th/nvim-cmp#basic-configuration
+      " https://github.com/hrsh7th/cmp-buffer#setup
+      " https://github.com/tzachar/cmp-tabnine#install
+      lua require'cmp'.setup({ sources = { { name = 'buffer' }, { name = 'cmp_tabnine' } } })
+      " https://github.com/hrsh7th/vim-vsnip/#2-setting
+      let g:vsnip_filetypes = {}
+      let g:vsnip_filetypes.javascriptreact = ['javascript']
+      let g:vsnip_filetypes.typescriptreact = ['typescript']
 
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
       lua require'lspconfig'.rnix.setup{}
-      " https://github.com/tzachar/compe-tabnine#install
-      let g:compe.source.tabnine = v:true
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
       lua require'lspconfig'.bashls.setup{}
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
