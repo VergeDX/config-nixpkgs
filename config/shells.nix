@@ -23,7 +23,8 @@
     pkgs.nushell
   ] ++ [
     pkgs.powerline-fonts
-    pkgs.powerline # pkgs.powerline-symbols
+    pkgs.powerline
+    pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
   ];
 
@@ -76,7 +77,7 @@
         nix-channel --update
         cd ~/.config/nixpkgs/
         git reset && rm flake.lock && true
-        home-manager switch
+        unlink ~/.config/gtk-3.0/gtk.css && home-manager switch
         git reset && rm flake.lock && true
 
         sudo nix-channel --update
