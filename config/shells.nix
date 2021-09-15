@@ -21,11 +21,11 @@
     pkgs.nur.repos.ilya-fedin.silver
 
     pkgs.nushell
-  ] ++ (if pkgs.stdenv.isDarwin then [ ] else [
+  ] ++ [
     pkgs.powerline-fonts
     pkgs.powerline # pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
-  ]);
+  ];
 
   programs.fish.plugins = [
     {
