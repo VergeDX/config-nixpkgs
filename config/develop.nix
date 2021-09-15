@@ -49,6 +49,6 @@ in
     systemProp.http.proxyPort=8889
     systemProp.https.proxyHost=127.0.0.1
     systemProp.https.proxyPort=8889
-    org.gradle.java.home=${pkgs.jdk11}
+    org.gradle.java.home=${pkgs.jetbrains.jdk}/lib/openjdk
   '';
 }
