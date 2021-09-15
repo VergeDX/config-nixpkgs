@@ -81,8 +81,6 @@ in
 
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
-      # Official's is a fork of ycm-core/YouCompleteMe.
-      # pkgs.vimPlugins.tabnine-vim
       pkgs.vimPlugins.editorconfig-vim
 
       # https://github.com/tzachar/compe-tabnine/#warning
@@ -231,6 +229,6 @@ in
     rnix-lsp
     nodePackages.bash-language-server
     haskell-language-server
-    pkgs.nodePackages.typescript-language-server
+    nodePackages.typescript-language-server
   ];
 }
