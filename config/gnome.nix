@@ -52,6 +52,9 @@
 
     # Debug packages/cutefish/cutefish-statusbar.nix.
     pkgs.gnomeExtensions.hide-top-bar
+
+    pkgs.gnomeExtensions.sensory-perception
+    pkgs.gnomeExtensions.vitals
   ];
 
   gtk.enable = true;
