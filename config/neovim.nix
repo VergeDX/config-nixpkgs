@@ -55,6 +55,20 @@ let
       rev = "${version}d3f27ddaa8e05e623bea65f99cd7be7e6";
       sha256 = "sha256-CNvqT9Z5YGMnehulgPIuZIkhSboyuAGFdIDf47xyEYc=";
     };
+
+    tabnine = pkgs.fetchurl {
+      url = "https://update.tabnine.com/bundles/3.6.8/x86_64-unknown-linux-musl/TabNine.zip";
+      sha256 = "sha256-+jxjHE2/6IGptMlKXGebHcaIVokOP76ut325EbkdaA0=";
+    };
+
+    buildInputs = [ pkgs.unzip ];
+    postInstall = ''
+      cd $out && mkdir -p binaries/3.6.8/x86_64-unknown-linux-musl
+      cd $out/binaries/3.6.8/x86_64-unknown-linux-musl
+
+      # https://github.com/tzachar/cmp-tabnine/blob/main/install.sh#L29
+      unzip -o ${tabnine} -d . && chmod +x *
+    '';
   };
 in
 {
@@ -164,6 +178,17 @@ in
 
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
       lua require'lspconfig'.rnix.setup{}
+
+      " https://github.com/tzachar/cmp-tabnine#setup
+      lua << EOF
+      local tabnine = require('cmp_tabnine.config')
+      tabnine:setup({
+              max_lines = 1000;
+              max_num_results = 20;
+              sort = true;
+      })
+      EOF
+
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
       lua require'lspconfig'.bashls.setup{}
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
