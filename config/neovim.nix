@@ -168,7 +168,43 @@ in
       " https://github.com/hrsh7th/nvim-cmp#basic-configuration
       " https://github.com/hrsh7th/cmp-buffer#setup
       " https://github.com/tzachar/cmp-tabnine#install
-      lua require'cmp'.setup({ sources = { { name = 'buffer' }, { name = 'cmp_tabnine' } } })
+      " https://github.com/tzachar/cmp-tabnine#pretty-printing-menu-items
+      " lua require'cmp'.setup({ sources = { { name = 'buffer' }, { name = 'cmp_tabnine' } } })
+
+      lua << EOF
+      local lspkind = require('lspkind')
+
+      local source_mapping = {
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        cmp_tabnine = "[TN]",
+        path = "[Path]",
+      }
+
+      require'cmp'.setup {
+        sources = {
+          { name = 'cmp_tabnine' },
+          { name = 'buffer' },
+          { name = 'cmp_tabnine' },
+        },
+        formatting = {
+          format = function(entry, vim_item)
+            vim_item.kind = lspkind.presets.default[vim_item.kind]
+            local menu = source_mapping[entry.source.name]
+            if entry.source.name == 'cmp_tabnine' then
+              if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+                menu = entry.completion_item.data.detail .. ' ' .. menu
+              end
+              vim_item.kind = ''
+            end
+            vim_item.menu = menu
+            return vim_item
+          end
+        },
+      }
+      EOF
+
       " https://github.com/hrsh7th/vim-vsnip/#2-setting
       let g:vsnip_filetypes = {}
       let g:vsnip_filetypes.javascriptreact = ['javascript']
