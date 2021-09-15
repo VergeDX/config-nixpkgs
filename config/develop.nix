@@ -10,7 +10,6 @@ in
   home.packages = [
     pkgs.android-tools
     pkgs.android-studio
-    # pkgs.androidStudioPackages.canary
     pkgs.apktool
     pkgs.dex2jar
     pkgs.jd-gui
@@ -28,11 +27,13 @@ in
     pkgs.dotnetPackages.Nuget
 
     pkgs.jetbrains.idea-ultimate
-    pkgs.jetbrains.jdk
+    pkgs.jetbrains.idea-community
+    pkgs.jdk11
     pkgs.kotlin
 
     pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
+    pkgs.conda
 
     pkgs.jetbrains.clion
     pkgs.cmake
@@ -41,6 +42,9 @@ in
     pkgs.maven
     pkgs.gradle
     pkgs.telnet
+
+    # pkgs.eclipses.eclipse-java
+    pkgs.eclipses.eclipse-platform
   ];
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
