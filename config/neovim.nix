@@ -1,16 +1,5 @@
 { programs, pkgs, home, ... }:
 let
-  sudormrfbin-cheatsheet-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "sudormrfbin-cheatsheet-nvim";
-    version = "7d83f02";
-
-    src = pkgs.fetchgit {
-      url = "https://github.com/sudormrfbin/cheatsheet.nvim";
-      rev = "${version}176287436acc06428ded782fe4bc08b94";
-      sha256 = "sha256-17PddcrUpgOzlSG2xaddDpdfRMtjCH5XYpZoSsmrWKo=";
-    };
-  };
-
   terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin rec {
     pname = "terrortylor-nvim-comment";
     version = "6363118";
@@ -125,7 +114,7 @@ in
       # https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
       pkgs.vimPlugins.telescope-fzf-native-nvim
       # https://github.com/sudormrfbin/cheatsheet.nvim#installation
-      sudormrfbin-cheatsheet-nvim
+      pkgs.vimPlugins.cheatsheet-nvim
       pkgs.vimPlugins.popup-nvim
       pkgs.vimPlugins.plenary-nvim
       pkgs.vimPlugins.telescope-nvim
