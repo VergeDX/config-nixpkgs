@@ -75,6 +75,8 @@ in
       # https://github.com/tzachar/compe-tabnine/#warning
       # https://github.com/hrsh7th/nvim-cmp#install
       pkgs.vimPlugins.nvim-cmp
+      # https://github.com/hrsh7th/nvim-cmp/issues/206
+      pkgs.vimPlugins.cmp-nvim-lsp
       # https://github.com/hrsh7th/vim-vsnip/#1-install
       pkgs.vimPlugins.vim-vsnip
       pkgs.vimPlugins.vim-vsnip-integ
@@ -157,39 +159,25 @@ in
       " https://github.com/hrsh7th/nvim-cmp#basic-configuration
       " https://github.com/hrsh7th/cmp-buffer#setup
       " https://github.com/tzachar/cmp-tabnine#install
-      " https://github.com/tzachar/cmp-tabnine#pretty-printing-menu-items
-      " lua require'cmp'.setup({ sources = { { name = 'buffer' }, { name = 'cmp_tabnine' } } })
 
       lua << EOF
       local lspkind = require('lspkind')
-
-      local source_mapping = {
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        cmp_tabnine = "[TN]",
-        path = "[Path]",
-      }
-
       require'cmp'.setup {
+        formatting = {
+          format = function(entry, vim_item)
+            vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+            vim_item.menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              cmp_tabnine = "[TN]",
+            })[entry.source.name]
+            return vim_item
+          end,
+        },
         sources = {
           { name = 'buffer' },
           { name = 'nvim_lsp' },
           { name = 'cmp_tabnine' },
-        },
-        formatting = {
-          format = function(entry, vim_item)
-            vim_item.kind = lspkind.presets.default[vim_item.kind]
-            local menu = source_mapping[entry.source.name]
-            if entry.source.name == 'cmp_tabnine' then
-              if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-                menu = entry.completion_item.data.detail .. ' ' .. menu
-              end
-              vim_item.kind = ''
-            end
-            vim_item.menu = menu
-            return vim_item
-          end
         },
       }
       EOF
@@ -198,9 +186,6 @@ in
       let g:vsnip_filetypes = {}
       let g:vsnip_filetypes.javascriptreact = ['javascript']
       let g:vsnip_filetypes.typescriptreact = ['typescript']
-
-      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
-      lua require'lspconfig'.rnix.setup{}
 
       " https://github.com/tzachar/cmp-tabnine#setup
       lua << EOF
@@ -212,15 +197,24 @@ in
       })
       EOF
 
-      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
-      lua require'lspconfig'.bashls.setup{}
-      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
-      lua require'lspconfig'.hls.setup{}
-      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
-      lua require'lspconfig'.tsserver.setup{}
-      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
-      lua require'lspconfig'.pyright.setup{}
+    '' + ''
+      lua << EOF
+      -- https://github.com/hrsh7th/cmp-nvim-lsp#setup
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
+      require'lspconfig'.rnix.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
+      require'lspconfig'.bashls.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
+      require'lspconfig'.hls.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
+      require'lspconfig'.tsserver.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
+      require'lspconfig'.pyright.setup{ capabilities = capabilities, }
+      EOF
+    '' + ''
       " https://github.com/glepnir/dashboard-nvim#faq
       let g:indentLine_fileTypeExclude = ['dashboard']
       " https://github.com/akinsho/bufferline.nvim#usage
