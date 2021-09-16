@@ -12,8 +12,8 @@ let
     mktplcRef = {
       publisher = "github";
       name = "copilot";
-      version = "1.4.2635";
-      sha256 = "sha256-yhzM3d8yZMARAZVmO3zqgD8ucusiBOZVaI7NPlcaddM=";
+      version = "1.4.2678";
+      sha256 = "sha256-NryXLuMIZJngp2dBsGbNhBiblEthckw1Zk2vqMXIzFM=";
     };
   });
   antfu.slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
