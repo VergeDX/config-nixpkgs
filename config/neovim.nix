@@ -62,6 +62,7 @@ let
 in
 {
   programs.neovim.enable = true;
+  home.sessionVariables = { EDITOR = "nvim"; };
   programs.neovim = {
     # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
     plugins = [
