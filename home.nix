@@ -2,6 +2,7 @@
 
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+  tdesktop-beta = (pkgs.callPackage ./packages/gui/tdesktop-beta.nix { });
 
   wrapElectronWithProxy = ({ package, binaryName, binaryPath }:
     pkgs.runCommandLocal binaryName { nativeBuildInputs = [ pkgs.makeWrapper ]; }
@@ -51,8 +52,8 @@ rec {
     (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    pkgs.tdesktop
-    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+    tdesktop-beta
+    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = tdesktop-beta; })
 
     pkgs.steam-run
     pkgs.osu-lazer
