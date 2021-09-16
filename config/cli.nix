@@ -62,6 +62,8 @@
     pkgs.gptfdisk
 
     pkgs.dmg2img
+    # https://github.com/helix-editor/helix
+    pkgs.helix
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
