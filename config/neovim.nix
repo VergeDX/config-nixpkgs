@@ -67,11 +67,10 @@ in
     plugins = [
       rose-pine-neovim
       pkgs.vimPlugins.lualine-nvim
-
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
       pkgs.vimPlugins.editorconfig-vim
-
+    ] ++ [
       # https://github.com/tzachar/compe-tabnine/#warning
       # https://github.com/hrsh7th/nvim-cmp#install
       pkgs.vimPlugins.nvim-cmp
@@ -83,7 +82,7 @@ in
       pkgs.vimPlugins.cmp-buffer
       tzachar-cmp-tabnine
       pkgs.vimPlugins.nvim-lspconfig
-
+    ] ++ [
       # https://github.com/NvChad/NvChad/tree/v1.0
       # [1] https://github.com/onsails/lspkind-nvim
       pkgs.vimPlugins.lspkind-nvim
@@ -155,7 +154,7 @@ in
 
       " https://github.com/kyazdani42/nvim-tree.lua/issues/549
       set shell=sh
-
+    '' + ''
       " https://github.com/hrsh7th/nvim-cmp#basic-configuration
       " https://github.com/hrsh7th/cmp-buffer#setup
       " https://github.com/tzachar/cmp-tabnine#install
@@ -181,14 +180,14 @@ in
         },
       }
       EOF
-
+    '' + ''
       " https://github.com/hrsh7th/vim-vsnip/#2-setting
       let g:vsnip_filetypes = {}
       let g:vsnip_filetypes.javascriptreact = ['javascript']
       let g:vsnip_filetypes.typescriptreact = ['typescript']
-
-      " https://github.com/tzachar/cmp-tabnine#setup
+    '' + ''
       lua << EOF
+      -- https://github.com/tzachar/cmp-tabnine#setup
       local tabnine = require('cmp_tabnine.config')
       tabnine:setup({
               max_lines = 1000;
@@ -196,7 +195,6 @@ in
               sort = true;
       })
       EOF
-
     '' + ''
       lua << EOF
       -- https://github.com/hrsh7th/cmp-nvim-lsp#setup
