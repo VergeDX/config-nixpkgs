@@ -15,6 +15,7 @@ in
 
   # https://nixos.wiki/wiki/Git
   programs.git.extraConfig = {
+    init.defaultBranch = "master";
     pack = {
       windowMemory = "2g";
       packSizeLimit = "1g";
