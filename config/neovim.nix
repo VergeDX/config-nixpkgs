@@ -173,8 +173,8 @@ in
 
       require'cmp'.setup {
         sources = {
-          { name = 'cmp_tabnine' },
           { name = 'buffer' },
+          { name = 'nvim_lsp' },
           { name = 'cmp_tabnine' },
         },
         formatting = {
@@ -218,6 +218,8 @@ in
       lua require'lspconfig'.hls.setup{}
       " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
       lua require'lspconfig'.tsserver.setup{}
+      " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
+      lua require'lspconfig'.pyright.setup{}
 
       " https://github.com/glepnir/dashboard-nvim#faq
       let g:indentLine_fileTypeExclude = ['dashboard']
@@ -255,5 +257,6 @@ in
     nodePackages.bash-language-server
     haskell-language-server
     nodePackages.typescript-language-server
+    pyright
   ];
 }
