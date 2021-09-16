@@ -153,7 +153,7 @@ in
       lua require('lspkind').init()
 
       " https://github.com/kyazdani42/nvim-tree.lua/issues/549
-      set shell=sh
+      set shell=bash
     '' + ''
       " https://github.com/hrsh7th/nvim-cmp#basic-configuration
       " https://github.com/hrsh7th/cmp-buffer#setup
