@@ -76,9 +76,6 @@ in
       pkgs.vimPlugins.nvim-cmp
       # https://github.com/hrsh7th/nvim-cmp/issues/206
       pkgs.vimPlugins.cmp-nvim-lsp
-      # https://github.com/hrsh7th/vim-vsnip/#1-install
-      pkgs.vimPlugins.vim-vsnip
-      pkgs.vimPlugins.vim-vsnip-integ
       pkgs.vimPlugins.cmp-buffer
       tzachar-cmp-tabnine
       pkgs.vimPlugins.nvim-lspconfig
@@ -180,11 +177,6 @@ in
         },
       }
       EOF
-    '' + ''
-      " https://github.com/hrsh7th/vim-vsnip/#2-setting
-      let g:vsnip_filetypes = {}
-      let g:vsnip_filetypes.javascriptreact = ['javascript']
-      let g:vsnip_filetypes.typescriptreact = ['typescript']
     '' + ''
       lua << EOF
       -- https://github.com/tzachar/cmp-tabnine#setup
