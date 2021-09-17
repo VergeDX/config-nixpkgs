@@ -26,7 +26,7 @@ in
     # (pkgs.hiPrio pkgs.msbuild)
     # pkgs.dotnetPackages.Nuget
 
-    pkgs.jetbrains.idea-ultimate
+    # pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.idea-community
     pkgs.jdk11
     pkgs.kotlin
