@@ -12,7 +12,7 @@
     pkgs.htop
     pkgs.bpytop
 
-    (pkgs.callPackage ../packages/cli/checkra1n.nix { })
+    pkgs.checkra1n
     pkgs.p7zip
     pkgs.slides
     pkgs.file
