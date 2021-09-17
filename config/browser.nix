@@ -2,8 +2,8 @@
 let
   adguard_adblocker = (pkgs.fetchFirefoxAddon rec {
     name = "adguard_adblocker";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3782305/${name}-3.6.6-an+fx.xpi";
-    sha256 = "sha256-/lPWlibJV747bf4Ctmtl4MegRp/p+Raahn97bHdT5Oo=";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3830793/${name}-3.6.13-an+fx.xpi";
+    sha256 = "sha256-4ygVYX/ndKyQehlXWP3seoaz4O7Ha+2FO5LIcdWYRNI=";
   });
   proxy_switchyomega = (pkgs.fetchFirefoxAddon rec {
     name = "proxy_switchyomega";
@@ -14,8 +14,6 @@ in
 {
   # https://github.com/NickCao/flakes/blob/master/nixos/local/configuration.nix#L246
   programs.chromium.enable = true;
-  # https://github.com/nix-community/home-manager/issues/2216
-  # programs.chromium.package = pkgs.ungoogled-chromium;
   programs.chromium.extensions = [
     # https://chrome.google.com/webstore/category/extensions
     "gighmmpiobklfepjocnamgkkbiglidom" # AdBlock
@@ -25,7 +23,6 @@ in
   programs.firefox.enable = true;
   programs.firefox.extensions = [
     adguard_adblocker
-    pkgs.nur.repos.rycee.firefox-addons.bitwarden
     proxy_switchyomega
   ];
 
