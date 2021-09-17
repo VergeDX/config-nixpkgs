@@ -108,6 +108,7 @@ rec {
 
   nixpkgs.config.allowUnfree = true;
   imports = [
+    ./config/fcitx5.nix
     ./config/git.nix
     ./config/shells.nix
     ./config/neovim.nix

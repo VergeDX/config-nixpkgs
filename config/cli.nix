@@ -12,6 +12,7 @@
     pkgs.htop
     pkgs.bpytop
 
+    (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
     pkgs.checkra1n
     pkgs.p7zip
     pkgs.slides
