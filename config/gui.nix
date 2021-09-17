@@ -4,7 +4,6 @@
     pkgs.gimp-with-plugins
     pkgs.remmina
     (pkgs.callPackage ../packages/gui/motrix.nix { })
-    pkgs.zoom-us
     pkgs.google-play-music-desktop-player
     pkgs.qbittorrent
     pkgs.obs-studio
