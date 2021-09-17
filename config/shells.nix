@@ -2,11 +2,11 @@
 {
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
-  # programs.starship.enable = true;
-  # programs.starship.settings = {
-  #   add_newline = false;
-  #   line_break = { disabled = true; };
-  # };
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    add_newline = false;
+    line_break = { disabled = true; };
+  };
 
   # https://github.com/nvbn/thefuck/wiki/Shell-aliases#fish
   programs.fish.shellInit = "thefuck --alias | source";
@@ -69,43 +69,7 @@
         sha256 = "sha256-3HHcaX2yVZXrRjOeSlI8tPhSjRR2tPU6AWq6eU5nPOs=";
       };
     }
-    {
-      name = "fish";
-      src = pkgs.fetchgit {
-        url = "https://github.com/silver-prompt/fish";
-        rev = "c1a31f16a2739998241e181c8f453999321b4c67";
-        sha256 = "sha256-hzCn760N4+NZDjtLj+0ZoO0IgV61yOzRAHvj2MQOqd4=";
-      };
-    }
   ];
-
-  # https://github.com/reujab/silver/tree/v2.0.0#configuration
-  home.file.".config/silver/silver.toml".text = ''
-    [[left]]
-    name = "dir"
-    color.background = "blue"
-    color.foreground = "black"
-
-    [[left]]
-    name = "git"
-    color.background = "green"
-    color.foreground = "black"
-
-    [[right]]
-    name = "status"
-    color.background = "white"
-    color.foreground = "black"
-
-    [[right]]
-    name = "cmdtime"
-    color.background = "magenta"
-    color.foreground = "black"
-
-    [[right]]
-    name = "shell"
-    color.background = "green"
-    color.foreground = "black"
-  '';
 
   programs.fish.functions = {
     nixos-update = {
