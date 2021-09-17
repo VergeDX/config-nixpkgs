@@ -31,6 +31,7 @@
     pkgs.yarn
     pkgs.yarn2nix
     pkgs.nodePackages.pxder
+
     pkgs.gh
     pkgs.speedtest-cli
 

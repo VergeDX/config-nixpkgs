@@ -2,7 +2,6 @@
 {
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
-
   home.packages = [
     pkgs.source-han-sans
     pkgs.source-han-mono

@@ -20,12 +20,6 @@ in
 
     pkgs.jetbrains-mono
 
-    # pkgs.jetbrains.rider
-    # pkgs.dotnet-sdk
-    # pkgs.mono
-    # (pkgs.hiPrio pkgs.msbuild)
-    # pkgs.dotnetPackages.Nuget
-
     # pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.idea-community
     pkgs.jdk11
@@ -33,7 +27,6 @@ in
 
     # pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
-    # pkgs.conda
 
     pkgs.jetbrains.clion
     pkgs.cmake
@@ -41,10 +34,8 @@ in
 
     pkgs.maven
     pkgs.gradle
-    pkgs.telnet
 
-    # pkgs.eclipses.eclipse-java
-    pkgs.eclipses.eclipse-platform
+    pkgs.telnet
   ];
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
