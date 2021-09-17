@@ -29,8 +29,8 @@ let
       # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
       publisher = "TabNine";
       name = "tabnine-vscode";
-      version = "3.4.26";
-      sha256 = "sha256-OEdc03X8EX9k2V8dO8gOOLpIaNrlituunRewZtcvlBI=";
+      version = "3.4.27";
+      sha256 = "sha256-Xg/N59a38OKEWb/4anysslensUoj9ENcuobkyByFDxE=";
     };
   });
   formulahendry.terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
