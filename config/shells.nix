@@ -9,11 +9,9 @@
   };
 
   # https://github.com/nvbn/thefuck/wiki/Shell-aliases#fish
-  programs.fish.shellInit = "thefuck --alias | source";
+  programs.fish.shellInit = "${pkgs.thefuck}/bin/thefuck --alias | source";
   programs.fish.shellAliases = { top = "bpytop"; };
   home.packages = [
-    pkgs.thefuck
-
     pkgs.powerline-go
     pkgs.powerline-rs
 
