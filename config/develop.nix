@@ -20,11 +20,11 @@ in
 
     pkgs.jetbrains-mono
 
-    pkgs.jetbrains.rider
-    pkgs.dotnet-sdk
-    pkgs.mono
-    (pkgs.hiPrio pkgs.msbuild)
-    pkgs.dotnetPackages.Nuget
+    # pkgs.jetbrains.rider
+    # pkgs.dotnet-sdk
+    # pkgs.mono
+    # (pkgs.hiPrio pkgs.msbuild)
+    # pkgs.dotnetPackages.Nuget
 
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.idea-community
