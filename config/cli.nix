@@ -22,7 +22,6 @@
     pkgs.tmux
     pkgs.idevicerestore
     pkgs.usbutils
-    (pkgs.callPackage ../packages/cli/xsp.nix { })
     pkgs.hub
     pkgs.du-dust
 
