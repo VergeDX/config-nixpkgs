@@ -1,13 +1,5 @@
 { home, pkgs, ... }:
 let
-  tobiasalthoff.atom-material-theme = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "tobiasalthoff";
-      name = "atom-material-theme";
-      version = "1.10.7";
-      sha256 = "sha256-t5CKrDEbDCuo28wN+hiWrvkt3C9vQAPfV/nd3QBGQ/s=";
-    };
-  });
   GitHub.copilot = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       publisher = "github";
