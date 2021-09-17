@@ -58,8 +58,8 @@ rec {
     pkgs.steam-run
     # pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
-    pkgs.minecraft
-    pkgs.multimc
+    # pkgs.minecraft
+    # pkgs.multimc
     pkgs.stellarium
 
     pkgs.vlc
