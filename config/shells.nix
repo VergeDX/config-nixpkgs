@@ -76,7 +76,7 @@
       body = ''
         nix-channel --update
         cd ~/.config/nixpkgs/
-        git reset && rm flake.lock && true
+        git reset && nix flake update
         unlink ~/.config/gtk-3.0/gtk.css && home-manager switch
         git reset && rm flake.lock && true
 
