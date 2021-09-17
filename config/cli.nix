@@ -25,8 +25,7 @@
     pkgs.hub
     pkgs.du-dust
 
-    pkgs.nodejs_latest
-    (pkgs.lowPrio pkgs.nodePackages.npm)
+    pkgs.nodejs_latest # pkgs.nodePackages.npm
     pkgs.nodePackages.npm-check-updates
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
