@@ -101,7 +101,6 @@ rec {
     pkgs.gnome.gnome-boxes
 
     pkgs.helvum
-    (pkgs.callPackage ./packages/gui/qtscrcpy.nix { })
 
     # pkgs.lutris
     # pkgs.playonlinux
