@@ -14,7 +14,6 @@
 
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
-    (pkgs.callPackage ../packages/gui/edex-ui.nix { })
 
     pkgs.libreoffice
     (pkgs.wpsoffice.overrideAttrs (old: {
