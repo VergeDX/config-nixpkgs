@@ -31,9 +31,9 @@ in
     pkgs.jdk11
     pkgs.kotlin
 
-    pkgs.jetbrains.pycharm-professional
+    # pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
-    pkgs.conda
+    # pkgs.conda
 
     pkgs.jetbrains.clion
     pkgs.cmake
