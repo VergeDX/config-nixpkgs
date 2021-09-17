@@ -30,8 +30,6 @@
       '';
     }))
 
-    # pkgs.googleearth
-    pkgs.googleearth-pro
     pkgs.wireshark
 
     # https://www.bilibili.com/video/BV17U4y1H7w1
@@ -63,8 +61,6 @@
     pkgs.mumble
     (pkgs.callPackage ../packages/gui/clapper.nix { })
   ];
-
-  nixpkgs.config.permittedInsecurePackages = [ "ffmpeg-3.4.8" "libav-12.3" ];
 
   # https://github.com/flightlessmango/MangoHud
   programs.mangohud.enable = true;
