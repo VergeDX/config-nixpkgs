@@ -204,6 +204,8 @@ in
       require'lspconfig'.tsserver.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
       require'lspconfig'.pyright.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#yamlls
+      require'lspconfig'.yamlls.setup{ capabilities = capabilities, }
       EOF
     '' + ''
       " https://github.com/glepnir/dashboard-nvim#faq
@@ -243,5 +245,6 @@ in
     haskell-language-server
     nodePackages.typescript-language-server
     pyright
+    nodePackages.yaml-language-server
   ];
 }
