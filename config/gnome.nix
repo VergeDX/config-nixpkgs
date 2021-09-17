@@ -29,9 +29,7 @@
     (pkgs.callPackage ../packages/gnome/dash-to-dock-gnome40.nix { })
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
-    (pkgs.gnomeExtensions.arcmenu.overrideAttrs (old: {
-      src = old.src.overrideAttrs (old: { outputHash = "sha256-HOxruic/8/R2NS51qZpPIEXdjuhG3J/ALXBVBHiq+iQ="; });
-    }))
+    pkgs.gnomeExtensions.arcmenu
     pkgs.gnomeExtensions.gsconnect
 
     # https://extensions.gnome.org/
