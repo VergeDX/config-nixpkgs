@@ -66,7 +66,6 @@ rec {
 
     pkgs.gnome.dconf-editor
     pkgs.amule
-    pkgs.gnome.polari
 
     discord-with-proxy
     pkgs.betterdiscord-installer
