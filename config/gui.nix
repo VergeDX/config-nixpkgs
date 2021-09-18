@@ -31,10 +31,10 @@
     pkgs.wireshark
 
     # https://www.bilibili.com/video/BV17U4y1H7w1
-    pkgs.retroarch
-    pkgs.dolphinEmu
-    pkgs.mame
-    pkgs.dosbox
+    # pkgs.retroarch
+    # pkgs.dolphinEmu
+    # pkgs.mame
+    # pkgs.dosbox
 
     pkgs.goverlay
     pkgs.okular
