@@ -1,4 +1,6 @@
 { home, pkgs, lib, ... }:
+let sf-pro = (pkgs.callPackage ../packages/resources/sf-pro.nix { });
+in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -57,6 +59,7 @@
   ];
 
   gtk.enable = true;
+  gtk.font = { package = sf-pro; name = "SF Pro Display Regular"; size = 11; };
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
   gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 }
