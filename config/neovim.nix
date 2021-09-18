@@ -167,6 +167,7 @@ in
               buffer = "[Buffer]",
               nvim_lsp = "[LSP]",
               cmp_tabnine = "[TN]",
+              path = "[Path]",
             })[entry.source.name]
             return vim_item
           end,
@@ -175,6 +176,7 @@ in
           { name = 'buffer' },
           { name = 'nvim_lsp' },
           { name = 'cmp_tabnine' },
+          { name = 'path' },
         },
       }
       EOF
