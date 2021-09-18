@@ -8,11 +8,6 @@
     pkgs.neofetch
     pkgs.lolcat
 
-    pkgs.guake
-    pkgs.terminator
-    pkgs.termite
-    pkgs.rxvt-unicode
-
     pkgs.libnotify
   ];
 
