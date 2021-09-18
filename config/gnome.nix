@@ -62,4 +62,8 @@ in
   gtk.font = { package = sf-pro; name = "SF Pro Display Regular"; size = 11; };
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
   gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
+
+  xsession.pointerCursor.package = pkgs.libsForQt5.breeze-icons;
+  xsession.pointerCursor.defaultCursor = "Breeze_cursors";
+  xsession.pointerCursor.name = "Breeze_cursors";
 }
