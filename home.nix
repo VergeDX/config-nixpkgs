@@ -65,7 +65,6 @@ rec {
     pkgs.vlc
 
     pkgs.gnome.dconf-editor
-    pkgs.libsForQt5.qtstyleplugin-kvantum
     pkgs.amule
     pkgs.gnome.polari
 
