@@ -50,9 +50,6 @@ in
     pkgs.gnome.nautilus
     pkgs.gnome.sushi
 
-    # Debug packages/cutefish/cutefish-statusbar.nix.
-    pkgs.gnomeExtensions.hide-top-bar
-
     pkgs.gnomeExtensions.sensory-perception
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
