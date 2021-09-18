@@ -57,7 +57,7 @@
     pkgs.spotify-qt
 
     pkgs.mumble
-    (pkgs.callPackage ../packages/gui/clapper.nix { })
+    # https://nixpk.gs/pr-tracker.html?pr=126080
   ];
 
   # https://github.com/flightlessmango/MangoHud
