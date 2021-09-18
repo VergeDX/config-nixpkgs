@@ -43,9 +43,6 @@
     pkgs.gnome-network-displays
     pkgs.miraclecast
 
-    pkgs.spotify
-    pkgs.spotify-qt
-
     pkgs.mumble
     # https://nixpk.gs/pr-tracker.html?pr=126080
   ];
