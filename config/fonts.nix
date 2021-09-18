@@ -14,6 +14,12 @@
     (pkgs.callPackage ../packages/fonts/sf-arabic-beta.nix { })
     (pkgs.callPackage ../packages/fonts/new-york.nix { })
 
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-extra
+    pkgs.noto-fonts-emoji
+    pkgs.noto-fonts-emoji-blob-bin
+
     pkgs.roboto
     pkgs.roboto-slab
     pkgs.roboto-mono
