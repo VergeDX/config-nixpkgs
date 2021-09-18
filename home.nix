@@ -72,7 +72,6 @@ rec {
     discord-with-proxy
     pkgs.betterdiscord-installer
     pkgs.betterdiscordctl
-    pkgs.emacs
     pkgs.nodePackages.http-server
     element-desktop-with-proxy
 
