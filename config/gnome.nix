@@ -53,6 +53,7 @@
 
     pkgs.gnomeExtensions.sensory-perception
     pkgs.gnomeExtensions.vitals
+    pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
   ];
 
   gtk.enable = true;
