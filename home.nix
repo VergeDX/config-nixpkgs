@@ -91,7 +91,6 @@ rec {
 
     pkgs.evcxr
     pkgs.scenebuilder
-    pkgs.eclipses.eclipse-platform
     pkgs.etcher
 
     pkgs.minecraft-server
