@@ -45,12 +45,14 @@
     pkgs.conky
     pkgs.gpick
 
-    pkgs.gnome.nautilus
     pkgs.gnome.sushi
 
     pkgs.gnomeExtensions.sensory-perception
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
+  ] ++ [
+    pkgs.gnome.nautilus
+    pkgs.gnome.gnome-disk-utility
   ];
 
   gtk.enable = true;
