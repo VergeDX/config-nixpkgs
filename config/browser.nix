@@ -1,6 +1,15 @@
 { programs, home, pkgs, ... }:
 {
   programs.chromium.enable = true;
+  # https://github.com/NickCao/flakes/blob/baaa99e3b32ca01069443aa0466c6aeefe3620a4/nixos/local/configuration.nix#L222
+  programs.chromium.package = (pkgs.chromium.override {
+    commandLineArgs = ''
+      --enable-gpu-rasterization \
+      --enable-zero-copy \
+      --enable-features=VaapiVideoDecoder
+    '';
+  });
+
   home.packages = [ pkgs.google-chrome ];
 
   # https://wiki.archlinux.org/title/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
