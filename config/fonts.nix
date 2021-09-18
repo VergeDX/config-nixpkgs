@@ -8,6 +8,12 @@
     pkgs.source-han-serif
     pkgs.source-han-code-jp
 
+    (pkgs.callPackage ../packages/fonts/sf-pro.nix { })
+    (pkgs.callPackage ../packages/fonts/sf-compact.nix { })
+    (pkgs.callPackage ../packages/fonts/sf-mono.nix { })
+    (pkgs.callPackage ../packages/fonts/sf-arabic-beta.nix { })
+    (pkgs.callPackage ../packages/fonts/new-york.nix { })
+
     pkgs.roboto
     pkgs.roboto-slab
     pkgs.roboto-mono
