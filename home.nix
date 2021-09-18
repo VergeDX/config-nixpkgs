@@ -94,7 +94,6 @@ rec {
     pkgs.minecraft-server
     pkgs.mkvtoolnix
     pkgs.testdisk
-    pkgs.gnome.gnome-boxes
 
     pkgs.helvum
 
