@@ -58,6 +58,10 @@
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
   gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 
+  qt.enable = true;
+  qt.platformTheme = "gnome";
+  qt.style = { package = pkgs.adwaita-qt; name = "adwaita"; };
+
   xsession.pointerCursor.package = pkgs.libsForQt5.breeze-icons;
   xsession.pointerCursor.defaultCursor = "Breeze_cursors";
   xsession.pointerCursor.name = "Breeze_cursors";
