@@ -1,6 +1,5 @@
 { ... }:
 {
-  # https://github.com/NixOS/nixpkgs/issues/135828
   hardware.deviceTree.overlays = [
     {
       # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
