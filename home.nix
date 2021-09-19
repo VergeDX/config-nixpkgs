@@ -91,8 +91,6 @@ rec {
     pkgs.scenebuilder
     pkgs.etcher
 
-    pkgs.minecraft-server
-    pkgs.mkvtoolnix
     pkgs.testdisk
 
     pkgs.helvum

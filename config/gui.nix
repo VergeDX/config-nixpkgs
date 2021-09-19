@@ -10,7 +10,6 @@
     pkgs.gnome3.baobab
 
     pkgs.virt-manager
-    pkgs.virt-manager-qt
 
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
@@ -27,10 +26,6 @@
     # pkgs.dosbox
 
     pkgs.goverlay
-    pkgs.okular
-    pkgs.zim
-    pkgs.kiwix
-    pkgs.zathura
 
     pkgs.yubioath-desktop
     pkgs.yubikey-manager
