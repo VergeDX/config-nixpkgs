@@ -46,11 +46,6 @@ rec {
     pkgs.appimage-run
     pkgs.texlive.combined.scheme-full
 
-    # https://nixos.wiki/wiki/Wine
-    pkgs.wineWowPackages.stable
-    pkgs.wineWowPackages.fonts
-    (pkgs.winetricks.override { wine = pkgs.wineWowPackages.stable; })
-
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
