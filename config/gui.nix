@@ -40,6 +40,9 @@
 
     pkgs.mumble
     # https://nixpk.gs/pr-tracker.html?pr=126080
+
+    # https://www.raspberrypi.org/documentation/computers/raspberry-pi.html#updating-the-bootloader
+    pkgs.rpi-imager
   ];
 
   # https://github.com/flightlessmango/MangoHud

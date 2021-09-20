@@ -1,12 +1,5 @@
 { home, pkgs, ... }:
-let home_dir = "/home/vanilla";
-in
 {
-  home.sessionVariables = {
-    PKG_CONFIG_PATH = "${home_dir}/.nix-profile/lib/pkgconfig:${home_dir}/.nix-profile/share/pkgconfig";
-    CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-  };
-
   home.packages = [
     pkgs.android-tools
     pkgs.android-studio
@@ -18,8 +11,6 @@ in
     pkgs.cmake
     pkgs.ninja
 
-    pkgs.jetbrains-mono
-
     # pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.idea-community
     pkgs.jdk11
@@ -28,7 +19,7 @@ in
     # pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
 
-    pkgs.jetbrains.clion
+    # pkgs.jetbrains.clion
     pkgs.cmake
     pkgs.gnumake
 
