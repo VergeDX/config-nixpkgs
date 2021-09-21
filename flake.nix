@@ -23,7 +23,7 @@
     let system = "x86_64-linux";
     in
     {
-      homeConfigurations."vanilla@nixos" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."vanilla@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
         inherit system;
 
         username = "vanilla";
