@@ -222,6 +222,8 @@ in
       lua require "lsp_signature".setup()
       " https://github.com/ray-x/lsp_signature.nvim/issues/1
       lua require'lsp_signature'.on_attach()
+      " https://github.com/sbdchd/neoformat#config-optional
+      let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
       " https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
       lua require('telescope').setup { extensions = { fzf = { fuzzy = true } } }
       lua require('telescope').load_extension('fzf')
@@ -248,5 +250,8 @@ in
     nodePackages.typescript-language-server
     pyright
     nodePackages.yaml-language-server
+
+    python39Packages.autopep8
+    python39Packages.yapf
   ];
 }
