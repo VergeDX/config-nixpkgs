@@ -15,4 +15,7 @@
   networking = { useDHCP = false; useNetworkd = true; };
   systemd.network.networks."wlan0".name = "wlan0";
   systemd.network.networks."wlan0" = { enable = true; DHCP = "yes"; };
+
+  # https://unix.stackexchange.com/questions/398690
+  systemd.services."wpa_supplicant".serviceConfig = { "Type" = "dbus"; };
 }
