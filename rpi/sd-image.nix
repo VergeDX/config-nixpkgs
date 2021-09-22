@@ -10,5 +10,6 @@
     ./patch/issuecomment-924816587.nix
 
     ./network.nix
+    ./nix.nix
   ];
 }
