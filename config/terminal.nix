@@ -6,6 +6,7 @@
 
     pkgs.screenfetch
     pkgs.neofetch
+    pkgs.disfetch
     pkgs.lolcat
 
     pkgs.libnotify
