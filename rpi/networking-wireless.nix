@@ -2,7 +2,10 @@
 {
   # https://nixos.wiki/wiki/Wpa_supplicant
   networking.wireless.enable = true;
-  networking.wireless.networks = { "@Ruijie-s02C6".psk = "Jxustnc001"; };
+  networking.wireless.networks = {
+    "@Ruijie-s02C6" = { psk = "Jxustnc001"; priority = 0; };
+    "Redmi K30" = { psk = "aaf0bc20ba13"; priority = 1; };
+  };
 
   # https://github.com/NixOS/nixpkgs/issues/101963#issuecomment-749443985
   networking.wireless.interfaces = [ "wlan0" ];
