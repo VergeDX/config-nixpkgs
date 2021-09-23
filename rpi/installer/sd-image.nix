@@ -7,7 +7,7 @@
     # https://github.com/NixOS/nixpkgs/issues/135828
     ./issuecomment-918359063.nix
 
-    ./wireless.nix
+    ./networking-wireless.nix
     ../nix.nix
   ];
 }
