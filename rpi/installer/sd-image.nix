@@ -5,11 +5,9 @@
     <nixpkgs/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix>
 
     # https://github.com/NixOS/nixpkgs/issues/135828
-    ./patch/issuecomment-918359063.nix
-    # https://github.com/NixOS/nixpkgs/issues/138900
-    # ./patch/issuecomment-924816587.nix
+    ./issuecomment-918359063.nix
 
-    ./network.nix
-    ./nix.nix
+    ./wireless.nix
+    ../nix.nix
   ];
 }
