@@ -11,5 +11,6 @@
     ./nix-binary-caches.nix
 
     ./users.nix
+    ./services-openssh.nix
   ];
 }
