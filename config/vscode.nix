@@ -13,10 +13,6 @@
     antfu.slidev
     mvllow.rose-pine
     tabnine.tabnine-vscode
-
-    # https://github.com/NixOS/nixpkgs/pull/138344#issuecomment-924041832
-    formulahendry.code-runner
-
     dotjoshjohnson.xml
   ] ++ [
     # https://www.youtube.com/watch?v=jQXtpwsWRas
