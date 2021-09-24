@@ -64,6 +64,10 @@
     pkgs.dmg2img
     # https://github.com/helix-editor/helix
     pkgs.helix
+
+    pkgs.dig
+    pkgs.raspberrypi-eeprom
+    pkgs.libraspberrypi
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
