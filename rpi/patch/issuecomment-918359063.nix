@@ -1,8 +1,8 @@
 { ... }:
 {
+  # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
   hardware.deviceTree.overlays = [
     {
-      # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
       name = "issuecomment-918359063";
       dtsText = ''
         // SPDX-License-Identifier: GPL-2.0
