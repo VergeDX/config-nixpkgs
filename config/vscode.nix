@@ -1,53 +1,10 @@
 { home, pkgs, ... }:
-let
-  GitHub.copilot = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "github";
-      name = "copilot";
-      version = "1.4.2678";
-      sha256 = "sha256-NryXLuMIZJngp2dBsGbNhBiblEthckw1Zk2vqMXIzFM=";
-    };
-  });
-  antfu.slidev = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "antfu";
-      name = "slidev";
-      version = "0.3.2";
-      sha256 = "sha256-vzmByEiKZIkd707Bs4RGQrMII5sghYlkQI6aAJOHFcY=";
-    };
-  });
-  mvllow.rose-pine = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "mvllow";
-      name = "rose-pine";
-      version = "1.3.6";
-      sha256 = "sha256-pKrwiA/ZArBfumT0VTauhINSDEbABWgBBzTZEE07wzk=";
-    };
-  });
-  TabNine.tabnine-vscode = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      # https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
-      publisher = "TabNine";
-      name = "tabnine-vscode";
-      version = "3.4.27";
-      sha256 = "sha256-Xg/N59a38OKEWb/4anysslensUoj9ENcuobkyByFDxE=";
-    };
-  });
-  formulahendry.terminal = (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      publisher = "formulahendry";
-      name = "terminal";
-      version = "0.0.10";
-      sha256 = "sha256-9hGkD/mWGhwH0ACA3nUD75/XCIi6A8DiDVagfHwPRz4=";
-    };
-  });
-in
 {
   programs.vscode.enable = true;
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     tobiasalthoff.atom-material-theme
     editorconfig.editorconfig
-    GitHub.copilot
+    github.copilot
     github.vscode-pull-request-github
     eamodio.gitlens
     ms-vsliveshare.vsliveshare
@@ -55,8 +12,11 @@ in
     jnoortheen.nix-ide
     antfu.slidev
     mvllow.rose-pine
-    TabNine.tabnine-vscode
-    formulahendry.terminal
+    tabnine.tabnine-vscode
+
+    # https://github.com/NixOS/nixpkgs/pull/138344#issuecomment-924041832
+    formulahendry.code-runner
+
     dotjoshjohnson.xml
   ] ++ [
     # https://www.youtube.com/watch?v=jQXtpwsWRas
