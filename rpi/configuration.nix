@@ -1,8 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
+    # https://github.com/NixOS/nixos-hardware#using-channels
+    <nixos-hardware/raspberry-pi/4>
+
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
     ./patch/issuecomment-918359063.nix
+    # https://github.com/NixOS/nixpkgs/issues/111683#issuecomment-771986512
+    ./patch/issuecomment-771986512.nix
 
     ./networking-wireless.nix
     ./nix-binary-caches.nix
@@ -18,7 +23,4 @@
       options = [ "noatime" ];
     };
   };
-
-  boot.loader.grub.enable = false;
-  boot.loader.systemd-boot.enable = true;
 }
