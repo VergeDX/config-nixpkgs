@@ -23,7 +23,7 @@ in
   # https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#L163
   # http://cms-sw.github.io/tutorial-proxy.html
   programs.git.extraConfig = {
-    http.proxy = "socks5://localhost:1089";
+    http.proxy = "socks5://127.0.0.1:7890";
     core.editor = "nvim";
   };
 
@@ -34,7 +34,7 @@ in
   programs.ssh.matchBlocks."git@github.com" = {
     host = "github.com";
     user = "git";
-    proxyCommand = "nc -X connect -x localhost:8889 %h %p";
+    proxyCommand = "nc -X connect -x localhost:7890 %h %p";
   };
 
   # https://superuser.com/questions/954509/what-are-the-correct-permissions-for-the-gnupg-enclosing-folder-gpg-warning

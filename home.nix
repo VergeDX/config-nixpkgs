@@ -10,7 +10,7 @@ let
         mkdir -p $out
         ${pkgs.xorg.lndir}/bin/lndir -silent ${package} $out
         wrapProgram $out/${binaryPath}/${binaryName} \
-          --add-flags '--proxy-server=http://127.0.0.1:8889'
+          --add-flags '--proxy-server=http://127.0.0.1:7890'
       '');
   discord-with-proxy = (wrapElectronWithProxy rec {
     package = pkgs.discord;
