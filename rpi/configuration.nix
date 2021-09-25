@@ -5,7 +5,7 @@
     <nixos-hardware/raspberry-pi/4>
 
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
-    ./patch/issuecomment-918359063.nix
+    ./hardware-deviceTree.nix
     # https://github.com/NixOS/nixpkgs/issues/111683#issuecomment-771986512
     ./patch/issuecomment-771986512.nix
 
