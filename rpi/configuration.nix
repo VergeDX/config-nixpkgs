@@ -15,6 +15,9 @@
     ./services-openssh.nix
   ];
 
+  boot.loader.generic-extlinux-compatible.enable = true;
+  boot.loader.generic-extlinux-compatible.configurationLimit = 3;
+
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   fileSystems = {
     "/" = {
