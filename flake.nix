@@ -37,6 +37,10 @@
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.clash-for-windows
             pkgs.nur.repos.linyinfeng.clash-premium
+            (pkgs.makeAutostartItem {
+              name = "clash-for-windows";
+              package = pkgs.nur.repos.linyinfeng.clash-for-windows;
+            })
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src

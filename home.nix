@@ -34,10 +34,6 @@ rec {
     pkgs.nixpkgs-fmt
     pkgs.update-nix-fetchgit
 
-    (pkgs.callPackage ./packages/gui/qv2ray.nix { })
-    (pkgs.makeAutostartItem { name = "qv2ray"; package = (pkgs.callPackage ./packages/gui/qv2ray.nix) { }; })
-    pkgs.v2ray
-
     pkgs.arion
     pkgs.apfs-fuse
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
