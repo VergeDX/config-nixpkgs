@@ -35,7 +35,6 @@
 
     pkgs.fontforge
     pkgs.fontforge-gtk
-    pkgs.gnome-network-displays
     pkgs.miraclecast
 
     pkgs.mumble
