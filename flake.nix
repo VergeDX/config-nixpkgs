@@ -34,9 +34,9 @@
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
           nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ];
-          home.packages = with nixos-cn.legacyPackages.${system}; [
-            netease-cloud-music
-            # (wine-wechat.override { scopedMount = false; })
+          home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
+            pkgs.nur.repos.linyinfeng.clash-for-windows
+            pkgs.nur.repos.linyinfeng.clash-premium
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src
