@@ -16,6 +16,6 @@
   systemd.network.networks."40-wlan0".networkConfig = { "MulticastDNS" = true; };
 
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
-  networking.hostName = "nixos-rpi";
+  networking.hostName = "NixOS-Raspi";
   networking.domain = "vanilla.local";
 }
