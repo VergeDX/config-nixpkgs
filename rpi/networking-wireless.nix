@@ -13,7 +13,6 @@
   # https://github.com/NickCao/flakes/blob/master/nixos/rpi/configuration.nix
   networking = { useDHCP = false; useNetworkd = true; };
   networking.interfaces."wlan0".useDHCP = true;
-  systemd.network.networks."40-wlan0".networkConfig = { "MulticastDNS" = true; };
 
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   networking.hostName = "NixOS-Raspi";

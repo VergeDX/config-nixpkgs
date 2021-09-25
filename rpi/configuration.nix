@@ -7,6 +7,8 @@
     <nixos-hardware/raspberry-pi/4>
 
     ./networking-wireless.nix
+    ./wiki-archlinux-mdns.nix
+
     ./nix-binary-caches.nix
     ./users-immutable.nix
     ./services-openssh.nix
