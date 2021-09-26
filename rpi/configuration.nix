@@ -3,10 +3,6 @@
   imports = [
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
     ./hardware-deviceTree.nix
-    # https://github.com/NixOS/nixos-hardware#using-channels
-    <nixos-hardware/raspberry-pi/4>
-    # https://nix-community.github.io/home-manager/
-    <home-manager/nixos>
 
     ./networking/wireless.nix
     ./networking/hostName-domain.nix
