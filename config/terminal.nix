@@ -70,4 +70,7 @@
     url = "https://raw.githubusercontent.com/rose-pine/kitty/main/rose-pine-dawn.conf";
     sha256 = "sha256-Y7lb3VKXDqbMhnzu1BRsm5RAY6MwM11i38EiTtdRH/s=";
   }}";
+
+  # https://github.com/kovidgoyal/kitty/issues/1613#issuecomment-492036864
+  home.sessionVariables = { TERM = "xterm"; };
 }
