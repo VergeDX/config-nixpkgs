@@ -8,7 +8,10 @@
     # https://nix-community.github.io/home-manager/
     <home-manager/nixos>
 
-    ./networking-wireless.nix
+    ./networking/wireless.nix
+    ./networking/hostName-domain.nix
+    ./networking/proxy.nix
+
     ./wiki-archlinux-mdns.nix
 
     ./nix-binary-caches.nix
