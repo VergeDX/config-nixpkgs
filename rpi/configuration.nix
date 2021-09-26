@@ -14,7 +14,9 @@
 
     ./wiki-archlinux-mdns.nix
 
-    ./nix-binary-caches.nix
+    ./nix/binary-caches.nix
+    ./nix/flakes.nix
+
     ./users-immutable.nix
 
     ./services/openssh.nix
