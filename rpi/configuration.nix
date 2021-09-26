@@ -5,6 +5,8 @@
     ./hardware-deviceTree.nix
     # https://github.com/NixOS/nixos-hardware#using-channels
     <nixos-hardware/raspberry-pi/4>
+    # https://nix-community.github.io/home-manager/
+    <home-manager/nixos>
 
     ./networking-wireless.nix
     ./wiki-archlinux-mdns.nix
