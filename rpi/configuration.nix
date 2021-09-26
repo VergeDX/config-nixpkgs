@@ -14,8 +14,8 @@
     ./nix-binary-caches.nix
     ./users-immutable.nix
 
-    ./services-openssh.nix
-    ./services-xserver.nix
+    ./services/openssh.nix
+    ./services/xserver.nix
   ];
 
   # https://github.com/NixOS/nixpkgs/issues/111683#issuecomment-771986512
