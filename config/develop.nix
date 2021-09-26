@@ -1,6 +1,8 @@
 { home, pkgs, ... }:
 {
   home.packages = [
+    pkgs.jetbrains.datagrip
+
     pkgs.android-tools
     pkgs.android-studio
     pkgs.apktool
@@ -11,15 +13,14 @@
     pkgs.cmake
     pkgs.ninja
 
-    # pkgs.jetbrains.idea-ultimate
-    pkgs.jetbrains.idea-community
+    pkgs.jetbrains.idea-ultimate
     pkgs.jdk11
     pkgs.kotlin
 
     # pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
 
-    # pkgs.jetbrains.clion
+    pkgs.jetbrains.clion
     pkgs.cmake
     pkgs.gnumake
 
