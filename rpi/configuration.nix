@@ -6,7 +6,7 @@
 
     ./networking/wireless.nix
     ./networking/hostName-domain.nix
-    ./networking/proxy.nix
+    # ./networking/proxy.nix
 
     ./wiki-archlinux-mdns.nix
 
