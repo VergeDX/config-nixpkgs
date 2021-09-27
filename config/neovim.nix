@@ -253,5 +253,8 @@ in
 
     python39Packages.autopep8
     python39Packages.yapf
+
+    python39Packages.pyaml
+    pkgs.nodePackages.prettier
   ];
 }
