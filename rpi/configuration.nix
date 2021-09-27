@@ -5,6 +5,7 @@
     ./hardware-deviceTree.nix
 
     ./networking/wireless.nix
+    ./networking/eth0.nix
     ./networking/hostName-domain.nix
     # ./networking/proxy.nix
 
