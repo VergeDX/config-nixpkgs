@@ -38,6 +38,9 @@
         profiles.system = {
           user = "${sshUser}";
           path = deploy-rs.lib."${rpi.arch}".activate.nixos nixosConfigurations."${rpi.hostName}";
+
+          # Copy the whole closure instead of letting the node substitute.
+          fastConnection = true;
         };
       };
     };
