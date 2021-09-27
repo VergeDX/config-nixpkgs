@@ -8,8 +8,6 @@
     ./networking/eth0.nix
     ./networking/hostName-domain.nix
 
-    ./wiki-archlinux-mdns.nix
-
     ./nix/binary-caches.nix
     ./nix/flakes.nix
 
@@ -17,6 +15,7 @@
 
     ./services/openssh.nix
     ./services/xserver.nix
+    ./services/avahi.nix
   ];
 
   # https://github.com/NixOS/nixpkgs/issues/111683#issuecomment-771986512
