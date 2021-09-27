@@ -14,9 +14,6 @@
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
 
-    pkgs.libreoffice
-    pkgs.wpsoffice
-
     pkgs.wireshark
 
     # https://www.bilibili.com/video/BV17U4y1H7w1
