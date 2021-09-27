@@ -55,6 +55,7 @@
     pkgs.gnome.file-roller
     # pkgs.gnome.gnome-terminal
     pkgs.gnome.eog
+    pkgs.gnome.gedit
   ];
 
   gtk.enable = true;
