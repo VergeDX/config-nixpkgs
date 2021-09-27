@@ -66,6 +66,7 @@
     pkgs.helix
 
     pkgs.dig
+    pkgs.nmap
     pkgs.raspberrypi-eeprom
     pkgs.libraspberrypi
   ];
