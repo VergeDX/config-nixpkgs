@@ -19,6 +19,7 @@
     ./services/avahi.nix
   ];
 
+  environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   fileSystems = {
     "/" = {
