@@ -24,12 +24,6 @@
 
     pkgs.goverlay
 
-    pkgs.yubioath-desktop
-    pkgs.yubikey-manager
-    pkgs.yubikey-manager-qt
-    pkgs.yubikey-personalization
-    pkgs.yubikey-personalization-gui
-
     pkgs.fontforge
     pkgs.fontforge-gtk
     pkgs.miraclecast
