@@ -42,6 +42,7 @@ in
   programs.gpg.enable = true;
   services.gpg-agent.enable = true;
   services.gpg-agent.pinentryFlavor = "curses";
+  services.gpg-agent.enableSshSupport = true;
 
   # https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key
   programs.git.signing.key = "3750028ED04FA42E";
