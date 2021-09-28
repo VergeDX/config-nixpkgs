@@ -1,4 +1,4 @@
-{ programs, pkgs, home, ... }:
+{ programs, pkgs, home, lib, ... }:
 let
   terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin rec {
     pname = "terrortylor-nvim-comment";
@@ -78,7 +78,9 @@ in
       # https://github.com/hrsh7th/nvim-cmp/issues/206
       pkgs.vimPlugins.cmp-nvim-lsp
       pkgs.vimPlugins.cmp-buffer
+    ] ++ lib.optionals (! pkgs.stdenv.isAarch64) [
       tzachar-cmp-tabnine
+    ] ++ [
       pkgs.vimPlugins.nvim-lspconfig
     ] ++ [
       # https://github.com/NvChad/NvChad/tree/v1.0
@@ -180,7 +182,7 @@ in
         },
       }
       EOF
-    '' + ''
+    '' + lib.optionalString (! pkgs.stdenv.isAarch64) ''
       lua << EOF
       -- https://github.com/tzachar/cmp-tabnine#setup
       local tabnine = require('cmp_tabnine.config')
