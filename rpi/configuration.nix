@@ -10,6 +10,7 @@
 
     ./nix/binary-caches.nix
     ./nix/flakes.nix
+    ./nix/gc-automatic.nix
 
     ./users-immutable.nix
     ./boot.nix
