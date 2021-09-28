@@ -2,6 +2,6 @@
 { pkgs, home, ... }:
 {
   imports = [
-    ../../config/neovim.nix
+    # ../../config/neovim.nix
   ];
 }
