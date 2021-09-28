@@ -43,6 +43,6 @@ in
   services.gpg-agent.pinentryFlavor = "curses";
 
   # https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key
-  programs.git.signing.key = "4DFA2BDD7305E739";
+  programs.git.signing.key = "3750028ED04FA42E";
   programs.git.signing.signByDefault = true;
 }
