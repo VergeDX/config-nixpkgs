@@ -200,10 +200,6 @@ in
 
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rnix
       require'lspconfig'.rnix.setup{ capabilities = capabilities, }
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
-      require'lspconfig'.bashls.setup{ capabilities = capabilities, }
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#hls
-      require'lspconfig'.hls.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
       require'lspconfig'.tsserver.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
@@ -248,7 +244,6 @@ in
   home.packages = with pkgs; [
     rnix-lsp
     nodePackages.bash-language-server
-    haskell-language-server
     nodePackages.typescript-language-server
     pyright
     nodePackages.yaml-language-server
