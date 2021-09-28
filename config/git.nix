@@ -7,7 +7,7 @@ in
   programs.git.lfs.enable = true;
 
   programs.git.userName = "Vanilla";
-  programs.git.userEmail = "neko@hydev.org";
+  programs.git.userEmail = "osu_Vanilla@126.com";
   # https://github.com/GitAlias/gitalias#install-with-typical-usage
   programs.git.includes = [{ path = "${gitalias}/${gitalias.fileName}"; }];
 
