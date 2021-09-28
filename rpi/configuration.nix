@@ -25,10 +25,6 @@
   boot.loader.generic-extlinux-compatible.enable = true;
   boot.loader.generic-extlinux-compatible.configurationLimit = 3;
 
-  # code-server --bind-addr 0.0.0.0:8080
-  environment.systemPackages = with pkgs; [ code-server ];
-  networking.firewall.allowedTCPPorts = [ 8080 ];
-
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   fileSystems = {
     "/" = {
