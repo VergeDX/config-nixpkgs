@@ -12,6 +12,8 @@
 
     # https://github.com/nix-community/NUR#flake-support
     nur.url = github:nix-community/NUR;
+    # https://github.com/ryantm/agenix#flakes
+    agenix.url = "github:ryantm/agenix";
 
     deploy-rs = {
       url = "github:serokell/deploy-rs";
@@ -19,7 +21,7 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs }:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs, agenix }:
     let system = "x86_64-linux";
     in
     {
@@ -44,7 +46,8 @@
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src
-          ] ++ [ pkgs.deploy-rs.deploy-rs ];
+          ] ++ [ pkgs.deploy-rs.deploy-rs ]
+            ++ [ agenix.defaultPackage.x86_64-linux ];
         };
       };
     };
