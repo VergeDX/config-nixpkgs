@@ -28,7 +28,7 @@
     pkgs.gradle
 
     pkgs.telnet
-  ];
+  ] ++ (with pkgs; [ influxdb2 telegraf ]);
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
