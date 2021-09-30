@@ -44,6 +44,12 @@ in
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.enableSshSupport = true;
 
+  # https://github.com/Yubico/yubico-piv-tool/issues/102#issuecomment-303239922
+  programs.fish.interactiveShellInit = ''
+    # https://unix.stackexchange.com/questions/109979/how-to-asynchronously-launch-external-program-from-cli-and-discard-its-output
+    gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1 &
+  '';
+
   # https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key
   programs.git.signing.key = "3750028ED04FA42E";
   programs.git.signing.signByDefault = true;
