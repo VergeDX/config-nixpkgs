@@ -6,9 +6,11 @@
   inputs.home-manager.url = "github:nix-community/home-manager";
   # https://github.com/serokell/deploy-rs
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
+  # https://github.com/ryantm/agenix#flakes
+  inputs.agenix.url = "github:ryantm/agenix";
 
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, agenix }:
     let rpi = {
       hostName = "NixOS-Raspi";
       arch = "aarch64-linux";
@@ -26,6 +28,7 @@
             home-manager.useUserPackages = true;
             home-manager.users."${rpi.user}" = import ./home-manager/home.nix;
           }
+          agenix.nixosModules.age
         ];
       };
 
