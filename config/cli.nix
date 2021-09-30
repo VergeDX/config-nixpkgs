@@ -69,6 +69,7 @@
     pkgs.nmap
     pkgs.raspberrypi-eeprom
     pkgs.libraspberrypi
+    pkgs.kalker
   ];
 
   # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
