@@ -24,6 +24,6 @@
         lib.mkForce "${pkgs.bash}/bin/bash ${script}";
 
       # https://unix.stackexchange.com/questions/39226/how-to-run-a-script-with-systemd-right-before-shutdown
-      "ExecStop" = "/run/current-system/sw/bin/rm ${dir}/telegraf.conf";
+      "ExecStop" = "/run/current-system/sw/bin/rm ${dir}/telegraf.conf && true";
     };
 }
