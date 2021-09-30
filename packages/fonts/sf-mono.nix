@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   name = "sf-mono";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg";
-    sha256 = "sha256-7AUY4xB5fS+cuSTBjj57ZhNZ9PtlPRrUMVdY6821/xE=";
+    sha256 = "sha256-dsQV6a7gUkCHzGoEIRPbazjxoZ8uKG+AeqKXVkYTcKk=";
   };
 
   buildInputs = [ p7zip ];

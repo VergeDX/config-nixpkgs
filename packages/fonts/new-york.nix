@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   name = "new-york";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/NY.dmg";
-    sha256 = "sha256-5Er6Aux1rGgApQ6RZEb4xaPtBC+jzYRq5YYMmbU387I=";
+    sha256 = "sha256-qW/yCo4UPxz/MT7AXtK40pCjuf9gEKsGIZMldMn3lAI=";
   };
 
   buildInputs = [ p7zip ];

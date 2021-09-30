@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   name = "sf-arabic-beta";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Arabic.dmg";
-    sha256 = "sha256-WyjSx+xVczdapeSsXEs8SKrYb0ilWa+W6Ei0SEIquxI=";
+    sha256 = "sha256-DI76Da0L+J56z7OHGTudo76PWEFUYuE1i5lxK/xiB6o=";
   };
 
   buildInputs = [ p7zip ];
