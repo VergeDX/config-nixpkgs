@@ -19,4 +19,6 @@
       "tls-cert" = "${CREDENTIALS_DIRECTORY}/crt";
       "tls-key" = "${CREDENTIALS_DIRECTORY}/key";
     };
+
+  networking.firewall.allowedTCPPorts = [ 8086 ];
 }
