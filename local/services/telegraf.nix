@@ -11,7 +11,7 @@
       "ExecStart" =
         let script = pkgs.writeText "isv.sh" ''
           # https://docs.influxdata.com/influxdb/v1.8/administration/https_setup/#connect-telegraf-to-a-secured-influxdb-instance
-          mkdir -p ${dir}/ && rm ${dir}/telegraf.conf && true
+          rm -r ${dir}/ && true && mkdir -p ${dir}/
 
           # https://stackoverflow.com/questions/65768636/influxdb-reports-unauthorized-access-with-the-generated-token
           ${pkgs.curl}/bin/curl $config -k --header "Authorization: Token $INFLUX_TOKEN" > ${dir}/telegraf.conf && chmod o-r ${dir}/telegraf.conf
@@ -24,6 +24,6 @@
         lib.mkForce "${pkgs.bash}/bin/bash ${script}";
 
       # https://unix.stackexchange.com/questions/39226/how-to-run-a-script-with-systemd-right-before-shutdown
-      "ExecStop" = "/run/current-system/sw/bin/rm ${dir}/telegraf.conf && true";
+      "ExecStop" = "/run/current-system/sw/bin/rm -r ${dir}/ && true";
     };
 }
