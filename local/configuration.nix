@@ -9,9 +9,7 @@
 
       ./services/services.nix
       ./services/openssh-fail2ban.nix
-      ./services/influxdb2.nix
-      ./services/telegraf.nix
-      ./services/nginx.nix
+      # ./services/telegraf.nix
 
       ./virtualisation.nix
       ./programs.nix
@@ -26,22 +24,6 @@
   age.secrets = {
     "telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
     "telegraf/config.env".file = ./secrets/telegraf/config-env.age;
-
-    "influxdb2/influxdb-selfsigned.crt".file =
-      ./secrets/influxdb2/influxdb-selfsigned-crt.age;
-    "influxdb2/influxdb-selfsigned.key".file =
-      ./secrets/influxdb2/influxdb-selfsigned-key.age;
-
-    "nginx/nginx-selfsigned.crt" = {
-      owner = "nginx";
-      group = "nginx";
-      file = ./secrets/nginx/nginx-selfsigned-crt.age;
-    };
-    "nginx/nginx-selfsigned.key" = {
-      owner = "nginx";
-      group = "nginx";
-      file = ./secrets/nginx/nginx-selfsigned-key.age;
-    };
   };
 
   # Set your time zone.
