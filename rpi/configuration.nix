@@ -24,10 +24,19 @@
   ];
 
   age.secrets = {
-    "influxdb2/influxdb-selfsigned.crt".file = ./secrets/influxdb2/influxdb-selfsigned-crt.age;
-    "influxdb2/influxdb-selfsigned.key".file = ./secrets/influxdb2/influxdb-selfsigned-key.age;
-    "nginx/nginx-selfsigned.key" = { owner = "nginx"; file = ./secrets/nginx/nginx-selfsigned-key.age; };
-    "nginx/nginx-selfsigned.crt" = { owner = "nginx"; file = ./secrets/nginx/nginx-selfsigned-crt.age; };
+    "influxdb2/influxdb-selfsigned.crt".file =
+      ./secrets/influxdb2/influxdb-selfsigned-crt.age;
+    "influxdb2/influxdb-selfsigned.key".file =
+      ./secrets/influxdb2/influxdb-selfsigned-key.age;
+
+    "nginx/nginx-selfsigned.key" = {
+      owner = "nginx";
+      file = ./secrets/nginx/nginx-selfsigned-key.age;
+    };
+    "nginx/nginx-selfsigned.crt" = {
+      owner = "nginx";
+      file = ./secrets/nginx/nginx-selfsigned-crt.age;
+    };
   };
 
   environment.systemPackages = with pkgs; [ git ];
