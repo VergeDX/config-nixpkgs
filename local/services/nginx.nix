@@ -5,6 +5,7 @@
   services.nginx.recommendedProxySettings = true;
   services.nginx.recommendedTlsSettings = true;
 
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.nginx.virtualHosts."NixOS-Laptop.local" = {
     forceSSL = true;
     sslCertificate = "/run/secrets/nginx/nginx-selfsigned.crt";
