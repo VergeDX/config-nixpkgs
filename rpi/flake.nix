@@ -9,9 +9,10 @@
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
   # https://github.com/ryantm/agenix#flakes
   inputs.agenix.url = "github:ryantm/agenix";
+  inputs.nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, agenix }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, agenix, nixos-unstable }:
     let rpi = {
       hostName = "NixOS-Raspi";
       arch = "aarch64-linux";
@@ -34,6 +35,8 @@
             home-manager.users."${rpi.user}" = import ./home-manager/home.nix;
           }
           agenix.nixosModules.age
+          # https://nixos.org/manual/nixos/stable/#sec-replace-modules
+          "${nixos-unstable}/nixos/modules/services/databases/influxdb2.nix"
         ];
       };
 
