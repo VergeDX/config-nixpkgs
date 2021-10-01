@@ -21,8 +21,6 @@
     ./services/avahi.nix
     ./services/influxdb2.nix
     ./services/nginx.nix
-
-    # ../local/services/telegraf.nix
   ];
 
   age.secrets = {
