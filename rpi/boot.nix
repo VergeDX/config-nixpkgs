@@ -5,5 +5,5 @@
   boot.kernelPackages = pkgs.linuxPackages;
 
   boot.loader.generic-extlinux-compatible.enable = true;
-  boot.loader.generic-extlinux-compatible.configurationLimit = 3;
+  boot.loader.generic-extlinux-compatible.configurationLimit = 7;
 }
