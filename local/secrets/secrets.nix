@@ -10,4 +10,7 @@ in
 
   "influxdb2/influxdb-selfsigned-crt.age".publicKeys = all;
   "influxdb2/influxdb-selfsigned-key.age".publicKeys = all;
+
+  "nginx/nginx-selfsigned-key.age".publicKeys = all;
+  "nginx/nginx-selfsigned-crt.age".publicKeys = all;
 }
