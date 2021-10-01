@@ -6,12 +6,12 @@
     /run/secrets/telegraf/config.env
   ];
 
-  systemd.services."telegraf".serviceConfig = let dir = "/tmp/telegraf/"; in
+  systemd.services."telegraf".serviceConfig = let dir = "/tmp/telegraf"; in
     {
       "ExecStart" =
         let script = pkgs.writeText "isv.sh" ''
           # https://docs.influxdata.com/influxdb/v1.8/administration/https_setup/#connect-telegraf-to-a-secured-influxdb-instance
-          mkdir -p ${dir} && rm ${dir}/telegraf.conf && true
+          mkdir -p ${dir}/ && rm ${dir}/telegraf.conf && true
 
           # https://stackoverflow.com/questions/65768636/influxdb-reports-unauthorized-access-with-the-generated-token
           ${pkgs.curl}/bin/curl $config -k --header "Authorization: Token $INFLUX_TOKEN" > ${dir}/telegraf.conf && chmod o-r ${dir}/telegraf.conf
