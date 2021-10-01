@@ -6,8 +6,10 @@
   services.nginx.recommendedTlsSettings = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-  services.nginx.virtualHosts."NixOS-Laptop.local" = {
+  services.nginx.virtualHosts."NixOS-Raspi.local" = {
     forceSSL = true;
+
+    # https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04
     sslCertificate = "/run/secrets/nginx/nginx-selfsigned.crt";
     sslCertificateKey = "/run/secrets/nginx/nginx-selfsigned.key";
 

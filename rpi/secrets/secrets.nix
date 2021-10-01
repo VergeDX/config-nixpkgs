@@ -9,4 +9,6 @@ in
 {
   "influxdb2/influxdb-selfsigned-crt.age".publicKeys = all_users;
   "influxdb2/influxdb-selfsigned-key.age".publicKeys = all_users;
+  "nginx/nginx-selfsigned-key.age".publicKeys = all_users;
+  "nginx/nginx-selfsigned-crt.age".publicKeys = all_users;
 }
