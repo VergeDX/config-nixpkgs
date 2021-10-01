@@ -19,11 +19,14 @@
     ./services/openssh.nix
     ./services/xserver.nix
     ./services/avahi.nix
-    # ./services/influxdb2.nix
+    ./services/influxdb2.nix
     # ./services/nginx.nix
   ];
 
-  age.secrets = { };
+  age.secrets = {
+    "influxdb2/influxdb-selfsigned.crt".file = ./secrets/influxdb2/influxdb-selfsigned-crt.age;
+    "influxdb2/influxdb-selfsigned.key".file = ./secrets/influxdb2/influxdb-selfsigned-key.age;
+  };
 
   environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
