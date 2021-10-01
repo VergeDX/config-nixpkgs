@@ -39,11 +39,7 @@
     };
   };
 
-  # https://nixos.wiki/wiki/GNOME
-  programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ git ]
-    ++ [ pkgs.gnome3.adwaita-icon-theme pkgs.epiphany ];
-
+  environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   fileSystems = {
     "/" = {
