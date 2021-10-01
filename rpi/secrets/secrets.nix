@@ -6,7 +6,4 @@ let
   raspi = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHMpE4EHEYbzMiyiOvfXG4FBgyz5AhLW46WsRDEl90Rv osu_Vanilla@126.com";
   all = [ vanilla-laptop laptop vanilla-raspi raspi ];
 in
-{
-  "telegraf/INFLUX_TOKEN-env.age".publicKeys = all;
-  "telegraf/config-env.age".publicKeys = all;
-}
+{ }

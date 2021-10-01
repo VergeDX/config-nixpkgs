@@ -23,10 +23,7 @@
     # ./services/nginx.nix
   ];
 
-  age.secrets = {
-    "telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
-    "telegraf/config.env".file = ./secrets/telegraf/config-env.age;
-  };
+  age.secrets = { };
 
   environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
