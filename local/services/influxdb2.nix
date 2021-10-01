@@ -1,4 +1,5 @@
 { ... }:
+let CREDENTIALS_DIRECTORY = "/run/credentials/influxdb2.service"; in
 {
   services.influxdb2.enable = true;
 
@@ -12,13 +13,8 @@
   };
 
   # https://docs.influxdata.com/influxdb/v2.0/security/enable-tls/
-  services.influxdb2.settings =
-    let CREDENTIALS_DIRECTORY = "/run/credentials/influxdb2.service";
-    in
-    {
-      "tls-cert" = "${CREDENTIALS_DIRECTORY}/crt";
-      "tls-key" = "${CREDENTIALS_DIRECTORY}/key";
-    };
-
-  networking.firewall.allowedTCPPorts = [ 8086 ];
+  services.influxdb2.settings = {
+    "tls-cert" = "${CREDENTIALS_DIRECTORY}/crt";
+    "tls-key" = "${CREDENTIALS_DIRECTORY}/key";
+  };
 }
