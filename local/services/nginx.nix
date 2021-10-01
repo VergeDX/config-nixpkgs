@@ -12,5 +12,7 @@
     sslCertificateKey = "/run/secrets/nginx/nginx-selfsigned.key";
 
     locations."/".proxyPass = "https://127.0.0.1:8086";
+    # https://nginx.org/en/docs/http/ngx_http_stub_status_module.html
+    locations."/basic_status".extraConfig = "stub_status;";
   };
 }
