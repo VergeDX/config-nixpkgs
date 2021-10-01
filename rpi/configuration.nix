@@ -1,5 +1,6 @@
 { pkgs, lib, ... }:
 {
+  sdImage.compressImage = false;
   imports = [
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
     ./hardware-deviceTree.nix

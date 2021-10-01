@@ -18,9 +18,13 @@
       user = "vanilla";
     }; in
     rec {
+      # nix build .#nixosConfigurations.NixOS-Raspi.config.system.build.sdImage -vL
       nixosConfigurations."${rpi.hostName}" = nixpkgs.lib.nixosSystem {
         system = "${rpi.arch}";
         modules = [
+          # https://nixos.wiki/wiki/NixOS_on_ARM#Build_your_own_image
+          "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+
           ./configuration.nix
           nixos-hardware.nixosModules.raspberry-pi-4
           home-manager.nixosModules.home-manager
