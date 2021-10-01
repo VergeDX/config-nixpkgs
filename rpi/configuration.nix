@@ -19,8 +19,8 @@
     ./services/openssh.nix
     ./services/xserver.nix
     ./services/avahi.nix
-    ./services/influxdb2.nix
-    ./services/nginx.nix
+    # ./services/influxdb2.nix
+    # ./services/nginx.nix
   ];
 
   age.secrets = {
