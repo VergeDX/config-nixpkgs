@@ -17,7 +17,7 @@
     pkgs.jdk11
     pkgs.kotlin
 
-    # pkgs.jetbrains.pycharm-professional
+    pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
 
     pkgs.jetbrains.clion
@@ -28,7 +28,7 @@
     pkgs.gradle
 
     pkgs.telnet
-  ] ++ (with pkgs; [ influxdb2 telegraf ]);
+  ] ++ (with pkgs; [ influxdb2 telegraf dasel ]);
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
