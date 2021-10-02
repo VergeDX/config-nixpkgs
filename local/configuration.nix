@@ -9,6 +9,7 @@
 
       ./services/services.nix
       ./services/openssh-fail2ban.nix
+      ../common/telegraf.nix
 
       ./virtualisation.nix
       ./programs.nix

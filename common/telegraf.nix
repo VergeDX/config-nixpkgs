@@ -6,24 +6,50 @@
     /run/secrets/telegraf/config.env
   ];
 
-  systemd.services."telegraf".serviceConfig = let dir = "/tmp/telegraf"; in
+  systemd.services."telegraf".serviceConfig =
+    let
+      cfg_dir = "/tmp/telegraf";
+      cfg_file = "${cfg_dir}/telegraf.conf";
+
+      # https://nixos.wiki/wiki/Python
+      my-python-packages = python-packages: with python-packages; [ toml ];
+      python-with-my-packages = pkgs.python3.withPackages my-python-packages;
+
+      toml_parse = pkgs.writeText "isv.py" ''
+        #! /usr/bin/env python3
+        import toml
+
+        with open('${cfg_file}.old', 'r') as f:
+            # https://github.com/uiri/toml#quick-tutorial
+            parsed_toml = toml.loads(f.read())
+
+            ISV = 'insecure_skip_verify'
+            # https://docs.influxdata.com/influxdb/v2.0/security/enable-tls/
+            parsed_toml['outputs']['influxdb_v2'][0][ISV] = True
+            # https://github.com/influxdata/telegraf/pull/2883/files
+            if parsed_toml.get('inputs').get('nginx') is not None:
+                parsed_toml['inputs']['nginx'][0][ISV] = True
+
+            new_toml_string = toml.dumps(parsed_toml)
+            print(new_toml_string)
+      '';
+    in
     {
       "ExecStart" =
         let script = pkgs.writeText "isv.sh" ''
-          # https://docs.influxdata.com/influxdb/v1.8/administration/https_setup/#connect-telegraf-to-a-secured-influxdb-instance
-          rm -r ${dir}/ && true && mkdir -p ${dir}/
-
-          # https://stackoverflow.com/questions/65768636/influxdb-reports-unauthorized-access-with-the-generated-token
-          ${pkgs.curl}/bin/curl $config -k --header "Authorization: Token $INFLUX_TOKEN" > ${dir}/telegraf.conf && chmod o-r ${dir}/telegraf.conf
-
-          # https://stackoverflow.com/questions/6537490/insert-a-line-at-specific-line-number-with-sed-or-awk/6537587
-          ${pkgs.gnused}/bin/sed -i '65i  insecure_skip_verify = true' ${dir}/telegraf.conf
-          ${config.services.telegraf.package}/bin/telegraf --config ${dir}/telegraf.conf
+          #! /usr/bin/env bash
+          rm -r ${cfg_dir}/ || true && mkdir -p ${cfg_dir}/
+          ${pkgs.curl}/bin/curl $config -k \
+              --header "Authorization: Token $INFLUX_TOKEN" \
+              > ${cfg_file}.old && chmod o-r ${cfg_file}.old
+          ${python-with-my-packages}/bin/python3 ${toml_parse} > ${cfg_file}
+          rm ${cfg_file}.old && chmod o-r ${cfg_file}
+          ${config.services.telegraf.package}/bin/telegraf --config ${cfg_file}
         '';
         in
         lib.mkForce "${pkgs.bash}/bin/bash ${script}";
 
       # https://unix.stackexchange.com/questions/39226/how-to-run-a-script-with-systemd-right-before-shutdown
-      "ExecStop" = "/run/current-system/sw/bin/rm -r ${dir}/ && true";
+      "ExecStop" = "${pkgs.coreutils}/bin/rm -r ${cfg_dir}/ || true";
     };
 }
