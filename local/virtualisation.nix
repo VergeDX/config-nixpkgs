@@ -4,8 +4,13 @@ in
 {
   # https://nixos.wiki/wiki/Podman
   virtualisation.podman.enable = true;
-  virtualisation.podman.dockerCompat = true;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
+  # https://docs.hercules-ci.com/arion/#_nixos
+  environment.systemPackages = with pkgs; [ arion docker-client ];
+  virtualisation.podman.dockerSocket.enable = true;
+  virtualisation.podman.defaultNetwork.dnsname.enable = true;
+  users.extraUsers."vanilla".extraGroups = [ "podman" ];
 
   # https://nixos.wiki/wiki/Virt-manager
   boot.kernelModules = [ "kvm-intel" ];
