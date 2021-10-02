@@ -1,4 +1,22 @@
 { home, pkgs, ... }:
+let
+  formulahendry.terminal = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "formulahendry";
+      name = "terminal";
+      version = "0.0.10";
+      sha256 = "sha256-9hGkD/mWGhwH0ACA3nUD75/XCIi6A8DiDVagfHwPRz4=";
+    };
+  };
+  influxdata.flux = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "influxdata";
+      name = "flux";
+      version = "0.6.5";
+      sha256 = "sha256-rKkZ7Sg8buryFtbIuKsrf3V3Rf7PP8hnbEIRFf4FvSM=";
+    };
+  };
+in
 {
   programs.vscode.enable = true;
   programs.vscode.extensions = with pkgs.vscode-extensions; [
@@ -19,7 +37,7 @@
     streetsidesoftware.code-spell-checker
     esbenp.prettier-vscode
     coenraads.bracket-pair-colorizer-2
-  ];
+  ] ++ [ formulahendry.terminal influxdata.flux ];
 
   programs.vscode.userSettings = {
     # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
