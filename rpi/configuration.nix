@@ -21,6 +21,7 @@
     ./services/avahi.nix
     ./services/influxdb2.nix
     ./services/nginx.nix
+    ../common/telegraf.nix
   ];
 
   age.secrets = {
@@ -37,6 +38,9 @@
       owner = "nginx";
       file = ./secrets/nginx/nginx-selfsigned-crt.age;
     };
+
+    "telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
+    "telegraf/config.env".file = ./secrets/telegraf/config-env.age;
   };
 
   environment.systemPackages = with pkgs; [ git ];

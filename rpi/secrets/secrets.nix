@@ -11,4 +11,6 @@ in
   "influxdb2/influxdb-selfsigned-key.age".publicKeys = all_users;
   "nginx/nginx-selfsigned-key.age".publicKeys = all_users;
   "nginx/nginx-selfsigned-crt.age".publicKeys = all_users;
+  "telegraf/INFLUX_TOKEN-env.age".publicKeys = all_users;
+  "telegraf/config-env.age".publicKeys = all_users;
 }
