@@ -31,8 +31,8 @@
       name = "done";
       src = pkgs.fetchgit {
         url = "https://github.com/franciscolourenco/done";
-        rev = "1.16.3";
-        sha256 = "sha256-Xld66z9vVp3kxikndZ9k/zlNvP0YSoSCNTBkJ8rT3uo=";
+        rev = "1.16.5";
+        sha256 = "sha256-E0wveeDw1VzEH2kzn63q9hy1xkccfxQHBV2gVpu2IdQ=";
       };
     }
     {
