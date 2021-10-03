@@ -53,7 +53,7 @@
     pkgs.gnome.sushi
     pkgs.gnome.gnome-disk-utility
     pkgs.gnome.file-roller
-  ] ++ [ pkgs.gnome.gnome-screenshot ];
+  ] ++ [ pkgs.gnome.gnome-screenshot ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display Regular"; size = 11; };
@@ -67,4 +67,9 @@
   xsession.pointerCursor.package = pkgs.libsForQt5.breeze-icons;
   xsession.pointerCursor.defaultCursor = "Breeze_cursors";
   xsession.pointerCursor.name = "Breeze_cursors";
+
+  xdg = { enable = true; mime.enable = true; mimeApps.enable = true; };
+  xdg.mimeApps.defaultApplications = {
+    "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+  };
 }
