@@ -42,7 +42,7 @@
 
       deploy.nodes."${rpi.hostName}" = rec {
         # https://github.com/NickCao/flakes/blob/d874d24e5718e34141647e1048cb489afa50808b/flake.nix#L109
-        hostname = "${rpi.hostName}.local";
+        hostname = "192.168.110.71";
         # https://github.com/serokell/deploy-rs/issues/25#issuecomment-740067529
         sshUser = "root";
 

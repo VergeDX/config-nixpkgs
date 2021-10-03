@@ -19,7 +19,6 @@
 
     ./services/openssh.nix
     ./services/xserver.nix
-    ./services/avahi.nix
     ./services/influxdb2.nix
     ./services/nginx.nix
     ../common/telegraf.nix
