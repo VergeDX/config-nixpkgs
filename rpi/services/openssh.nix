@@ -11,6 +11,6 @@ in
     "root".openssh.authorizedKeys.keys = keys;
   };
 
-  services.fail2ban.enable = true;
+  services.fail2ban = { enable = true; ignoreIP = [ "192.168.110.182" ]; };
   services.fail2ban.bantime-increment.enable = true;
 }
