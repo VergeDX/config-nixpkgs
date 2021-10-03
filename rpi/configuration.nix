@@ -24,6 +24,13 @@
     ../common/telegraf.nix
   ];
 
+  # https://stackoverflow.com/questions/21830670
+  systemd.services."telegraf".after = [ "influxdb2.service" ];
+  # https://stackoverflow.com/questions/43001223
+  # https://www.freedesktop.org/software/systemd/man/systemd.service.html#ExecStartPre=
+  systemd.services."telegraf".serviceConfig."ExecStartPre" =
+    [ "${pkgs.coreutils}/bin/sleep 30" ];
+
   age.secrets = {
     "influxdb2/influxdb-selfsigned.crt".file =
       ./secrets/influxdb2/influxdb-selfsigned-crt.age;
