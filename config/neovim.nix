@@ -254,7 +254,7 @@ in
     python39Packages.pyaml
     pkgs.nodePackages.prettier
 
-    pkgs.stylish-haskell
+    (pkgs.hiPrio pkgs.stylish-haskell)
     pkgs.haskellPackages.hindent
   ];
 }

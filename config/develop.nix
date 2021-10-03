@@ -14,8 +14,15 @@
     pkgs.ninja
 
     pkgs.jetbrains.idea-ultimate
-    pkgs.jdk11
+    pkgs.jdk11 # pkgs.jetbrains.jdk
     pkgs.kotlin
+
+    pkgs.stack
+    pkgs.ghc
+    pkgs.haskellPackages.hlint
+    pkgs.haskellPackages.hoogle
+    pkgs.haskellPackages.ormolu
+    pkgs.haskellPackages.stylish-haskell
 
     pkgs.jetbrains.pycharm-professional
     pkgs.python3Full
