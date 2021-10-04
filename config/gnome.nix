@@ -53,7 +53,10 @@
     pkgs.gnome.sushi
     pkgs.gnome.gnome-disk-utility
     pkgs.gnome.file-roller
-  ] ++ [ pkgs.gnome.gnome-screenshot ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
+  ] ++ [
+    pkgs.gnome.gnome-screenshot
+    pkgs.gnome.gnome-system-monitor
+  ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display Regular"; size = 11; };
