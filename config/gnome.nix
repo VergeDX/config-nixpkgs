@@ -71,5 +71,6 @@
   xdg = { enable = true; mime.enable = true; mimeApps.enable = true; };
   xdg.mimeApps.defaultApplications = {
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+    "text/plain" = [ "org.gnome.gedit.desktop" ];
   };
 }
