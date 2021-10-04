@@ -16,6 +16,14 @@ let
       sha256 = "sha256-rKkZ7Sg8buryFtbIuKsrf3V3Rf7PP8hnbEIRFf4FvSM=";
     };
   };
+  takayama.vscode-qq = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "takayama";
+      name = "vscode-qq";
+      version = "1.4.0";
+      sha256 = "sha256-DYjNWSKOrDYvdiV7G24uKz6w4ggeYUMkQIiOGZAbMSI=";
+    };
+  };
 in
 {
   programs.vscode.enable = true;
@@ -37,7 +45,8 @@ in
     streetsidesoftware.code-spell-checker
     esbenp.prettier-vscode
     coenraads.bracket-pair-colorizer-2
-  ] ++ [ formulahendry.terminal influxdata.flux ];
+  ] ++ [ formulahendry.terminal influxdata.flux ]
+  ++ [ takayama.vscode-qq ];
 
   programs.vscode.userSettings = {
     # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
