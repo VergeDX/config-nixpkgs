@@ -37,6 +37,18 @@
           agenix.nixosModules.age
           # https://nixos.org/manual/nixos/stable/#sec-replace-modules
           "${nixos-unstable}/nixos/modules/services/databases/influxdb2.nix"
+
+          # https://github.com/NixOS/nixpkgs/pull/139865
+          # https://nixos.wiki/wiki/Overlays#In_NixOS
+          {
+            nixpkgs.overlays = [
+              (self: super: {
+                ubootRaspberryPi4_64bit = super.callPackage
+                  ./hardware/uboot.nix
+                  { pkgs = import nixpkgs { system = "${rpi.arch}"; }; };
+              })
+            ];
+          }
         ];
       };
 
