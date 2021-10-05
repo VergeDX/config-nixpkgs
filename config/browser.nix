@@ -6,7 +6,7 @@
     commandLineArgs = ''
       --enable-gpu-rasterization \
       --enable-zero-copy \
-      --enable-features=VaapiVideoDecoder
+      --enable-features=VaapiVideoDecoder \
     '';
   });
 
