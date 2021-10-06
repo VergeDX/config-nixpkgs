@@ -8,6 +8,7 @@
       ./xserver.nix
 
       ./services/services.nix
+      ./services/xrdp.nix
       ./services/openssh.nix
       ./services/fail2ban.nix
       ../common/telegraf.nix
