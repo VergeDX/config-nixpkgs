@@ -85,9 +85,7 @@ rec {
     pkgs.testdisk
 
     pkgs.helvum
-
-    # pkgs.lutris
-    # pkgs.playonlinux
+    pkgs.osu-lazer
   ];
 
   nixpkgs.config.allowUnfree = true;
