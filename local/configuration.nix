@@ -8,7 +8,8 @@
       ./xserver.nix
 
       ./services/services.nix
-      ./services/openssh-fail2ban.nix
+      ./services/openssh.nix
+      ./services/fail2ban.nix
       ../common/telegraf.nix
 
       ./virtualisation.nix
