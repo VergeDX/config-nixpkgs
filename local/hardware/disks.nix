@@ -2,7 +2,7 @@
 {
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/4ff541a0-7952-4ede-a20b-6cecba4f16eb";
+      device = "/dev/disk/by-partuuid/ffaae78b-c99c-4fd2-9501-5a99f84259b4";
       fsType = "btrfs";
 
       # https://btrfs.wiki.kernel.org/index.php/Compression
@@ -11,6 +11,12 @@
       options = [ "compress-force=zstd" "noatime" ];
     };
 
-  fileSystems."/boot" = { device = "/dev/disk/by-uuid/F934-BA50"; fsType = "vfat"; };
-  swapDevices = [{ device = "/dev/disk/by-uuid/1b07ef58-fa1b-4e5e-a394-7a07a9229f07"; }];
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-partuuid/3f2a09aa-c259-4bca-846d-6cae19e5e048";
+    fsType = "vfat";
+  };
+
+  swapDevices = [{
+    device = "/dev/disk/by-partuuid/7be06228-8eab-403f-9a06-2b7990db2f00";
+  }];
 }
