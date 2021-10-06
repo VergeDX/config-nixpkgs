@@ -35,6 +35,7 @@
     pkgs.gradle
 
     pkgs.telnet
+    pkgs.binwalk
   ] ++ (with pkgs; [ influxdb2 telegraf dasel ]);
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
