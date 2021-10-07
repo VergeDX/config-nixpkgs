@@ -67,6 +67,14 @@
         sha256 = "sha256-3HHcaX2yVZXrRjOeSlI8tPhSjRR2tPU6AWq6eU5nPOs=";
       };
     }
+    {
+      name = "plugin-git";
+      src = pkgs.fetchgit {
+        url = "https://github.com/jhillyerd/plugin-git";
+        rev = "bc6caff38fdcac309fddac6651c13cd217d5a382";
+        sha256 = "sha256-jodMn2KfSnO6xUgOvMHYXU4PUAEUS5skVuNcBJQYzyU=";
+      };
+    }
   ];
 
   programs.zsh.enable = true;
