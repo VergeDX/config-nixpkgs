@@ -1,27 +1,5 @@
 { config, pkgs, lib, ... }:
-
-let
-  anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
-  # tdesktop-beta = (pkgs.callPackage ./packages/gui/tdesktop-beta.nix { });
-
-  wrapElectronWithProxy = ({ package, binaryName, binaryPath }:
-    pkgs.runCommandLocal binaryName { nativeBuildInputs = [ pkgs.makeWrapper ]; }
-      ''
-        mkdir -p $out
-        ${pkgs.xorg.lndir}/bin/lndir -silent ${package} $out
-        wrapProgram $out/${binaryPath}/${binaryName} \
-          --add-flags '--proxy-server=http://127.0.0.1:7890'
-      '');
-  discord-with-proxy = (wrapElectronWithProxy rec {
-    package = pkgs.discord;
-    binaryName = "Discord";
-    binaryPath = "opt/${binaryName}";
-  });
-  element-desktop-with-proxy = (wrapElectronWithProxy rec {
-    package = pkgs.element-desktop;
-    binaryPath = "bin";
-    binaryName = "element-desktop";
-  });
+let anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
 in
 rec {
   programs.home-manager.enable = true;
@@ -58,11 +36,7 @@ rec {
     pkgs.gnome.dconf-editor
     pkgs.amule
 
-    discord-with-proxy
-    pkgs.betterdiscord-installer
-    pkgs.betterdiscordctl
     pkgs.nodePackages.http-server
-    element-desktop-with-proxy
 
     pkgs.woeusb
     pkgs.ntfs3g
@@ -85,7 +59,6 @@ rec {
     pkgs.testdisk
 
     pkgs.helvum
-    pkgs.osu-lazer
   ];
 
   nixpkgs.config.allowUnfree = true;
