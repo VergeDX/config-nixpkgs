@@ -1,35 +1,20 @@
 { fonts, home, pkgs, ... }:
+let
+  sf-pro = (pkgs.callPackage ../packages/fonts/sf-pro.nix { });
+  sf-compact = (pkgs.callPackage ../packages/fonts/sf-compact.nix { });
+  sf-mono = (pkgs.callPackage ../packages/fonts/sf-mono.nix { });
+  sf-arabic-beta = (pkgs.callPackage ../packages/fonts/sf-arabic-beta.nix { });
+  new-york = (pkgs.callPackage ../packages/fonts/new-york.nix { });
+in
 {
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
-  home.packages = [
-    pkgs.source-han-sans
-    pkgs.source-han-mono
-    pkgs.source-han-serif
-    pkgs.source-han-code-jp
-
-    (pkgs.callPackage ../packages/fonts/sf-pro.nix { })
-    (pkgs.callPackage ../packages/fonts/sf-compact.nix { })
-    (pkgs.callPackage ../packages/fonts/sf-mono.nix { })
-    (pkgs.callPackage ../packages/fonts/sf-arabic-beta.nix { })
-    (pkgs.callPackage ../packages/fonts/new-york.nix { })
-
-    pkgs.noto-fonts
-    pkgs.noto-fonts-cjk
-    pkgs.noto-fonts-extra
-    pkgs.noto-fonts-emoji
-    pkgs.noto-fonts-emoji-blob-bin
-
-    pkgs.roboto
-    pkgs.roboto-slab
-    pkgs.roboto-mono
-
-    # https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-    pkgs.dejavu_fonts
-    pkgs.vdrsymbols
-    pkgs.hack-font
-    pkgs.vistafonts
-  ];
+  home.packages = (with pkgs; # 思源黑体 (Source Han Sans)
+    [ source-han-sans source-han-mono source-han-serif source-han-code-jp ])
+  ++ [ sf-pro sf-compact sf-mono sf-arabic-beta new-york ]
+  ++ (with pkgs; [ noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ])
+  ++ (with pkgs; [ roboto roboto-slab roboto-mono ]) # Roboto
+  ++ [ pkgs.hack-font pkgs.nerdfonts ];
 
   # https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # https://github.com/yrashk/nix-home/blob/master/home.nix#L285
