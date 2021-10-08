@@ -28,19 +28,19 @@
       font:
         # The normal (roman) font face to use.
         normal:
-          family: Hack
+          family: Hack Nerd Font
           # Style can be specified to pick a specific face.
           style: Regular
 
         # The bold font face
         bold:
-          family: Hack
+          family: Hack Nerd Font
           # Style can be specified to pick a specific face.
           # style: Bold
 
         # The italic font face
         italic:
-          family: Hack
+          family: Hack Herd Font
           # Style can be specified to pick a specific face.
           # style: Italic
         size: 11.0
