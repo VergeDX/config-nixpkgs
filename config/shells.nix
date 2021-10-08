@@ -11,6 +11,13 @@
   # https://github.com/nvbn/thefuck/wiki/Shell-aliases#fish
   programs.fish.shellInit = "${pkgs.thefuck}/bin/thefuck --alias | source";
   programs.fish.shellAliases = { top = "bpytop"; };
+
+  # https://github.com/franciscolourenco/done#for-linux-set-the-urgency-level-for-notifications-sent-via-notify-send-low-normal-critical-the-default-is-normal-for-regular-commands-and-critical-for-failed-commands
+  programs.fish.interactiveShellInit = ''
+    set -U __done_notification_urgency_level low
+    set -U __done_notification_urgency_level_failure normal
+  '';
+
   home.packages = [
     pkgs.powerline-go
     pkgs.powerline-rs
