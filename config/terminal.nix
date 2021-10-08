@@ -43,13 +43,13 @@
         bold:
           family: Hack Nerd Font
           # Style can be specified to pick a specific face.
-          # style: Bold
+          style: Bold
 
         # The italic font face
         italic:
           family: Hack Herd Font
           # Style can be specified to pick a specific face.
-          # style: Italic
+          style: Italic
         size: 11.0
     '';
 
