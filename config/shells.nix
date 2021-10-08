@@ -31,17 +31,9 @@
     pkgs.powerline
     pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
-  ];
+  ] ++ [ pkgs.fishPlugins.done ];
 
   programs.fish.plugins = [
-    {
-      name = "done";
-      src = pkgs.fetchgit {
-        url = "https://github.com/franciscolourenco/done";
-        rev = "1.16.5";
-        sha256 = "sha256-E0wveeDw1VzEH2kzn63q9hy1xkccfxQHBV2gVpu2IdQ=";
-      };
-    }
     {
       name = "pisces";
       src = pkgs.fetchgit {
