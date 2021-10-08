@@ -23,6 +23,13 @@
       import:
         - ${rose-pine-dawn.yml}
 
+      # https://github.com/alacritty/alacritty/issues/2431
+      # 8 : 3 = 102 : 38.25 = 104 : 39
+      window:
+        dimensions:
+          columns: 104
+          lines: 39
+
       # https://wiki.gentoo.org/wiki/Alacritty#Font_configuration
       # Font configuration (changes require restart)
       font:
