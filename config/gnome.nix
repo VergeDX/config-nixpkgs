@@ -59,7 +59,7 @@
   ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
 
   gtk.enable = true;
-  gtk.font = { name = "Source Han Sans SC"; size = 11; };
+  gtk.font = { name = "Noto Sans CJK SC"; size = 11; };
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
   gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 

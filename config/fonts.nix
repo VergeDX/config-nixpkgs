@@ -17,19 +17,17 @@
       <alias>
         <family>sans-serif</family>
         <prefer>
-          <family>Source Han Sans SC</family>
-          <family>Source Han Sans TC</family>
-          <family>Source Han Sans HW</family>
-          <family>Source Han Sans K</family>
+          <family>Noto Sans CJK SC</family>
+          <family>Noto Sans CJK TC</family>
+          <family>Noto Sans CJK JP</family>
         </prefer>
       </alias>
       <alias>
         <family>monospace</family>
         <prefer>
-          <family>Source Han Sans SC</family>
-          <family>Source Han Sans TC</family>
-          <family>Source Han Sans HW</family>
-          <family>Source Han Sans K</family>
+          <family>Noto Sans Mono CJK SC</family>
+          <family>Noto Sans Mono CJK TC</family>
+          <family>Noto Sans Mono CJK JP</family>
         </prefer>
       </alias>
     </fontconfig>
