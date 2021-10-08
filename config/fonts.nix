@@ -16,17 +16,19 @@ with pkgs; {
       <alias>
         <family>sans-serif</family>
         <prefer>
-          <family>Noto Sans CJK SC</family>
-          <family>Noto Sans CJK TC</family>
-          <family>Noto Sans CJK JP</family>
+          <family>Source Han Sans SC</family>
+          <family>Source Han Sans TC</family>
+          <family>Source Han Sans HW</family>
+          <family>Source Han Sans K</family>
         </prefer>
       </alias>
       <alias>
         <family>monospace</family>
         <prefer>
-          <family>Noto Sans Mono CJK SC</family>
-          <family>Noto Sans Mono CJK TC</family>
-          <family>Noto Sans Mono CJK JP</family>
+          <family>Source Han Sans SC</family>
+          <family>Source Han Sans TC</family>
+          <family>Source Han Sans HW</family>
+          <family>Source Han Sans K</family>
         </prefer>
       </alias>
     </fontconfig>
