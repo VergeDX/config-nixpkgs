@@ -1,17 +1,9 @@
 { fonts, home, pkgs, ... }:
-let
-  sf-pro = (pkgs.callPackage ../packages/fonts/sf-pro.nix { });
-  sf-compact = (pkgs.callPackage ../packages/fonts/sf-compact.nix { });
-  sf-mono = (pkgs.callPackage ../packages/fonts/sf-mono.nix { });
-  sf-arabic-beta = (pkgs.callPackage ../packages/fonts/sf-arabic-beta.nix { });
-  new-york = (pkgs.callPackage ../packages/fonts/new-york.nix { });
-in
 {
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
   home.packages = (with pkgs; # 思源黑体 (Source Han Sans)
     [ source-han-sans source-han-mono source-han-serif source-han-code-jp ])
-  ++ [ sf-pro sf-compact sf-mono sf-arabic-beta new-york ]
   ++ (with pkgs; [ noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ])
   ++ (with pkgs; [ roboto roboto-slab roboto-mono ]) # Roboto
   ++ [ pkgs.hack-font pkgs.nerdfonts ];
