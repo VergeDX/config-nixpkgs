@@ -1,9 +1,11 @@
 {
   # https://github.com/NixOS/nixos-hardware#using-nix-flakes-support
   inputs.nixos-hardware.url = github:NixOS/nixos-hardware/master;
+
   # https://github.com/nix-community/home-manager#nix-flakes
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
-  inputs.home-manager.url = "github:nix-community/home-manager/release-21.05";
+  # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-935625041
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.home-manager.url = "github:nix-community/home-manager";
 
   # https://github.com/serokell/deploy-rs
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
@@ -37,18 +39,6 @@
           agenix.nixosModules.age
           # https://nixos.org/manual/nixos/stable/#sec-replace-modules
           "${nixos-unstable}/nixos/modules/services/databases/influxdb2.nix"
-
-          # https://github.com/NixOS/nixpkgs/pull/139865
-          # https://nixos.wiki/wiki/Overlays#In_NixOS
-          {
-            nixpkgs.overlays = [
-              (self: super: {
-                ubootRaspberryPi4_64bit = super.callPackage
-                  ./hardware/uboot.nix
-                  { pkgs = import nixpkgs { system = "${rpi.arch}"; }; };
-              })
-            ];
-          }
         ];
       };
 
