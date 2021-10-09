@@ -11,7 +11,6 @@
       ./services/xrdp.nix
       ./services/openssh.nix
       ./services/fail2ban.nix
-      ../common/telegraf.nix
 
       ./virtualisation.nix
       ./programs.nix
@@ -22,11 +21,6 @@
       # Include the results of the hardware scan.
       ./hardware/hardware.nix
     ];
-
-  age.secrets = {
-    "telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
-    "telegraf/config.env".file = ./secrets/telegraf/config-env.age;
-  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
