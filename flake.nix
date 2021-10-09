@@ -43,6 +43,9 @@
               name = "clash-for-windows";
               package = pkgs.nur.repos.linyinfeng.clash-for-windows;
             })
+
+            pkgs.nur.repos.linyinfeng.wemeet
+            pkgs.gnome.cheese
           ] ++ [
             pkgs.rust-bin.stable.latest.default
             pkgs.rust-bin.stable.latest.rust-src
