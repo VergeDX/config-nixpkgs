@@ -6,13 +6,6 @@
   networking.hostName = "NixOS-Laptop"; # Define your hostname.
   networking.domain = "vanilla.local";
 
-  networking.interfaces."enp3s0f1".useDHCP = true;
-  networking.interfaces."wlp0s20f3".useDHCP = true;
-
-  # Use networkd instead of buggy dhcpcd.
-  networking.useNetworkd = true;
-  networking.dhcpcd.enable = false;
-
   # Configure network proxy if necessary
   networking.proxy.default = "http://localhost:7890";
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
