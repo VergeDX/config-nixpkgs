@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
-let anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+let
+  anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
+  metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
 in
 rec {
   programs.home-manager.enable = true;
@@ -79,4 +81,7 @@ rec {
   ];
 
   home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
+
+  # https://www.reddit.com/r/pcmasterrace/comments/6u68jw/steam_skins_on_linux/
+  home.file.".local/share/Steam/skins/".source = metro-for-steam;
 }
