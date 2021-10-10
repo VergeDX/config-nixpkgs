@@ -28,6 +28,8 @@
 
     pkgs.nodejs_latest # pkgs.nodePackages.npm
     pkgs.nodePackages.npm-check-updates
+    pkgs.nodePackages.clipboard-cli
+
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
     pkgs.yarn2nix
