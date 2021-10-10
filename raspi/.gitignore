@@ -1,6 +1,3 @@
 # deploy . -k -- -vL
 .deploy-gc/
 
-# nix-build hardware/uboot.nix
-hardware/result
-
