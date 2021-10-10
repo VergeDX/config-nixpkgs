@@ -5,9 +5,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.font = "${pkgs.hack-font}/share/fonts/hack/Hack-Regular.ttf";
 
-  # https://nixos.wiki/wiki/Linux_kernel
-  # https://wiki.archlinux.org/title/Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-  boot.kernelPackages = pkgs.linuxPackages_zen;
   # https://mnguyen.io/blog/running-nixos-in-production/
   boot.kernelModules = [ "tcp_bbr" ];
   boot.kernel.sysctl = { "net.ipv4.tcp_congestion_control" = "bbr"; };
