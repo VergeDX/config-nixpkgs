@@ -4,7 +4,6 @@
     pkgs.gimp-with-plugins
     pkgs.remmina
     (pkgs.callPackage ../packages/gui/motrix.nix { })
-    pkgs.google-play-music-desktop-player
     pkgs.qbittorrent
     pkgs.obs-studio
     pkgs.gnome3.baobab
@@ -15,23 +14,14 @@
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
 
     pkgs.wireshark
-
-    # https://www.bilibili.com/video/BV17U4y1H7w1
-    # pkgs.retroarch
-    # pkgs.dolphinEmu
-    # pkgs.mame
-    # pkgs.dosbox
-
-    pkgs.goverlay
+    pkgs.dosbox
 
     pkgs.fontforge
     pkgs.fontforge-gtk
     pkgs.miraclecast
 
     pkgs.mumble
-    # https://nixpk.gs/pr-tracker.html?pr=126080
-
-    # https://www.raspberrypi.org/documentation/computers/raspberry-pi.html#updating-the-bootloader
+    pkgs.clapper
     pkgs.rpi-imager
   ];
 

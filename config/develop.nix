@@ -1,8 +1,5 @@
 { home, pkgs, ... }:
-let
-  useJbJdk = pkgsJb: pkgsJb.overrideAttrs (old: {
-    jdk = pkgs.jetbrains.jdk;
-  });
+let useJbJdk = pkgsJb: pkgsJb.overrideAttrs (old: { jdk = pkgs.jetbrains.jdk; });
 in
 {
   home.packages = (builtins.map useJbJdk (with pkgs.jetbrains;

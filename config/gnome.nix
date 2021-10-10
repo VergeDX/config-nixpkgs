@@ -56,6 +56,7 @@
   ] ++ [
     pkgs.gnome.gnome-screenshot
     pkgs.gnome.gnome-system-monitor
+    pkgs.gnome.gnome-power-manager
   ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
 
   gtk.enable = true;

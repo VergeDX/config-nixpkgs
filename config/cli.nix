@@ -60,9 +60,6 @@
     pkgs.unrar
     pkgs.hydra-check
 
-    # https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer
-    pkgs.gptfdisk
-
     pkgs.dmg2img
     # https://github.com/helix-editor/helix
     pkgs.helix
@@ -77,21 +74,6 @@
     pkgs.openssl
   ];
 
-  # https://nvchecker.readthedocs.io/en/latest/usage.html#install-and-run
-  # https://nvchecker.readthedocs.io/en/latest/usage.html#check-github
-  home.file.".config/nvchecker/nvchecker.toml".source =
-    let source-github = g: { source = "github"; github = g; use_max_tag = true; };
-    in
-    (pkgs.formats.toml { }).generate "nvchecker.toml" {
-      nvchecker = source-github "lilydjwg/nvchecker";
-      python-toml = { source = "pypi"; pypi = "toml"; };
-
-      # https://github.com/NixOS/nixpkgs/search?q=maintainers.vanilla
-      gpick = source-github "thezbyg/gpick";
-      layan-gtk-theme = source-github "vinceliuice/Layan-gtk-theme";
-      flat-remix-gnome = source-github "daniruiz/flat-remix-gnome";
-    };
-
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
   programs.exa.enableAliases = true;
@@ -103,9 +85,6 @@
   programs.bat.enable = true;
   programs.bat.config = { theme = "Solarized (light)"; };
   # programs.fish.shellAliases = { cat = "bat"; };
-
-  # https://github.com/Canop/broot
-  programs.broot.enable = true;
 
   # https://github.com/jesseduffield/lazygit
   programs.lazygit.enable = true;

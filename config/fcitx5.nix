@@ -12,8 +12,7 @@ in
   .source = "${zhwiki}/${zhwiki.fileName}";
   home.file.".local/share/fcitx5/pinyin/dictionaries/${moegirl.fileName}"
   .source = "${moegirl}/${moegirl.fileName}";
-  home.file.".local/share/fcitx5/themes/"
-  .source = "${fcitx5-nord}";
+  home.file.".local/share/fcitx5/themes/".source = "${fcitx5-nord}";
   home.file.".local/share/fcitx5/pinyin/dictionaries/${fcitx5_dicts.fileName}"
   .source = "${fcitx5_dicts}/${fcitx5_dicts.fileName}";
 }

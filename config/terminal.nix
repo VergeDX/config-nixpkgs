@@ -47,7 +47,7 @@
 
         # The italic font face
         italic:
-          family: Hack Herd Font
+          family: Hack Nerd Font
           # Style can be specified to pick a specific face.
           style: Italic
         size: 11.0
@@ -55,7 +55,7 @@
 
   # https://sw.kovidgoyal.net/kitty/
   programs.kitty.enable = true;
-  programs.kitty.font = { package = pkgs.hack-font; name = "Hack"; };
+  programs.kitty.font = { package = pkgs.hack-font; name = "Hack Nerd Font"; };
   # https://github.com/dexpota/kitty-themes
   # https://sw.kovidgoyal.net/kitty/conf/
   programs.kitty.extraConfig = "include ${pkgs.fetchurl {

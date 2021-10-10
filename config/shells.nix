@@ -3,10 +3,7 @@
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
   programs.starship.enable = true;
-  programs.starship.settings = {
-    add_newline = false;
-    line_break = { disabled = true; };
-  };
+  programs.starship.settings = { add_newline = false; line_break = { disabled = true; }; };
 
   # https://github.com/nvbn/thefuck/wiki/Shell-aliases#fish
   programs.fish.shellInit = "${pkgs.thefuck}/bin/thefuck --alias | source";
