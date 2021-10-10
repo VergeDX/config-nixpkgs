@@ -19,9 +19,4 @@ in
   virtualisation.libvirtd.qemuVerbatimConfig = ''
     nvram = [ "${qemu-efi-aarch64}/usr/share/AAVMF/AAVMF_CODE.fd:${qemu-efi-aarch64}/usr/share/AAVMF/AAVMF_VARS.fd" ]
   '';
-
-  # https://nixos.wiki/wiki/Virtualbox
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "vanilla" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
 }
