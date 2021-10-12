@@ -79,5 +79,6 @@
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     "text/plain" = [ "org.gnome.gedit.desktop" ];
     "application/pdf" = [ "org.gnome.Evince.desktop" ];
+    "image/jpeg" = [ "org.gnome.eog.desktop" ];
   };
 }
