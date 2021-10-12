@@ -58,7 +58,8 @@
     pkgs.gnome.gnome-system-monitor
     pkgs.gnome.gnome-power-manager
     pkgs.gnome.gnome-boxes
-  ] ++ [ pkgs.perl534Packages.FileMimeInfo ];
+  ] ++ [ pkgs.perl534Packages.FileMimeInfo ]
+  ++ [ pkgs.evince ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
@@ -77,5 +78,6 @@
   xdg.mimeApps.defaultApplications = {
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     "text/plain" = [ "org.gnome.gedit.desktop" ];
+    "application/pdf" = [ "org.gnome.Evince.desktop" ];
   };
 }
