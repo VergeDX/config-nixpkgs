@@ -19,4 +19,8 @@
   swapDevices = [{
     device = "/dev/disk/by-partuuid/7be06228-8eab-403f-9a06-2b7990db2f00";
   }];
+
+  services.btrfs.autoScrub.enable = true;
+  services.btrfs.autoScrub.interval = "weekly";
+  services.btrfs.autoScrub.fileSystems = [ "/" ];
 }
