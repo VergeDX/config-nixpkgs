@@ -3,6 +3,7 @@
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
     pkgs.qt5ct
+    pkgs.gjs
 
     pkgs.layan-gtk-theme
     pkgs.breeze-gtk
