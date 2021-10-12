@@ -11,6 +11,8 @@
   services.xserver.displayManager.defaultSession = "gnome-xorg";
 
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.wacom.enable = true;
+
   # https://wiki.archlinux.org/title/GNOME/Flashback
   services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
 
