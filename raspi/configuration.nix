@@ -13,6 +13,7 @@
 
     ./users-immutable.nix
     ./boot.nix
+    ./libvirt.nix
 
     ./services/openssh.nix
     ./services/xserver.nix

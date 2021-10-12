@@ -6,4 +6,9 @@
   imports = [
     # ../../config/neovim.nix
   ];
+
+  home.packages = with pkgs; [
+    virt-manager
+    gnome.gnome-boxes
+  ];
 }
