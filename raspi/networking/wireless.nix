@@ -9,8 +9,5 @@
 
   # https://github.com/NixOS/nixpkgs/issues/101963#issuecomment-749443985
   networking.wireless.interfaces = [ "wlan0" ];
-
-  # https://github.com/NickCao/flakes/blob/master/nixos/rpi/configuration.nix
-  networking = { useDHCP = false; useNetworkd = true; };
   networking.interfaces."wlan0".useDHCP = true;
 }

@@ -4,7 +4,7 @@
   imports = [
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
     ./networking/wireless.nix
-    ./networking/eth0.nix
+    ./networking/networkmanager.nix
     ./networking/hostName-domain.nix
 
     ./nix/binary-caches.nix
