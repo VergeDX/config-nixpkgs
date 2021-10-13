@@ -7,5 +7,6 @@
     # ../../config/neovim.nix
   ];
 
-  home.packages = [ pkgs.gnome.gnome-boxes ];
+  home.packages = [ pkgs.gnome.gnome-boxes ]
+    ++ [ pkgs.dmenu ];
 }

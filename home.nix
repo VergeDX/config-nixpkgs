@@ -61,6 +61,7 @@ rec {
     pkgs.testdisk
 
     pkgs.helvum
+    pkgs.dmenu
   ];
 
   nixpkgs.config.allowUnfree = true;
