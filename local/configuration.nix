@@ -14,7 +14,10 @@
 
       ./virtualisation.nix
       ./programs.nix
+
       ./nix/common.nix
+      ./nix/flakes.nix
+
       ./audio.nix
       ./users.nix
 

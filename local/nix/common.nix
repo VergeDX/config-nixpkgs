@@ -1,9 +1,5 @@
-{ pkgs, lib, config, ... }:
+{ ... }:
 {
-  # https://nixos.wiki/wiki/Flakes
-  nix.package = pkgs.nixUnstable;
-  nix.extraOptions = "experimental-features = nix-command flakes";
-
   # https://nixos.org/manual/nixpkgs/stable/#submitting-changes-tested-with-sandbox
   nix.useSandbox = true;
 
