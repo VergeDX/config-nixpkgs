@@ -17,6 +17,7 @@
 
       ./nix/common.nix
       ./nix/flakes.nix
+      ./nix/binaryCaches.nix
 
       ./audio.nix
       ./users.nix
