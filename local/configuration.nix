@@ -11,6 +11,7 @@
       ./services/xrdp.nix
       ./services/openssh.nix
       ./services/fail2ban.nix
+      ./services/avahi.nix
 
       ./virtualisation.nix
       ./programs.nix
