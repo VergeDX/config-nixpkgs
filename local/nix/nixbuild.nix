@@ -1,10 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 # https://docs.nixbuild.net/getting-started/#quick-nixos-configuration
+let nc = "${pkgs.libressl.bin.nc}/bin/nc"; in
 {
   programs.ssh.extraConfig = ''
     Host eu.nixbuild.net
       PubkeyAcceptedKeyTypes ssh-ed25519
       IdentityFile /home/vanilla/.ssh/id_ed25519
+      ProxyCommand ${nc} -X connect -x localhost:7890 %h %p
   '';
 
   programs.ssh.knownHosts = {
