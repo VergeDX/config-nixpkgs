@@ -16,12 +16,14 @@
 
   nix = {
     distributedBuilds = true;
+
+    # https://docs.nixbuild.net/getting-started/#aarch64-linux-builds
     buildMachines = [
       {
         hostName = "eu.nixbuild.net";
-        system = "x86_64-linux";
+        system = "aarch64-linux";
         maxJobs = 100;
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [ "big-parallel" "benchmark" ];
       }
     ];
   };
