@@ -13,7 +13,7 @@
       ./services/fail2ban.nix
       ./services/avahi.nix
 
-      ./virtualisation.nix
+      ./virtualisation/virtualisation.nix
       ./programs.nix
 
       ./nix/common.nix
