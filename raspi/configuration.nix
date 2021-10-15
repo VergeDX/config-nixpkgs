@@ -17,6 +17,7 @@
 
     ./services/openssh.nix
     ./services/xserver.nix
+    ./services/lightdm.nix
   ];
 
   environment.systemPackages = with pkgs; [ git ];
