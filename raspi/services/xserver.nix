@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  # https://nixos.wiki/wiki/Xorg
+  services.xserver.enable = true;
   # https://nixos.wiki/wiki/XMonad
   services.xserver.windowManager.xmonad.enable = true;
 
