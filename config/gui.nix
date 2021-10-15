@@ -23,6 +23,10 @@
     pkgs.mumble
     pkgs.clapper
     pkgs.rpi-imager
+
+    pkgs.v2ray
+    pkgs.qv2ray
+    (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
   ];
 
   # https://github.com/flightlessmango/MangoHud

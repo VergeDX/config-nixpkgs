@@ -7,11 +7,11 @@
   networking.domain = "vanilla.local";
 
   # Configure network proxy if necessary
-  networking.proxy.default = "http://localhost:7890";
+  networking.proxy.default = "http://localhost:8889";
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8080 7890 ];
+  networking.firewall.allowedTCPPorts = [ 8080 ];
   networking.firewall.allowedUDPPorts = [ 5353 ];
   # networking.firewall.allowedTCPPortRanges = [ kde-connect-port-range ];
   # networking.firewall.allowedUDPPortRanges = [ kde-connect-port-range ];

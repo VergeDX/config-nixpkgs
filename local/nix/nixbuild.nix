@@ -6,7 +6,7 @@ let nc = "${pkgs.libressl.bin.nc}/bin/nc"; in
     Host eu.nixbuild.net
       PubkeyAcceptedKeyTypes ssh-ed25519
       IdentityFile /home/vanilla/.ssh/id_ed25519
-      ProxyCommand ${nc} -X connect -x localhost:7890 %h %p
+      ProxyCommand ${nc} -X connect -x localhost:8889 %h %p
   '';
 
   programs.ssh.knownHosts = {
