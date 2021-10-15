@@ -14,6 +14,8 @@
       ./services/avahi.nix
 
       ./virtualisation/virtualisation.nix
+      ./virtualisation/libvirt.nix
+
       ./programs.nix
 
       ./nix/common.nix
