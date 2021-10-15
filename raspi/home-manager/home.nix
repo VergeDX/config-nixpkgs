@@ -5,8 +5,7 @@
   programs.htop.enable = true;
   imports = [
     # ../../config/neovim.nix
-    ./gtk.nix
   ];
 
-  home.packages = [ pkgs.gnome.gnome-boxes ];
+  home.packages = with pkgs; [ gnome.gnome-boxes virt-manager dmenu ];
 }
