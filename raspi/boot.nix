@@ -5,5 +5,5 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   boot.loader.generic-extlinux-compatible.enable = true;
-  boot.loader.generic-extlinux-compatible.configurationLimit = 7;
+  boot.loader.generic-extlinux-compatible.configurationLimit = 13;
 }
