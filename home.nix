@@ -26,11 +26,7 @@ rec {
     pkgs.tdesktop
     (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
 
-    pkgs.steam-run
-    # pkgs.osu-lazer
     (pkgs.callPackage ./packages/gui/olympus.nix { })
-    # pkgs.minecraft
-    # pkgs.multimc
     pkgs.stellarium
 
     pkgs.vlc
