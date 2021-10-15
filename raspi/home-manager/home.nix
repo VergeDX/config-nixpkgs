@@ -5,6 +5,7 @@
   programs.htop.enable = true;
   imports = [
     # ../../config/neovim.nix
+    ./gtk.nix
   ];
 
   home.packages = [ pkgs.gnome.gnome-boxes ];
