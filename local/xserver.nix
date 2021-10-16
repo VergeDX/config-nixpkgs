@@ -12,6 +12,7 @@
 
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.wacom.enable = true;
+  services.xserver.digimend.enable = true;
 
   # https://wiki.archlinux.org/title/GNOME/Flashback
   services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
