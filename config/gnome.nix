@@ -63,7 +63,7 @@
   ++ [ pkgs.evince ];
 
   gtk.enable = true;
-  gtk.font = { name = "SFCompactDisplay"; size = 11; };
+  gtk.font = { name = "SF Compact Display"; size = 11; };
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
   gtk.theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
 
