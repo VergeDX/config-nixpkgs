@@ -16,6 +16,7 @@
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.blur-me
+    pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.openweather
     pkgs.gnomeExtensions.tray-icons
     pkgs.gnomeExtensions.simple-net-speed
