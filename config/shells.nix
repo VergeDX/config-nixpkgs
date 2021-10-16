@@ -1,4 +1,15 @@
 { programs, home, pkgs, ... }:
+let plugin-git = pkgs.fishPlugins.buildFishPlugin rec {
+  pname = "plugin-git";
+  version = "bc6caff";
+
+  src = pkgs.fetchgit {
+    url = "https://github.com/jhillyerd/${pname}";
+    rev = "${version}38fdcac309fddac6651c13cd217d5a382";
+    sha256 = "sha256-jodMn2KfSnO6xUgOvMHYXU4PUAEUS5skVuNcBJQYzyU=";
+  };
+};
+in
 {
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
@@ -10,9 +21,11 @@
   programs.fish.shellAliases = { top = "bpytop"; };
 
   # https://github.com/franciscolourenco/done#for-linux-set-the-urgency-level-for-notifications-sent-via-notify-send-low-normal-critical-the-default-is-normal-for-regular-commands-and-critical-for-failed-commands
+  # https://github.com/jhillyerd/plugin-git/blob/master/hooks/install.fish
   programs.fish.interactiveShellInit = ''
     set -U __done_notification_urgency_level low
     set -U __done_notification_urgency_level_failure normal
+    source ${plugin-git}/share/fish/vendor_functions.d/__git.init.fish && __git.init
   '';
 
   home.packages = [
@@ -53,14 +66,6 @@
         url = "https://github.com/kidonng/nix-completions.fish";
         rev = "dcb15c4f7d3e85d8f7cd3eb09b3014ccd278aab8";
         sha256 = "sha256-3HHcaX2yVZXrRjOeSlI8tPhSjRR2tPU6AWq6eU5nPOs=";
-      };
-    }
-    {
-      name = "plugin-git";
-      src = pkgs.fetchgit {
-        url = "https://github.com/jhillyerd/plugin-git";
-        rev = "bc6caff38fdcac309fddac6651c13cd217d5a382";
-        sha256 = "sha256-jodMn2KfSnO6xUgOvMHYXU4PUAEUS5skVuNcBJQYzyU=";
       };
     }
   ];
