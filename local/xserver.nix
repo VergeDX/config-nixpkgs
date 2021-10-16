@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -11,6 +11,11 @@
   services.xserver.displayManager.defaultSession = "gnome-xorg";
 
   services.xserver.desktopManager.gnome.enable = true;
+
+  # https://github.com/Ninlives/nixos-config/blob/master/world-implementation/module/hardware/gpu.nix#L63
+  services.xserver.displayManager.sessionCommands =
+    config.services.xserver.displayManager.setupCommands;
+
   services.xserver.wacom.enable = true;
   services.xserver.digimend.enable = true;
 
