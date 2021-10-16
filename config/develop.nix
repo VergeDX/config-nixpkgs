@@ -7,6 +7,7 @@ in
   ++ (with pkgs; [ android-tools android-studio apktool dex2jar jd-gui ])
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
+  ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
   ++ (with pkgs; [ cmake gnumake clang cmake ninja ]); # C / C++
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
