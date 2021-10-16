@@ -5,11 +5,6 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.displayManager.gdm.nvidiaWayland = true;
-  # https://wiki.archlinux.org/title/GDM
-  services.xserver.displayManager.defaultSession = "gnome-xorg";
-
   services.xserver.desktopManager.gnome.enable = true;
 
   # https://github.com/Ninlives/nixos-config/blob/master/world-implementation/module/hardware/gpu.nix#L63
@@ -18,9 +13,6 @@
 
   services.xserver.wacom.enable = true;
   services.xserver.digimend.enable = true;
-
-  # https://wiki.archlinux.org/title/GNOME/Flashback
-  services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
 
   # https://nixos.wiki/wiki/GNOME#Excluding_some_GNOME_applications_from_the_default_install
   services.gnome.core-utilities.enable = false;
