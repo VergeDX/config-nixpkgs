@@ -20,7 +20,6 @@ rec {
     pkgs.appimagekit
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
     pkgs.appimage-run
-    pkgs.texlive.combined.scheme-full
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
