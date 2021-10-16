@@ -28,17 +28,9 @@
     pkgs.powerline
     pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
-  ] ++ [ pkgs.fishPlugins.done ];
+  ] ++ (with pkgs.fishPlugins; [ done pisces ]);
 
   programs.fish.plugins = [
-    {
-      name = "pisces";
-      src = pkgs.fetchgit {
-        url = "https://github.com/laughedelic/pisces";
-        rev = "v0.7.0";
-        sha256 = "sha256-Oou2IeNNAqR00ZT3bss/DbhrJjGeMsn9dBBYhgdafBw=";
-      };
-    }
     {
       name = "plugin-bang-bang";
       src = pkgs.fetchgit {
