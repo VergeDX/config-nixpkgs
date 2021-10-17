@@ -9,7 +9,8 @@ in
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
   ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
-  ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]); # C / C++
+  ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]) # C / C++
+  ++ [ pkgs.clang_9 pkgs.gdb pkgs.llvmPackages_9.lldb ]; # For CLion.
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
