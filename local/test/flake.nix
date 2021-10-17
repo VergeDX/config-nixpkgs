@@ -4,7 +4,7 @@
     # https://nixos.wiki/wiki/NixOS:nixos-rebuild_build-vm
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./gnome.nix ./nixosvmtest.nix ./systemPackages.nix ];
+      modules = [ ./gnome.nix ./users-nixosvmtest.nix ./systemPackages.nix ];
     };
   };
 }
