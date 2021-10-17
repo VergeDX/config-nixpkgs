@@ -21,7 +21,10 @@
     pkgs.miraclecast
 
     pkgs.mumble
-    pkgs.clapper
+    (pkgs.clapper.overrideAttrs (old: {
+      # https://github.com/NixOS/nixpkgs/pull/141985/files
+      buildInputs = old.buildInputs ++ (with pkgs; [ appstream-glib libsoup ]);
+    }))
     pkgs.rpi-imager
 
     pkgs.v2ray
