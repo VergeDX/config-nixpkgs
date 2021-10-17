@@ -8,7 +8,8 @@ in
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
   ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
-  ++ (with pkgs; [ cmake gnumake clang cmake ninja ]); # C / C++
+  # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
+  ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]); # C / C++
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''

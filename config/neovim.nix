@@ -206,6 +206,8 @@ in
       require'lspconfig'.pyright.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#yamlls
       require'lspconfig'.yamlls.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
+      require'lspconfig'.clangd.setup{ capabilities = capabilities, }
       EOF
     '' + ''
       " https://github.com/glepnir/dashboard-nvim#faq
