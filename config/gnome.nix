@@ -32,7 +32,7 @@
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
     pkgs.gnomeExtensions.arcmenu
-    pkgs.gnomeExtensions.gsconnect
+    # pkgs.gnomeExtensions.gsconnect
 
     # https://extensions.gnome.org/
     pkgs.gnomeExtensions.sound-output-device-chooser
