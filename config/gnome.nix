@@ -13,6 +13,7 @@
     pkgs.whitesur-icon-theme
 
     pkgs.gnomeExtensions.unite
+    pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.blur-me
