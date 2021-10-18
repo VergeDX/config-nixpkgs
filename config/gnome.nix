@@ -82,6 +82,9 @@
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     "text/plain" = [ "org.gnome.gedit.desktop" ];
     "application/pdf" = [ "org.gnome.Evince.desktop" ];
+
+    # https://www.vimfromscratch.com/articles/how-to-copy-and-paste-a-line-in-vim
     "image/jpeg" = [ "org.gnome.eog.desktop" ];
+    "image/png" = [ "org.gnome.eog.desktop" ];
   };
 }
