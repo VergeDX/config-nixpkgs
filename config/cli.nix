@@ -20,7 +20,6 @@
     pkgs.ncdu
     pkgs.lsd
     pkgs.screen
-    pkgs.tmux
     pkgs.idevicerestore
     pkgs.usbutils
     pkgs.hub
@@ -93,4 +92,8 @@
 
   # https://github.com/bennofs/nix-index
   programs.nix-index.enable = true;
+
+  programs.tmux.enable = true;
+  # https://wiki.archlinux.org/title/Tmux#Setting_the_correct_term
+  programs.tmux.extraConfig = ''set -ga terminal-overrides ",xterm:Tc"'';
 }
