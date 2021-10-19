@@ -95,5 +95,9 @@
 
   programs.tmux.enable = true;
   # https://wiki.archlinux.org/title/Tmux#Setting_the_correct_term
-  programs.tmux.extraConfig = ''set -ga terminal-overrides ",xterm:Tc"'';
+  # https://github.com/neovim/neovim/wiki/FAQ#esc-in-tmux-or-gnu-screen-is-delayed
+  programs.tmux.extraConfig = ''
+    set -ga terminal-overrides ",xterm:Tc"
+    set -sg escape-time 10
+  '';
 }
