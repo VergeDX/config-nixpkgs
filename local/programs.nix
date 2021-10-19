@@ -7,7 +7,4 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
-
-  # Required by https://github.com/blackjackshellac/eclipse
-  programs.gpaste.enable = true;
 }

@@ -23,7 +23,6 @@
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     pkgs.gnomeExtensions.extension-list
-    pkgs.gnomeExtensions.eclipse
     pkgs.gnomeExtensions.screenshot-tool
 
     # Credit: @Cyunrei
