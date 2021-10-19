@@ -19,6 +19,7 @@
     pkgs.fontforge
     pkgs.fontforge-gtk
     pkgs.miraclecast
+    pkgs.wpsoffice
 
     pkgs.mumble
     (pkgs.clapper.overrideAttrs (old: {

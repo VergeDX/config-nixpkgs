@@ -87,5 +87,8 @@
     # https://www.vimfromscratch.com/articles/how-to-copy-and-paste-a-line-in-vim
     "image/jpeg" = [ "org.gnome.eog.desktop" ];
     "image/png" = [ "org.gnome.eog.desktop" ];
+
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
+      [ "wps-office-wpp.desktop" ];
   };
 }
