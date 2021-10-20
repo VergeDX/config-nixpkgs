@@ -65,6 +65,7 @@
 
     pkgs.dig
     pkgs.nmap
+    pkgs.metasploit
     pkgs.raspberrypi-eeprom
     pkgs.libraspberrypi
 
