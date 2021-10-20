@@ -43,7 +43,7 @@
 
     # https://askubuntu.com/questions/1234742/automatic-light-dark-mode
     pkgs.gnomeExtensions.night-theme-switcher
-    pkgs.gnomeExtensions.jiggle
+    # pkgs.gnomeExtensions.jiggle
 
     pkgs.conky
     pkgs.gpick
