@@ -1,4 +1,4 @@
-{ home, pkgs, ... }:
+{ home, pkgs, lib, ... }:
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -36,4 +36,11 @@
   # https://github.com/flightlessmango/MangoHud
   programs.mangohud.enable = true;
   programs.mangohud.enableSessionWide = true;
+
+  programs.zathura.enable = true;
+  # https://github.com/edunfelt/zathura#usage
+  programs.zathura.extraConfig = lib.readFile (pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/edunfelt/zathura/main/rose-pine-dawn";
+    sha256 = "sha256-mmr6RSsX5wkj0rkwoMhfVpc5cIWTpbXjwoABCOe586A=";
+  });
 }
