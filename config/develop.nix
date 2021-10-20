@@ -12,7 +12,7 @@ in
   ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]) # C / C++
   ++ [ pkgs.clang_9 pkgs.gdb pkgs.llvmPackages_9.lldb ] # For CLion.
   # https://github.com/oxalica/rust-overlay#usage-examples
-  ++ lib.singleton (pkgs.rust-bin.stable.latest.default.override {
+  ++ lib.singleton (pkgs.rust-bin.nightly.latest.default.override {
     extensions = [ "rust-src" ];
     # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
     targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
