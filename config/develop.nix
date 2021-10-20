@@ -10,7 +10,8 @@ in
   ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]) # C / C++
-  ++ [ pkgs.clang_9 pkgs.gdb pkgs.llvmPackages_9.lldb ]; # For CLion.
+  ++ [ pkgs.clang_9 pkgs.gdb pkgs.llvmPackages_9.lldb ] # For CLion.
+  ++ (with pkgs.rust-bin.stable.latest; [ default rust-src ]); # Rust
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''

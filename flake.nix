@@ -39,9 +39,6 @@
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.wemeet
             pkgs.gnome.cheese
-          ] ++ [
-            pkgs.rust-bin.stable.latest.default
-            pkgs.rust-bin.stable.latest.rust-src
           ] ++ [ pkgs.deploy-rs.deploy-rs ]
             ++ [ agenix.defaultPackage.x86_64-linux ];
         };
