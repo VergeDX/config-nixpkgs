@@ -16,7 +16,7 @@ in
     extensions = [ "rust-src" "llvm-tools-preview" ];
     # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
     targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
-  });
+  }) ++ [ pkgs.cargo-binutils ];
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
