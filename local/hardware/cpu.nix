@@ -1,5 +1,6 @@
 { lib, ... }:
 {
+  powerManagement.enable = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   # https://discourse.nixos.org/t/update-microcode-microcodeintel-not-working/10856
