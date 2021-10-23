@@ -61,7 +61,7 @@
     pkgs.gnome.gnome-system-monitor
     pkgs.gnome.gnome-power-manager
     pkgs.gnome.gnome-boxes
-  ] ++ [ pkgs.evince ];
+  ] ++ [ pkgs.evince pkgs.perlPackages.FileMimeInfo ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
