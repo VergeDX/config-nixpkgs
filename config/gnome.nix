@@ -28,7 +28,7 @@
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
     # pkgs.gnomeExtensions.extensions-in-system-menu
-    (pkgs.callPackage ../packages/gnome/dash-to-dock-gnome40.nix { })
+    pkgs.gnomeExtensions.dash-to-dock
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
     pkgs.gnomeExtensions.arcmenu
