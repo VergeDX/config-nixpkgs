@@ -6,6 +6,4 @@
   imports = [
     # ../../config/neovim.nix
   ];
-
-  home.packages = with pkgs; [ gnome.gnome-boxes virt-manager dmenu ];
 }

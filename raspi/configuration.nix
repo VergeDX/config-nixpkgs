@@ -13,13 +13,10 @@
 
     ./users-immutable.nix
     ./boot.nix
-    ./libvirt.nix
 
     ./services/openssh.nix
     ./services/xserver.nix
     ./services/lightdm.nix
-
-    ../local/virtualisation/libvirt.nix
   ];
 
   environment.systemPackages = with pkgs; [ git ];
