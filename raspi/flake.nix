@@ -4,8 +4,8 @@
 
   # https://github.com/nix-community/home-manager#nix-flakes
   # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-935625041
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+  inputs.home-manager.url = "github:nix-community/home-manager/release-21.05";
 
   # https://github.com/serokell/deploy-rs
   inputs.deploy-rs.url = "github:serokell/deploy-rs";

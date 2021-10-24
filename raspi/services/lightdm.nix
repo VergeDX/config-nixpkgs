@@ -8,7 +8,7 @@
 
   services.xserver.displayManager.lightdm.greeters.gtk.enable = true;
   services.xserver.displayManager.lightdm.greeters.gtk = {
-    theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
+    # theme = { package = pkgs.layan-gtk-theme; name = "Layan-light-solid"; };
     iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
     cursorTheme = { package = pkgs.libsForQt5.breeze-qt5; name = "breeze_cursors"; };
   };
