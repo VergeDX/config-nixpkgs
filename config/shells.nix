@@ -38,8 +38,6 @@ in
 
     pkgs.starship
     pkgs.nur.repos.ilya-fedin.silver
-
-    pkgs.nushell
   ] ++ [
     pkgs.powerline-fonts
     pkgs.powerline
