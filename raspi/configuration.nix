@@ -12,6 +12,7 @@
 
     ./users-immutable.nix
     ./boot.nix
+    ./deviceTree.nix
 
     ./services/openssh.nix
     ./services/xserver.nix
