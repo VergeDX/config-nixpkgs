@@ -1,4 +1,6 @@
 { pkgs, ... }:
+let tmpBase = "file:/tmp";
+in
 {
   services.hadoop = {
     hdfs = { namenode.enabled = true; datanode.enabled = true; };
@@ -7,14 +9,14 @@
 
   services.hadoop = {
     coreSite = {
-      "hadoop.tmp.dir" = "file:/tmp";
+      "hadoop.tmp.dir" = "${tmpBase}";
       "fs.defaultFS" = "hdfs://localhost";
     };
 
     hdfsSite = {
       "dfs.replication" = "1";
-      "dfs.namenode.name.dir" = "file:/tmp/dfs/name";
-      "dfs.datanode.data.dir" = "file:/tmp/dfs/data";
+      "dfs.namenode.name.dir" = "${tmpBase}/dfs/name";
+      "dfs.datanode.data.dir" = "${tmpBase}/dfs/data";
     };
   };
 
