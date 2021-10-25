@@ -1,5 +1,4 @@
-# https://github.com/nix-community/home-manager#usage
-{ pkgs, home, ... }:
+{ pkgs, ... }:
 {
   programs.chromium.enable = true;
   # https://www.linuxuprising.com/2021/04/how-to-enable-hardware-acceleration-in.html
@@ -14,9 +13,4 @@
       --use-gl=desktop \
     '';
   };
-
-  programs.htop.enable = true;
-  imports = [
-    # ../../config/neovim.nix
-  ];
 }
