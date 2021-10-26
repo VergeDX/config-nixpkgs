@@ -65,7 +65,6 @@
 
     pkgs.dig
     pkgs.nmap
-    pkgs.metasploit
     pkgs.inetutils
 
     pkgs.raspberrypi-eeprom
