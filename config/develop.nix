@@ -3,7 +3,7 @@ let useJbJdk = pkgsJb: pkgsJb.overrideAttrs (old: { jdk = pkgs.jetbrains.jdk; })
 in
 {
   home.packages = (builtins.map useJbJdk (with pkgs.jetbrains;
-    [ datagrip idea-ultimate pycharm-professional clion ]))
+    [ datagrip idea-ultimate pycharm-professional clion webstorm ]))
   ++ (with pkgs; [ android-tools android-studio apktool dex2jar jd-gui ])
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
