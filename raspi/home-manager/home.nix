@@ -4,5 +4,5 @@
   programs.htop.enable = true;
   imports = [ ./chromium.nix ];
 
-  home.packages = [ pkgs.dmenu ];
+  home.packages = [ pkgs.dmenu pkgs.vlc ];
 }
