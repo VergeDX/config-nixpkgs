@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, self, ... }:
 {
   # https://nixos.org/manual/nixpkgs/stable/#submitting-changes-tested-with-sandbox
   nix.useSandbox = true;
@@ -8,4 +8,8 @@
 
   # btrfs filesystem defragment -r -v -czstd /
   # nix.readOnlyStore = false;
+
+  # NickCao/flakes | flakes/nixos/local/default.nix
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.registry."p".flake = self;
 }
