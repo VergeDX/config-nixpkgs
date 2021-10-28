@@ -35,6 +35,17 @@ let
     };
   };
 
+  github-copilot-vim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "github-copilot-vim";
+    version = "1.0.1";
+
+    src = pkgs.fetchgit {
+      url = "https://github.com/github/copilot.vim";
+      rev = "e1be74e21a7daf88ca52116386c5acdb22265c76";
+      sha256 = "sha256-6IXr0PNw1Pflw1avexSVIFUYs8wGdQ//ETfRviLuogY=";
+    };
+  };
+
   tzachar-cmp-tabnine = pkgs.vimUtils.buildVimPlugin rec {
     pname = "tzachar-cmp-tabnine";
     version = "c3a168e";
@@ -61,6 +72,7 @@ let
   };
 in
 {
+  # https://github.com/github/copilot.vim
   programs.neovim.enable = true;
   programs.neovim.package = pkgs.neovim-nightly;
 
@@ -136,7 +148,7 @@ in
       pkgs.vimPlugins.neoscroll-nvim
       # https://github.com/tpope/vim-fugitive
       pkgs.vimPlugins.vim-fugitive
-    ];
+    ] ++ [ github-copilot-vim ];
 
     # https://medium.com/@hql287/10-vim-tips-to-ease-the-learning-curve-c8234cbdafa5
     # https://vimjc.com/vim-powerline.html
