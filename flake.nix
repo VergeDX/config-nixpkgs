@@ -19,9 +19,12 @@
       url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # https://github.com/nix-community/neovim-nightly-overlay#to-use-the-overlay
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs, agenix }:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs, agenix, ... }@inputs:
     let system = "x86_64-linux";
     in
     {
@@ -35,7 +38,9 @@
           imports = [ ./home.nix ];
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
-          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ];
+          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ]
+            ++ [ inputs.neovim-nightly-overlay.overlay ];
+
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.wemeet
             pkgs.gnome.cheese
