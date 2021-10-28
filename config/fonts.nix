@@ -5,7 +5,8 @@ with pkgs; {
   home.packages = [ source-han-sans source-han-mono source-han-serif source-han-code-jp ]
     ++ [ noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji noto-fonts-emoji-blob-bin ]
     ++ [ roboto roboto-slab roboto-mono ]
-    ++ [ dejavu_fonts vdrsymbols hack-font vistafonts nerdfonts ]
+    ++ [ dejavu_fonts vdrsymbols hack-font nerdfonts ]
+    ++ [ vistafonts vistafonts-chs ]
     ++ (with pkgs; [
     # https://developer.apple.com/fonts/
     (callPackage ../packages/fonts/common.nix {
