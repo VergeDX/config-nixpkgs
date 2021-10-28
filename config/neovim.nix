@@ -253,6 +253,8 @@ in
       lua require("autosave").setup({ enabled = true })
       " https://github.com/karb94/neoscroll.nvim#quickstart
       lua require('neoscroll').setup()
+      " https://github.com/github/copilot.vim/blob/release/doc/copilot.txt
+      let b:copilot_disabled = v:false
     '';
   };
 
