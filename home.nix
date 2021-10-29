@@ -17,9 +17,7 @@ rec {
     pkgs.arion
     pkgs.apfs-fuse
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
-    pkgs.appimagekit
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
-    pkgs.appimage-run
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
     pkgs.tdesktop
