@@ -1,21 +1,11 @@
 { home, pkgs, lib, ... }:
-# https://github.com/NixOS/nixpkgs/pull/143795
-let unixODBCDrivers.mariadb = pkgs.unixODBCDrivers.mariadb.overrideAttrs (old: rec {
-  version = "3.1.14";
-  src = pkgs.fetchgit {
-    url = "https://github.com/mariadb-corporation/mariadb-connector-odbc";
-    rev = "${version}";
-    sha256 = "sha256-b5v2Clg4HTeIOaWeBt4Ug3PlYA5NOKvmiFFuh1M1fnM=";
-  };
-});
-in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
   ++ (with pkgs; [ android-tools android-studio apktool dex2jar jd-gui ])
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
-  ++ [ unixODBCDrivers.mariadb pkgs.gcc ] # Required by mariadb (pypi)
+  ++ [ pkgs.libmysqlclient.dev pkgs.gcc ] # Required by mariadb (pypi)
   ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
