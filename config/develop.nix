@@ -18,8 +18,7 @@ in
   ++ [ unixODBCDrivers.mariadb pkgs.gcc ] # Required by mariadb (pypi)
   ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
-  ++ (with pkgs; [ cmake gnumake llvmPackages_9.libclang cmake ninja ]) # C / C++
-  ++ [ (pkgs.hiPrio pkgs.clang_9) pkgs.gdb pkgs.llvmPackages_9.lldb ] # For CLion.
+  ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ lib.singleton (pkgs.rust-bin.nightly.latest.default.override {
     extensions = [ "rust-src" "llvm-tools-preview" ];
