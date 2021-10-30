@@ -12,6 +12,7 @@
       ./services/openssh.nix
       ./services/fail2ban.nix
       ./services/hadoop.nix
+      ./services/mysql.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
