@@ -274,5 +274,7 @@ in
 
     (pkgs.hiPrio pkgs.stylish-haskell)
     pkgs.haskellPackages.hindent
+
+    pkgs.llvmPackages_9.libclang
   ];
 }
