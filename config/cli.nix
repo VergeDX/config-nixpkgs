@@ -102,4 +102,9 @@
     set -ga terminal-overrides ",xterm:Tc"
     set -sg escape-time 10
   '';
+
+  home.file.".dolt/config_global.json".text = builtins.toJSON {
+    "user.email" = "osu_Vanilla@126.com";
+    "user.name" = "Vanilla";
+  };
 }
