@@ -56,6 +56,8 @@ rec {
     pkgs.helvum
     pkgs.dmenu
     pkgs.waydroid
+
+    pkgs.gnome.ghex
   ];
 
   nixpkgs.config.allowUnfree = true;
