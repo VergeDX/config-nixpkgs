@@ -16,6 +16,9 @@
     targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
   }) ++ [ pkgs.cargo-binutils ];
 
+  # https://npmmirror.com/
+  home.file.".npmrc".text = "registry=https://registry.npmmirror.com/";
+
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
     systemProp.http.proxyHost=127.0.0.1
