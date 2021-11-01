@@ -22,6 +22,9 @@
 
     # https://github.com/nix-community/neovim-nightly-overlay#to-use-the-overlay
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    # https://github.com/MidAutumnMoon/Barbfish#nix-use-flake
+    Barbfish.url = "github:MidAutumnMoon/Barbfish";
   };
 
   outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs, agenix, ... }@inputs:
@@ -39,7 +42,7 @@
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
           nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ]
-            ++ [ inputs.neovim-nightly-overlay.overlay ];
+            ++ (with inputs; [ neovim-nightly-overlay.overlay Barbfish.overlay ]);
 
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.wemeet

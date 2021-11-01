@@ -43,7 +43,9 @@ in
     pkgs.powerline
     pkgs.powerline-symbols
     pkgs.meslo-lgs-nf
-  ] ++ (with pkgs.fishPlugins; [ done pisces ]);
+
+    pkgs.bubblewrap
+  ] ++ (with pkgs.fishPlugins; [ done pisces bfish ]);
 
   programs.fish.plugins = [
     {
