@@ -13,6 +13,7 @@
       ./services/fail2ban.nix
       ./services/hadoop.nix
       ./services/mysql.nix
+      ./services/dnscrypt-proxy2.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
