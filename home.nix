@@ -58,7 +58,25 @@ rec {
     pkgs.waydroid
 
     pkgs.gnome.ghex
+    pkgs.ArchiSteamFarm
+    pkgs.dasel
   ];
+
+  # https://github.com/TomWright/dasel#put
+  # https://www.cyberciti.biz/faq/howto-set-readonly-file-permission-in-linux-unix/
+  home.activation."ASF-Vanilla.json" =
+    let
+      json-file = "~/.config/asf/config/Vanilla.json";
+      secrets-dir = "/run/secrets";
+      dasel = "${pkgs.dasel}/bin/dasel";
+    in
+    ''
+      rm -f ${json-file} && echo "{}" > ${json-file}
+      ${dasel} put string -r json '.SteamLogin' `cat ${secrets-dir}/SteamLogin` -f ${json-file}
+      ${dasel} put string -r json '.SteamPassword' `cat ${secrets-dir}/SteamPassword` -f ${json-file}
+      ${dasel} put bool -r json '.Enabled' true -f ${json-file}
+      chmod u-w ${json-file}
+    '';
 
   nixpkgs.config.allowUnfree = true;
   imports = [

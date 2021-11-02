@@ -31,6 +31,10 @@
       ./hardware/hardware.nix
     ];
 
+  # https://github.com/ryantm/agenix#tutorial
+  age.secrets."SteamLogin" = { owner = "vanilla"; file = ../secrets/SteamLogin.age; };
+  age.secrets."SteamPassword" = { owner = "vanilla"; file = ../secrets/SteamPassword.age; };
+
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
