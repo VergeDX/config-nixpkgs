@@ -20,6 +20,9 @@
     "nowatchdog"
     "systemd.unified_cgroup_hierarchy=1"
   ];
+
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # https://wiki.archlinux.org/title/intel_graphics
   boot.extraModprobeConfig = ''
     options i915 enable_guc=2

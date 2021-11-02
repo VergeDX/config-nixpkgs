@@ -11,13 +11,4 @@
     ""
     "${pkgs.bluez}/libexec/bluetooth/bluetoothd --noplugin=sap"
   ];
-
-  # https://github.com/atar-axis/xpadneo/issues/259#issuecomment-918469473
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.bluetooth.settings."General" = {
-    "Privacy" = "device";
-    "JustWorksRepairing" = "always";
-    "Class" = "0x000100";
-    "FastConnectable" = "true";
-  };
 }
