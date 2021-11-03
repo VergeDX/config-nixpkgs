@@ -60,6 +60,7 @@ rec {
     pkgs.gnome.ghex
     pkgs.ArchiSteamFarm
     pkgs.dasel
+    pkgs.coreutils
   ];
 
   # https://github.com/TomWright/dasel#put
