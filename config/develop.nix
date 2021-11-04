@@ -1,4 +1,10 @@
 { home, pkgs, lib, ... }:
+let myRust = pkgs.rust-bin.nightly.latest.default.override {
+  extensions = [ "rust-src" "llvm-tools-preview" ];
+  # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
+  targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
+};
+in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
@@ -10,11 +16,7 @@
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   # https://github.com/oxalica/rust-overlay#usage-examples
-  ++ lib.singleton (pkgs.rust-bin.nightly.latest.default.override {
-    extensions = [ "rust-src" "llvm-tools-preview" ];
-    # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
-    targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
-  }) ++ [ pkgs.cargo-binutils ];
+  ++ [ myRust pkgs.cargo-binutils ];
 
   # https://npmmirror.com/
   home.file.".npmrc".text = ''
