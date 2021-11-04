@@ -23,7 +23,11 @@
     buildMachines = [
       {
         hostName = "eu.nixbuild.net";
-        system = "aarch64-linux";
+
+        # system = "aarch64-linux";
+        # system = "x86_64-linux";
+        # systems = [ "aarch64-linux" "x86_64-linux" ];
+
         maxJobs = 100;
         supportedFeatures = [ "big-parallel" "benchmark" ];
       }
