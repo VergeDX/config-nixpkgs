@@ -20,10 +20,16 @@ in
   ++ [ pkgs.nodePackages."@vue/cli" ]; # uni-app
 
   # https://npmmirror.com/
-  home.file.".npmrc".text = ''
-    registry=https://registry.npmmirror.com/
-    home=https://npm.taobao.org
-  '';
+  home.file = {
+    ".npmrc".text = ''
+      registry=https://registry.npmmirror.com/
+      home=https://npm.taobao.org
+    '';
+
+    ".yarnrc".text = ''
+      registry "https://registry.npm.taobao.org/"
+    '';
+  };
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
   home.file.".gradle/gradle.properties".text = ''
