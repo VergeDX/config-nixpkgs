@@ -14,6 +14,7 @@
       ./services/hadoop.nix
       ./services/mysql.nix
       ./services/dnscrypt-proxy2.nix
+      ./services/mongodb.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
