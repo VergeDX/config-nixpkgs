@@ -16,7 +16,8 @@ in
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   # https://github.com/oxalica/rust-overlay#usage-examples
-  ++ [ myRust pkgs.cargo-binutils ];
+  ++ [ myRust pkgs.cargo-binutils ] # THU - rCore
+  ++ [ pkgs.nodePackages."@vue/cli" ]; # uni-app
 
   # https://npmmirror.com/
   home.file.".npmrc".text = ''
