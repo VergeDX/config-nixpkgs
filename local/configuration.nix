@@ -15,6 +15,7 @@
       ./services/mariadb.nix
       ./services/dnscrypt-proxy2.nix
       ./services/mongodb.nix
+      ./services/redis.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
