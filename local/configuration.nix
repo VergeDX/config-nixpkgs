@@ -12,7 +12,7 @@
       ./services/openssh.nix
       ./services/fail2ban.nix
       ./services/hadoop.nix
-      ./services/mysql.nix
+      ./services/mariadb.nix
       ./services/dnscrypt-proxy2.nix
       ./services/mongodb.nix
 
