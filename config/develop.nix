@@ -12,7 +12,7 @@ in
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   ++ (with pkgs; [ python2Full python3Full sqlite sqlitebrowser ]) # Python 3
   ++ [ pkgs.libmysqlclient.dev pkgs.gcc ] # Required by mariadb (pypi)
-  ++ (with pkgs.python3Packages; [ pylint pylint-django ]) # Pylint
+  ++ (with pkgs.python3Packages; [ pylint ]) # pylint-django ]) # Pylint
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   # https://github.com/oxalica/rust-overlay#usage-examples
