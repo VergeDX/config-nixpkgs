@@ -30,6 +30,7 @@ in
     set -U __done_notification_urgency_level low
     set -U __done_notification_urgency_level_failure normal
     source ${plugin-git}/share/fish/vendor_functions.d/__git.init.fish && __git.init
+    set -e LD_LIBRARY_PATH
   '';
 
   home.packages = [
