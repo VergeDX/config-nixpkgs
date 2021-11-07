@@ -51,6 +51,7 @@
     pkgs.gnomeExtensions.sensory-perception
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
+    pkgs.gnomeExtensions.kimpanel
   ] ++ [
     pkgs.gnome.nautilus
     pkgs.gnome.sushi
