@@ -32,7 +32,6 @@
 
     # https://nixos.wiki/wiki/Node.js
     pkgs.yarn
-    pkgs.yarn2nix
     pkgs.nodePackages.pxder
 
     pkgs.gh

@@ -17,7 +17,8 @@ in
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ [ myRust pkgs.cargo-binutils ] # THU - rCore
-  ++ [ pkgs.nodePackages."@vue/cli" ]; # uni-app
+  ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
+  ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ]);
 
   # https://npmmirror.com/
   home.file = {
