@@ -5,10 +5,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.font = "${pkgs.hack-font}/share/fonts/hack/Hack-Regular.ttf";
 
-  # https://mnguyen.io/blog/running-nixos-in-production/
-  boot.kernelModules = [ "tcp_bbr" ];
-  boot.kernel.sysctl = { "net.ipv4.tcp_congestion_control" = "bbr"; };
-
   # https://opensource.com/article/21/8/linux-kernel-module
   zramSwap.enable = true;
 
@@ -21,7 +17,7 @@
     "systemd.unified_cgroup_hierarchy=1"
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   # https://wiki.archlinux.org/title/intel_graphics
   boot.extraModprobeConfig = ''
