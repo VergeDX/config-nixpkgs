@@ -28,7 +28,7 @@ in
     core.editor = "nvim";
   };
 
-  home.packages = [ pkgs.diff-so-fancy ];
+  home.packages = with pkgs; [ diff-so-fancy delta ];
 
   # https://gist.github.com/coin8086/7228b177221f6db913933021ac33bb92
   programs.ssh.enable = true;
