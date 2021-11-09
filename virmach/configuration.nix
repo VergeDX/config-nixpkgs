@@ -9,6 +9,7 @@
     ./services/fail2ban.nix
 
     ./networking/networkmanager.nix
+    ./networking/firewall.nix
 
     ./users.nix
     ./boot.nix
