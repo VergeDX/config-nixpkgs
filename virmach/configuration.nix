@@ -15,4 +15,7 @@
 
   networking = { inherit hostName; };
   system.stateVersion = "21.05";
+
+  # btrfs filesystem defragment -r -v -czstd /
+  # nix.readOnlyStore = false;
 }
