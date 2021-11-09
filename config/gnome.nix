@@ -83,6 +83,8 @@
     "x-scheme-handler/ftp" = [ "org.gnome.Nautilus.desktop" ];
 
     "text/plain" = [ "org.gnome.gedit.desktop" ];
+    "application/x-shellscript" = [ "org.gnome.gedit.desktop" ];
+
     "application/pdf" = [ "org.gnome.Evince.desktop" ];
 
     # https://www.vimfromscratch.com/articles/how-to-copy-and-paste-a-line-in-vim
