@@ -11,6 +11,7 @@
   # https://gist.github.com/manuelmazzuola/4ffa90f5f5d0ddacda96#file-configuration-nix-L22
   boot.kernel.sysctl = { "kernel.sysrq" = 1; };
 
+  # https://github.com/linyinfeng/dotfiles/search?q=boot.kernelPackages
   boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   # https://github.com/slacka/WoeUSB/issues/299

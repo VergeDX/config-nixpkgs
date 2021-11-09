@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  nixpkgs.config.allowUnfree = true;
-
   # https://github.com/NickCao/flakes/blob/baaa99e3b32ca01069443aa0466c6aeefe3620a4/nixos/local/configuration.nix#L104
   hardware.nvidia.modesetting.enable = true;
   # hardware.nvidia.nvidiaSettings = false;

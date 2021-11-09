@@ -20,6 +20,10 @@
             (self: super: {
               fish = (import nixos-unstable { inherit system; }).pkgs.fish;
               nixFlakes = (import nixos-unstable { inherit system; }).pkgs.nixFlakes;
+              linuxPackages_xanmod = (import nixos-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              }).pkgs.linuxPackages_xanmod;
             })
           ];
         }
