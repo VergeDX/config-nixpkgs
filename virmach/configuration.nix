@@ -8,7 +8,8 @@
     ./services/v2ray.nix
     ./services/fail2ban.nix
 
-    ./networkmanager.nix
+    ./networking/networkmanager.nix
+
     ./users.nix
     ./boot.nix
   ];
