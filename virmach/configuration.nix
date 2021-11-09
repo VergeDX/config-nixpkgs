@@ -8,6 +8,7 @@
     ./users.nix
     ./boot.nix
     ./v2ray.nix
+    ./fail2ban.nix
   ];
 
   networking = { inherit hostName; };
