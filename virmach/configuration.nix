@@ -4,9 +4,8 @@
     ./hardware-configuration.nix
     ./grub.nix
     ./openssh.nix
+    ./networkmanager.nix
   ];
-
-  networking.networkmanager.enable = true;
 
   system.stateVersion = "21.05";
 }
