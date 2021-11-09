@@ -31,6 +31,8 @@
     pkgs.v2ray
     pkgs.qv2ray
     (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
+    pkgs.nur.repos.linyinfeng.clash-premium
+    pkgs.nur.repos.linyinfeng.clash-for-windows
   ];
 
   # https://github.com/flightlessmango/MangoHud
