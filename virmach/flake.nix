@@ -9,7 +9,7 @@
     in
     rec {
       nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system; specialArgs = { inherit hostName; };
         modules = [ ./configuration.nix ];
       };
 
