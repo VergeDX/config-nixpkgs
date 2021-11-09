@@ -3,12 +3,14 @@
   imports = [
     ./disks.nix
     ./grub.nix
-    ./openssh.nix
+
+    ./services/openssh.nix
+    ./services/v2ray.nix
+    ./services/fail2ban.nix
+
     ./networkmanager.nix
     ./users.nix
     ./boot.nix
-    ./v2ray.nix
-    ./fail2ban.nix
   ];
 
   networking = { inherit hostName; };
