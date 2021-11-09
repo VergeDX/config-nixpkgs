@@ -5,8 +5,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
 
-  networking.useDHCP = false;
-  networking.interfaces.ens3.useDHCP = true;
+  networking.networkmanager.enable = true;
 
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
