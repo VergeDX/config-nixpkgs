@@ -7,6 +7,7 @@
     ./networkmanager.nix
     ./users.nix
     ./boot.nix
+    ./v2ray.nix
   ];
 
   networking = { inherit hostName; };
