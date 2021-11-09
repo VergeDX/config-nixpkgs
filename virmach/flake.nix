@@ -15,8 +15,7 @@
       };
 
       deploy.nodes."${hostName}" = rec {
-        hostname = "cs.lt.nkeo.top";
-        sshOpts = [ "-p" "55169" ];
+        hostname = "107.173.141.139";
 
         sshUser = "root";
         profiles.system = {
