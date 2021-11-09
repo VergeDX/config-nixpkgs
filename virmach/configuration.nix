@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./hardware-configuration.nix
+    ./disks.nix
     ./grub.nix
     ./openssh.nix
     ./networkmanager.nix
