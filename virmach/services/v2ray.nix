@@ -4,6 +4,9 @@
 
   # https://www.v2ray.com/chapter_02/01_overview.html
   services.v2ray.config = {
+    # https://www.v2ray.com/chapter_02/01_overview.html#logobject
+    # "log"."loglevel" = "info";
+
     # https://adguard-dns.com/zh_cn/public-dns.html
     "dns" = { "servers" = [ "https://dns.adguard.com/dns-query" ]; };
 
