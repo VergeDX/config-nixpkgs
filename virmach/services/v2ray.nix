@@ -10,32 +10,35 @@
     # https://adguard-dns.com/zh_cn/public-dns.html
     "dns" = { "servers" = [ "https://dns.adguard.com/dns-query" ]; };
 
-    "inbounds" = [{
-      "port" = 10086;
-      "protocol" = "vmess";
-      "settings" = { "clients" = [{ "id" = "b831381d-6324-4d53-ad4f-8cda48b30811"; }]; };
+    "inbounds" = [
+      {
+        "port" = 10086;
+        "protocol" = "vmess";
+        "settings" = { "clients" = [{ "id" = "b831381d-6324-4d53-ad4f-8cda48b30811"; }]; };
 
-      # https://github.com/v2ray/v2ray-core/issues/826
-      # https://toutyrater.github.io/advanced/httpfake.html
-      "streamSettings"."tcpSettings"."header"."type" = "http";
-    }
-
+        # https://github.com/v2ray/v2ray-core/issues/826
+        # https://toutyrater.github.io/advanced/httpfake.html
+        "streamSettings"."tcpSettings"."header"."type" = "http";
+      }
       {
         "tag" = "tg-in";
         "port" = 443;
         "protocol" = "mtproto";
         "settings" = { "users" = [{ "secret" = "b0cbcef5a486d9636472ac27f8e11a9d"; }]; };
-      }];
+      }
+    ];
 
-    "outbounds" = [{
-      "protocol" = "freedom";
-      "settings" = { };
-    }
+    "outbounds" = [
+      {
+        "protocol" = "freedom";
+        "settings" = { };
+      }
       {
         "tag" = "tg-out";
         "protocol" = "mtproto";
         "settings" = { };
-      }];
+      }
+    ];
 
     # https://www.v2ray.com/chapter_02/protocols/mtproto.html#sample
     "routing"."rules" = [{
