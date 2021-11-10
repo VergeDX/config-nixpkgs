@@ -18,6 +18,8 @@
 
   networking = { inherit hostName; };
   networking.nameservers = [ "127.0.0.1" "::1" ];
+
+  time.timeZone = "America/Chicago";
   system.stateVersion = "21.05";
 
   # btrfs filesystem defragment -r -v -czstd /
