@@ -1,7 +1,9 @@
 {
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
-  inputs.deploy-rs.url = "github:serokell/deploy-rs";
-  inputs.nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    deploy-rs.url = "github:serokell/deploy-rs";
+    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
 
   outputs = { self, nixpkgs, deploy-rs, nixos-unstable, ... }:
     let
