@@ -13,4 +13,8 @@
   programs.adb.enable = true;
   users.users."vanilla".extraGroups = [ "adbusers" ];
   services.udev.packages = [ pkgs.android-udev-rules ];
+
+  programs.proxychains.enable = true;
+  programs.proxychains.proxies."myproxy" = { type = "socks5"; host = "127.0.0.1"; port = 1089; };
+  programs.proxychains.proxies."myproxy".enable = true;
 }
