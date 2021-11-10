@@ -11,6 +11,10 @@
       "port" = 10086;
       "protocol" = "vmess";
       "settings" = { "clients" = [{ "id" = "b831381d-6324-4d53-ad4f-8cda48b30811"; }]; };
+
+      # https://github.com/v2ray/v2ray-core/issues/826
+      # https://toutyrater.github.io/advanced/httpfake.html
+      "streamSettings"."tcpSettings"."header"."type" = "http";
     }];
 
     "outbounds" = [{
