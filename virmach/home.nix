@@ -1,5 +1,5 @@
 { pkgs, ... }:
 {
   programs.htop.enable = true;
-  home.packages = [ pkgs.dig ];
+  home.packages = with pkgs; [ dig tcpdump ];
 }
