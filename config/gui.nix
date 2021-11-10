@@ -15,6 +15,7 @@
 
     pkgs.wireshark
     pkgs.dosbox
+    (pkgs.callPackage ../packages/gui/openvisualtraceroute.nix { })
 
     pkgs.fontforge
     pkgs.fontforge-gtk
