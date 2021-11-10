@@ -1,7 +1,12 @@
 { ... }:
 {
   services.v2ray.enable = true;
+
+  # https://www.v2ray.com/chapter_02/01_overview.html
   services.v2ray.config = {
+    # https://adguard-dns.com/zh_cn/public-dns.html
+    "dns" = { "servers" = [ "https://dns.adguard.com/dns-query" ]; };
+
     "inbounds" = [{
       "port" = 10086;
       "protocol" = "vmess";
