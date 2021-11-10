@@ -1,6 +1,4 @@
-{ pkgs, inputs, system, ... }:
-let pkgs-unstable = import inputs.nixos-unstable { inherit system; };
-in
+{ pkgs, pkgs-unstable, ... }:
 {
   boot.kernelPackages = pkgs-unstable.linuxPackages_xanmod;
 
