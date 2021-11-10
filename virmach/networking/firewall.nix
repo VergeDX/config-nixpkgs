@@ -1,5 +1,5 @@
 { ... }:
 {
   networking.firewall.allowPing = false;
-  networking.firewall.rejectPackets = true;
+  # networking.firewall.rejectPackets = true;
 }
