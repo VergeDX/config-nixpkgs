@@ -11,8 +11,13 @@
     in
     rec {
       nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
-        inherit system; specialArgs = { inherit hostName pkgs-unstable; };
-        modules = [ ./configuration.nix ];
+        inherit system;
+        specialArgs = { inherit hostName pkgs-unstable; };
+
+        modules = [
+          ./configuration.nix
+          { nixpkgs.overlays = [ (self: super: { v2ray = pkgs-unstable.v2ray; }) ]; }
+        ];
       };
 
       deploy.nodes."${hostName}" = rec {
