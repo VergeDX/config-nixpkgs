@@ -26,7 +26,8 @@ let config_JSON = lib.strings.toJSON {
   ];
 
   "outbounds" = [
-    { "protocol" = "freedom"; "settings" = { }; }
+    # https://www.4spaces.org/v2ray-google-check/
+    { "protocol" = "freedom"; "settings" = { "domainStrategy" = "UseIPv4"; }; }
     { "tag" = "tg-out"; "protocol" = "mtproto"; "settings" = { }; }
   ];
 
