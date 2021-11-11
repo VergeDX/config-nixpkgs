@@ -13,7 +13,6 @@
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
 
-    pkgs.wireshark
     pkgs.dosbox
     (pkgs.callPackage ../packages/gui/openvisualtraceroute.nix { })
 

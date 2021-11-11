@@ -21,6 +21,7 @@
       ./virtualisation/libvirt.nix
 
       ./programs.nix
+      ./setcap.nix
 
       ./nix/common.nix
       ./nix/flakes.nix
