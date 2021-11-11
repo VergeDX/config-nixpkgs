@@ -11,6 +11,7 @@
 
     ./networking/networkmanager.nix
     ./networking/firewall.nix
+    ./networking/iperf.nix
 
     ./users.nix
     ./boot.nix
