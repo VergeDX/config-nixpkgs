@@ -4,9 +4,10 @@
     deploy-rs.url = "github:serokell/deploy-rs";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, deploy-rs, nixos-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, deploy-rs, nixos-unstable, home-manager, agenix, ... }:
     let
       hostName = "VirMach-V2Ray";
       system = "x86_64-linux";
@@ -22,7 +23,8 @@
           ++ [ home-manager.nixosModules.home-manager ]
           ++ [{ home-manager.useGlobalPkgs = true; }]
           ++ [{ home-manager.useUserPackages = true; }]
-          ++ [{ home-manager.users."root" = import ./home.nix; }];
+          ++ [{ home-manager.users."root" = import ./home.nix; }]
+          ++ [ agenix.nixosModules.age ];
       };
 
       deploy.nodes."${hostName}" = rec {
