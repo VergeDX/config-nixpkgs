@@ -16,6 +16,9 @@
     ./boot.nix
   ];
 
+  age.secrets."v2ray/id".file = ./secrets/v2ray/id.age;
+  age.secrets."v2ray/secret".file = ./secrets/v2ray/secret.age;
+
   networking = { inherit hostName; };
   networking.nameservers = [ "127.0.0.1" "::1" ];
 
