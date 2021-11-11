@@ -29,15 +29,8 @@
     ];
 
     "outbounds" = [
-      {
-        "protocol" = "freedom";
-        "settings" = { };
-      }
-      {
-        "tag" = "tg-out";
-        "protocol" = "mtproto";
-        "settings" = { };
-      }
+      { "protocol" = "freedom"; "settings" = { }; }
+      { "tag" = "tg-out"; "protocol" = "mtproto"; "settings" = { }; }
     ];
 
     # https://www.v2ray.com/chapter_02/protocols/mtproto.html#sample
