@@ -19,7 +19,7 @@ let config_JSON = lib.strings.toJSON {
     }
     {
       "tag" = "tg-in";
-      "port" = 443;
+      "port" = 4433;
       "protocol" = "mtproto";
       "settings" = { "users" = [{ "secret" = "@secret@"; }]; };
     }
@@ -52,6 +52,6 @@ in
     ${pkgs.gnused}/bin/sed -i "s/@secret@/$secret/g" /etc/v2ray/Vanilla-V2Ray.json
   '';
 
-  networking.firewall.allowedTCPPorts = [ 10086 443 ];
-  networking.firewall.allowedUDPPorts = [ 10086 443 ];
+  networking.firewall.allowedTCPPorts = [ 10086 4433 ];
+  networking.firewall.allowedUDPPorts = [ 10086 4433 ];
 }
