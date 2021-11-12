@@ -4,8 +4,8 @@ let config_JSON = lib.strings.toJSON {
   # https://www.v2ray.com/chapter_02/01_overview.html#logobject
   # "log"."loglevel" = "info";
 
-  # https://developers.google.com/speed/public-dns/docs/doh
-  "dns" = { "servers" = [ "https://dns.google/dns-query" ]; };
+  # https://adguard-dns.com/zh_cn/public-dns.html
+  "dns" = { "servers" = [ "https://dns.adguard.com/dns-query" ]; };
 
   "inbounds" = [
     {
