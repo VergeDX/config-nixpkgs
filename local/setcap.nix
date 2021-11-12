@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # https://search.nixos.org/options?channel=unstable&type=packages&query=setcap
+  # NixOS - Search - "setcap"
   programs.iotop.enable = true;
   programs.iftop.enable = true;
   programs.noisetorch.enable = true;
