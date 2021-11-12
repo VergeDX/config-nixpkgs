@@ -2,24 +2,21 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
     deploy-rs.url = "github:serokell/deploy-rs";
-    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, deploy-rs, nixos-unstable, home-manager, agenix, ... }:
+  outputs = { self, nixpkgs, deploy-rs, home-manager, agenix, ... }:
     let
       hostName = "VirMach-V2Ray";
       system = "x86_64-linux";
-      pkgs-unstable = import nixos-unstable { inherit system; };
     in
     rec {
       nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit hostName pkgs-unstable; };
+        specialArgs = { inherit hostName; };
 
         modules = [ ./configuration.nix ]
-          ++ [{ nixpkgs.overlays = [ (self: super: { v2ray = pkgs-unstable.v2ray; }) ]; }]
           ++ [ home-manager.nixosModules.home-manager ]
           ++ [{ home-manager.useGlobalPkgs = true; }]
           ++ [{ home-manager.useUserPackages = true; }]

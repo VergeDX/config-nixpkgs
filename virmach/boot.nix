@@ -1,6 +1,6 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
-  boot.kernelPackages = pkgs-unstable.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   boot.kernel.sysctl = {
     # https://sysctl-explorer.net/net/ipv4/tcp_fastopen/
