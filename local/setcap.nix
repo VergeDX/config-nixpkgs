@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # https://search.nixos.org/options?channel=unstable&type=packages&query=setcap
   programs.iotop.enable = true;
@@ -8,5 +8,7 @@
   programs.mtr.enable = true;
   programs.wavemon.enable = true;
   programs.bandwhich.enable = true;
+
   programs.wireshark.enable = true;
+  programs.wireshark.package = pkgs.wireshark;
 }
