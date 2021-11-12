@@ -8,6 +8,7 @@
     ./services/v2ray.nix
     ./services/fail2ban.nix
     ./services/dnscrypt-proxy2.nix
+    ./services/nginx.nix
 
     ./networking/networkmanager.nix
     ./networking/firewall.nix
