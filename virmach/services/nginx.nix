@@ -2,6 +2,9 @@
 {
   services.nginx.enable = true;
   services.nginx.virtualHosts."vanilla.cyunrei.moe" = {
+    # https://nixos.wiki/wiki/Nginx#Minimal_Example
+    addSSL = true;
+
     enableACME = true;
     root = "${pkgs.nginx}/html";
   };
