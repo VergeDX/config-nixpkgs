@@ -11,9 +11,6 @@
   services.xserver.displayManager.sessionCommands =
     config.services.xserver.displayManager.setupCommands;
 
-  services.xserver.wacom.enable = true;
-  services.xserver.digimend.enable = true;
-
   # https://nixos.wiki/wiki/GNOME#Excluding_some_GNOME_applications_from_the_default_install
   services.gnome.core-utilities.enable = false;
   services.gnome.core-developer-tools.enable = false;
