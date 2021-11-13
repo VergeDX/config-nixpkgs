@@ -65,6 +65,7 @@
 
     pkgs.dig
     pkgs.nmap
+    pkgs.iperf
 
     pkgs.raspberrypi-eeprom
     pkgs.libraspberrypi
