@@ -22,7 +22,7 @@
     pkgs.gnomeExtensions.tray-icons
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
-    pkgs.gnomeExtensions.extension-list
+    # pkgs.gnomeExtensions.extension-list
     pkgs.gnomeExtensions.screenshot-tool
 
     # Credit: @Cyunrei
@@ -42,7 +42,7 @@
     pkgs.gnomeExtensions.disconnect-wifi
 
     # https://askubuntu.com/questions/1234742/automatic-light-dark-mode
-    pkgs.gnomeExtensions.night-theme-switcher
+    # pkgs.gnomeExtensions.night-theme-switcher
     # pkgs.gnomeExtensions.jiggle
 
     pkgs.conky
