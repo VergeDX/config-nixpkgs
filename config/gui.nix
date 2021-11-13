@@ -30,6 +30,7 @@
 
     pkgs.v2ray
     pkgs.qv2ray
+    (pkgs.callPackage ../packages/resources/QvPlugin-Trojan-Go.nix { })
     (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
     pkgs.nur.repos.linyinfeng.clash-premium
     pkgs.nur.repos.linyinfeng.clash-for-windows
