@@ -33,6 +33,8 @@
     (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
     pkgs.nur.repos.linyinfeng.clash-premium
     pkgs.nur.repos.linyinfeng.clash-for-windows
+
+    pkgs.osu-lazer
   ];
 
   # https://github.com/flightlessmango/MangoHud
