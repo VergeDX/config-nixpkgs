@@ -1,16 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-
-    ./disks.nix
-    ./cpu.nix
-    ./bluetooth.nix
-    ./nvidia.nix
-    ./steam.nix
-    ./yubikey.nix
-    ./tablet.nix
-  ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];

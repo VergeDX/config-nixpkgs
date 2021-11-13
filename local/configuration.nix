@@ -33,6 +33,13 @@
 
       # Include the results of the hardware scan.
       ./hardware/hardware.nix
+      ./hardware/disks.nix
+      ./hardware/cpu.nix
+      ./hardware/bluetooth.nix
+      ./hardware/nvidia.nix
+      ./hardware/steam.nix
+      ./hardware/yubikey.nix
+      ./hardware/tablet.nix
     ];
 
   # https://github.com/ryantm/agenix#tutorial
