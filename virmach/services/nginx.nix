@@ -7,6 +7,12 @@
 
     enableACME = true;
     root = "${pkgs.nginx}/html";
+
+    # https://nixos.wiki/wiki/Nginx#TLS_reverse_proxy
+    locations."/ray" = {
+      proxyPass = "http://127.0.0.1:10000";
+      proxyWebsockets = true;
+    };
   };
 
   security.acme.email = "osu_Vanilla@126.com";

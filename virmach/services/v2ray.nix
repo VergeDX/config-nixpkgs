@@ -6,13 +6,17 @@ let config_JSON = lib.strings.toJSON {
 
   "inbounds" = [
     {
-      "port" = 10086;
+      "port" = 10000;
+      "listen" = "127.0.0.1";
+
       "protocol" = "vmess";
       "settings" = { "clients" = [{ "id" = "@id@"; }]; };
 
-      # https://github.com/v2ray/v2ray-core/issues/826
-      # https://toutyrater.github.io/advanced/httpfake.html
-      "streamSettings"."tcpSettings"."header"."type" = "http";
+      # https://guide.v2fly.org/advanced/wss_and_web.html
+      "streamSettings" = {
+        "network" = "ws";
+        "wsSettings" = { "path" = "/ray"; };
+      };
     }
     {
       "tag" = "tg-in";
@@ -49,6 +53,6 @@ in
     ${pkgs.gnused}/bin/sed -i "s/@secret@/$secret/g" /etc/v2ray/Vanilla-V2Ray.json
   '';
 
-  networking.firewall.allowedTCPPorts = [ 10086 4433 ];
-  networking.firewall.allowedUDPPorts = [ 10086 4433 ];
+  networking.firewall.allowedTCPPorts = [ 4433 ];
+  networking.firewall.allowedUDPPorts = [ 4433 ];
 }
