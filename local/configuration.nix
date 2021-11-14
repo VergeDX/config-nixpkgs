@@ -16,6 +16,7 @@
       ./services/dnscrypt-proxy2.nix
       ./services/mongodb.nix
       ./services/redis.nix
+      ./services/nginx.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
