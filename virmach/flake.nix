@@ -4,9 +4,10 @@
     deploy-rs.url = "github:serokell/deploy-rs";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
     agenix.url = "github:ryantm/agenix";
+    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, deploy-rs, home-manager, agenix, ... }:
+  outputs = { self, nixpkgs, deploy-rs, home-manager, agenix, nixos-unstable, ... }:
     let
       hostName = "VirMach-V2Ray";
       system = "x86_64-linux";
@@ -14,7 +15,7 @@
     rec {
       nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit hostName; };
+        specialArgs = { inherit hostName nixpkgs system nixos-unstable; };
 
         modules = [ ./configuration.nix ]
           ++ [ home-manager.nixosModules.home-manager ]
