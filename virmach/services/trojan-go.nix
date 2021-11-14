@@ -16,6 +16,13 @@
       "key" = "/var/lib/acme/vanilla.cyunrei.moe/key.pem";
       "fallback_port" = 443;
     };
+
+    # https://p4gefau1t.github.io/trojan-go/advance/websocket/
+    "websocket" = {
+      "enabled" = true;
+      "path" = "/your-websocket-path";
+      "host" = "vanilla.cyunrei.moe";
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 4433 ];
