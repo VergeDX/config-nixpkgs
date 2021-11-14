@@ -66,6 +66,7 @@
     pkgs.dig
     pkgs.nmap
     pkgs.iperf
+    (pkgs.callPackage ../packages/cli/trojan-go.nix { })
 
     pkgs.raspberrypi-eeprom
     pkgs.libraspberrypi
