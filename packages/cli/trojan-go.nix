@@ -16,4 +16,7 @@ buildGo117Module rec {
     rm ./test/scenario/proxy_test.go
     rm ./tunnel/shadowsocks/shadowsocks_test.go
   '';
+
+  # https://github.com/p4gefau1t/trojan-go/blob/v0.10.6/Makefile#L9
+  tags = [ "full" ];
 }
