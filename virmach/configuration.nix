@@ -5,11 +5,11 @@
     ./grub.nix
 
     ./services/openssh.nix
-    # ./services/v2ray.nix
+    ./services/v2ray.nix
     ./services/fail2ban.nix
     ./services/dnscrypt-proxy2.nix
     ./services/nginx.nix
-    ./services/trojan-go.nix
+    # ./services/trojan-go.nix
 
     ./networking/networkmanager.nix
     ./networking/firewall.nix
