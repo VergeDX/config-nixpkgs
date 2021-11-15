@@ -24,9 +24,6 @@
   age.secrets."v2ray/id".file = ./secrets/v2ray/id.age;
   age.secrets."v2ray/secret".file = ./secrets/v2ray/secret.age;
 
-  age.secrets."asf/SteamLogin".file = ./secrets/asf/SteamLogin.age;
-  age.secrets."asf/SteamPassword".file = ./secrets/asf/SteamPassword.age;
-
   age.secrets."telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
   age.secrets."telegraf/config_url/system".file = ./secrets/telegraf/config_url/system.age;
   age.secrets."telegraf/config_url/fail2ban".file = ./secrets/telegraf/config_url/fail2ban.age;
