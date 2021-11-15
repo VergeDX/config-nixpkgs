@@ -13,6 +13,10 @@
       proxyPass = "http://127.0.0.1:10000";
       proxyWebsockets = true;
     };
+
+    # https://www.tecmint.com/enable-nginx-status-page/
+    locations."/nginx_status".extraConfig =
+      "stub_status;" + "allow 127.0.0.1;" + "deny all;";
   };
 
   security.acme.email = "osu_Vanilla@126.com";

@@ -21,7 +21,9 @@
         --header "Authorization: Token $INFLUX_TOKEN" > ../telegraf.conf
       ${pkgs.curl}/bin/curl  $(cat /run/secrets/telegraf/config_url/fail2ban) \
         --header "Authorization: Token $INFLUX_TOKEN" > fail2ban.conf
-      chmod u-w ../telegraf.conf fail2ban.conf
+      ${pkgs.curl}/bin/curl  $(cat /run/secrets/telegraf/config_url/nginx) \
+        --header "Authorization: Token $INFLUX_TOKEN" > nginx.conf
+      chmod u-w ../telegraf.conf fail2ban.conf nginx.conf
     ''; in
     "sleep 3" + " && " + "${pkgs.bash}/bin/bash ${prepare-config-script}";
   systemd.services."telegraf".after = [ "influxdb2.services" ];
