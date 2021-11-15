@@ -11,6 +11,7 @@
     ./services/nginx.nix
     # ./services/trojan-go.nix
     ./services/influxdb2.nix
+    ./services/telegraf.nix
 
     ./networking/networkmanager.nix
     ./networking/firewall.nix
