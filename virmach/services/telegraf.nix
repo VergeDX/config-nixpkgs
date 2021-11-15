@@ -26,7 +26,7 @@
       chmod u-w ../telegraf.conf fail2ban.conf nginx.conf
     ''; in
     "sleep 3" + " && " + "${pkgs.bash}/bin/bash ${prepare-config-script}";
-  systemd.services."telegraf".after = [ "influxdb2.services" ];
+  systemd.services."telegraf".after = [ "influxdb2.service" "nginx.service" ];
 
   systemd.services."telegraf".serviceConfig."AmbientCapabilities" = [ "CAP_DAC_OVERRIDE" ];
   systemd.services."telegraf".serviceConfig."CapabilityBoundingSet" = [ "CAP_DAC_OVERRIDE" ];
