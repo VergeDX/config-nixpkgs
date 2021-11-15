@@ -13,4 +13,5 @@ in
 
   "telegraf/INFLUX_TOKEN-env.age".publicKeys = all;
   "telegraf/config_url/system.age".publicKeys = all;
+  "telegraf/config_url/fail2ban.age".publicKeys = all;
 }
