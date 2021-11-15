@@ -22,6 +22,9 @@
   age.secrets."v2ray/id".file = ./secrets/v2ray/id.age;
   age.secrets."v2ray/secret".file = ./secrets/v2ray/secret.age;
 
+  age.secrets."asf/SteamLogin".file = ./secrets/asf/SteamLogin.age;
+  age.secrets."asf/SteamPassword".file = ./secrets/asf/SteamPassword.age;
+
   networking = { inherit hostName; };
   networking.nameservers = [ "127.0.0.1" "::1" ];
 

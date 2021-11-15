@@ -7,4 +7,7 @@ in
 {
   "v2ray/id.age".publicKeys = all;
   "v2ray/secret.age".publicKeys = all;
+
+  "asf/SteamLogin.age".publicKeys = all;
+  "asf/SteamPassword.age".publicKeys = all;
 }
