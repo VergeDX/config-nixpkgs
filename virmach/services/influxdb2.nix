@@ -16,7 +16,4 @@
     "AmbientCapabilities" = [ "CAP_DAC_OVERRIDE" ];
     "CapabilityBoundingSet" = lib.mkForce "CAP_DAC_OVERRIDE";
   };
-
-  networking.firewall.allowedTCPPorts = [ 8086 ];
-  networking.firewall.allowedUDPPorts = [ 8086 ];
 }

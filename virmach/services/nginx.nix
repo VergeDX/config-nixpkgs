@@ -6,7 +6,7 @@
     addSSL = true;
 
     enableACME = true;
-    root = "${pkgs.nginx}/html";
+    locations."/".proxyPass = "https://127.0.0.1:8086";
 
     # https://nixos.wiki/wiki/Nginx#TLS_reverse_proxy
     locations."/ray" = {
