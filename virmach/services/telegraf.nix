@@ -9,7 +9,7 @@
     # https://unix.stackexchange.com/questions/216780
     ("${pkgs.bash}/bin/bash" + " " + "-c" + " " + "\"" +
       "${config.services.telegraf.package}/bin/telegraf" + " " +
-      "-config" + " " + "$$(cat /run/secrets/telegraf/config_url)" + "\"");
+      "-config" + " " + "$$(cat /run/secrets/telegraf/config_url/system)" + "\"");
 
   systemd.services."telegraf".serviceConfig."AmbientCapabilities" = [ "CAP_DAC_OVERRIDE" ];
   systemd.services."telegraf".serviceConfig."CapabilityBoundingSet" = [ "CAP_DAC_OVERRIDE" ];
