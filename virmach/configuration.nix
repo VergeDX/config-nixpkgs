@@ -10,6 +10,7 @@
     ./services/dnscrypt-proxy2.nix
     ./services/nginx.nix
     # ./services/trojan-go.nix
+    ./services/influxdb2.nix
 
     ./networking/networkmanager.nix
     ./networking/firewall.nix
