@@ -12,4 +12,5 @@ in
   "asf/SteamPassword.age".publicKeys = all;
 
   "telegraf/INFLUX_TOKEN-env.age".publicKeys = all;
+  "telegraf/config_url.age".publicKeys = all;
 }

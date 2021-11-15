@@ -27,6 +27,7 @@
   age.secrets."asf/SteamPassword".file = ./secrets/asf/SteamPassword.age;
 
   age.secrets."telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
+  age.secrets."telegraf/config_url".file = ./secrets/telegraf/config_url.age;
 
   networking = { inherit hostName; };
   networking.nameservers = [ "127.0.0.1" "::1" ];
