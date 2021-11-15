@@ -8,6 +8,9 @@
   services.influxdb2.settings = {
     "tls-cert" = "/var/lib/acme/vanilla.cyunrei.moe/cert.pem";
     "tls-key" = "/var/lib/acme/vanilla.cyunrei.moe/key.pem";
+
+    # https://docs.influxdata.com/influxdb/v2.1/reference/config-options/#http-bind-address
+    "http-bind-address" = "127.0.0.1:8086";
   };
 
   # https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Capabilities
