@@ -27,6 +27,7 @@
   age.secrets."telegraf/INFLUX_TOKEN.env".file = ./secrets/telegraf/INFLUX_TOKEN-env.age;
   age.secrets."telegraf/config_url/system".file = ./secrets/telegraf/config_url/system.age;
   age.secrets."telegraf/config_url/fail2ban".file = ./secrets/telegraf/config_url/fail2ban.age;
+  age.secrets."telegraf/config_url/nginx".file = ./secrets/telegraf/config_url/nginx.age;
 
   networking = { inherit hostName; };
   networking.nameservers = [ "127.0.0.1" "::1" ];
