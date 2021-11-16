@@ -55,6 +55,7 @@ rec {
 
     pkgs.helvum
     pkgs.dmenu
+    pkgs.termius
 
     pkgs.gnome.ghex
     pkgs.ArchiSteamFarm
