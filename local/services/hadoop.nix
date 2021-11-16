@@ -16,6 +16,22 @@ let
     targetPkgs = pkgs: [ hadoop-fixed ];
     runScript = "${name}";
   };
+  hdfs-FHS = pkgs.buildFHSUserEnv rec {
+    name = "hdfs";
+    targetPkgs = pkgs: [ hadoop-fixed ];
+    runScript = "${name}";
+  };
+  hadoop-final = pkgs.stdenv.mkDerivation {
+    name = "hadoop-final";
+    version = "${hadoop-fixed.version}";
+    src = hadoop-fixed-FHS;
+
+    installPhase = ''
+      mkdir -p $out/bin/
+      ln -s ${hadoop-fixed-FHS}/bin/hadoop $out/bin/hadoop
+      ln -s ${hdfs-FHS}/bin/hdfs $out/bin/hdfs
+    '';
+  };
 in
 {
   services.hadoop = {
@@ -37,6 +53,6 @@ in
   };
 
   nixpkgs.config.permittedInsecurePackages = [ "openssl-1.0.2u" ];
-  services.hadoop.package = hadoop-fixed;
-  environment.systemPackages = [ hadoop-fixed-FHS ];
+  services.hadoop.package = hadoop-final;
+  environment.systemPackages = [ hadoop-final ];
 }
