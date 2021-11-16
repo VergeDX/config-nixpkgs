@@ -3,5 +3,6 @@ let yubikey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrr1hJLnVmUFa9CNFAGZTvYZbO9
 in
 {
   services.openssh.enable = true;
-  users.users."root".openssh.authorizedKeys.keys = lib.singleton yubikey;
+  users.users."root".openssh.authorizedKeys.keys = [ yubikey ] ++
+    [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVpgJtK1tTpURq6XH3xibH+6VdU8/2igxpQs4aAkaoy" ];
 }
