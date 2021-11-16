@@ -11,6 +11,11 @@ let
       '';
     });
   });
+  hadoop-fixed-FHS = pkgs.buildFHSUserEnv rec {
+    name = "hadoop";
+    targetPkgs = pkgs: [ hadoop-fixed ];
+    runScript = "${name}";
+  };
 in
 {
   services.hadoop = {
@@ -33,5 +38,5 @@ in
 
   nixpkgs.config.permittedInsecurePackages = [ "openssl-1.0.2u" ];
   services.hadoop.package = hadoop-fixed;
-  environment.systemPackages = [ hadoop-fixed ];
+  environment.systemPackages = [ hadoop-fixed-FHS ];
 }
