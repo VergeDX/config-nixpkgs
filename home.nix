@@ -79,6 +79,10 @@ rec {
       chmod u-w ${json-file}
     '';
 
+  # https://github.com/JustArchiNET/ArchiSteamFarm/wiki/FAQ-zh-CN
+  home.file.".config/asf/config/ASF.json".text =
+    builtins.toJSON { "Statistics" = false; "UpdateChannel" = 0; };
+
   nixpkgs.config.allowUnfree = true;
   imports = [
     ./config/fcitx5.nix
