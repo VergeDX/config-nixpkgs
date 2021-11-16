@@ -55,7 +55,6 @@ rec {
 
     pkgs.helvum
     pkgs.dmenu
-    pkgs.waydroid
 
     pkgs.gnome.ghex
     pkgs.ArchiSteamFarm
