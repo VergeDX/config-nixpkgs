@@ -17,6 +17,7 @@
       ./services/mongodb.nix
       ./services/redis.nix
       ./services/nginx.nix
+      ./services/hbase.nix
 
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
