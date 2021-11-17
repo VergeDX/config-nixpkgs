@@ -36,6 +36,8 @@
     pkgs.nur.repos.linyinfeng.clash-for-windows
 
     pkgs.osu-lazer
+    pkgs.minecraft
+    pkgs.multimc
   ];
 
   # https://github.com/flightlessmango/MangoHud
