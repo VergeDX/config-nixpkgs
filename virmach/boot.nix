@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   boot.kernel.sysctl = {
     # https://sysctl-explorer.net/net/ipv4/tcp_fastopen/
@@ -11,5 +11,9 @@
 
     # https://blog.cloudflare.com/syn-packet-handling-in-the-wild/
     "net.core.somaxconn" = 16 * 1024;
+
+    # https://gist.github.com/xterat/cefccb42f7d4b2055368ebb00454861f
+    "net.core.default_qdisc" = "fq";
+    "net.ipv4.tcp_congestion_control" = "bbr";
   };
 }
