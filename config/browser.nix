@@ -16,4 +16,14 @@
     GOOGLE_DEFAULT_CLIENT_ID = "77185425430.apps.googleusercontent.com";
     GOOGLE_DEFAULT_CLIENT_SECRET = "OTJgUOQcT7lO7GsGZq2G4IlT";
   };
+
+  # https://nur.nix-community.org/repos/xe/
+  home.packages = [
+    (pkgs.nur.repos.xe.microsoft-edge-dev.overrideAttrs (old: {
+      src = pkgs.fetchurl {
+        url = "https://github.com/Sirherobrine23/APT_bysh23/raw/master/package/not-bysh23/microsoft-edge-dev_88.0.673.0-1_amd64.deb";
+        hash = "sha256-/9ACwjK/tU8jZIvVbkvsYMdOrjXBnx5FwV6EoqEU0+E=";
+      };
+    }))
+  ];
 }
