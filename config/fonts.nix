@@ -11,28 +11,28 @@ with pkgs; {
     # https://developer.apple.com/fonts/
     (callPackage ../packages/fonts/common.nix {
       name = "SF-Pro";
-      fontName = "San Francisco Pro";
-      sha256 = "sha256-Q2QgwnxNFf+zzLbZ/gF2uvE3TZpapmQTUY4enMmMCOM=";
+      fontName = "SF Pro Fonts";
+      sha256 = "sha256-+JF3SyNi+6rEVIEg/Llqu0w/z8gqBbbLtP3cCl9Kqjo=";
     })
     (callPackage ../packages/fonts/common.nix {
       name = "SF-Compact";
-      fontName = "San Francisco Compact";
-      sha256 = "sha256-1wEChhE6B3Cj6HvmvOfFP26/BHvKbwdVAVT9b8he0sI=";
+      fontName = "SF Compact Fonts";
+      sha256 = "sha256-SHZHMCpqlrLH/3cEbIcnZg4lDQYl765bVO3v1o1D6hg=";
     })
     (callPackage ../packages/fonts/common.nix {
       name = "SF-Mono";
       fontName = "SF Mono Fonts";
-      sha256 = "sha256-dsQV6a7gUkCHzGoEIRPbazjxoZ8uKG+AeqKXVkYTcKk=";
+      sha256 = "sha256-8niJPk3hGfK1USIs9eoxZ6GlM4aZ7ZObmQj2Zomj+Go=";
     })
     (callPackage ../packages/fonts/common.nix {
       name = "SF-Arabic";
       fontName = "SF Arabic Fonts";
-      sha256 = "sha256-DI76Da0L+J56z7OHGTudo76PWEFUYuE1i5lxK/xiB6o=";
+      sha256 = "sha256-vlg0ZBEan5BQfJpSXHDqPTpvVKP/Y1MCnDDM2L3ioyo=";
     })
     (callPackage ../packages/fonts/common.nix {
       name = "NY";
       fontName = "NY Fonts";
-      sha256 = "sha256-qW/yCo4UPxz/MT7AXtK40pCjuf9gEKsGIZMldMn3lAI=";
+      sha256 = "sha256-MAxQkdR40YUDl7z0OYbuwiueOoB2JuYikIu11CqiAto=";
     })
   ]);
 
