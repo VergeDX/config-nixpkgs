@@ -27,7 +27,7 @@
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, rust-overlay, nur, deploy-rs, agenix, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
     let system = "x86_64-linux";
     in
     {
@@ -41,7 +41,7 @@
           imports = [ ./home.nix ];
 
           # https://github.com/oxalica/rust-overlay#example-nixos-configuration
-          nixpkgs.overlays = [ rust-overlay.overlay nur.overlay deploy-rs.overlay ]
+          nixpkgs.overlays = (with inputs; [ rust-overlay.overlay nur.overlay deploy-rs.overlay ])
             ++ (with inputs; [ neovim-nightly-overlay.overlay Barbfish.overlay ]);
 
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
