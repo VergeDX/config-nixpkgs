@@ -25,6 +25,9 @@
 
     # https://github.com/MidAutumnMoon/Barbfish#nix-use-flake
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
+
+    # https://github.com/NixOS/nixpkgs/pull/123805
+    leo60228-nixpkgs.url = "github:leo60228/nixpkgs/edge";
   };
 
   outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
@@ -33,6 +36,9 @@
     {
       homeConfigurations."vanilla@NixOS-Laptop" = home-manager.lib.homeManagerConfiguration {
         inherit system;
+
+        # https://nix-community.github.io/home-manager/nixos-options.html
+        extraSpecialArgs = { inherit inputs system; };
 
         username = "vanilla";
         homeDirectory = "/home/vanilla";
