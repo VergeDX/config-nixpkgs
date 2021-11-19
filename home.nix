@@ -1,7 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, system, ... }:
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
+
+  stablePkgs = with pkgs; import inputs.nixos-stable {
+    inherit system; config.allowUnfree = true;
+    overlays = [ (self: super: { inherit abseil-cpp; }) ];
+  };
+
+  pkgs-tdesktop = with stablePkgs; (import inputs.nixpkgs {
+    inherit system; overlays = [ (self: super: { inherit libsForQt5; }) ];
+  }).pkgs.tdesktop;
 in
 rec {
   programs.home-manager.enable = true;
@@ -20,8 +29,8 @@ rec {
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    pkgs.tdesktop
-    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+    pkgs-tdesktop
+    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs-tdesktop; })
 
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.stellarium
