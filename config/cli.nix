@@ -75,6 +75,10 @@
     pkgs.kalker
     # https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-centos-7
     pkgs.openssl
+
+    # https://github.com/migueravila/Flowetch
+    pkgs.rpm
+    pkgs.bc
   ];
 
   # https://nix-community.github.io/home-manager/options.html
