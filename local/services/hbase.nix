@@ -1,12 +1,11 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, inputs, ... }:
 {
+  disabledModules = [ "services/databases/hbase.nix" ];
+  imports = [ "${inputs.nixpkgs-me}/nixos/modules/services/databases/hbase.nix" ];
+
   services.hbase.enable = true;
   services.hbase.package = pkgs.hbase;
-
-  systemd.services."hbase".environment = {
-    # NixOS - nixpkgs: nixos/modules/services/databases/hbase.nix
-    "JAVA_HOME" = lib.mkForce "${pkgs.jre8}";
-  };
+  services.hbase.settings."hbase.master.info.port" = 60010;
 
   environment.systemPackages =
     [ config.services.hbase.package ];
