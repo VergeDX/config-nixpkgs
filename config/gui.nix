@@ -1,4 +1,7 @@
 { home, pkgs, lib, ... }:
+let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
+  ../packages/gui/shadowsocks-qt5.nix
+  { }; in
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -34,6 +37,7 @@
     (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
     pkgs.nur.repos.linyinfeng.clash-premium
     pkgs.nur.repos.linyinfeng.clash-for-windows
+    pkgs-shadowsocks-qt5
 
     pkgs.osu-lazer
     pkgs.minecraft
