@@ -17,6 +17,10 @@ rec {
   nixpkgs.config.permittedInsecurePackages =
     [ "botan-1.10.17" "openssl-1.0.2u" ];
 
+  nixpkgs.overlays = with stablePkgs;
+    [ (self: super: { inherit openjdk11 openjfx15; openjdk17 = openjdk; }) ]
+    ++ [ (self: super: { jetbrains = super.jetbrains // { inherit jdk; }; }) ];
+
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
 
