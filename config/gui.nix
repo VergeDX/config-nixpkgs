@@ -39,9 +39,9 @@ let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
     pkgs.nur.repos.linyinfeng.clash-for-windows
     pkgs-shadowsocks-qt5
 
-    pkgs.osu-lazer
-    pkgs.minecraft
-    pkgs.multimc
+    # pkgs.osu-lazer
+    # pkgs.minecraft
+    # pkgs.multimc
   ];
 
   # https://github.com/flightlessmango/MangoHud
