@@ -2,6 +2,7 @@
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
+  masterPkgs = import inputs.nixpkgs-master { inherit system; };
 
   stablePkgs = with pkgs; import inputs.nixos-stable {
     inherit system; config.allowUnfree = true;
@@ -17,7 +18,7 @@ rec {
   nixpkgs.config.permittedInsecurePackages =
     [ "botan-1.10.17" "openssl-1.0.2u" ];
 
-  nixpkgs.overlays = with stablePkgs;
+  nixpkgs.overlays = with masterPkgs;
     [ (self: super: { inherit openjdk11 openjfx15; openjdk17 = openjdk; }) ]
     ++ [ (self: super: { jetbrains = super.jetbrains // { inherit jdk; }; }) ];
 
