@@ -1,7 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 {
   disabledModules = [ "services/databases/hbase.nix" ];
-  imports = [ "${inputs.nixpkgs-me}/nixos/modules/services/databases/hbase.nix" ];
+  imports = [ "${inputs.nixpkgs-master}/nixos/modules/services/databases/hbase.nix" ];
 
   services.hbase.enable = true;
   services.hbase.package = pkgs.hbase;

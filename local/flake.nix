@@ -4,7 +4,7 @@
   inputs.agenix.url = "github:ryantm/agenix";
 
   inputs.nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-  inputs.nixpkgs-me.url = "github:vergedx/nixpkgs/hbase";
+  inputs.nixpkgs-master.url = "github:NixOS/nixpkgs";
   outputs = { self, nixpkgs, agenix, nixos-unstable, ... }@inputs: {
     # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem rec {
