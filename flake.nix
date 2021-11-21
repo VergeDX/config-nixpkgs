@@ -5,7 +5,7 @@
     nixos-stable.url = "github:nixos/nixpkgs/nixos-21.05";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
-    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # https://github.com/nixos-cn/flakes#%E4%BD%BF%E7%94%A8
