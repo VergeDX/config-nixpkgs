@@ -45,8 +45,8 @@ let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
   ];
 
   # https://github.com/flightlessmango/MangoHud
-  programs.mangohud.enable = true;
-  programs.mangohud.enableSessionWide = true;
+  # programs.mangohud.enable = true;
+  # programs.mangohud.enableSessionWide = true;
 
   programs.zathura.enable = true;
   # https://github.com/edunfelt/zathura#usage
