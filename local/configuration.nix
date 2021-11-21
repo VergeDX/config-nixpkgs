@@ -22,6 +22,7 @@
       ./virtualisation/virtualisation.nix
       ./virtualisation/libvirt.nix
       ./virtualisation/arion.nix
+      ./virtualisation/podman.nix
 
       ./programs.nix
       ./setcap.nix
