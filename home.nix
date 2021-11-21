@@ -3,6 +3,7 @@ let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
   masterPkgs = import inputs.nixpkgs-master { inherit system; };
+  subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
 
   stablePkgs = with pkgs; import inputs.nixos-stable {
     inherit system; config.allowUnfree = true;
@@ -122,4 +123,11 @@ rec {
 
   # https://www.reddit.com/r/pcmasterrace/comments/6u68jw/steam_skins_on_linux/
   home.file.".local/share/Steam/skins/".source = metro-for-steam;
+
+  # https://nix-community.github.io/home-manager/options.html#opt-systemd.user.services
+  systemd.user.services."subconverter" = {
+    Service."ExecStart" = "${subconverter-bin}/subconverter";
+    # https://superuser.com/questions/1025091/start-a-systemd-user-service-at-boot
+    Install."WantedBy" = [ "default.target" ];
+  };
 }
