@@ -86,7 +86,7 @@ rec {
   home.activation."ASF-Vanilla.json" =
     let
       json-file = "~/.config/asf/config/Vanilla.json";
-      secrets-dir = "/run/secrets";
+      secrets-dir = "/run/agenix";
       dasel = "${pkgs.dasel}/bin/dasel";
     in
     ''
