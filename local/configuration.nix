@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+let me = { owner = "vanilla"; group = "users"; }; in
 {
   imports =
     [
@@ -47,8 +48,10 @@
     ];
 
   # https://github.com/ryantm/agenix#tutorial
-  age.secrets."SteamLogin" = { owner = "vanilla"; file = ../secrets/SteamLogin.age; };
-  age.secrets."SteamPassword" = { owner = "vanilla"; file = ../secrets/SteamPassword.age; };
+  age.secrets = with me; {
+    "SteamLogin" = with me; { inherit owner group; file = ../secrets/SteamLogin.age; };
+    "SteamPassword" = with me; { inherit owner group; file = ../secrets/SteamPassword.age; };
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
