@@ -19,7 +19,7 @@
       ./services/nginx.nix
       ./services/hbase.nix
 
-      ./virtualisation/virtualisation.nix
+      ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
       ./virtualisation/arion.nix
       ./virtualisation/podman.nix
