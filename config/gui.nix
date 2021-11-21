@@ -34,6 +34,7 @@ let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
     pkgs.v2ray
     pkgs.qv2ray
     (pkgs.callPackage ../packages/resources/QvPlugin-Trojan-Go.nix { })
+    (pkgs.callPackage ../packages/resources/QvPlugin-SSR.nix { })
     (pkgs.makeAutostartItem { name = "qv2ray"; package = pkgs.qv2ray; })
     pkgs.nur.repos.linyinfeng.clash-premium
     pkgs.nur.repos.linyinfeng.clash-for-windows
