@@ -45,4 +45,8 @@ in
   home.sessionVariables = {
     "JAVA_HOME" = "${pkgs.jre8}";
   };
+
+  home.shellAliases = {
+    "docker" = "podman";
+  };
 }
