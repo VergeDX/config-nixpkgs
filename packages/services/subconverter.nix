@@ -16,5 +16,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ cmake pkg-config ];
   buildInputs = [ libevent curl rapidjson toml11 libyamlcpp pcre2 quickjspp libcron ];
+
   NIX_CFLAGS_LINK = "-ldl";
+  NIX_CFLAGS_COMPILE = toString [ "-L${quickjspp}/lib/quickjs" ];
 }
