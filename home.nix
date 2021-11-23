@@ -2,25 +2,12 @@
 let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
-  masterPkgs = import inputs.nixpkgs-master { inherit system; };
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
-
-  stablePkgs = with pkgs; import inputs.nixos-stable {
-    inherit system; config.allowUnfree = true;
-    overlays = [ (self: super: { inherit abseil-cpp; }) ];
-  };
-
-  pkgs-tdesktop = with stablePkgs; (import inputs.nixpkgs {
-    inherit system; overlays = [ (self: super: { inherit libsForQt5; }) ];
-  }).pkgs.tdesktop;
 in
 rec {
   # https://github.com/shadowsocks/libQtShadowsocks
   nixpkgs.config.permittedInsecurePackages =
     [ "botan-1.10.17" "openssl-1.0.2u" ];
-
-  nixpkgs.overlays = with masterPkgs;
-    [ (self: super: { inherit openjdk11 openjfx15; openjdk17 = openjdk; }) ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
@@ -38,8 +25,8 @@ rec {
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    pkgs-tdesktop
-    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs-tdesktop; })
+    pkgs.tdesktop
+    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
 
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.stellarium
@@ -77,7 +64,7 @@ rec {
 
     pkgs.gnome.ghex
     # https://github.com/NixOS/nixpkgs/pull/145542
-    stablePkgs.ArchiSteamFarm
+    # stablePkgs.ArchiSteamFarm
     pkgs.dasel
     pkgs.coreutils
   ];

@@ -2,8 +2,6 @@
   # https://github.com/nix-community/home-manager#nix-flakes
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-stable.url = "github:nixos/nixpkgs/nixos-21.05";
-    nixpkgs-master.url = "github:NixOS/nixpkgs";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
