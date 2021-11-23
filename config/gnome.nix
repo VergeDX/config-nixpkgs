@@ -1,4 +1,9 @@
 { home, pkgs, lib, ... }:
+let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
+  # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
+  patchPhase = ''sed -i 's/"${version}"/"${version}", "41"/g' metadata.json'';
+}));
+in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -18,13 +23,8 @@
     pkgs.gnomeExtensions.espresso
     # pkgs.gnomeExtensions.blur-me
     pkgs.gnomeExtensions.blur-my-shell
-    (pkgs.gnomeExtensions.openweather.overrideAttrs (old: {
-      # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
-      patchPhase = ''sed -i 's/"40"/"40", "41"/g' metadata.json'';
-    }))
-    (pkgs.gnomeExtensions.tray-icons.overrideAttrs (old: {
-      patchPhase = ''sed -i 's/"40.0"/"40.0", "41"/g' metadata.json'';
-    }))
+    (forceGNOME41 "40" pkgs.gnomeExtensions.openweather)
+    (forceGNOME41 "40.0" pkgs.gnomeExtensions.tray-icons)
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     # pkgs.gnomeExtensions.extension-list
@@ -60,9 +60,7 @@
     pkgs.conky
     pkgs.gpick
 
-    (pkgs.gnomeExtensions.sensory-perception.overrideAttrs (old: {
-      patchPhase = ''sed -i 's/"40"/"40", "41"/g' metadata.json'';
-    }))
+    (forceGNOME41 "40" pkgs.gnomeExtensions.sensory-perception)
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
     pkgs.gnomeExtensions.kimpanel
