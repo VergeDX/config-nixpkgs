@@ -1,20 +1,13 @@
 { stdenv, fetchgit, cmake, ... }:
 stdenv.mkDerivation rec {
   pname = "libcron";
-  version = "1.3.0";
+  version = "d4679b7";
 
   src = fetchgit {
     url = "https://github.com/PerMalmberg/${pname}";
-    rev = "v${version}";
-    hash = "sha256-MXmEHUJOZNnbJNMfhDKvl6fwVvPG3MjCaER0xOwRX2I=";
+    rev = "${version}c3cd7b03bf3865dc1709f1d1133fb7ee1";
+    hash = "sha256-Rv88F/cWK3ypoA/VVD4+DyRP1ac2bwmZrcZPo3gMpg4=";
   };
-
-  # https://github.com/PerMalmberg/libcron/pull/23/files
-  patchPhase = ''
-    echo 'install(TARGETS libcron DESTINATION lib)' >> CMakeLists.txt
-    echo 'install(DIRECTORY libcron/include/libcron DESTINATION include)' >> CMakeLists.txt
-    echo 'install(DIRECTORY libcron/externals/date/include/date DESTINATION include)' >> CMakeLists.txt
-  '';
 
   nativeBuildInputs = [ cmake ];
 }
