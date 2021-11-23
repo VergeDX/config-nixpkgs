@@ -31,7 +31,14 @@
     pkgs.gnomeExtensions.dash-to-dock
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
-    pkgs.gnomeExtensions.arcmenu
+    (pkgs.gnomeExtensions.arcmenu.overrideAttrs (old: rec {
+      version = "19";
+      src = pkgs.fetchgit {
+        url = "https://gitlab.com/arcmenu/ArcMenu";
+        rev = "v${version}";
+        hash = "sha256-GEeONrrH00Tt9tuxhH7Gv5lSZ2D/hFgeGbUstqJsWZo=";
+      };
+    }))
     # pkgs.gnomeExtensions.gsconnect
 
     # https://extensions.gnome.org/
