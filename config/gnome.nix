@@ -18,7 +18,10 @@
     pkgs.gnomeExtensions.espresso
     # pkgs.gnomeExtensions.blur-me
     pkgs.gnomeExtensions.blur-my-shell
-    pkgs.gnomeExtensions.openweather
+    (pkgs.gnomeExtensions.openweather.overrideAttrs (old: {
+      # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
+      patchPhase = ''sed -i 's/"40"/"40", "41"/g' metadata.json'';
+    }))
     pkgs.gnomeExtensions.tray-icons
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
