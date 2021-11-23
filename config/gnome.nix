@@ -58,7 +58,9 @@
     pkgs.conky
     pkgs.gpick
 
-    pkgs.gnomeExtensions.sensory-perception
+    (pkgs.gnomeExtensions.sensory-perception.overrideAttrs (old: {
+      patchPhase = ''sed -i 's/"40"/"40", "41"/g' metadata.json'';
+    }))
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
     pkgs.gnomeExtensions.kimpanel
