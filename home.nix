@@ -3,6 +3,7 @@ let
   anime4k = (pkgs.callPackage ./packages/resources/anime4k.nix { });
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
+  pkgsOld = import inputs.nixpkgs-old { inherit system; };
 in
 rec {
   # https://github.com/shadowsocks/libQtShadowsocks
@@ -67,6 +68,9 @@ rec {
     # stablePkgs.ArchiSteamFarm
     pkgs.dasel
     pkgs.coreutils
+  ] ++ [
+    pkgsOld.appimagekit
+    pkgsOld.appimage-run
   ];
 
   # https://github.com/TomWright/dasel#put
