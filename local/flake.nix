@@ -3,9 +3,7 @@
   # https://github.com/ryantm/agenix/releases/tag/0.10.0
   inputs.agenix.url = "github:ryantm/agenix/0.10.1";
 
-  inputs.nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-  inputs.nixpkgs-master.url = "github:NixOS/nixpkgs";
-  outputs = { self, nixpkgs, agenix, nixos-unstable, ... }@inputs: {
+  outputs = { self, nixpkgs, agenix, ... }@inputs: {
     # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
@@ -14,20 +12,6 @@
       modules = [
         ./configuration.nix
         agenix.nixosModules.age
-
-        {
-          # https://nixos.wiki/wiki/Overlays#In_NixOS
-          nixpkgs.overlays = [
-            (self: super: {
-              fish = (import nixos-unstable { inherit system; }).pkgs.fish;
-              nixFlakes = (import nixos-unstable { inherit system; }).pkgs.nixFlakes;
-              linuxPackages_xanmod = (import nixos-unstable {
-                inherit system;
-                config.allowUnfree = true;
-              }).pkgs.linuxPackages_xanmod;
-            })
-          ];
-        }
       ];
     };
   };
