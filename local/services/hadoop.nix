@@ -35,7 +35,7 @@ let
 in
 {
   services.hadoop = {
-    hdfs = { namenode.enabled = true; datanode.enabled = true; };
+    hdfs = { namenode.enable = true; datanode.enable = true; };
     # yarn = { resourcemanager.enabled = true; nodemanager.enabled = true; };
   };
 
@@ -53,6 +53,6 @@ in
   };
 
   nixpkgs.config.permittedInsecurePackages = [ "openssl-1.0.2u" ];
-  services.hadoop.package = hadoop-final;
+  # services.hadoop.package = hadoop-final;
   environment.systemPackages = [ hadoop-final ];
 }
