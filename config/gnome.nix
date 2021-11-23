@@ -22,7 +22,9 @@
       # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
       patchPhase = ''sed -i 's/"40"/"40", "41"/g' metadata.json'';
     }))
-    pkgs.gnomeExtensions.tray-icons
+    (pkgs.gnomeExtensions.tray-icons.overrideAttrs (old: {
+      patchPhase = ''sed -i 's/"40.0"/"40.0", "41"/g' metadata.json'';
+    }))
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     # pkgs.gnomeExtensions.extension-list
