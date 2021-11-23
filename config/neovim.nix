@@ -15,12 +15,12 @@ let
 
   Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "Pocco81-AutoSave-nvim";
-    version = "b1df927";
+    version = "140c477";
 
     src = pkgs.fetchgit {
       url = "https://github.com/Pocco81/AutoSave.nvim";
-      rev = "abe94790b4fd1d423ac825c2ac09898e8";
-      sha256 = "sha256-+CENz+8nE90kjqiaH1e2Bg3y4wQ5Q8KiDi2FddBXFAo=";
+      rev = "${version}57051706c484525472296ca5213fdf598";
+      hash = "sha256-l1REQsT3+hYIf+XReT2DdQOvDyWiNWgvronhgHq0TQg=";
     };
   };
 
