@@ -45,6 +45,7 @@ let me = { owner = "vanilla"; group = "users"; }; in
       ./hardware/steam.nix
       ./hardware/yubikey.nix
       ./hardware/tablet.nix
+      ./hardware/udev.nix
     ];
 
   # https://github.com/ryantm/agenix#tutorial
