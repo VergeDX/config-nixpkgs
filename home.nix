@@ -66,8 +66,8 @@ rec {
     pkgs.termius
 
     pkgs.gnome.ghex
-    # https://github.com/NixOS/nixpkgs/pull/145542
-    # stablePkgs.ArchiSteamFarm
+    # https://github.com/NixOS/nixpkgs/pull/147322
+    pkgsOld.ArchiSteamFarm
     pkgs.dasel
     pkgs.coreutils
   ] ++ [
