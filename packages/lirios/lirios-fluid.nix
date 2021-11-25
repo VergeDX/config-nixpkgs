@@ -13,8 +13,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ libsForQt5.qtquickcontrols2 wayland-scanner.dev ];
 
   # https://github.com/lirios/fluid/tree/v1.2.0#build
-  cmakeFlags = [
-    "-DFLUID_WITH_DOCUMENTATION:BOOL=OFF"
-    "-DFLUID_WITH_DEMO:BOOL=OFF"
-  ];
+  cmakeFlags = [ "-DFLUID_WITH_DOCUMENTATION:BOOL=OFF" ];
+
+  preFixup = "qtWrapperArgs+=(--prefix QML2_IMPORT_PATH : $out/lib/qml/)";
 }
