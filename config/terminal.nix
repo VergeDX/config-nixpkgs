@@ -1,4 +1,5 @@
 { home, pkgs, ... }:
+# let tide = pkgs.callPackage ../packages/resources/tide.nix { }; in
 {
   home.packages = [
     pkgs.xfce.terminal
@@ -93,4 +94,9 @@
     color.background = "green"
     color.foreground = "black"
   '';
+
+  # https://github.com/IlanCosman/tide/tree/v5.0.1#installation
+  # home.file.".config/fish/completions/tide.fish".source = "${tide}/completions/tide.fish";
+  # home.file.".config/fish/conf.d/_tide_init.fish".source = "${tide}/conf.d/_tide_init.fish";
+  # home.file.".config/fish/functions".source = "${tide}/functions";
 }
