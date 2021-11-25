@@ -109,8 +109,11 @@ rec {
     ./config/terminal.nix
     ./config/cli.nix
     ./config/develop.nix
+
     ./config/gui.nix
     ./config/lirios.nix
+    ./config/cutefish.nix
+
     ./config/vscode.nix
   ];
 
