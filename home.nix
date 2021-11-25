@@ -109,6 +109,7 @@ rec {
     ./config/cli.nix
     ./config/develop.nix
     ./config/gui.nix
+    ./config/lirios.nix
     ./config/vscode.nix
   ];
 
