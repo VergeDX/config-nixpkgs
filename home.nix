@@ -4,6 +4,7 @@ let
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
   pkgsOld = import inputs.nixpkgs-old { inherit system; };
+  pkgsMaster = import inputs.nixpkgs-master { inherit system; };
 in
 rec {
   # https://github.com/shadowsocks/libQtShadowsocks
@@ -67,7 +68,7 @@ rec {
 
     pkgs.gnome.ghex
     # https://github.com/NixOS/nixpkgs/pull/147322
-    pkgsOld.ArchiSteamFarm
+    pkgsMaster.ArchiSteamFarm
     pkgs.dasel
     pkgs.coreutils
   ] ++ [

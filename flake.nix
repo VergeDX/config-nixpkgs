@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-old.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
