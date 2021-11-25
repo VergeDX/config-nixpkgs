@@ -65,4 +65,32 @@
 
   # https://github.com/kovidgoyal/kitty/issues/1613#issuecomment-492036864
   home.sessionVariables = { TERM = "xterm"; };
+
+  # https://github.com/reujab/silver/tree/v2.0.0#configuration
+  home.file.".config/silver/silver.toml".text = ''
+    [[left]]
+    name = "dir"
+    color.background = "blue"
+    color.foreground = "black"
+
+    [[left]]
+    name = "git"
+    color.background = "green"
+    color.foreground = "black"
+
+    [[right]]
+    name = "status"
+    color.background = "white"
+    color.foreground = "black"
+
+    [[right]]
+    name = "cmdtime"
+    color.background = "magenta"
+    color.foreground = "black"
+
+    [[right]]
+    name = "shell"
+    color.background = "green"
+    color.foreground = "black"
+  '';
 }
