@@ -1,0 +1,19 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e365238..9248e9b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,10 +46,10 @@ if (NOT QT_QMAKE_EXECUTABLE)
+     message(FATAL_ERROR "qmake is not found.")
+ endif ()
+ 
+-execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} -query QT_INSTALL_QML
+-        OUTPUT_VARIABLE INSTALL_QMLDIR
+-        OUTPUT_STRIP_TRAILING_WHITESPACE
+-        )
++# execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} -query QT_INSTALL_QML
++#         OUTPUT_VARIABLE INSTALL_QMLDIR
++#         OUTPUT_STRIP_TRAILING_WHITESPACE
++#         )
+ if (INSTALL_QMLDIR)
+     message(STATUS "qml directory:" "${INSTALL_QMLDIR}")
+ else ()
