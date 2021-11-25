@@ -21,7 +21,12 @@ in
   programs.fish.shellInit = ''
     ${pkgs.thefuck}/bin/thefuck --alias | source
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-  '';
+  '' + "rose_pine dawn > /dev/null";
+
+  # https://github.com/rose-pine/fish#usage
+  home.file.".config/fish/functions/rose_pine.fish".source =
+    "${pkgs.callPackage ../packages/resources/rose-pine-fish.nix { }}/rose_pine.fish";
+
   programs.fish.shellAliases = { top = "bpytop"; };
 
   # https://github.com/franciscolourenco/done#for-linux-set-the-urgency-level-for-notifications-sent-via-notify-send-low-normal-critical-the-default-is-normal-for-regular-commands-and-critical-for-failed-commands
