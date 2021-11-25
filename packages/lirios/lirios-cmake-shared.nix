@@ -1,12 +1,12 @@
 { stdenv, fetchgit, cmake, ... }:
 stdenv.mkDerivation rec {
   pname = "lirios-cmake-shared";
-  version = "1.1.0";
+  version = "f886cca";
 
   src = fetchgit {
     url = "https://github.com/lirios/cmake-shared";
-    rev = "v${version}";
-    hash = "sha256-PjcoZY7oJRdvwBS5yn3ERDduF6weoevf18BRRascLes=";
+    rev = "${version}1d18f5c1e8a56b9a035013f460bec38b7";
+    hash = "sha256-mhnym2iL/laryrwu6DNZLz9Cxn/ioa0tGUHqmCwoXtg=";
   };
 
   nativeBuildInputs = [ cmake ];
