@@ -10,7 +10,8 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ cmake libsForQt5.wrapQtAppsHook ];
-  buildInputs = [ libsForQt5.qtquickcontrols2 wayland-scanner.dev ];
+  buildInputs = [ wayland-scanner.dev ]
+    ++ (with libsForQt5; [ qtquickcontrols2 qtgraphicaleffects ]);
 
   # https://github.com/lirios/fluid/tree/v1.2.0#build
   cmakeFlags = [ "-DFLUID_WITH_DOCUMENTATION:BOOL=OFF" ];
