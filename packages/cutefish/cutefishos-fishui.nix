@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
     ++ [ extra-cmake-modules ];
   dontWrapQtApps = true;
 
-  patches = [ ./no-query-qt-install-qml.patch ];
-  #  https://github.com/cutefishos/fishui/blob/0.5/CMakeLists.txt#L54
+  # https://github.com/cutefishos/fishui/blob/0.5/CMakeLists.txt#L49
+  patchPhase = "sed -i '49,52d' CMakeLists.txt";
   cmakeFlags = [ "-DINSTALL_QMLDIR=lib/qt-${libsForQt5.qtbase.version}/qml" ];
 }
