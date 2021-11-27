@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, cmake, libsForQt5, callPackage, ... }:
+{ stdenv, fetchgit, cmake, libsForQt5, ... }:
 stdenv.mkDerivation rec {
   pname = "libcutefish";
   version = "0.5";
