@@ -92,6 +92,12 @@ rec {
       chmod u-w ${json-file}
     '';
 
+  # https://stackoverflow.com/questions/19161960/connect-with-ssh-through-a-proxy
+  programs.ssh.extraConfig = ''
+    Host 107.173.141.139
+      ProxyCommand nc -X 5 -x 127.0.0.1:1089 %h %p
+  '';
+
   # https://github.com/JustArchiNET/ArchiSteamFarm/wiki/FAQ-zh-CN
   home.file.".config/asf/config/ASF.json".text =
     builtins.toJSON { "Statistics" = false; "UpdateChannel" = 0; };
