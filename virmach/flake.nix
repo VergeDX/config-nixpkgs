@@ -3,7 +3,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
     deploy-rs.url = "github:serokell/deploy-rs";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
-    agenix.url = "github:ryantm/agenix";
+
+    agenix.url = "github:ryantm/agenix/0.10.1";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 

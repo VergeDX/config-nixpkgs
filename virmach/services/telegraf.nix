@@ -2,7 +2,7 @@
 {
   services.telegraf.enable = true;
 
-  services.telegraf.environmentFiles = [ "/run/secrets/telegraf/INFLUX_TOKEN.env" ];
+  services.telegraf.environmentFiles = [ "/run/agenix/telegraf/INFLUX_TOKEN.env" ];
   systemd.services."telegraf".serviceConfig."Environment" =
     [ "INFLUX_HOST=https://vanilla.cyunrei.moe" "INFLUX_ORG=NixOS" "INFLUX_BUCKET=default" ];
   systemd.services."telegraf".path = [ pkgs.fail2ban ];
@@ -16,12 +16,12 @@
       mkdir -p /etc/telegraf/telegraf.d && cd "$_"
 
       # https://docs.influxdata.com/influxdb/cloud/security/tokens/create-token/
-      export $(cat /run/secrets/telegraf/INFLUX_TOKEN.env)
-      ${pkgs.curl}/bin/curl  $(cat /run/secrets/telegraf/config_url/system) \
+      export $(cat /run/agenix/telegraf/INFLUX_TOKEN.env)
+      ${pkgs.curl}/bin/curl  $(cat /run/agenix/telegraf/config_url/system) \
         --header "Authorization: Token $INFLUX_TOKEN" > ../telegraf.conf
-      ${pkgs.curl}/bin/curl  $(cat /run/secrets/telegraf/config_url/fail2ban) \
+      ${pkgs.curl}/bin/curl  $(cat /run/agenix/telegraf/config_url/fail2ban) \
         --header "Authorization: Token $INFLUX_TOKEN" > fail2ban.conf
-      ${pkgs.curl}/bin/curl  $(cat /run/secrets/telegraf/config_url/nginx) \
+      ${pkgs.curl}/bin/curl  $(cat /run/agenix/telegraf/config_url/nginx) \
         --header "Authorization: Token $INFLUX_TOKEN" > nginx.conf
       chmod u-w ../telegraf.conf fail2ban.conf nginx.conf
     ''; in

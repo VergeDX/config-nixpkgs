@@ -48,7 +48,7 @@ in
   system.activationScripts."Vanilla-V2Ray.json".text = ''
     rm -r /etc/v2ray && mkdir /etc/v2ray || true
     echo '${config_JSON}' > /etc/v2ray/Vanilla-V2Ray.json
-    id="$(cat /run/secrets/v2ray/id)" && secret="$(cat /run/secrets/v2ray/secret)"
+    id="$(cat /run/agenix/v2ray/id)" && secret="$(cat /run/agenix/v2ray/secret)"
     ${pkgs.gnused}/bin/sed -i "s/@id@/$id/g" /etc/v2ray/Vanilla-V2Ray.json
     ${pkgs.gnused}/bin/sed -i "s/@secret@/$secret/g" /etc/v2ray/Vanilla-V2Ray.json
   '';
