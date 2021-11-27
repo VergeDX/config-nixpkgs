@@ -7,6 +7,7 @@
   icons = callPackage ./icons.nix { };
   launcher = callPackage ./launcher.nix { };
   libcutefish = callPackage ./libcutefish.nix { };
+  screenshot = callPackage ./screenshot.nix { };
   terminal = callPackage ./terminal.nix { };
   wallpapers = callPackage ./wallpapers.nix { };
 }
