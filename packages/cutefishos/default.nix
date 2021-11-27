@@ -7,4 +7,5 @@
   launcher = callPackage ./launcher.nix { };
   libcutefish = callPackage ./libcutefish.nix { };
   terminal = callPackage ./terminal.nix { };
+  wallpapers = callPackage ./wallpapers.nix { };
 }
