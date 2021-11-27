@@ -7,7 +7,10 @@
     # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs self; };
+      specialArgs = {
+        inherit inputs self;
+        owner = "vanilla";
+      };
 
       modules = [
         ./configuration.nix
