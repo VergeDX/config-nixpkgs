@@ -15,5 +15,5 @@ stdenv.mkDerivation rec {
     ++ (with libsForQt5; [ qtquickcontrols2 cutefishos.fishui qtgraphicaleffects ]);
 
   # https://github.com/cutefishos/filemanager/blob/0.5/CMakeLists.txt#L93
-  patchPhase = "sed -i 's@/usr@usr@g' CMakeLists.txt";
+  patchPhase = "sed -i 's@/usr/@@g' CMakeLists.txt";
 }
