@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
     deploy-rs.url = "github:serokell/deploy-rs";
-    home-manager.url = "github:nix-community/home-manager/release-21.05";
+    home-manager.url = "github:nix-community/home-manager/release-21.11";
 
     agenix.url = "github:ryantm/agenix/0.10.1";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";

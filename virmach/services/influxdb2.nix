@@ -1,8 +1,5 @@
 { nixos-unstable, lib, ... }:
 {
-  # NixOS - nixpkgs: nixos/modules/services/databases/influxdb2.nix
-  imports = [ "${nixos-unstable}/nixos/modules/services/databases/influxdb2.nix" ];
-
   services.influxdb2.enable = true;
   # https://docs.influxdata.com/influxdb/v2.0/security/enable-tls/
   services.influxdb2.settings = {
