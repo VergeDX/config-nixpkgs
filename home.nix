@@ -112,7 +112,7 @@ rec {
 
     ./config/gui.nix
     ./config/lirios.nix
-    ./config/cutefish.nix
+    # https://github.com/NixOS/nixpkgs/issues/131282
 
     ./config/vscode.nix
   ];
