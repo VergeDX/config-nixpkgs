@@ -1,6 +1,7 @@
 { callPackage, ... }:
 {
   calculator = callPackage ./calculator.nix { };
+  core = callPackage ./core.nix { };
   dock = callPackage ./dock.nix { };
   filemanager = callPackage ./filemanager.nix { };
   fishui = callPackage ./fishui.nix { };
