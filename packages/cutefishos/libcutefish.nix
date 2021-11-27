@@ -1,11 +1,10 @@
 { stdenv, fetchgit, cmake, libsForQt5, callPackage, ... }:
-let cutefishos-fishui = callPackage ./cutefishos-fishui.nix { }; in
 stdenv.mkDerivation rec {
-  pname = "cutefishos-libcutefish";
+  pname = "libcutefish";
   version = "0.5";
 
   src = fetchgit {
-    url = "https://github.com/cutefishos/libcutefish";
+    url = "https://github.com/cutefishos/${pname}";
     rev = "${version}";
     hash = "sha256-os47UB/qyhiNu6MIihWI7bBWYLM+n0IrSdZM85Fys1o=";
   };

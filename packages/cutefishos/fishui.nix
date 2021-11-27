@@ -1,10 +1,10 @@
 { stdenv, fetchgit, cmake, libsForQt5, extra-cmake-modules, ... }:
 stdenv.mkDerivation rec {
-  pname = "cutefishos-fishui";
+  pname = "fishui";
   version = "0.5";
 
   src = fetchgit {
-    url = "https://github.com/cutefishos/fishui";
+    url = "https://github.com/cutefishos/${pname}";
     rev = "${version}";
     hash = "sha256-KyvQi0SN2KmBdEx2k6fS2NbeF+rCFwFeJLV8eSVPTc8=";
   };
