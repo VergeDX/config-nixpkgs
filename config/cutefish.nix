@@ -2,5 +2,6 @@
 let cutefishos = pkgs.callPackage ../packages/cutefishos { }; in
 {
   home.packages = with cutefishos;
-    [ calculator dock filemanager launcher screenshot terminal ];
+    [ calculator dock filemanager launcher screenshot terminal ]
+    ++ (with cutefishos;[ icons wallpapers ]);
 }
