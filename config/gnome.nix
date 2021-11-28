@@ -75,7 +75,8 @@ in
     pkgs.gnome.gnome-power-manager
     pkgs.gnome.gnome-boxes
   ] ++ [ pkgs.evince pkgs.perlPackages.FileMimeInfo ]
-  ++ [ pkgs.gnomeExtensions.hide-top-bar ];
+  ++ [ pkgs.gnomeExtensions.hide-top-bar ]
+  ++ [ pkgs.gnome.gnome-dictionary ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
