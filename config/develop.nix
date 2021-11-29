@@ -41,10 +41,7 @@ in
     org.gradle.java.home=${pkgs.jetbrains.jdk}/lib/openjdk
   '';
 
-  # Used by `hbase shell`.
   home.sessionVariables = {
-    "JAVA_HOME" = "${pkgs.jre8}";
-
     # https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs
     "HADOOP_USER_NAME" = "hdfs";
   };
