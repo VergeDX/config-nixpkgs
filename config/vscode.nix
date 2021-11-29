@@ -10,6 +10,8 @@ let formulahendry.terminal = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
 in
 {
   programs.vscode.enable = true;
+  home.packages = [ pkgs.nur.repos.linyinfeng.icalingua ];
+
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     tobiasalthoff.atom-material-theme
     editorconfig.editorconfig
