@@ -11,6 +11,8 @@
     pkgs.lolcat
 
     pkgs.libnotify
+    pkgs.nur.repos.vanilla.fastfetch
+    pkgs.nur.repos.vanilla.freshfetch
   ];
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
