@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, cmake, pkg-config, pciutils, vulkan-loader, vulkan-headers, xorg, wayland, libffi, glib, pcre, libuuid, libselinux, libsepol, dconf, xfce, rpm, zstd, ... }:
+{ stdenv, fetchgit, cmake, pkg-config, pciutils, vulkan-loader, vulkan-headers, xorg, wayland, libffi, glib, pcre, libuuid, libselinux, libsepol, dconf, xfce, rpm, zstd, lib, ... }:
 stdenv.mkDerivation rec {
   pname = "fastfetch";
   version = "79bec5c";
@@ -29,4 +29,12 @@ stdenv.mkDerivation rec {
       install -D $file $out/share/fastfetch/presets/
     done
   '';
+
+  meta = with lib; {
+    description = "Like neofetch, but much faster because written in c. Only Linux. ";
+    homepage = "https://github.com/LinusDierheimer/${pname}";
+    license = licenses.mit;
+    maintainers = [ maintainers.vanilla ];
+    platforms = [ "x86_64-linux" ];
+  };
 }
