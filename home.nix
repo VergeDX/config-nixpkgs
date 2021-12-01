@@ -74,7 +74,7 @@ rec {
   ] ++ [
     pkgsOld.appimagekit
     pkgsOld.appimage-run
-  ];
+  ] ++ [ pkgs.protontricks ];
 
   # https://github.com/TomWright/dasel#put
   # https://www.cyberciti.biz/faq/howto-set-readonly-file-permission-in-linux-unix/
