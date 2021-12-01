@@ -24,6 +24,7 @@
       ./virtualisation/arion.nix
       ./virtualisation/podman.nix
       ./virtualisation/virtualbox.nix
+      ./virtualisation/wine.nix
 
       ./programs.nix
       ./setcap.nix
