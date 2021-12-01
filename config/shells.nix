@@ -39,9 +39,9 @@
     pkgs.bubblewrap
   ] ++ (with pkgs.fishPlugins; [ done pisces bfish ])
   ++ [
-    pkgs.nur.repos.linyinfeng.fishPlugins.plugin-git
-    pkgs.nur.repos.linyinfeng.fishPlugins.plugin-bang-bang
-    pkgs.nur.repos.linyinfeng.fishPlugins.replay-fish
+    pkgs.nur.repos.linyinfeng.fishPlugins.git
+    pkgs.nur.repos.linyinfeng.fishPlugins.bang-bang
+    pkgs.nur.repos.linyinfeng.fishPlugins.replay
   ];
 
   programs.fish.plugins = [
