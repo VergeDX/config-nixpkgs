@@ -6,13 +6,12 @@
   # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-935625041
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
   inputs.home-manager.url = "github:nix-community/home-manager";
-  inputs.nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
   # https://github.com/serokell/deploy-rs
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
 
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, nixos-unstable }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, ... }:
     let rpi = {
       hostName = "NixOS-Raspi";
       arch = "aarch64-linux";
@@ -29,12 +28,10 @@
 
           ./configuration.nix
           nixos-hardware.nixosModules.raspberry-pi-4
-
           home-manager.nixosModules.home-manager
-          { home-manager.users."${rpi.user}"._module.args.pkgs = nixos-unstable; }
-          { home-manager.users."${rpi.user}"._module.args.pkgsPath = toString nixos-unstable; }
+
           {
-            # home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users."${rpi.user}" = import ./home-manager/home.nix;
           }
