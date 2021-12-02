@@ -29,8 +29,8 @@
     # https://github.com/MidAutumnMoon/Barbfish#nix-use-flake
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
 
-    # https://github.com/NixOS/nixpkgs/pull/123805
-    leo60228-nixpkgs.url = "github:leo60228/nixpkgs/edge";
+    # https://gitlab.com/zanc/overlays
+    zanc-overlays.url = "gitlab:zanc/overlays";
   };
 
   outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
