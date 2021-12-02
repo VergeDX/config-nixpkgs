@@ -19,6 +19,7 @@
 
   # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-983745849
   home.packages = [
-    (pkgs.callPackage "${inputs.zanc-overlays}/microsoft-edge-dev" { })
+    # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-984271996
+    (pkgs.callPackage (import "${inputs.zanc-overlays}/edge").stable { })
   ];
 }
