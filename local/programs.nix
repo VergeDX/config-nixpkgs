@@ -15,4 +15,8 @@
 
   # https://nixos.wiki/wiki/Steam#Normal_install
   programs.steam.enable = true;
+  # https://nixos.wiki/wiki/Steam#Adding_missing_dependencies
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override { extraPkgs = pkgs: [ pkgs.icu ]; };
+  };
 }
