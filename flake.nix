@@ -5,6 +5,9 @@
     nixpkgs-old.url = "github:nixos/nixpkgs/nixos-21.05";
     nixpkgs-master.url = "github:nixos/nixpkgs";
 
+    # https://github.com/NixOS/nixpkgs/pull/147010
+    NickCao-nixpkgs.url = "github:NickCao/nixpkgs/v2ray-geoip";
+
     rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

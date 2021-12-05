@@ -1,7 +1,6 @@
-{ home, pkgs, lib, ... }:
-let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
-  ../packages/gui/shadowsocks-qt5.nix
-  { }; in
+{ home, pkgs, lib, inputs, system, ... }:
+let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage ../packages/gui/shadowsocks-qt5.nix { }; in
+let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray-geoip; in
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -44,6 +43,14 @@ let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage
     # pkgs.minecraft
     # pkgs.multimc
   ];
+
+  # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
+  home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
+    mkdir $out/
+    ln -s ${pkgs.v2ray}/bin/v2ray $out/v2ray && ln -s ${pkgs.v2ray}/bin/v2ctl $out/v2ctl
+    ln -s ${v2ray-geoip}/share/v2ray/geoip.dat $out/geoip.dat
+    ln -s ${pkgs.v2ray-domain-list-community}/share/v2ray/geosite.dat $out/geosite.dat
+  '';
 
   # https://github.com/flightlessmango/MangoHud
   programs.mangohud.enable = true;
