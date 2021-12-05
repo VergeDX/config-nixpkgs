@@ -14,7 +14,7 @@
       vanilla-do = nixos-generators.nixosGenerate {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         # https://docs.digitalocean.com/products/images/custom-images/#image-requirements
-        modules = [ ./services/cloud-init.nix ];
+        modules = [ ./services/cloud-init.nix ./services/openssh.nix ];
         format = "do";
       };
     };
