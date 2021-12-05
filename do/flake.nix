@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, nixos-generators, ... }: {
     packages.x86_64-linux = {
-      vanilla-do = nixos-generators.nixosGenerate {
+      do = nixos-generators.nixosGenerate {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         # https://docs.digitalocean.com/products/images/custom-images/#image-requirements
         modules = [ ./configuration.nix ];
