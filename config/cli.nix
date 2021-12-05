@@ -79,7 +79,7 @@
     # https://github.com/migueravila/Flowetch
     pkgs.rpm
     pkgs.bc
-  ];
+  ] ++ [ pkgs.nixos-generators ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
