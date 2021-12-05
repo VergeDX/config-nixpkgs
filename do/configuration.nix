@@ -1,5 +1,5 @@
 { ... }:
 {
-  modules = [ ./services/cloud-init.nix ./services/openssh.nix ]
+  imports = [ ./services/cloud-init.nix ./services/openssh.nix ]
     ++ [ ./users.nix ];
 }
