@@ -29,7 +29,9 @@
         user = "${sshUser}";
         path = deploy-rs.lib."x86_64-linux".activate.nixos (nixpkgs.lib.nixosSystem
           { system = "x86_64-linux"; modules = [ ./configuration.nix ]; });
+
         fastConnection = true;
+        autoRollback = false;
       };
     };
   };
