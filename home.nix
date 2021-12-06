@@ -125,6 +125,7 @@ rec {
     # https://github.com/NixOS/nixpkgs/issues/131282
 
     ./config/vscode.nix
+    ./config/ssh-proxy.nix
   ];
 
   home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
