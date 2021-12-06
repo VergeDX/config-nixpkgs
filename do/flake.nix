@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
     deploy-rs.url = "github:serokell/deploy-rs";
     flake-utils.url = "github:numtide/flake-utils";
+    agenix.url = "github:ryantm/agenix/0.10.1";
   };
 
   outputs = { self, nixpkgs, deploy-rs, flake-utils, ... }@inputs:
