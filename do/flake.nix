@@ -7,11 +7,10 @@
 
   outputs = { self, nixpkgs, deploy-rs, flake-utils, ... }:
     # https://github.com/numtide/flake-utils#example
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system}; in
+    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
       rec {
         # https://justinas.org/nixos-in-the-cloud-step-by-step-part-1
-        packages."digitalOceanImage" = (pkgs.nixos {
+        packages."digitalOceanImage" = ((nixpkgs.legacyPackages."${system}").nixos {
           imports = [ "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix" ];
         }).digitalOceanImage;
 
