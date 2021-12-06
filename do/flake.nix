@@ -6,8 +6,9 @@
   };
 
   outputs = { self, nixpkgs, deploy-rs, flake-utils, ... }@inputs:
+    let system = "x86_64-linux"; in
     # https://github.com/numtide/flake-utils#example
-    (flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
+    (flake-utils.lib.eachSystem [ "${system}" ] (system:
       rec {
         # https://justinas.org/nixos-in-the-cloud-step-by-step-part-1
         packages."digitalOceanImage" = ((nixpkgs.legacyPackages."${system}").nixos {
@@ -21,8 +22,8 @@
 
         profiles.system = {
           user = "${sshUser}";
-          path = deploy-rs.lib."x86_64-linux".activate.nixos (nixpkgs.lib.nixosSystem
-            { system = "x86_64-linux"; modules = [ ./configuration.nix ]; specialArgs = { inherit inputs; }; });
+          path = deploy-rs.lib."${system}".activate.nixos (nixpkgs.lib.nixosSystem
+            { inherit system; modules = [ ./configuration.nix ]; specialArgs = { inherit inputs; }; });
           fastConnection = true;
         };
       };
