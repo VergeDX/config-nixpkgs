@@ -1,5 +1,5 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
-  imports = [ ./users.nix ./boot.nix ] ++
-    [ "${inputs.nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix" ];
+  imports = [ ./boot.nix ] ++ [{ users.users."root".shell = pkgs.fish; }] ++
+    [ "${inputs.nixpkgs}/nixos/modules/virtualisation/digital-ocean-config.nix" ];
 }
