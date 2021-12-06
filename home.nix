@@ -27,10 +27,14 @@ rec {
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
 
     # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    pkgs.tdesktop
-    (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
-    # pkgs.kotatogram-desktop
-    # (pkgs.makeAutostartItem { name = "kotatogramdesktop"; package = pkgs.kotatogram-desktop; })
+    # pkgs.tdesktop
+    # (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
+    # https://github.com/NixOS/nixpkgs/pull/148672
+    pkgs.nur.repos.ilya-fedin.kotatogram-desktop
+    (pkgs.makeAutostartItem {
+      name = "kotatogramdesktop";
+      package = pkgs.nur.repos.ilya-fedin.kotatogram-desktop;
+    })
 
     (pkgs.callPackage ./packages/gui/olympus.nix { })
     pkgs.stellarium
