@@ -2,7 +2,7 @@
 let gnome-shell-new = pkgs: pkgs.gnome.gnome-shell.overrideAttrs (old: {
   patches = old.patches ++ lib.singleton (pkgs.fetchurl {
     url = "https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954/diffs.patch";
-    hash = "sha256-qnvKaNDIzElLfFCuZLldSJloSWd/InZ9xVk8DqpPX1Y=";
+    hash = "sha256-fO/JdLICv8fnjdYAzKAn3cXR94db7bJ6lL8gIkIxr5Q=";
   });
 }); in
 let gnome-settings-daemon-new = pkgs: pkgs.gnome.gnome-settings-daemon.overrideAttrs (old: {
@@ -16,13 +16,6 @@ let gnome-control-center-new = pkgs: pkgs.gnome.gnome-control-center.overrideAtt
     url = "https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/1075/diffs.patch";
     hash = "sha256-nmjRJMWg8+huwLuiwgOq6kCNvDKCPnM/+Q8braZcYg4=";
   });
-}); in
-let mutter-new = pkgs: pkgs.gnome.mutter.overrideAttrs (old: {
-  src = pkgs.fetchgit {
-    url = "https://gitlab.gnome.org/YaLTeR/mutter";
-    branchName = "screenshot-ui-temp";
-    hash = "sha256-GaKrXObJ8T/R0NaEKbGZL8JTY0eCCNp+27vdmH7WxP8=";
-  };
 }); in
 {
   # Enable the X11 windowing system.
@@ -69,7 +62,6 @@ let mutter-new = pkgs: pkgs.gnome.mutter.overrideAttrs (old: {
         gnome-shell = (gnome-shell-new super);
         gnome-settings-daemon = (gnome-settings-daemon-new super);
         gnome-control-center = (gnome-control-center-new super);
-        mutter = (mutter-new super);
       };
     })
   ];
