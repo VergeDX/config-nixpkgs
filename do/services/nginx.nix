@@ -4,6 +4,11 @@
   services.nginx.virtualHosts."vanilla.scp.link" = {
     addSSL = true;
     enableACME = true;
+
+    locations."/ray" = {
+      proxyPass = "http://127.0.0.1:10000";
+      proxyWebsockets = true;
+    };
   };
 
   security.acme.acceptTerms = true;
