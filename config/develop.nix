@@ -15,7 +15,9 @@ in
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ [ myRust pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] # THU - rCore
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
-  ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ]);
+  ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
+  ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
+    ([ pip setuptools ] ++ [ pyserial pyodbc ])));
 
   # https://npmmirror.com/
   home.file = {
