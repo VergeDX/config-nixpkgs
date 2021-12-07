@@ -1,0 +1,13 @@
+diff --git a/fildemGMenu@gonza.com/metadata.json b/fildemGMenu@gonza.com/metadata.json
+index 9920348..5a0c092 100644
+--- a/fildemGMenu@gonza.com/metadata.json
++++ b/fildemGMenu@gonza.com/metadata.json
+@@ -5,7 +5,7 @@
+   "shell-version": [
+     "3.36",
+     "3.38",
+-    "40"
++    "40", "41"
+   ],
+   "url": "https://github.com/gonzaarcr/Fildem",
+   "uuid": "fildemGMenu@gonza.com"
