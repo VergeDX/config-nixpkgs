@@ -12,12 +12,7 @@
   boot.kernel.sysctl = { "kernel.sysrq" = 1; };
 
   # https://github.com/linyinfeng/dotfiles/search?q=boot.kernelPackages
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  # https://gist.github.com/xterat/cefccb42f7d4b2055368ebb00454861f
-  boot.kernel.sysctl = {
-    "net.core.default_qdisc" = "fq";
-    "net.ipv4.tcp_congestion_control" = "bbr";
-  };
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   # https://github.com/slacka/WoeUSB/issues/299
   boot.supportedFilesystems = [ "ntfs" ];
