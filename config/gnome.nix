@@ -29,7 +29,7 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     # pkgs.gnomeExtensions.extension-list
-    pkgs.gnomeExtensions.screenshot-tool
+    (forceGNOME41 "40" pkgs.gnomeExtensions.screenshot-tool)
 
     # Credit: @Cyunrei
     pkgs.gnomeExtensions.bluetooth-quick-connect
