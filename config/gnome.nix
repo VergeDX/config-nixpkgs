@@ -73,6 +73,10 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
   ++ [ pkgs.gnome.gnome-dictionary ]
   ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ];
 
+  # https://github.com/gonzaarcr/Fildem#configuration
+  gtk.gtk2.extraConfig = "gtk-modules=\"appmenu-gtk-module\"";
+  gtk.gtk3.extraConfig."gtk-modules" = "appmenu-gtk-module";
+
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
   gtk.iconTheme = { package = pkgs.tela-icon-theme; name = "Tela-pink"; };
