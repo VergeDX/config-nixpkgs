@@ -16,5 +16,4 @@ python3Packages.buildPythonPackage rec {
   setuptoolsCheckPhase = "echo -n";
   propagatedBuildInputs = with python3Packages;
     [ pygobject3 dbus-python ];
-  patchPhase = "";
 }

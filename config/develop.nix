@@ -17,7 +17,8 @@ in
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
-    ([ pip setuptools ] ++ [ pyserial pyodbc ])));
+    ([ pip setuptools ] ++ [ pyserial pyodbc ]
+      ++ [ (pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }) ])));
 
   # https://npmmirror.com/
   home.file = {

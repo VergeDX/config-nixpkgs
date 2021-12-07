@@ -1,9 +1,10 @@
-{ home, pkgs, lib, ... }:
+{ home, pkgs, lib, buildGnomeExtension, ... }:
 let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
   # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
   patchPhase = ''sed -i 's/"${version}"/"${version}", "41"/g' metadata.json'';
-}));
-in
+})); in
+let Fildem-GNOME = pkgs.callPackage ../packages/cli/Fildem/Fildem-GNOME.nix { }; in
+let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -69,7 +70,8 @@ in
     pkgs.gnome.gnome-boxes
   ] ++ [ pkgs.evince pkgs.perlPackages.FileMimeInfo ]
   ++ [ pkgs.gnomeExtensions.hide-top-bar ]
-  ++ [ pkgs.gnome.gnome-dictionary ];
+  ++ [ pkgs.gnome.gnome-dictionary ]
+  ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ];
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
