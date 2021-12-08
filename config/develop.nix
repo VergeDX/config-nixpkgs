@@ -12,6 +12,7 @@ in
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
+  ++ (with pkgs.llvmPackages; [ clang ] ++ [ pkgs.lldb ]) # CLion
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ [ myRust pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] # THU - rCore
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
