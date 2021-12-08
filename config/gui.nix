@@ -42,7 +42,7 @@ let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray
     # pkgs.osu-lazer
     # pkgs.minecraft
     # pkgs.multimc
-  ];
+  ] ++ [ pkgs.zotero ];
 
   # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
