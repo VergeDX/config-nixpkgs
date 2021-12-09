@@ -1,5 +1,8 @@
 { home, pkgs, ... }:
 {
+  # https://www.markjour.com/article/20190506-unzip-chinese.html#toc-8
+  home.sessionVariables = { UNZIP = "-O CP936"; ZIPINFO = "-O CP936"; };
+
   home.packages = [
     # https://gitlab.gnome.org/GNOME/file-roller/-/issues/137
     (pkgs.unzip.overrideAttrs (old: rec {
