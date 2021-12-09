@@ -1,8 +1,6 @@
 { home, pkgs, ... }:
 let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
 {
-  # https://www.markjour.com/article/20190506-unzip-chinese.html#toc-8
-  home.sessionVariables = { UNZIP = "-O CP936"; ZIPINFO = "-O CP936"; };
   nixpkgs.overlays = [
     (self: super: {
       gnome = super.gnome // {
