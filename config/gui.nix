@@ -38,11 +38,8 @@ let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray
     pkgs.nur.repos.linyinfeng.clash-premium
     pkgs.nur.repos.linyinfeng.clash-for-windows
     pkgs-shadowsocks-qt5
-
-    # pkgs.osu-lazer
-    # pkgs.minecraft
-    # pkgs.multimc
-  ] ++ [ pkgs.zotero ];
+  ] ++ [ pkgs.zotero ]
+  ++ [ pkgs.playonlinux ];
 
   # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
