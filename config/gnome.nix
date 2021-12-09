@@ -71,7 +71,8 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
   ] ++ [ pkgs.evince pkgs.perlPackages.FileMimeInfo ]
   ++ [ pkgs.gnomeExtensions.hide-top-bar ]
   ++ [ pkgs.gnome.gnome-dictionary ]
-  ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ];
+  ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ]
+  ++ [ pkgs.lm_sensors ]; # Required by sensory.
 
   # https://github.com/gonzaarcr/Fildem#configuration
   gtk.gtk2.extraConfig = "gtk-modules=\"appmenu-gtk-module\"";
