@@ -121,7 +121,6 @@ rec {
     ./config/develop.nix
 
     ./config/gui.nix
-    ./config/lirios.nix
     # https://github.com/NixOS/nixpkgs/issues/131282
 
     ./config/vscode.nix
