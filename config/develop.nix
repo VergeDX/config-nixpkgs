@@ -5,6 +5,8 @@ let myRust = pkgs.rust-bin.nightly.latest.default.override {
   targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
 }; in
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
+# https://github.com/NixOS/nixpkgs/pull/150004
+let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix { }; in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
@@ -12,13 +14,14 @@ let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
-  ++ (with pkgs.llvmPackages; [ clang ] ++ [ pkgs.lldb ]) # CLion
+  ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (hiPrio lldb) ])) # CLion
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ [ myRust pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] # THU - rCore
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
-    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ])));
+    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
+      ++ [ mariadb XlsxWriter pandas ])));
 
   # https://npmmirror.com/
   home.file = {
