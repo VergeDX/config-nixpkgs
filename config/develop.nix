@@ -23,13 +23,7 @@ let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix {
     ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
       ++ [ mariadb XlsxWriter pandas ])));
 
-  # https://npmmirror.com/
   home.file = {
-    ".npmrc".text = ''
-      registry=https://registry.npmmirror.com/
-      home=https://npm.taobao.org
-    '';
-
     ".yarnrc".text = ''
       registry "https://registry.npm.taobao.org/"
     '';
