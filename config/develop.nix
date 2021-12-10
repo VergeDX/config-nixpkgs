@@ -3,8 +3,8 @@ let myRust = pkgs.rust-bin.nightly.latest.default.override {
   extensions = [ "rust-src" "llvm-tools-preview" ];
   # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
   targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
-};
-in
+}; in
+let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
@@ -18,8 +18,7 @@ in
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
-    ([ pip setuptools ] ++ [ pyserial pyodbc ]
-      ++ [ (pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }) ])));
+    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ])));
 
   # https://npmmirror.com/
   home.file = {
