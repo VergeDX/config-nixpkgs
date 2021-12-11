@@ -14,7 +14,7 @@ let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix {
   ++ (with pkgs; [ jdk11 kotlin maven gradle ]) # Java & Kotlin
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
-  ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (hiPrio lldb) ])) # CLion
+  ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
   # https://github.com/oxalica/rust-overlay#usage-examples
   ++ [ myRust pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] # THU - rCore
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
