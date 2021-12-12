@@ -19,7 +19,4 @@
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override { extraPkgs = pkgs: [ pkgs.icu ]; };
   };
-
-  # https://www.markjour.com/article/20190506-unzip-chinese.html#toc-8
-  environment.variables = { UNZIP = "-O CP936"; ZIPINFO = "-O CP936"; };
 }
