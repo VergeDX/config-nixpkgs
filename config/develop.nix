@@ -7,6 +7,7 @@ let myRust = pkgs.rust-bin.nightly.latest.default.override {
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 # https://github.com/NixOS/nixpkgs/pull/150004
 let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix { }; in
+let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
@@ -21,7 +22,7 @@ let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix {
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
     ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
-      ++ [ mariadb XlsxWriter pandas ])));
+      ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])));
 
   home.file = {
     ".yarnrc".text = ''

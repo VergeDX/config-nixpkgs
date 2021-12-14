@@ -1,6 +1,8 @@
 { home, pkgs, lib, inputs, system, ... }:
 let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage ../packages/gui/shadowsocks-qt5.nix { }; in
 let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray-geoip; in
+let pkgs-gnote = pkgs.callPackage ../packages/gui/gnote.nix { }; in
+let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -14,6 +16,26 @@ let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray
 
     pkgs.albert
     (pkgs.makeAutostartItem { name = "albert"; package = pkgs.albert; })
+
+    pkgs.atom
+    pkgs.rbw
+    pkgs.copyq
+    pkgs.fortune
+    pkgs-gnote
+    pkgs.units
+    pkgs.goldendict
+    pkgs.lastpass-cli
+    pkgs.phpPackages.composer
+    pkgs-expac
+    pkgs.pacman
+    pkgs.pass
+    pkgs.php
+    pkgs.xclip
+    pkgs.scrot
+    pkgs.tetex
+    pkgs.tomboy
+    pkgs.imagemagick
+    pkgs.wmctrl
 
     pkgs.dosbox
     (pkgs.callPackage ../packages/gui/openvisualtraceroute.nix { })
