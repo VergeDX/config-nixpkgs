@@ -11,6 +11,8 @@ let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
 
   home.packages = [
     unzip-fixed
+    # pkgs.unzip
+
     pkgs.scrcpy
     pkgs.glxinfo
     pkgs.mr
@@ -23,7 +25,6 @@ let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
 
     (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
     pkgs.checkra1n
-    pkgs.p7zip
     pkgs.slides
     pkgs.file
     pkgs.ncdu
