@@ -45,6 +45,7 @@ rec {
     pkgs.amule
 
     pkgs.nodePackages.http-server
+    pkgs.nur.repos.plabadens.filebrowser
 
     pkgs.woeusb
     pkgs.ntfs3g
