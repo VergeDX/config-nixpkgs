@@ -1,6 +1,6 @@
 { home, pkgs, lib, inputs, system, ... }:
 let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage ../packages/gui/shadowsocks-qt5.nix { }; in
-let v2ray-geoip = (import inputs.NickCao-nixpkgs { inherit system; }).pkgs.v2ray-geoip; in
+let v2ray-geoip = (import inputs.nixpkgs-master { inherit system; }).pkgs.v2ray-geoip; in
 let pkgs-gnote = pkgs.callPackage ../packages/gui/gnote.nix { }; in
 let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
 {
