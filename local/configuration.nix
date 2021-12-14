@@ -18,6 +18,7 @@
       ./services/redis.nix
       ./services/nginx.nix
       ./services/hbase.nix
+      ./services/spark.nix
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
