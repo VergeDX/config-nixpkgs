@@ -18,14 +18,14 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-icon-theme
 
-    # pkgs.gnomeExtensions.unite
+    pkgs.gnomeExtensions.unite
     # pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.runcat
     pkgs.gnomeExtensions.espresso
     # pkgs.gnomeExtensions.blur-me
     pkgs.gnomeExtensions.blur-my-shell
     (forceGNOME41 "40" pkgs.gnomeExtensions.openweather)
-    (forceGNOME41 "40.0" pkgs.gnomeExtensions.tray-icons)
+    # (forceGNOME41 "40.0" pkgs.gnomeExtensions.tray-icons)
     pkgs.gnomeExtensions.simple-net-speed
     pkgs.gnomeExtensions.proxy-switcher
     # pkgs.gnomeExtensions.extension-list
