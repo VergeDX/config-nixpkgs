@@ -59,7 +59,14 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
     pkgs.gnomeExtensions.kimpanel
   ] ++ [
-    pkgs.gnome.nautilus
+    # https://gitlab.gnome.org/GNOME/nautilus/-/issues/2053
+    (pkgs.gnome.nautilus.overrideAttrs (old: {
+      patches = old.patches ++ (lib.singleton (pkgs.fetchurl {
+        url = "https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/722.patch";
+        hash = "sha256-ncB7WbHGcMJirLnkig4HQQM33aq0s2IeGzMNvvUVSTA=";
+      }));
+    }))
+
     pkgs.gnome.sushi
     pkgs.gnome.gnome-disk-utility
     pkgs.gnome.file-roller
