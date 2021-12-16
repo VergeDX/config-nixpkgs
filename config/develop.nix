@@ -1,4 +1,4 @@
-{ home, pkgs, lib, ... }:
+{ home, pkgs, lib, inputs, system, ... }:
 let myRust = pkgs.rust-bin.nightly.latest.default.override {
   extensions = [ "rust-src" "llvm-tools-preview" ];
   # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
@@ -22,7 +22,9 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
     ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
-      ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])));
+      ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
+  # https://github.com/NixOS/nixpkgs/issues/148779
+  ++ [ (import inputs.nixpkgs-old { inherit system; }).pkgs.mysql-workbench ];
 
   home.file = {
     ".yarnrc".text = ''
