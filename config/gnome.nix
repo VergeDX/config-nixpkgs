@@ -58,6 +58,9 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
     pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.bring-out-submenu-of-power-offlogout-button
     pkgs.gnomeExtensions.kimpanel
+
+    # https://www.reddit.com/r/linux/comments/ri496j/theres_snow_place_like_gnome/
+    pkgs.gnomeExtensions.downfall
   ] ++ [
     # https://gitlab.gnome.org/GNOME/nautilus/-/issues/2053
     (pkgs.gnome.nautilus.overrideAttrs (old: {
