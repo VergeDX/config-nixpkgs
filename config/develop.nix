@@ -23,20 +23,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
     ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
-  # https://github.com/NixOS/nixpkgs/issues/148779
-  ++ lib.singleton (pkgs.mysql-workbench.override {
-    python2 = pkgs.python2.overrideAttrs (old: {
-      passthru = old.passthru // {
-        pkgs = old.passthru.pkgs // {
-          paramiko = pkgs.python2Packages.paramiko.override {
-            pynacl = pkgs.python2Packages.callPackage
-              "${inputs.nixpkgs-a6ce00c}/pkgs/development/python-modules/pynacl"
-              { };
-          };
-        };
-      };
-    });
-  });
+  ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ];
 
   home.file = {
     ".yarnrc".text = ''

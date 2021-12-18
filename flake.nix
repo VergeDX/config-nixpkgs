@@ -5,9 +5,8 @@
     nixpkgs-old.url = "github:nixos/nixpkgs/nixos-21.05";
     nixpkgs-master.url = "github:nixos/nixpkgs";
 
-    # Commit 6874b70 disabled python which older than 3.6.
-    # Check out history of NixOS/nixpkgs - pkgs/development/python-modules/pynacl/default.nix
-    nixpkgs-a6ce00c.url = "github:NixOS/nixpkgs/a6ce00c50c36624fec06b2b756a766d4d0f4a888";
+    # https://hydra.nixos.org/build/143801064#tabs-buildinputs
+    nixpkgs-29f57e4.url = "github:NixOS/nixpkgs/29f57e475266edbb57d995c044aba3adf7f71298";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager.url = "github:nix-community/home-manager/release-21.11";
