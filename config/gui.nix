@@ -62,7 +62,9 @@ let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
     pkgs-shadowsocks-qt5
   ] ++ [ pkgs.zotero ]
   ++ [ pkgs.playonlinux ]
-  ++ [ pkgs.space-cadet-pinball ];
+  ++ [ pkgs.space-cadet-pinball ]
+  # https://github.com/openrazer/openrazer#applications
+  ++ [ pkgs.RazerGenie ];
 
   # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
