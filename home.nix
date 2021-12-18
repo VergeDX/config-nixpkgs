@@ -135,8 +135,8 @@ rec {
 
   # https://nix-community.github.io/home-manager/options.html#opt-systemd.user.services
   # systemd.user.services."subconverter" = {
-    # Service."ExecStart" = "${subconverter-bin}/subconverter";
-    # https://superuser.com/questions/1025091/start-a-systemd-user-service-at-boot
-    # Install."WantedBy" = [ "default.target" ];
+  #   Service."ExecStart" = "${subconverter-bin}/subconverter";
+  #   # https://superuser.com/questions/1025091/start-a-systemd-user-service-at-boot
+  #   Install."WantedBy" = [ "default.target" ];
   # };
 }
