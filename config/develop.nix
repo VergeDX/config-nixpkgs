@@ -23,6 +23,10 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
     ".yarnrc".text = ''
       registry "https://registry.npm.taobao.org/"
     '';
+
+    # https://nixos.wiki/wiki/Rust#VSCode_integration
+    "Downloads/temp/RUST_SRC_PATH".source =
+      pkgs.rust.packages.stable.rustPlatform.rustLibSrc;
   };
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
