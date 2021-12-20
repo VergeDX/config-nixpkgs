@@ -8,7 +8,6 @@
     # https://hydra.nixos.org/build/143801064#tabs-buildinputs
     nixpkgs-29f57e4.url = "github:NixOS/nixpkgs/29f57e475266edbb57d995c044aba3adf7f71298";
 
-    rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -52,8 +51,7 @@
         configuration = { pkgs, ... }: {
           imports = [ ./home.nix ];
 
-          # https://github.com/oxalica/rust-overlay#example-nixos-configuration
-          nixpkgs.overlays = (with inputs; [ rust-overlay.overlay nur.overlay deploy-rs.overlay ])
+          nixpkgs.overlays = (with inputs; [ nur.overlay deploy-rs.overlay ])
             ++ (with inputs; [ neovim-nightly-overlay.overlay Barbfish.overlay ]);
 
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
