@@ -11,7 +11,8 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
-  ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] ++ (with pkgs; [ rustc cargo ])
+  ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ]
+  ++ (with pkgs; [ rustc cargo rustfmt ]) # For CLion + Rust plugin.
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
