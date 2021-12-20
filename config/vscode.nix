@@ -6,8 +6,15 @@ let formulahendry.terminal = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     version = "0.0.10";
     sha256 = "sha256-9hGkD/mWGhwH0ACA3nUD75/XCIi6A8DiDVagfHwPRz4=";
   };
-};
-in
+}; in
+let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  mktplcRef = {
+    publisher = "denigmaapp";
+    name = "denigma";
+    version = "0.0.8";
+    sha256 = "sha256-oMY4y8BzsDSMDSW+yZG8a3HURbjb9e4qg1a+xIpHKPo=";
+  };
+}; in
 {
   programs.vscode.enable = true;
   home.packages = [ pkgs.nur.repos.linyinfeng.icalingua ];
@@ -31,7 +38,7 @@ in
     esbenp.prettier-vscode
     coenraads.bracket-pair-colorizer-2
   ] ++ [ formulahendry.terminal influxdata.flux ]
-  ++ [ takayama.vscode-qq ];
+  ++ [ takayama.vscode-qq denigmaapp.denigma ];
 
   programs.vscode.userSettings = {
     # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
