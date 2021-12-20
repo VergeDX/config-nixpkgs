@@ -1,9 +1,4 @@
 { home, pkgs, lib, inputs, system, ... }:
-let myRust = pkgs.rust-bin.nightly.latest.default.override {
-  extensions = [ "rust-src" "llvm-tools-preview" ];
-  # https://learningos.github.io/rCore-Tutorial-Book-2021Autumn/chapter1/1app-ee-platform.html#id5
-  targets = [ "x86_64-unknown-linux-gnu" "riscv64gc-unknown-none-elf" ];
-}; in
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 # https://github.com/NixOS/nixpkgs/pull/150004
 let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix { }; in
@@ -16,8 +11,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
-  # https://github.com/oxalica/rust-overlay#usage-examples
-  ++ [ myRust pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] # THU - rCore
+  ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] ++ (with pkgs; [ rustc cargo ])
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
