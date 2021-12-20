@@ -83,7 +83,8 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
   ++ [ pkgs.gnome.gnome-dictionary ]
   ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ]
   ++ [ pkgs.lm_sensors ] # Required by sensory.
-  ++ [ pkgs.nur.repos.vanilla.gnome-text-editor ];
+  ++ [ pkgs.nur.repos.vanilla.gnome-text-editor ]
+  ++ [ pkgs.gnome.gnome-font-viewer ];
 
   # https://github.com/gonzaarcr/Fildem#configuration
   gtk.gtk2.extraConfig = "gtk-modules=\"appmenu-gtk-module\"";
