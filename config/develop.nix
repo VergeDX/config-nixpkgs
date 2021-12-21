@@ -12,7 +12,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
   ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ]
-  ++ (with pkgs; [ rustc cargo rustfmt ]) # For CLion + Rust plugin.
+  ++ (with pkgs; [ rustc cargo rustfmt (lowPrio rustup) ]) # For CLion + Rust plugin.
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
@@ -24,10 +24,6 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
     ".yarnrc".text = ''
       registry "https://registry.npm.taobao.org/"
     '';
-
-    # https://nixos.wiki/wiki/Rust#VSCode_integration
-    "Downloads/temp/RUST_SRC_PATH".source =
-      pkgs.rust.packages.stable.rustPlatform.rustLibSrc;
   };
 
   # https://stackoverflow.com/questions/26523804/global-gradle-proxy-settings
