@@ -2,7 +2,7 @@
 {
   services.hadoop = {
     hdfs = { namenode.enable = true; datanode.enable = true; };
-    yarn = { resourcemanager.enable = true; nodemanager.enable = true; };
+    # yarn = { resourcemanager.enable = true; nodemanager.enable = true; };
   };
 
   # https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html
