@@ -1,6 +1,6 @@
 { home, pkgs, ... }:
 # let tide = pkgs.callPackage ../packages/resources/tide.nix { }; in
-let ayamir-dotfiles = pkgs.callPackage ../packages/resources/ayamir-dotfiles.nix { }; in
+# let ayamir-dotfiles = pkgs.callPackage ../packages/resources/ayamir-dotfiles.nix { }; in
 {
   home.packages = [
     pkgs.xfce.terminal
@@ -16,8 +16,8 @@ let ayamir-dotfiles = pkgs.callPackage ../packages/resources/ayamir-dotfiles.nix
     pkgs.nur.repos.vanilla.freshfetch
   ];
 
-  home.file.".config/neofetch".source =
-    "${ayamir-dotfiles}/gruvbox/.config/neofetch";
+  # home.file.".config/neofetch".source =
+  #   "${ayamir-dotfiles}/gruvbox/.config/neofetch";
 
   # https://github.com/alacritty/alacritty/wiki/Color-schemes
   home.file.".config/alacritty/alacritty.yml".text =
