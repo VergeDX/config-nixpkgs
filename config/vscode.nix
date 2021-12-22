@@ -11,8 +11,8 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
   mktplcRef = {
     publisher = "denigmaapp";
     name = "denigma";
-    version = "0.0.8";
-    sha256 = "sha256-oMY4y8BzsDSMDSW+yZG8a3HURbjb9e4qg1a+xIpHKPo=";
+    version = "0.0.11";
+    sha256 = "0r3hss25myf3x3c3cm7acakyi26bcygvq29sh90mcsxzk1g0bivc";
   };
 }; in
 {
