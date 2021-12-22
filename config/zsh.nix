@@ -12,4 +12,7 @@
 
   # https://nix-community.github.io/home-manager/options.html#opt-programs.zsh.autocd
   programs.zsh.autocd = true;
+
+  # https://nix-community.github.io/home-manager/options.html#opt-programs.zsh.oh-my-zsh
+  programs.zsh.oh-my-zsh.enable = true;
 }
