@@ -12,7 +12,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
   ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ]
-  ++ [ (pkgs.fenix.complete.withComponents [ "cargo" "rust-src" "rustc" "rustfmt" ]) ]
+  ++ (with pkgs.fenix.stable; [ cargo rust-src rustc rustfmt ])
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
