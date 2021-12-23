@@ -20,6 +20,7 @@ let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix {
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-icon-theme
 
+    pkgs.orchis-theme
     Fluent-gtk-theme
 
     pkgs.gnomeExtensions.unite
