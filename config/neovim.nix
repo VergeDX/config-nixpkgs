@@ -188,6 +188,8 @@ in
       require'lspconfig'.clangd.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cmake
       require'lspconfig'.cmake.setup{ capabilities = capabilities, }
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rls
+      require'lspconfig'.rls.setup{ capabilities = capabilities, }
       EOF
     '' + ''
       " https://github.com/glepnir/dashboard-nvim#faq
@@ -243,5 +245,7 @@ in
 
     pkgs.llvmPackages_9.libclang
     pkgs.cmake-language-server
+
+    pkgs.rls
   ];
 }
