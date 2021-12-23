@@ -36,7 +36,6 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     # https://www.youtube.com/watch?v=jQXtpwsWRas
     streetsidesoftware.code-spell-checker
     esbenp.prettier-vscode
-    coenraads.bracket-pair-colorizer-2
   ] ++ [ formulahendry.terminal influxdata.flux ]
   ++ [ takayama.vscode-qq denigmaapp.denigma ];
 
@@ -66,5 +65,9 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     "telemetry.enableTelemetry" = false;
     "workbench.enableExperiments" = false;
     "extensions.autoUpdate" = false;
+
+    # https://github.com/CoenraadS/Bracket-Pair-Colorizer-2#how-to-enable-native-bracket-matching
+    "editor.bracketPairColorization.enabled" = true;
+    "editor.guides.bracketPairs" = "active";
   };
 }
