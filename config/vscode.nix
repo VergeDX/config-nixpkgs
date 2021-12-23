@@ -15,6 +15,22 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     sha256 = "0r3hss25myf3x3c3cm7acakyi26bcygvq29sh90mcsxzk1g0bivc";
   };
 }; in
+let rust-lang.rust = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  mktplcRef = {
+    publisher = "rust-lang";
+    name = "rust";
+    version = "0.7.8";
+    sha256 = "sha256-Y33agSNMVmaVCQdYd5mzwjiK5JTZTtzTkmSGTQrSNg0=";
+  };
+}; in
+let DavidAnson.vscode-markdownlint = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+  mktplcRef = {
+    publisher = "DavidAnson";
+    name = "vscode-markdownlint";
+    version = "0.45.0";
+    sha256 = "sha256-L7y+Lsx1DMS12JtxSl7WkT8jGQLipebNKxknF/Y1ke0=";
+  };
+}; in
 {
   programs.vscode.enable = true;
   home.packages = [ pkgs.nur.repos.linyinfeng.icalingua ];
@@ -37,7 +53,8 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     streetsidesoftware.code-spell-checker
     esbenp.prettier-vscode
   ] ++ [ formulahendry.terminal influxdata.flux ]
-  ++ [ takayama.vscode-qq denigmaapp.denigma ];
+  ++ [ takayama.vscode-qq denigmaapp.denigma ]
+  ++ [ rust-lang.rust DavidAnson.vscode-markdownlint ];
 
   programs.vscode.userSettings = {
     # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
