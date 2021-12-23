@@ -6,5 +6,7 @@
     ++ [ inputs.agenix.nixosModules.age ];
 
   networking.hostName = "nixos";
+
   age.secrets."v2ray/id".file = ./secrets/v2ray/id.age;
+  age.secrets."v2ray/path".file = ./secrets/v2ray/path.age;
 }

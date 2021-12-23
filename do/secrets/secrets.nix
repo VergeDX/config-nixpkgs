@@ -4,4 +4,7 @@ let
   vanilla = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVpgJtK1tTpURq6XH3xibH+6VdU8/2igxpQs4aAkaoy";
   all = [ do laptop vanilla ];
 in
-{ "v2ray/id.age".publicKeys = all; }
+{
+  "v2ray/id.age".publicKeys = all;
+  "v2ray/path.age".publicKeys = all;
+}

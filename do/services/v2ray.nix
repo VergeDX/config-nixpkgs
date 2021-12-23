@@ -10,7 +10,7 @@ let config_JSON = lib.strings.toJSON {
 
       "streamSettings" = {
         "network" = "ws";
-        "wsSettings" = { "path" = "/ray"; };
+        "wsSettings" = { "path" = "@path@"; };
       };
     }
   ];
@@ -25,9 +25,13 @@ in
   services.v2ray.configFile = "/etc/v2ray/Vanilla-V2Ray.json";
 
   system.activationScripts."Vanilla-V2Ray.json".deps = [ "agenixRoot" ];
+  # https://stackoverflow.com/questions/9366816/sed-fails-with-unknown-option-to-s-error
   system.activationScripts."Vanilla-V2Ray.json".text = ''
     mkdir -p /etc/v2ray && rm /etc/v2ray/Vanilla-V2Ray.json || true
-    echo '${config_JSON}' > /etc/v2ray/Vanilla-V2Ray.json && id="$(cat /run/agenix/v2ray/id)"
-    ${pkgs.gnused}/bin/sed -i "s/@id@/$id/g" /etc/v2ray/Vanilla-V2Ray.json
+    echo '${config_JSON}' > /etc/v2ray/Vanilla-V2Ray.json
+
+    id="$(cat /run/agenix/v2ray/id)" && path="$(cat /run/agenix/v2ray/path)"
+    ${pkgs.gnused}/bin/sed -i "s|@id@|$id|g" /etc/v2ray/Vanilla-V2Ray.json
+    ${pkgs.gnused}/bin/sed -i "s|@path@|$path|g" /etc/v2ray/Vanilla-V2Ray.json
   '';
 }
