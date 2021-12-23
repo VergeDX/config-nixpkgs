@@ -6,6 +6,7 @@ let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
 let Fildem-GNOME = pkgs.callPackage ../packages/cli/Fildem/Fildem-GNOME.nix { }; in
 let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
 let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
+let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix { }; in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -18,6 +19,8 @@ let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
     pkgs.flat-remix-gnome
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-icon-theme
+
+    Fluent-gtk-theme
 
     pkgs.gnomeExtensions.unite
     # pkgs.gnomeExtensions.appindicator
