@@ -1,16 +1,5 @@
 { programs, pkgs, home, lib, ... }:
 let
-  rose-pine-neovim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "rose-pine-neovim";
-    version = "v0.1.0";
-
-    src = pkgs.fetchgit {
-      url = "https://github.com/rose-pine/neovim";
-      rev = version;
-      sha256 = "sha256-PTGSYjU+PTgscB5/KJMUuy9Y0UktamH1q0HQgJdxAiI=";
-    };
-  };
-
   github-copilot-vim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "github-copilot-vim";
     version = "1.0.5";
@@ -55,7 +44,7 @@ in
   programs.neovim = {
     # https://github.com/NixOS/nixpkgs/blob/nixos-21.05/nixos/modules/programs/neovim.nix#L66
     plugins = [
-      rose-pine-neovim
+      pkgs.nur.repos.m15a.vimExtraPlugins.rose-pine
       pkgs.vimPlugins.lualine-nvim
       pkgs.vimPlugins.vim-polyglot
       pkgs.vimPlugins.vim-lastplace
