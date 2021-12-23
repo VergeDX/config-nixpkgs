@@ -72,9 +72,8 @@ let
   };
 in
 {
-  # https://github.com/github/copilot.vim
   programs.neovim.enable = true;
-  programs.neovim.package = pkgs.neovim-nightly;
+  programs.neovim.package = pkgs.neovim-unwrapped;
 
   home.sessionVariables = { EDITOR = "nvim"; };
   programs.neovim = {

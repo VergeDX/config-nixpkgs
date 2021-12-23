@@ -27,9 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # https://github.com/nix-community/neovim-nightly-overlay#to-use-the-overlay
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
     # https://github.com/MidAutumnMoon/Barbfish#nix-use-flake
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
 
@@ -54,7 +51,7 @@
           imports = [ ./home.nix ];
 
           nixpkgs.overlays = (with inputs; [ fenix.overlay nur.overlay deploy-rs.overlay ])
-            ++ (with inputs; [ neovim-nightly-overlay.overlay Barbfish.overlay ]);
+            ++ (with inputs; [ Barbfish.overlay ]);
 
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.wemeet
