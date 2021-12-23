@@ -5,6 +5,7 @@ let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
 })); in
 let Fildem-GNOME = pkgs.callPackage ../packages/cli/Fildem/Fildem-GNOME.nix { }; in
 let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
+let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -61,7 +62,7 @@ let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
 
     # https://www.reddit.com/r/linux/comments/ri496j/theres_snow_place_like_gnome/
     pkgs.gnomeExtensions.downfall
-  ] ++ [
+  ] ++ [ Schneegans.Fly-Pie ] ++ [
     # https://gitlab.gnome.org/GNOME/nautilus/-/issues/2053
     (pkgs.gnome.nautilus.overrideAttrs (old: {
       patches = old.patches ++ (lib.singleton (pkgs.fetchurl {
