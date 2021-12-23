@@ -26,12 +26,12 @@ let
 
   rose-pine-neovim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "rose-pine-neovim";
-    version = "v0.0.1";
+    version = "v0.1.0";
 
     src = pkgs.fetchgit {
       url = "https://github.com/rose-pine/neovim";
       rev = version;
-      sha256 = "sha256-OLlutTnMQiCYLmnwkAXiyuhp62DBmpxq3z0No3buHcg=";
+      sha256 = "sha256-PTGSYjU+PTgscB5/KJMUuy9Y0UktamH1q0HQgJdxAiI=";
     };
   };
 
