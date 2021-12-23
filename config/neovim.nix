@@ -1,16 +1,5 @@
 { programs, pkgs, home, lib, ... }:
 let
-  Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "Pocco81-AutoSave-nvim";
-    version = "140c477";
-
-    src = pkgs.fetchgit {
-      url = "https://github.com/Pocco81/AutoSave.nvim";
-      rev = "${version}57051706c484525472296ca5213fdf598";
-      hash = "sha256-l1REQsT3+hYIf+XReT2DdQOvDyWiNWgvronhgHq0TQg=";
-    };
-  };
-
   rose-pine-neovim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "rose-pine-neovim";
     version = "v0.1.0";
@@ -129,7 +118,7 @@ in
       # https://github.com/glepnir/dashboard-nvim#install
       pkgs.vimPlugins.dashboard-nvim
       # https://github.com/Pocco81/AutoSave.nvim#adding-the-plugin
-      Pocco81-AutoSave-nvim
+      pkgs.nur.repos.m15a.vimExtraPlugins.AutoSave-nvim
       # https://github.com/karb94/neoscroll.nvim#installation
       pkgs.vimPlugins.neoscroll-nvim
       # https://github.com/tpope/vim-fugitive
