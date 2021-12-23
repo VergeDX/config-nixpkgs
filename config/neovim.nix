@@ -1,18 +1,5 @@
 { programs, pkgs, home, lib, ... }:
 let
-  terrortylor-nvim-comment = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "terrortylor-nvim-comment";
-    version = "6363118";
-
-    src = pkgs.fetchgit {
-      url = "https://github.com/terrortylor/nvim-comment";
-      rev = "${version}acf86824ed11c2238292b72dc5ef8bdde";
-      sha256 = "sha256-wv4scKfo4EyHLnP7zOHOhQ4Z7ok8lOvB/NS4RpX9Lg0=";
-    };
-
-    preBuild = "rm ./Makefile";
-  };
-
   Pocco81-AutoSave-nvim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "Pocco81-AutoSave-nvim";
     version = "140c477";
@@ -138,7 +125,7 @@ in
       # https://github.com/windwp/nvim-autopairs
       pkgs.vimPlugins.nvim-autopairs
       # https://github.com/terrortylor/nvim-comment#via-a-plugin-manager
-      terrortylor-nvim-comment
+      pkgs.nur.repos.m15a.vimExtraPlugins.nvim-comment
       # https://github.com/glepnir/dashboard-nvim#install
       pkgs.vimPlugins.dashboard-nvim
       # https://github.com/Pocco81/AutoSave.nvim#adding-the-plugin
