@@ -7,6 +7,7 @@ let Fildem-GNOME = pkgs.callPackage ../packages/cli/Fildem/Fildem-GNOME.nix { };
 let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
 let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
 let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix { }; in
+let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix { }; in
 {
   home.packages = [
     pkgs.gnome.gnome-tweak-tool
@@ -22,6 +23,7 @@ let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix {
 
     pkgs.orchis-theme
     Fluent-gtk-theme
+    Fluent-icon-theme
 
     pkgs.gnomeExtensions.unite
     # pkgs.gnomeExtensions.appindicator
