@@ -245,7 +245,5 @@ in
 
     pkgs.llvmPackages_9.libclang
     pkgs.cmake-language-server
-
-    pkgs.rls
   ];
 }
