@@ -62,7 +62,6 @@ rec {
     pkgs.jq
 
     pkgs.evcxr
-    pkgs.scenebuilder
     pkgs.etcher
 
     pkgs.testdisk
