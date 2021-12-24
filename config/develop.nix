@@ -19,6 +19,11 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
   ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ];
 
+  # https://nix-community.github.io/home-manager/options.html#opt-home.sessionPath
+  home.sessionPath = [ "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin" ];
+  # https://nix-community.github.io/home-manager/options.html#opt-home.activation
+  home.activation."rustup_update" = "${pkgs.rustup}/bin/rustup update &> /dev/null";
+
   home.file = {
     ".yarnrc".text = ''
       registry "https://registry.npm.taobao.org/"
