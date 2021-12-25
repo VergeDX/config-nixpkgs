@@ -22,7 +22,6 @@
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
-      ./virtualisation/arion.nix
       ./virtualisation/podman.nix
       ./virtualisation/virtualbox.nix
       ./virtualisation/wine.nix
