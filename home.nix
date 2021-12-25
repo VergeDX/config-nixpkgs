@@ -62,6 +62,7 @@ rec {
     pkgs.jq
 
     pkgs.evcxr
+    pkgs.fq
     pkgs.etcher
 
     pkgs.testdisk
