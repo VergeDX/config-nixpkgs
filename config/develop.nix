@@ -15,7 +15,8 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
     ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
-  ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ];
+  ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ]
+  ++ [ pkgs.texlive.combined.scheme-small ]; # https://nixos.wiki/wiki/TexLive
 
   # https://nix-community.github.io/home-manager/options.html#opt-home.sessionPath
   home.sessionPath = [ "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin" ];

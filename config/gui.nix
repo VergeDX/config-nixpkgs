@@ -32,7 +32,6 @@ let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
     pkgs.php
     pkgs.xclip
     pkgs.scrot
-    pkgs.tetex
     pkgs.tomboy
     pkgs.imagemagick
     pkgs.wmctrl
