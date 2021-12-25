@@ -1,7 +1,5 @@
 { home, pkgs, lib, inputs, system, ... }:
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
-# https://github.com/NixOS/nixpkgs/pull/150004
-let mariadb = pkgs.python3Packages.callPackage ../packages/python3/mariadb.nix { }; in
 let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
 {
   home.packages = (with pkgs.jetbrains;
