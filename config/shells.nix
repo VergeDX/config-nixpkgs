@@ -46,16 +46,12 @@
     pkgs.nur.repos.linyinfeng.fishPlugins.bang-bang
     pkgs.nur.repos.linyinfeng.fishPlugins.replay
   ] # https://wakatime.com/terminal
-  ++ [ pkgs.wakatime ];
+  ++ [ (pkgs.python3Packages.callPackage ../packages/python3/wakatime.nix { }) ];
 
   home.activation."dot_wakatime_cfg" = ''
     unlink ~/.wakatime.cfg && true
     ln -s /run/agenix/dot-wakatime-cfg ~/.wakatime.cfg
   '';
-
-  programs.fish.shellAliases = {
-    "wakatime" = "wakatime-cli";
-  };
 
   programs.fish.plugins = [
     {

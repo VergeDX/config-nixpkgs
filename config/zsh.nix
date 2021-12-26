@@ -1,4 +1,5 @@
 { pkgs, ... }:
+let wakatime = pkgs.python3Packages.callPackage ../packages/python3/wakatime.nix { }; in
 {
   programs.zsh.enable = true;
 
@@ -36,6 +37,6 @@
 
   # https://nix-community.github.io/home-manager/options.html#opt-programs.zsh.sessionVariables
   programs.zsh.sessionVariables = {
-    "ZSH_WAKATIME_BIN" = "${pkgs.wakatime}/bin/wakatime-cli";
+    "ZSH_WAKATIME_BIN" = "${wakatime}/bin/wakatime";
   };
 }
