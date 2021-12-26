@@ -112,7 +112,9 @@ in
       pkgs.vimPlugins.neoscroll-nvim
       # https://github.com/tpope/vim-fugitive
       pkgs.vimPlugins.vim-fugitive
-    ] ++ [ github-copilot-vim ];
+    ] ++ [ github-copilot-vim ]
+    # https://wakatime.com/neovim
+    ++ [ pkgs.vimPlugins.vim-wakatime ];
 
     # https://medium.com/@hql287/10-vim-tips-to-ease-the-learning-curve-c8234cbdafa5
     # https://vimjc.com/vim-powerline.html
