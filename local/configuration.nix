@@ -23,7 +23,7 @@
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
       ./virtualisation/podman.nix
-      ./virtualisation/virtualbox.nix
+      # ./virtualisation/virtualbox.nix
       ./virtualisation/wine.nix
 
       ./programs.nix

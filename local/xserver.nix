@@ -2,7 +2,7 @@
 let gnome-shell-new = pkgs: pkgs.gnome.gnome-shell.overrideAttrs (old: {
   patches = old.patches ++ lib.singleton (pkgs.fetchurl {
     url = "https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954/diffs.patch";
-    hash = "sha256-fO/JdLICv8fnjdYAzKAn3cXR94db7bJ6lL8gIkIxr5Q=";
+    hash = "sha256-IL+UoCmpKsLxTUythsN+SMdsnToKZnmCWV9dbLYrqfE=";
   });
 }); in
 let gnome-settings-daemon-new = pkgs: pkgs.gnome.gnome-settings-daemon.overrideAttrs (old: {
