@@ -28,6 +28,9 @@ let fish-wakatime-sh = pkgs.fetchurl {
     set -U __done_notification_urgency_level_failure normal
   '';
 
+  # [!] Always remember exec `__git.init` after removed `.config/fish` folder.
+  # https://github.com/jhillyerd/plugin-git/blob/master/hooks/install.fish
+
   home.packages = [
     pkgs.powerline-go
     pkgs.powerline-rs
