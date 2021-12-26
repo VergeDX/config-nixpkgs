@@ -37,7 +37,9 @@ let denigmaapp.denigma = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     streetsidesoftware.code-spell-checker
     esbenp.prettier-vscode
   ] ++ [ formulahendry.terminal influxdata.flux ]
-  ++ [ takayama.vscode-qq denigmaapp.denigma ];
+  ++ [ takayama.vscode-qq denigmaapp.denigma ]
+  # https://wakatime.com/vs-code
+  ++ [ WakaTime.vscode-wakatime ];
 
   programs.vscode.userSettings = {
     # https://github.com/rose-pine/vscode#:~:text=rose%20pine%20dawn
