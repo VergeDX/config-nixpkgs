@@ -114,6 +114,7 @@ rec {
     ./config/git.nix
     ./config/shells.nix
     ./config/zsh.nix
+    ./config/bash.nix
     ./config/neovim.nix
 
     ./config/fonts.nix
