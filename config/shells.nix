@@ -1,4 +1,8 @@
 { programs, home, pkgs, ... }:
+let fish-wakatime-sh = pkgs.fetchurl {
+  url = "https://raw.githubusercontent.com/Cyber-Duck/fish-wakatime/master/fish-wakatime.sh";
+  hash = "sha256-gZn0S/6QYKXy9WluXg+dT9HhnMAsgNtFhou1ZMprxO0=";
+}; in
 {
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
@@ -22,7 +26,7 @@
   programs.fish.interactiveShellInit = ''
     set -U __done_notification_urgency_level low
     set -U __done_notification_urgency_level_failure normal
-  '';
+  '' + "fish-wakatime";
 
   # [!] Always remember exec `__git.init` after removed `.config/fish` folder.
   # https://github.com/jhillyerd/plugin-git/blob/master/hooks/install.fish
@@ -52,6 +56,12 @@
     unlink ~/.wakatime.cfg && true
     ln -s /run/agenix/dot-wakatime-cfg ~/.wakatime.cfg
   '';
+
+  # https://brettterpstra.com/2019/10/15/fish-shell-fun-event-handlers/
+  programs.fish.functions."fish-wakatime" = {
+    body = (builtins.readFile fish-wakatime-sh);
+    onEvent = "fish_prompt";
+  };
 
   programs.fish.plugins = [
     {
