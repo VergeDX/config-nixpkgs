@@ -12,7 +12,8 @@
   boot.kernel.sysctl = { "kernel.sysrq" = 1; };
 
   # https://github.com/linyinfeng/dotfiles/search?q=boot.kernelPackages
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  # https://github.com/NixOS/nixpkgs/pull/152143
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # https://github.com/slacka/WoeUSB/issues/299
   boot.supportedFilesystems = [ "ntfs" ];
