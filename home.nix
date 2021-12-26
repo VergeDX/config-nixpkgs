@@ -79,13 +79,7 @@ rec {
     pkgs.coreutils
   ] ++ [
     pkgsOld.appimagekit
-    # pkgsOld.appimage-run
-
-    # Src of appimage-run: NixOS - nixpkgs/pkgs/tools/package-management/appimage-run
-    (pkgs.appimage-run.override {
-      # Required by harmonoid-linux-x86_64.AppImage, see GitHub harmonoid/harmonoid.
-      extraPkgs = (pkgs: with pkgs; [ libmediainfo libepoxy ] ++ [ gnome.webkitgtk gnome2.libsoup ]);
-    })
+    pkgsOld.appimage-run
   ] ++ [ pkgs.protontricks ];
 
   # https://github.com/TomWright/dasel#put
