@@ -1,8 +1,4 @@
 { programs, home, pkgs, ... }:
-let fish-wakatime-sh = pkgs.fetchurl {
-  url = "https://raw.githubusercontent.com/Cyber-Duck/fish-wakatime/master/fish-wakatime.sh";
-  hash = "sha256-gZn0S/6QYKXy9WluXg+dT9HhnMAsgNtFhou1ZMprxO0=";
-}; in
 {
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
@@ -56,11 +52,6 @@ let fish-wakatime-sh = pkgs.fetchurl {
     unlink ~/.wakatime.cfg && true
     ln -s /run/agenix/dot-wakatime-cfg ~/.wakatime.cfg
   '';
-
-  # https://wakatime.com/terminal#install-fish
-  programs.fish.functions = {
-    "fish_prompt".body = builtins.readFile fish-wakatime-sh;
-  };
 
   programs.fish.shellAliases = {
     "wakatime" = "wakatime-cli";
