@@ -19,6 +19,7 @@
       ./services/nginx.nix
       ./services/hbase.nix
       ./services/spark.nix
+      ./services/postgresql.nix
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
