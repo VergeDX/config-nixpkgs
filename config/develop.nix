@@ -1,6 +1,7 @@
 { home, pkgs, lib, inputs, system, ... }:
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
+let PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig"; in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
@@ -20,7 +21,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
   ++ (with pkgs; [ pkg-config (hiPrio bintools) ]); # stock-scanner-rs.
 
   home.sessionVariables = {
-    "PKG_CONFIG_PATH" = "${pkgs.openssl.dev}/lib/pkgconfig";
+    inherit PKG_CONFIG_PATH;
   };
 
   # https://nix-community.github.io/home-manager/options.html#opt-home.sessionPath
