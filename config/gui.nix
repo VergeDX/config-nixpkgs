@@ -45,10 +45,7 @@ let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
     pkgs.wpsoffice
 
     pkgs.mumble
-    (pkgs.clapper.overrideAttrs (old: {
-      # https://github.com/NixOS/nixpkgs/pull/141985/files
-      buildInputs = old.buildInputs ++ (with pkgs; [ appstream-glib libsoup ]);
-    }))
+    pkgs.clapper
     pkgs.rpi-imager
 
     pkgs.v2ray
