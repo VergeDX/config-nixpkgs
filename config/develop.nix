@@ -17,7 +17,7 @@ let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
   ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ]
   ++ [ pkgs.texlive.combined.scheme-full ] # https://nixos.wiki/wiki/TexLive
-  ++ [ pkgs.pkg-config ]; # Required by Rust project stock-scanner-rs.
+  ++ (with pkgs; [ pkg-config (hiPrio bintools) ]); # stock-scanner-rs.
 
   home.sessionVariables = {
     "PKG_CONFIG_PATH" = "${pkgs.openssl.dev}/lib/pkgconfig";
