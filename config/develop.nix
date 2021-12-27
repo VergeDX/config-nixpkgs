@@ -1,7 +1,14 @@
 { home, pkgs, lib, inputs, system, ... }:
 let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
+
 let PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig"; in
+let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
+  postFixup = old.postFixup + ''
+    wrapProgram $out/bin/clion \
+      --set PKG_CONFIG_PATH ${PKG_CONFIG_PATH}
+  '';
+}); in
 {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
