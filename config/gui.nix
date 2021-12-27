@@ -48,6 +48,12 @@ let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
     pkgs.clapper
     pkgs.rpi-imager
 
+    (pkgs.pidgin.override {
+      plugins = with pkgs; [
+        telegram-purple
+      ];
+    })
+
     pkgs.v2ray
     pkgs.qv2ray
     (pkgs.callPackage ../packages/QvPlugin/QvPlugin-Trojan-Go.nix { })
