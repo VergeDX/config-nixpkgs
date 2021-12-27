@@ -4,6 +4,6 @@
 
   # https://nixos.wiki/wiki/PostgreSQL
   services.postgresql.authentication =
-    # https://www.postgresql.org/docs/current/auth-pg-hba-conf.html
-    "host all all 127.0.0.1/32 md5";
+    # https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
+    "local all meh md5";
 }
