@@ -135,11 +135,4 @@ rec {
 
   # https://www.reddit.com/r/pcmasterrace/comments/6u68jw/steam_skins_on_linux/
   home.file.".local/share/Steam/skins/".source = metro-for-steam;
-
-  # https://nix-community.github.io/home-manager/options.html#opt-systemd.user.services
-  # systemd.user.services."subconverter" = {
-  #   Service."ExecStart" = "${subconverter-bin}/subconverter";
-  #   # https://superuser.com/questions/1025091/start-a-systemd-user-service-at-boot
-  #   Install."WantedBy" = [ "default.target" ];
-  # };
 }
