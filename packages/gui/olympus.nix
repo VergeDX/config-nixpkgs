@@ -2,12 +2,12 @@
 let
   olympus = pkgs.stdenv.mkDerivation rec {
     pname = "olympus";
-    version = "2422";
+    version = "2478";
 
     # https://everestapi.github.io/
     src = pkgs.fetchzip {
       url = "https://dev.azure.com/EverestAPI/Olympus/_apis/build/builds/${version}/artifacts?artifactName=linux.main&$format=zip#linux.main.zip";
-      sha256 = "sha256-osVbSeCUB2FWVvIrrYjbtJkWvD8V5/xV3KRQvcl8S8s=";
+      sha256 = "sha256-uboYtfljMlocmIDvMIJ08F7vVBhgrtBphXEd0nXL+Js=";
     };
 
     buildInputs = [ pkgs.unzip ];
