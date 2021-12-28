@@ -1,8 +1,4 @@
 { programs, home, pkgs, ... }:
-let fish-wakatime-sh = pkgs.fetchurl {
-  url = "https://raw.githubusercontent.com/Cyber-Duck/fish-wakatime/master/fish-wakatime.sh";
-  hash = "sha256-gZn0S/6QYKXy9WluXg+dT9HhnMAsgNtFhou1ZMprxO0=";
-}; in
 {
   programs.fish.enable = true;
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
@@ -57,9 +53,16 @@ let fish-wakatime-sh = pkgs.fetchurl {
     ln -s /run/agenix/dot-wakatime-cfg ~/.wakatime.cfg
   '';
 
+  # https://github.com/tehdarthvid/log-wakatime-fish#installation
+  home.file.".config/fish/functions/log-wakatime.fish".source =
+    pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/tehdarthvid/log-wakatime-fish/master/log-wakatime.fish";
+      hash = "sha256-TCDna2Cpv1E5vsYpXm2HsEX7X8iGZ8t7MxxByy3jybw=";
+    };
+
   # https://brettterpstra.com/2019/10/15/fish-shell-fun-event-handlers/
   programs.fish.functions."fish-wakatime" = {
-    body = (builtins.readFile fish-wakatime-sh);
+    body = "disown (log-wakatime)";
     onEvent = "fish_preexec";
   };
 
