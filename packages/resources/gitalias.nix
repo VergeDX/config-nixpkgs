@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
   # https://github.com/GitAlias/gitalias#install
   src = fetchurl {
     url = "https://raw.githubusercontent.com/GitAlias/${name}/master/${fileName}";
-    sha256 = "sha256-owo2Z24MraRisucY7PqOj4s619QTZMjSF+YQ5vU/Dhw=";
+    sha256 = "sha256-Ov333cW2PbvX5fp1KAHfgXR4SCwjoolHGCHBf0xskkE=";
   };
 
   unpackPhase = "echo";
