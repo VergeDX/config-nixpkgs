@@ -60,7 +60,7 @@ let fish-wakatime-sh = pkgs.fetchurl {
   # https://brettterpstra.com/2019/10/15/fish-shell-fun-event-handlers/
   programs.fish.functions."fish-wakatime" = {
     body = (builtins.readFile fish-wakatime-sh);
-    onEvent = "fish_prompt";
+    onEvent = "fish_preexec";
   };
 
   programs.fish.plugins = [
