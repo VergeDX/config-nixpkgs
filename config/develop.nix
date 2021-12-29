@@ -13,7 +13,7 @@ let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
   home.packages = (with pkgs.jetbrains;
     [ datagrip idea-ultimate pycharm-professional clion webstorm ])
   ++ (with pkgs; [ android-studio apktool dex2jar jd-gui ])
-  ++ (with pkgs; [ jdk8 kotlin maven gradle ]) # Java & Kotlin
+  ++ (with pkgs; [ jdk8 kotlin maven gradle ]) ++ [ pkgs.kotlin-native ] # Java & Kotlin
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
