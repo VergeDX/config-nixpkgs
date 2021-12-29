@@ -23,4 +23,7 @@
   boot.devSize = "32m";
   # https://forums.gentoo.org/viewtopic-t-1103400-start-0.html
   boot.devShmSize = "8192m";
+
+  # From GitHub, NickCao - flakes: nixos/local/configuration.nix
+  boot.kernelParams = [ "nowatchdog" ] ++ [ "intel_iommu=on" "iommu=pt" ];
 }
