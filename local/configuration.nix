@@ -56,6 +56,7 @@
     "SteamLogin" = { inherit owner; file = ../secrets/SteamLogin.age; };
     "SteamPassword" = { inherit owner; file = ../secrets/SteamPassword.age; };
     "dot-wakatime-cfg" = { inherit owner; file = ../secrets/dot-wakatime-cfg.age; };
+    "dot-steam_secret" = { inherit owner; file = ../secrets/dot-steam_secret.age; };
   };
 
   # Set your time zone.
