@@ -1,5 +1,6 @@
 { home, pkgs, ... }:
 let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
+let sg_cli = pkgs.callPackage ../packages/cli/sg_cli.nix { }; in
 {
   nixpkgs.overlays = [
     (self: super: {
@@ -89,7 +90,8 @@ let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
     # https://github.com/migueravila/Flowetch
     pkgs.rpm
     pkgs.bc
-  ] ++ [ pkgs.nixos-generators ];
+  ] ++ [ pkgs.nixos-generators ]
+  ++ [ sg_cli ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
