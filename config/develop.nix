@@ -17,7 +17,7 @@ let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
   # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
   ++ (with pkgs; [ cmake gnumake cmake ninja gdb ]) # C / C++
   ++ (with pkgs.llvmPackages; [ clang ] ++ (with pkgs; [ (lowPrio lldb) ])) # CLion
-  ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] ++ [ pkgs.rustup ]
+  ++ [ pkgs.cargo-binutils ] ++ [ pkgs.cargo-outdated ] ++ [ pkgs.rustup pkgs.cargo-update ]
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
