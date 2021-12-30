@@ -137,6 +137,6 @@ rec {
   home.file.".local/share/Steam/skins/".source = metro-for-steam;
   home.activation."dot-sg_cli" = ''
     unlink ~/.sg_cli.toml && true
-    ln -s /run/agenix/dot-sg_cli $_
+    ln -s /run/agenix/dot-sg_cli ~/.sg_cli.toml
   '';
 }
