@@ -10,5 +10,5 @@ in
 
   # https://wakatime.com/terminal
   "dot-wakatime-cfg.age".publicKeys = all;
-  "dot-steam_secret.age".publicKeys = all;
+  "dot-sg_cli.age".publicKeys = all;
 }

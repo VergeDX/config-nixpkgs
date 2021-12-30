@@ -135,8 +135,8 @@ rec {
 
   # https://www.reddit.com/r/pcmasterrace/comments/6u68jw/steam_skins_on_linux/
   home.file.".local/share/Steam/skins/".source = metro-for-steam;
-  home.activation."dot_steam_secret" = ''
-    unlink ~/.steam_secret && true
-    ln -s /run/agenix/dot-steam_secret ~/.steam_secret
+  home.activation."dot-sg_cli" = ''
+    unlink ~/.sg_cli.toml && true
+    ln -s /run/agenix/dot-sg_cli $_
   '';
 }
