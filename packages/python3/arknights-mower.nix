@@ -16,6 +16,4 @@ python3Packages.buildPythonPackage rec {
     ++ [ onnxruntime ] ++ (with python3Packages;
     [ scikit-learn pyclipper shapely colorlog scikitimage imagehash ])
     ++ [ imagehash opencv_python ];
-
-  doCheck = false;
 }
