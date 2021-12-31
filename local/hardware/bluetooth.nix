@@ -4,6 +4,13 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # https://forum.manjaro.org/t/bluez-battery-provider/85220
+  hardware.bluetooth.settings = {
+    "General" = {
+      "Experimental" = true;
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
