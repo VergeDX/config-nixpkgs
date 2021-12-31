@@ -16,4 +16,7 @@ python3Packages.buildPythonPackage rec {
     ++ [ onnxruntime ] ++ (with python3Packages;
     [ scikit-learn pyclipper shapely colorlog scikitimage imagehash ])
     ++ [ imagehash opencv_python ];
+
+  # https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings
+  postFixup = "wrapProgram $out/bin/${pname} --set PYTHONWARNINGS ignore";
 }
