@@ -20,6 +20,7 @@
       ./services/hbase.nix
       ./services/spark.nix
       ./services/postgresql.nix
+      ./services/plymouth.nix
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
