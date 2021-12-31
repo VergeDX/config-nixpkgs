@@ -30,6 +30,7 @@
 
     # https://gitlab.com/zanc/overlays
     zanc-overlays.url = "gitlab:zanc/overlays";
+    ACross.url = "github:ArkToria/ACross/v0.1.2";
   };
 
   outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
@@ -49,7 +50,7 @@
           imports = [ ./home.nix ];
 
           nixpkgs.overlays = (with inputs; [ nur.overlay deploy-rs.overlay ])
-            ++ (with inputs; [ Barbfish.overlay ]);
+            ++ (with inputs; [ Barbfish.overlay ACross.overlay ]);
 
           home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
             pkgs.nur.repos.linyinfeng.wemeet
