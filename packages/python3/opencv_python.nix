@@ -1,4 +1,4 @@
-{ python3Packages, fetchPypi, ... }:
+{ python3Packages, fetchPypi, autoPatchelfHook, xlibs, glib, libglvnd, ... }:
 python3Packages.buildPythonPackage rec {
   pname = "opencv_python";
   version = "4.5.5.62";
@@ -15,6 +15,8 @@ python3Packages.buildPythonPackage rec {
     platform = "manylinux_2_17_x86_64.manylinux2014_x86_64";
   };
 
-  propagatedBuildInputs = with python3Packages;
-    [ numpy ];
+  propagatedBuildInputs = with python3Packages; [ numpy ];
+
+  nativeBuildInputs = [ autoPatchelfHook ];
+  buildInputs = [ xlibs.libX11 glib xlibs.libSM libglvnd ];
 }
