@@ -1,4 +1,0 @@
-# deploy . -k -- -vL
-.deploy-gc/
-result
-
