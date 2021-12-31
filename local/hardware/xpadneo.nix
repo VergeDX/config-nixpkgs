@@ -1,0 +1,4 @@
+{ ... }:
+{
+  hardware.xpadneo.enable = true;
+}

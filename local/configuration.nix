@@ -49,6 +49,7 @@
       ./hardware/tablet.nix
       ./hardware/udev.nix
       ./hardware/openrazer.nix
+      ./hardware/xpadneo.nix
     ];
 
   # https://github.com/ryantm/agenix#tutorial
