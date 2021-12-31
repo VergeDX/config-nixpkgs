@@ -33,7 +33,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users."${rpi.user}" = import ./home-manager/home.nix;
+            home-manager.users."${rpi.user}" = import ./home.nix;
           }
         ];
       };
