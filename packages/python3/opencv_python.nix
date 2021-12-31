@@ -19,4 +19,7 @@ python3Packages.buildPythonPackage rec {
 
   nativeBuildInputs = [ autoPatchelfHook ];
   buildInputs = [ xlibs.libX11 glib xlibs.libSM libglvnd ];
+
+  # ELF load command address/offset not properly aligned
+  dontStrip = true;
 }
