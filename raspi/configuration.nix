@@ -12,10 +12,7 @@
 
     ./users-immutable.nix
     ./boot.nix
-
-    ./services/openssh.nix
-    ./services/xserver.nix
-    ./services/lightdm.nix
+    ./openssh.nix
   ];
 
   environment.systemPackages = with pkgs; [ git ];
