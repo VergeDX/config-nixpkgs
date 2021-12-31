@@ -9,6 +9,7 @@
     "https://nix-community.cachix.org"
     "https://linyinfeng.cachix.org"
     "https://ilya-fedin.cachix.org"
+    "https://across.cachix.org"
 
     "https://cache.nixos.org/"
   ];
@@ -18,5 +19,6 @@
     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     "linyinfeng.cachix.org-1:sPYQXcNrnCf7Vr7T0YmjXz5dMZ7aOKG3EqLja0xr9MM="
     "ilya-fedin.cachix.org-1:QveU24a5ePPMh82mAFSxLk1P+w97pRxqe9rh+MJqlag="
+    "across.cachix.org-1:gbHoNiu6UQBGwgEF+zAA00ovBCn5ObAER4KPqGQVI9A="
   ];
 }
