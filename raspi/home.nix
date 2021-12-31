@@ -2,4 +2,5 @@
 { pkgs, home, ... }:
 {
   programs.htop.enable = true;
+  home.packages = with pkgs; [ android-tools ];
 }
