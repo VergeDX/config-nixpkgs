@@ -1,6 +1,7 @@
 { home, pkgs, ... }:
 let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
 let sg_cli = pkgs.callPackage ../packages/cli/sg_cli.nix { }; in
+let arknights-mower = pkgs.python3Packages.callPackage ../packages/python3/arknights-mower.nix { }; in
 {
   nixpkgs.overlays = [
     (self: super: {
@@ -91,7 +92,7 @@ let sg_cli = pkgs.callPackage ../packages/cli/sg_cli.nix { }; in
     pkgs.rpm
     pkgs.bc
   ] ++ [ pkgs.nixos-generators ]
-  ++ [ sg_cli ];
+  ++ [ sg_cli ] ++ [ arknights-mower ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
