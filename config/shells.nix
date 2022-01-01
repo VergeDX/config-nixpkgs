@@ -22,7 +22,10 @@
   programs.fish.interactiveShellInit = ''
     set -U __done_notification_urgency_level low
     set -U __done_notification_urgency_level_failure normal
-  '' + "fish-wakatime";
+  '' + "fish-wakatime" + "\n" + ''
+    export DRONE_SERVER=https://cloud.drone.io
+    export DRONE_TOKEN=(cat /run/agenix/DRONE_TOKEN)
+  '';
 
   # [!] Always remember exec `__git.init` after removed `.config/fish` folder.
   # https://github.com/jhillyerd/plugin-git/blob/master/hooks/install.fish
