@@ -59,6 +59,7 @@
     "SteamPassword" = { inherit owner; file = ../secrets/SteamPassword.age; };
     "dot-wakatime-cfg" = { inherit owner; file = ../secrets/dot-wakatime-cfg.age; };
     "dot-sg_cli" = { inherit owner; file = ../secrets/dot-sg_cli.age; };
+    "DRONE_TOKEN" = { inherit owner; file = ../secrets/DRONE_TOKEN.age; };
   };
 
   # Set your time zone.
