@@ -5,6 +5,7 @@ let
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
   pkgsOld = import inputs.nixpkgs-old { inherit system; };
   pkgsMaster = import inputs.nixpkgs-master { inherit system; };
+  kotatogram-desktop-no-ad = (pkgs.callPackage ./packages/patches/kotatogram-desktop-no-ad.nix { });
 in
 rec {
   # https://github.com/shadowsocks/libQtShadowsocks
@@ -26,14 +27,11 @@ rec {
     # https://github.com/HeQuanX/navicat-keygen-tools/blob/main/README.zh-CN.md
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
 
-    # https://github.com/bkchr/nixos-config/blob/master/system-with-gui-configuration.nix#L8
-    # pkgs.tdesktop
-    # (pkgs.makeAutostartItem { name = "telegramdesktop"; package = pkgs.tdesktop; })
     # https://github.com/NixOS/nixpkgs/pull/148672
-    pkgs.nur.repos.ilya-fedin.kotatogram-desktop
+    kotatogram-desktop-no-ad
     (pkgs.makeAutostartItem {
       name = "kotatogramdesktop";
-      package = pkgs.nur.repos.ilya-fedin.kotatogram-desktop;
+      package = kotatogram-desktop-no-ad;
     })
 
     (pkgs.callPackage ./packages/gui/olympus.nix { })

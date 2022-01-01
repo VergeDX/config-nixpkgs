@@ -1,0 +1,14 @@
+diff --git a/Telegram/SourceFiles/data/data_sponsored_messages.cpp b/Telegram/SourceFiles/data/data_sponsored_messages.cpp
+index 155dc5f90..c6dd180fb 100644
+--- a/Telegram/SourceFiles/data/data_sponsored_messages.cpp
++++ b/Telegram/SourceFiles/data/data_sponsored_messages.cpp
+@@ -93,7 +93,8 @@ bool SponsoredMessages::append(not_null<History*> history) {
+ }
+ 
+ bool SponsoredMessages::canHaveFor(not_null<History*> history) const {
+-	return history->isChannel();
++	// Credit: https://t.me/TGgeek.
++	return 0 && history->isChannel();
+ }
+ 
+ void SponsoredMessages::request(not_null<History*> history) {
