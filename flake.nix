@@ -30,7 +30,7 @@
 
     # https://gitlab.com/zanc/overlays
     zanc-overlays.url = "gitlab:zanc/overlays";
-    ACross.url = "github:ArkToria/ACross/v0.1.2";
+    ACross.url = "github:ArkToria/ACross";
   };
 
   outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
