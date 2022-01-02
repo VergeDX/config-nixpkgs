@@ -3,6 +3,11 @@ let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage ../packages/gui/shadowsoc
 let v2ray-geoip = (import inputs.nixpkgs-master { inherit system; }).pkgs.v2ray-geoip; in
 let pkgs-gnote = pkgs.callPackage ../packages/gui/gnote.nix { }; in
 let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
+
+let pkgsOld = import inputs.nixpkgs-old {
+  inherit system; config.allowUnfree = true;
+  config.permittedInsecurePackages = [ "electron-9.4.4" ];
+}; in
 {
   home.packages = [
     pkgs.gimp-with-plugins
@@ -66,7 +71,7 @@ let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
   ++ [ pkgs.playonlinux ]
   ++ [ pkgs.space-cadet-pinball ]
   # https://github.com/openrazer/openrazer#applications
-  ++ [ pkgs.razergenie ] ++ [ pkgs.across ];
+  ++ [ pkgs.razergenie ] ++ [ pkgs.across ] ++ [ pkgsOld.typora ];
 
   # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
