@@ -55,4 +55,9 @@ let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
     # https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs
     "HADOOP_USER_NAME" = "hdfs";
   };
+
+  # https://docs.docker.com/network/proxy/
+  home.file.".docker/config.json".text = builtins.toJSON {
+    "proxies" = { "default" = { "httpsProxy" = "socks5://127.0.0.1:1089"; }; };
+  };
 }
