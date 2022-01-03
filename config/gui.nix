@@ -71,7 +71,8 @@ let pkgsOld = import inputs.nixpkgs-old {
   ++ [ pkgs.playonlinux ]
   ++ [ pkgs.space-cadet-pinball ]
   # https://github.com/openrazer/openrazer#applications
-  ++ [ pkgs.razergenie ] ++ [ pkgs.across ] ++ [ pkgsOld.typora ];
+  ++ [ pkgs.razergenie ] ++ [ pkgs.across ] ++ [ pkgsOld.typora ]
+  ++ (with pkgs; [ ciscoPacketTracer7 ciscoPacketTracer8 ]);
 
   # https://qv2ray.net/getting-started/step2.html#download-v2ray-core-files
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
