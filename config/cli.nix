@@ -92,7 +92,8 @@ let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { };
     pkgs.rpm
     pkgs.bc
   ] ++ [ pkgs.nixos-generators ]
-  ++ [ sg_cli nix-user-chroot ];
+  ++ [ sg_cli nix-user-chroot ]
+  ++ [ pkgs.ffmpeg ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
