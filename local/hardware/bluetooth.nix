@@ -3,6 +3,7 @@
   # https://nixos.wiki/wiki/Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.package = pkgs.bluezFull;
+  hardware.bluetooth.hsphfpd.enable = true;
 
   services.blueman.enable = true;
 
