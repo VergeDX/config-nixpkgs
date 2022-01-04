@@ -2,6 +2,8 @@
 {
   # https://nixos.wiki/wiki/Bluetooth
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.package = pkgs.bluezFull;
+
   services.blueman.enable = true;
 
   # https://forum.manjaro.org/t/bluez-battery-provider/85220
