@@ -1,7 +1,9 @@
 { ... }:
 {
-  # Enable sound.
+  # https://blog.ryey.icu/zhs/replace-pulseaudio-with-pipewire.html
   sound.enable = true;
+  sound.enableOSSEmulation = true;
+
   hardware.pulseaudio.enable = false;
 
   # https://nixos.wiki/wiki/PipeWire
