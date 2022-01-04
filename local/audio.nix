@@ -4,15 +4,16 @@
   sound.enable = true;
   sound.enableOSSEmulation = true;
 
+  # https://nixos.wiki/wiki/PipeWire#Enabling_PipeWire
+  services.pipewire.enable = true;
   hardware.pulseaudio.enable = false;
 
-  # https://nixos.wiki/wiki/PipeWire
-  # https://blog.ryey.icu/zhs/replace-pulseaudio-with-pipewire.html
-  security.rtkit.enable = true;
+  # NixOS Search: services.pipewire.*.enable
   services.pipewire = {
-    enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
   };
 }
