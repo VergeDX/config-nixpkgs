@@ -10,6 +10,19 @@
     '';
   });
 
+  # https://nix-community.github.io/home-manager/options.html#opt-programs.chromium.extensions
+  programs.chromium.extensions = [{
+    id = "kpbnombpnpcffllnianjibmpadjolanh";
+    crxPath = toString (pkgs.fetchurl {
+      url = "https://github.com/bilibili-helper/bilibili-helper-o" +
+        "/releases/download/v1.2.30/bilibilihelper_1.2.30.crx";
+      hash = "sha256-ippD8jJ9C6AO41ywDRmbE2omphcGuZIf/t/mQpSDwEk=";
+    });
+
+    # https://github.com/bilibili-helper/bilibili-helper-o/releases
+    version = "v1.2.30";
+  }];
+
   # https://wiki.archlinux.org/title/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # https://gist.github.com/foutrelis/14e339596b89813aa9c37fd1b4e5d9d5
   systemd.user.sessionVariables = {
