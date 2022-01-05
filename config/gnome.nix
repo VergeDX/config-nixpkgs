@@ -119,6 +119,7 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
 
     "text/plain" = [ "org.gnome.gedit.desktop" ];
     "application/x-shellscript" = [ "org.gnome.gedit.desktop" ];
+    "application/xml" = [ "org.gnome.gedit.desktop" ];
 
     "application/pdf" = [ "org.gnome.Evince.desktop" ];
 
