@@ -21,7 +21,7 @@ let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
-    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ]
+    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ] ++ [ statsmodels ]
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
   ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ]
   ++ [ pkgs.texlive.combined.scheme-full ] # https://nixos.wiki/wiki/TexLive
