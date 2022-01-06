@@ -1,4 +1,5 @@
-{ ... }:
+{ inputs, system, ... }:
+let pkgsUnstable = (import inputs.nixpkgs-unstable { inherit system; }); in
 {
   # https://blog.ryey.icu/zhs/replace-pulseaudio-with-pipewire.html
   sound.enable = true;
@@ -6,6 +7,7 @@
 
   # https://nixos.wiki/wiki/PipeWire#Enabling_PipeWire
   services.pipewire.enable = true;
+  services.pipewire.package = pkgsUnstable.pipewire;
   hardware.pulseaudio.enable = false;
 
   # NixOS Search: services.pipewire.*.enable

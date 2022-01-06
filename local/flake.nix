@@ -1,5 +1,6 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+  inputs.nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   # https://github.com/ryantm/agenix/releases/tag/0.10.0
   inputs.agenix.url = "github:ryantm/agenix/0.10.1";
 
@@ -8,7 +9,7 @@
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = {
-        inherit inputs self;
+        inherit inputs self system;
         owner = "vanilla";
       };
 
