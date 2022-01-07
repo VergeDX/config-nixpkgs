@@ -45,7 +45,8 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
 
     # https://www.linuxlinks.com/excellent-gnome-desktop-extensions/
     pkgs.gnomeExtensions.arcmenu
-    # pkgs.gnomeExtensions.gsconnect
+    pkgs.gnomeExtensions.gsconnect
+    pkgs.libsForQt5.kdeconnect-kde
 
     # https://extensions.gnome.org/
     pkgs.gnomeExtensions.sound-output-device-chooser
