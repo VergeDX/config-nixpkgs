@@ -114,6 +114,8 @@ let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { };
 
   # https://github.com/bennofs/nix-index
   programs.nix-index.enable = true;
+  programs.nix-index.enableBashIntegration = false;
+  programs.nix-index.enableZshIntegration = false;
 
   programs.tmux.enable = true;
   # https://wiki.archlinux.org/title/Tmux#Setting_the_correct_term

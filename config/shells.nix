@@ -1,6 +1,8 @@
 { programs, home, pkgs, ... }:
 {
   programs.fish.enable = true;
+  programs.command-not-found.enable = true;
+
   # https://starship.rs/zh-CN/config/#%E6%8F%90%E7%A4%BA%E7%AC%A6
   programs.starship.enable = true;
   programs.starship.settings = { add_newline = false; line_break = { disabled = true; }; };
