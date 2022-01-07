@@ -48,7 +48,6 @@
       ./hardware/steam.nix
       ./hardware/yubikey.nix
       ./hardware/tablet.nix
-      ./hardware/udev.nix
       ./hardware/openrazer.nix
       ./hardware/xpadneo.nix
     ];
