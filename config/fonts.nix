@@ -10,7 +10,7 @@ with pkgs; {
     ++ [ dejavu_fonts vdrsymbols hack-font nerdfonts ]
     # https://developer.apple.com/fonts/
     ++ (with apple-fonts; [ SF-Pro SF-Compact SF-Mono SF-Arabic NY ])
-    ++ [ Win10_LTSC_2019_fonts ]; # This one is a heavyweight!
+    ++ [ Win10_LTSC_2019_fonts dosemu_fonts ];
 
   # https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # https://github.com/yrashk/nix-home/blob/master/home.nix#L285

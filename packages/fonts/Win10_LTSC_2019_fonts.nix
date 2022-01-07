@@ -1,4 +1,4 @@
-{ stdenv, requireFile, p7zip, wimlib, fontforge, ... }:
+{ stdenv, requireFile, p7zip, wimlib, ... }:
 stdenv.mkDerivation rec {
   pname = "Win10_LTSC_2019_fonts";
   version = "LTSC_2019";
@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     url = "https://msdn.itellyou.cn/"; # TODO: LTSC 2021
   };
 
-  nativeBuildInputs = [ p7zip wimlib fontforge ];
+  nativeBuildInputs = [ p7zip wimlib ];
   unpackPhase = "7z x ${src}";
 
   # https://wimlib.net/man1/wimextract.html
@@ -18,22 +18,8 @@ stdenv.mkDerivation rec {
     cd install && wimextract install.wim 1 /Windows/Fonts
   '';
 
-  # https://forums.techguy.org/threads/convert-font-file-fon-to-another-format.654200/
-  # https://stackoverflow.com/questions/13087903/command-line-tool-for-converting-ttf-otf-fonts-to-svg
   installPhase = ''
     mkdir -p $out/share/fonts/truetype/ && find . -name "*.ttf" -exec cp {} $_ \;
     mkdir -p $out/share/fonts/opentype/ && find . -name "*.ttc" -exec cp {} $_ \;
-
-    mkdir -p $out/share/fonts/misc/ && cd ./Fonts
-    rm ./script.fon ./roman.fon ./modern.fon
-
-    for fon_font in $(find . -name "*.fon"); do
-      file_name="$(basename $fon_font .fon)"
-
-      fontforge -c "import fontforge; \
-        fontforge.open(\"$fon_font\").generate(\"$file_name.bdf\")"
-    done
-
-    mkdir -p $out/share/fonts/misc/ && cp -r ./*.bdf $out/share/fonts/misc/
   '';
 }
