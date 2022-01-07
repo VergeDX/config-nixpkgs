@@ -25,7 +25,7 @@
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
       ./virtualisation/docker.nix
-      # ./virtualisation/virtualbox.nix
+      ./virtualisation/virtualbox.nix
       ./virtualisation/wine.nix
 
       ./programs.nix
