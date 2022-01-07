@@ -69,7 +69,8 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
     # https://www.reddit.com/r/linux/comments/ri496j/theres_snow_place_like_gnome/
     pkgs.gnomeExtensions.downfall
 
-    pkgs.gnomeExtensions.desktop-icons-ng-ding
+    # pkgs.gnomeExtensions.desktop-icons-ng-ding
+    # pkgs.gnomeExtensions.desktop-icons-neo
   ] ++ [ Schneegans.Fly-Pie ] ++ [
     # https://gitlab.gnome.org/GNOME/nautilus/-/issues/2053
     (pkgs.gnome.nautilus.overrideAttrs (old: {
