@@ -1,6 +1,6 @@
 { fonts, home, pkgs, ... }:
 let apple-fonts = import ../packages/fonts/apple.nix { inherit pkgs; }; in
-let Win10_LTSC_2019_fonts = pkgs.callPackage ../packages/fonts/Win10_LTSC_2019_fonts.nix { }; in
+let Win10_LTSC_2021_fonts = pkgs.callPackage ../packages/fonts/Win10_LTSC_2021_fonts.nix { }; in
 with pkgs; {
   # https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig.enable = true;
@@ -10,7 +10,7 @@ with pkgs; {
     ++ [ dejavu_fonts vdrsymbols hack-font nerdfonts ]
     # https://developer.apple.com/fonts/
     ++ (with apple-fonts; [ SF-Pro SF-Compact SF-Mono SF-Arabic NY ])
-    ++ [ Win10_LTSC_2019_fonts dosemu_fonts ];
+    ++ [ Win10_LTSC_2021_fonts dosemu_fonts ];
 
   # https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
   # https://github.com/yrashk/nix-home/blob/master/home.nix#L285

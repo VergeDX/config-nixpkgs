@@ -4,9 +4,11 @@ stdenv.mkDerivation rec {
   version = "LTSC_2019";
 
   src = requireFile {
-    name = "cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso";
-    sha256 = "aa4ea00581aa84999dbfe0627499b392e10c75912d6e2f1635eb7c4b9139fb5f";
-    url = "https://msdn.itellyou.cn/"; # TODO: LTSC 2021
+    name = "SW_DVD9_WIN_ENT_LTSC_2021_64BIT_ChnSimp_MLF_X22-84402.ISO";
+    sha256 = "c117c5ddbc51f315c739f9321d4907fa50090ba7b48e7e9a2d173d49ef2f73a3";
+
+    # LTSC - Windows 10 Enterprise LTSC 2021 (x64) - DVD (Chinese-Simplified)
+    url = "https://next.itellyou.cn/Original/#cbp=Product?ID=f905b2d9-11e7-4ee3-8b52-407a8befe8d1";
   };
 
   nativeBuildInputs = [ p7zip wimlib ];
