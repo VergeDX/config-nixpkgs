@@ -11,14 +11,11 @@
       ./services/xrdp.nix
       ./services/openssh.nix
       ./services/fail2ban.nix
-      # ./services/hadoop.nix
       ./services/mysql.nix
       ./services/dnscrypt-proxy2.nix
       ./services/mongodb.nix
       ./services/redis.nix
       ./services/nginx.nix
-      ./services/hbase.nix
-      ./services/spark.nix
       ./services/postgresql.nix
       ./services/plymouth.nix
 
