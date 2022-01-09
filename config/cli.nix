@@ -93,7 +93,8 @@ let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { };
     pkgs.bc
   ] ++ [ pkgs.nixos-generators ]
   ++ [ sg_cli nix-user-chroot ]
-  ++ [ pkgs.ffmpeg ] ++ [ pkgs.powershell ];
+  ++ [ pkgs.ffmpeg ] ++ [ pkgs.powershell ]
+  ++ [ pkgs.vitetris ]; # `tetris`!
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
