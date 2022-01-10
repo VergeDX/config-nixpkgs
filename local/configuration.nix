@@ -7,7 +7,7 @@
       ./i18n.nix
       ./xserver.nix
 
-      ./services/services.nix
+      ./services/fstrim.nix
       ./services/xrdp.nix
       ./services/openssh.nix
       ./services/fail2ban.nix
