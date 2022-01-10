@@ -12,7 +12,6 @@
       ./services/openssh.nix
       ./services/fail2ban.nix
       ./services/dnscrypt-proxy2.nix
-      ./services/nginx.nix
       ./services/plymouth.nix
 
       ./virtualisation/binfmt.nix
