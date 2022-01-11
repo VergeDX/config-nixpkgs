@@ -188,8 +188,10 @@ in
       require'lspconfig'.yamlls.setup{ capabilities = capabilities, }
       -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
       require'lspconfig'.clangd.setup{ capabilities = capabilities, }
+
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cmake
-      require'lspconfig'.cmake.setup{ capabilities = capabilities, }
+      -- require'lspconfig'.cmake.setup{ capabilities = capabilities, }
+
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rls
       require'lspconfig'.rls.setup{ capabilities = capabilities, }
       EOF
@@ -246,6 +248,8 @@ in
     pkgs.haskellPackages.hindent
 
     pkgs.llvmPackages_9.libclang
-    pkgs.cmake-language-server
+
+    # https://github.com/openlawlibrary/pygls/issues/221
+    # pkgs.cmake-language-server
   ];
 }
