@@ -5,8 +5,8 @@ let
 in
 {
   # https://justarchinet.github.io/ASF-WebConfigGenerator/#/bot
-  "SteamLogin.age".publicKeys = all;
-  "SteamPassword.age".publicKeys = all;
+  "Steam/SteamLogin.age".publicKeys = all;
+  "Steam/SteamPassword.age".publicKeys = all;
 
   # https://wakatime.com/terminal
   "dot-wakatime-cfg.age".publicKeys = all;

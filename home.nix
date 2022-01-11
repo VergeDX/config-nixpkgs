@@ -90,8 +90,8 @@ rec {
     in
     ''
       rm -f ${json-file} && echo "{}" > ${json-file}
-      ${dasel} put string -r json '.SteamLogin' `cat ${secrets-dir}/SteamLogin` -f ${json-file}
-      ${dasel} put string -r json '.SteamPassword' `cat ${secrets-dir}/SteamPassword` -f ${json-file}
+      ${dasel} put string -r json '.SteamLogin' `cat ${secrets-dir}/Steam/SteamLogin` -f ${json-file}
+      ${dasel} put string -r json '.SteamPassword' `cat ${secrets-dir}/Steam/SteamPassword` -f ${json-file}
       ${dasel} put bool -r json '.Enabled' true -f ${json-file}
       chmod u-w ${json-file}
     '';

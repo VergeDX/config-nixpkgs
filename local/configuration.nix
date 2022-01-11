@@ -46,8 +46,8 @@
 
   # https://github.com/ryantm/agenix#tutorial
   age.secrets = {
-    "SteamLogin" = { inherit owner; file = ../secrets/SteamLogin.age; };
-    "SteamPassword" = { inherit owner; file = ../secrets/SteamPassword.age; };
+    "Steam/SteamLogin" = { inherit owner; file = ../secrets/Steam/SteamLogin.age; };
+    "Steam/SteamPassword" = { inherit owner; file = ../secrets/Steam/SteamPassword.age; };
     "dot-wakatime-cfg" = { inherit owner; file = ../secrets/dot-wakatime-cfg.age; };
     "dot-sg_cli" = { inherit owner; file = ../secrets/dot-sg_cli.age; };
     "DRONE_TOKEN" = { inherit owner; file = ../secrets/DRONE_TOKEN.age; };
