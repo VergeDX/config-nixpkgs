@@ -14,4 +14,6 @@ in
 
   # https://cloud.drone.io/account
   "DRONE_TOKEN.age".publicKeys = all;
+
+  "TICK/INFLUX_TOKEN.age".publicKeys = all;
 }
