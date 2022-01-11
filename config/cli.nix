@@ -2,6 +2,7 @@
 let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
 let sg_cli = pkgs.callPackage ../packages/cli/sg_cli.nix { }; in
 let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { }; in
+let distrobox = pkgs.callPackage ../packages/cli/distrobox.nix { }; in
 {
   nixpkgs.overlays = [
     (self: super: {
@@ -94,7 +95,8 @@ let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { };
   ] ++ [ pkgs.nixos-generators ]
   ++ [ sg_cli nix-user-chroot ]
   ++ [ pkgs.ffmpeg ] ++ [ pkgs.powershell ]
-  ++ [ pkgs.vitetris ]; # `tetris`!
+  ++ [ pkgs.vitetris ] # `tetris`!
+  ++ [ distrobox ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
