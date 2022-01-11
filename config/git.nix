@@ -9,7 +9,7 @@ in
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "osu_Vanilla@126.com";
   # https://github.com/GitAlias/gitalias#install-with-typical-usage
-  programs.git.includes = [{ path = "${gitalias}/${gitalias.fileName}"; }];
+  # programs.git.includes = [{ path = "${gitalias}/${gitalias.fileName}"; }];
 
   # https://nixos.wiki/wiki/Git
   programs.git.extraConfig = {
