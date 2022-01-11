@@ -71,7 +71,7 @@ let pkgsOld = import inputs.nixpkgs-old {
   ++ [ pkgs.playonlinux ]
   ++ [ pkgs.space-cadet-pinball ]
   # https://github.com/openrazer/openrazer#applications
-  ++ [ pkgs.razergenie ] ++ [ pkgs.across ] ++ [ pkgsOld.typora ]
+  ++ [ pkgs.razergenie ] ++ [ /* pkgs.across */ ] ++ [ pkgsOld.typora ]
   ++ [ pkgs.ciscoPacketTracer8 ] # Packet Tracer
   ++ [ pkgs.drawio ]; # https://app.diagrams.net/
 
