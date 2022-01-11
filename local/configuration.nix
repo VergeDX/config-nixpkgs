@@ -13,6 +13,7 @@
       ./services/fail2ban.nix
       ./services/dnscrypt-proxy2.nix
       ./services/plymouth.nix
+      ./services/TICK.nix
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
