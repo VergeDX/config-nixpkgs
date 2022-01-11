@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
+let pkgsUnstable = (import inputs.nixpkgs-unstable { inherit system; }); in
 {
   # https://nixos.wiki/wiki/Yubikey
   security.pam.yubico.enable = true;
@@ -15,5 +16,8 @@
 
   # https://nixos.wiki/wiki/Yubikey
   services.udev.packages = [ pkgs.yubikey-personalization ];
+
+  # https://github.com/NixOS/nixpkgs/pull/148601
   services.pcscd.enable = true;
+  nixpkgs.overlays = [ (self: super: { pcsclite = pkgsUnstable.pcsclite; }) ];
 }
