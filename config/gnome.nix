@@ -120,6 +120,7 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
     "x-scheme-handler/ftp" = [ "org.gnome.Nautilus.desktop" ];
 
     "text/plain" = [ "org.gnome.gedit.desktop" ];
+    "text/markdown" = [ "code.desktop" ];
     "application/x-shellscript" = [ "org.gnome.gedit.desktop" ];
     "application/xml" = [ "org.gnome.gedit.desktop" ];
 
