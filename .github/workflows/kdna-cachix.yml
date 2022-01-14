@@ -1,5 +1,10 @@
 name: build and push
-on: [ push ]
+on:
+  push:
+    paths:
+      - packages/patches/kotatogram-desktop-no-ad.nix
+      - packages/patches/no-sponsored_messages.patch
+
 jobs:
   Build-and-Cachix:
     runs-on: ubuntu-latest
