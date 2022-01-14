@@ -33,7 +33,7 @@
     ACross.url = "github:ArkToria/ACross";
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, nur, ... }@inputs:
     let system = "x86_64-linux";
     in
     {
@@ -59,5 +59,8 @@
             ++ [ agenix.defaultPackage.x86_64-linux ];
         };
       };
+
+      kdna = let pkgs = import nixpkgs { inherit system; overlays = [ nur.overlay ]; }; in
+        (pkgs.callPackage ./packages/patches/kotatogram-desktop-no-ad.nix { });
     };
 }
