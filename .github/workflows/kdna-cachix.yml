@@ -4,6 +4,7 @@ on:
     paths:
       - packages/patches/kotatogram-desktop-no-ad.nix
       - packages/patches/no-sponsored_messages.patch
+  workflow_dispatch:
 
 jobs:
   Build-and-Cachix:
