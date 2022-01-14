@@ -17,7 +17,7 @@
 
       ./virtualisation/binfmt.nix
       ./virtualisation/libvirt.nix
-      ./virtualisation/docker.nix
+      ./virtualisation/podman.nix
       ./virtualisation/virtualbox.nix
       ./virtualisation/wine.nix
 
