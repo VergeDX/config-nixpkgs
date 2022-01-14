@@ -2,6 +2,7 @@ name: Workflow - build kdna and push to cachix
 on:
   push:
     paths:
+      - .github/workflows/kdna-cachix.yml
       - packages/patches/kotatogram-desktop-no-ad.nix
       - packages/patches/no-sponsored_messages.patch
   workflow_dispatch:
