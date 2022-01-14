@@ -1,4 +1,4 @@
-name: build and push
+name: Workflow - build kdna and push to cachix
 on:
   push:
     paths:
