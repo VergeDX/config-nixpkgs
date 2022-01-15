@@ -5,6 +5,7 @@
   home.packages = [
     pkgs.xfce.terminal
     pkgs.alacritty
+    pkgs.cool-retro-term
 
     pkgs.screenfetch
     pkgs.neofetch
