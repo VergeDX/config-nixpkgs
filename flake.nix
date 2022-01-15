@@ -11,10 +11,6 @@
     home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # https://github.com/nixos-cn/flakes#%E4%BD%BF%E7%94%A8
-    nixos-cn.url = "github:nixos-cn/flakes";
-    nixos-cn.inputs.nixpkgs.follows = "nixpkgs";
-
     # https://github.com/nix-community/NUR#flake-support
     nur.url = github:nix-community/NUR;
     # https://github.com/ryantm/agenix#flakes
@@ -33,7 +29,7 @@
     ACross.url = "github:ArkToria/ACross";
   };
 
-  outputs = { self, home-manager, nixpkgs, nixos-cn, agenix, nur, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, agenix, nur, ... }@inputs:
     let system = "x86_64-linux";
     in
     {
@@ -52,11 +48,11 @@
           nixpkgs.overlays = (with inputs; [ nur.overlay deploy-rs.overlay ])
             ++ (with inputs; [ Barbfish.overlay ACross.overlay ]);
 
-          home.packages = with nixos-cn.legacyPackages.${system}; [ ] ++ [
+          home.packages = [
             pkgs.nur.repos.linyinfeng.wemeet
             pkgs.gnome.cheese
           ] ++ [ pkgs.deploy-rs.deploy-rs ]
-            ++ [ agenix.defaultPackage.x86_64-linux ];
+          ++ [ agenix.defaultPackage.x86_64-linux ];
         };
       };
 
