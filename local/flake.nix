@@ -18,5 +18,8 @@
         agenix.nixosModules.age
       ];
     };
+
+    vb-with-ext = with (import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; });
+      virtualbox.override { extensionPack = virtualboxExtpack; enableHardening = true; };
   };
 }
