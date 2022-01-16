@@ -6,6 +6,8 @@ on:
       - packages/patches/kotatogram-desktop-no-ad.nix
       - packages/patches/no-sponsored_messages.patch
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   Build-and-Cachix:
