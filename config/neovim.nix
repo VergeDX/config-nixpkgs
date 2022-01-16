@@ -13,12 +13,12 @@ let
 
   tzachar-cmp-tabnine = pkgs.vimUtils.buildVimPlugin rec {
     pname = "tzachar-cmp-tabnine";
-    version = "ae5c8f3";
+    version = "827274a";
 
     src = pkgs.fetchgit {
       url = "https://github.com/tzachar/cmp-tabnine";
-      rev = "${version}6668d4cb5443e763df5f7989a29fc801f";
-      hash = "sha256-rS5DberDCuKAEwwHeie6PiRL6MvPwnp7EWM6i2o9Vys=";
+      rev = "${version}c3238ba43474fdf1b047ec02111c90df8";
+      hash = "sha256-dhNxFce6O0Yr7SXqSpzEieq8qu0z/8QNuWXYgPEJvpE=";
     };
 
     tabnine = pkgs.fetchurl {
