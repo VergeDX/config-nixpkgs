@@ -19,16 +19,15 @@ jobs:
           # https://github.com/cachix/install-nix-action#how-do-i-add-a-binary-cache
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            trusted-public-keys = ilya-fedin.cachix.org-1:QveU24a5ePPMh82mAFSxLk1P+w97pRxqe9rh+MJqlag= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= kdna.cachix.org-1:xAkLlelk3u0frMsevzcDLsjGe6ifqXx8q+OrPkbmetI=
-            substituters = https://ilya-fedin.cachix.org https://cache.nixos.org/ https://kdna.cachix.org/
+            trusted-public-keys = ilya-fedin.cachix.org-1:QveU24a5ePPMh82mAFSxLk1P+w97pRxqe9rh+MJqlag= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+            substituters = https://ilya-fedin.cachix.org https://cache.nixos.org/
           # https://github.com/cachix/install-nix-action#usage
           nix_path: nixpkgs=channel:nixos-unstable
 
       - uses: actions/checkout@v2
 
-      - run: nix-env -i cachix -f '<nixpkgs>'
+      - uses: cachix/cachix-action@v10
+        with:
+          name: kdna
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build .#kdna -vL
-
-      - run: readlink result | cachix push kdna
-        env:
-          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
