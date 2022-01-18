@@ -9,3 +9,5 @@ A Gnome user + Xmonad learner.
 The drv and patch is here: [kotatogram-desktop-no-ad.nix](./packages/patches/kotatogram-desktop-no-ad.nix)
 and here [no-sponsored_messages.patch](./packages/patches/no-sponsored_messages.patch).  
 Binary Cache is also available: https://kdna.cachix.org/, build with GitHub Actions.
+
+![Workflow - build kdna and push to cachix](https://github.com/VergeDX/config-nixpkgs/actions/workflows/kdna-cachix.yml/badge.svg)
