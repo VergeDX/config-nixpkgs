@@ -12,7 +12,7 @@ let pkgsUnstable = (import inputs.nixpkgs-unstable { inherit system; }); in
 
   # security.pam.yubico.debug = true;
   security.pam.yubico.mode = "challenge-response";
-  security.pam.yubico.control = "required";
+  security.pam.yubico.control = "sufficient";
 
   # https://nixos.wiki/wiki/Yubikey
   services.udev.packages = [ pkgs.yubikey-personalization ];
