@@ -22,10 +22,6 @@
 
     # https://github.com/MidAutumnMoon/Barbfish#nix-use-flake
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
-
-    # https://gitlab.com/zanc/overlays
-    zanc-overlays.url = "gitlab:zanc/overlays";
-    ACross.url = "github:ArkToria/ACross";
   };
 
   outputs = { self, home-manager, nixpkgs, agenix, nur, ... }@inputs:
@@ -45,7 +41,7 @@
           imports = [ ./home.nix ];
 
           nixpkgs.overlays = (with inputs; [ nur.overlay deploy-rs.overlay ])
-            ++ (with inputs; [ Barbfish.overlay ACross.overlay ]);
+            ++ (with inputs; [ Barbfish.overlay ]);
 
           home.packages = [
             pkgs.nur.repos.linyinfeng.wemeet
