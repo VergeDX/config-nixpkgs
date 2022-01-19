@@ -12,7 +12,6 @@ let pkgsOld = import inputs.nixpkgs-old {
   home.packages = [
     pkgs.gimp-with-plugins
     pkgs.remmina
-    (pkgs.callPackage ../packages/gui/motrix.nix { })
     pkgs.qbittorrent
     pkgs.obs-studio
     pkgs.gnome3.baobab
