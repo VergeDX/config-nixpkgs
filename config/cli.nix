@@ -25,6 +25,7 @@ let distrobox = pkgs.callPackage ../packages/cli/distrobox.nix { }; in
 
     pkgs.htop
     pkgs.bpytop
+    pkgs.btop
 
     (pkgs.callPackage ../packages/fcitx/ssf2fcitx.nix { })
     pkgs.checkra1n

@@ -18,8 +18,6 @@
   home.file.".config/fish/functions/rose_pine.fish".source =
     "${pkgs.callPackage ../packages/resources/rose-pine-fish.nix { }}/rose_pine.fish";
 
-  programs.fish.shellAliases = { top = "bpytop"; };
-
   # https://github.com/franciscolourenco/done#for-linux-set-the-urgency-level-for-notifications-sent-via-notify-send-low-normal-critical-the-default-is-normal-for-regular-commands-and-critical-for-failed-commands
   programs.fish.interactiveShellInit = ''
     set -U __done_notification_urgency_level low
