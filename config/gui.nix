@@ -1,6 +1,5 @@
 { home, pkgs, lib, inputs, system, ... }:
 let pkgs-shadowsocks-qt5 = pkgs.libsForQt5.callPackage ../packages/gui/shadowsocks-qt5.nix { }; in
-let v2ray-geoip = (import inputs.nixpkgs-master { inherit system; }).pkgs.v2ray-geoip; in
 let pkgs-gnote = pkgs.callPackage ../packages/gui/gnote.nix { }; in
 let pkgs-expac = pkgs.callPackage ../packages/cli/expac.nix { }; in
 
@@ -78,7 +77,7 @@ let pkgsOld = import inputs.nixpkgs-old {
   home.file.".config/qv2ray/vcore".source = pkgs.runCommand "vcore" { } ''
     mkdir $out/
     ln -s ${pkgs.v2ray}/bin/v2ray $out/v2ray && ln -s ${pkgs.v2ray}/bin/v2ctl $out/v2ctl
-    ln -s ${v2ray-geoip}/share/v2ray/geoip.dat $out/geoip.dat
+    ln -s ${pkgs.v2ray-geoip}/share/v2ray/geoip.dat $out/geoip.dat
     ln -s ${pkgs.v2ray-domain-list-community}/share/v2ray/geosite.dat $out/geosite.dat
   '';
 

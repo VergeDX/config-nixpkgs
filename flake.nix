@@ -3,7 +3,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-old.url = "github:nixos/nixpkgs/nixos-21.05";
-    nixpkgs-master.url = "github:nixos/nixpkgs";
 
     # https://hydra.nixos.org/build/143801064#tabs-buildinputs
     nixpkgs-29f57e4.url = "github:NixOS/nixpkgs/29f57e475266edbb57d995c044aba3adf7f71298";

@@ -4,7 +4,6 @@ let
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
   pkgsOld = import inputs.nixpkgs-old { inherit system; };
-  pkgsMaster = import inputs.nixpkgs-master { inherit system; };
   kotatogram-desktop-no-ad = (pkgs.callPackage ./packages/patches/kotatogram-desktop-no-ad.nix { });
 in
 rec {
@@ -71,8 +70,7 @@ rec {
     pkgs.termius
 
     pkgs.gnome.ghex
-    # https://github.com/NixOS/nixpkgs/pull/147322
-    pkgsMaster.ArchiSteamFarm
+    pkgs.ArchiSteamFarm
     pkgs.dasel
     pkgs.coreutils
   ] ++ [
