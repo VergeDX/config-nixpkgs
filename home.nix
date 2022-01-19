@@ -109,8 +109,6 @@ rec {
     ./config/fcitx5.nix
     ./config/git.nix
     ./config/shells.nix
-    ./config/zsh.nix
-    ./config/bash.nix
     ./config/neovim.nix
 
     ./config/fonts.nix
