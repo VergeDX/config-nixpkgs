@@ -10,7 +10,7 @@ let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix {
 let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix { }; in
 {
   home.packages = [
-    pkgs.gnome.gnome-tweak-tool
+    pkgs.gnome.gnome-tweaks
     pkgs.qt5ct
     pkgs.gjs
 

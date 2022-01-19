@@ -3,7 +3,7 @@
 # let ayamir-dotfiles = pkgs.callPackage ../packages/resources/ayamir-dotfiles.nix { }; in
 {
   home.packages = [
-    pkgs.xfce.terminal
+    # pkgs.xfce.terminal
     pkgs.alacritty
     pkgs.cool-retro-term
 

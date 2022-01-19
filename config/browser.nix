@@ -33,6 +33,6 @@
   # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-983745849
   home.packages = [
     # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-984271996
-    (pkgs.callPackage (import "${inputs.zanc-overlays}/edge").stable { })
+    # (pkgs.callPackage (import "${inputs.zanc-overlays}/edge").stable { })
   ];
 }
