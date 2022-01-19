@@ -1,5 +1,4 @@
 { home, pkgs, lib, inputs, system, ... }:
-let Fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem.nix { }; in
 let cson = pkgs.python3Packages.callPackage ../packages/python3/cson.nix { }; in
 
 let PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig"; in
@@ -21,7 +20,7 @@ let clion = pkgs.jetbrains.clion.overrideAttrs (old: {
   ++ [ pkgs.nodePackages."@vue/cli" ] # uni-app
   ++ (with pkgs; [ yarn2nix nodePackages.node2nix neko haxe ])
   ++ lib.singleton (pkgs.python3.withPackages (python-packages: with python-packages;
-    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ Fildem ] ++ [ statsmodels ]
+    ([ pip setuptools ] ++ [ pyserial pyodbc ] ++ [ statsmodels ]
       ++ [ mariadb XlsxWriter pandas ] ++ [ cson docker pylatexenc ])))
   ++ [ (import inputs.nixpkgs-29f57e4 { inherit system; }).pkgs.mysql-workbench ]
   ++ [ pkgs.texlive.combined.scheme-full ] # https://nixos.wiki/wiki/TexLive

@@ -3,8 +3,6 @@ let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
   # https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/merge_requests/248/diffs
   patchPhase = ''sed -i 's/"${version}"/"${version}", "41"/g' metadata.json'';
 })); in
-let Fildem-GNOME = pkgs.callPackage ../packages/cli/Fildem/Fildem-GNOME.nix { }; in
-let fildem = pkgs.callPackage ../packages/cli/Fildem/Fildem-run.nix { }; in
 let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
 let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix { }; in
 let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix { }; in
@@ -92,14 +90,9 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
   ] ++ [ pkgs.evince pkgs.perlPackages.FileMimeInfo ]
   ++ [ pkgs.gnomeExtensions.hide-top-bar ]
   ++ [ pkgs.gnome.gnome-dictionary ]
-  ++ [ Fildem-GNOME (pkgs.hiPrio fildem) ]
   ++ [ pkgs.lm_sensors ] # Required by sensory.
   ++ [ pkgs.nur.repos.vanilla.gnome-text-editor ]
   ++ [ pkgs.gnome.gnome-font-viewer ];
-
-  # https://github.com/gonzaarcr/Fildem#configuration
-  gtk.gtk2.extraConfig = "gtk-modules=\"appmenu-gtk-module\"";
-  gtk.gtk3.extraConfig."gtk-modules" = "appmenu-gtk-module";
 
   gtk.enable = true;
   gtk.font = { name = "SF Compact Display"; size = 11; };
