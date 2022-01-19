@@ -29,10 +29,4 @@
     GOOGLE_DEFAULT_CLIENT_ID = "77185425430.apps.googleusercontent.com";
     GOOGLE_DEFAULT_CLIENT_SECRET = "OTJgUOQcT7lO7GsGZq2G4IlT";
   };
-
-  # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-983745849
-  home.packages = [
-    # https://github.com/NixOS/nixpkgs/issues/101223#issuecomment-984271996
-    # (pkgs.callPackage (import "${inputs.zanc-overlays}/edge").stable { })
-  ];
 }
