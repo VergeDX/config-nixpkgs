@@ -10,10 +10,7 @@
 
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
   outputs = { self, nixpkgs, nixos-hardware, deploy-rs, ... }:
-    let rpi = {
-      hostName = "NixOS-Raspi";
-      arch = "aarch64-linux";
-    }; in
+    let rpi = { hostName = "NixOS-Raspi"; arch = "aarch64-linux"; }; in
     rec {
       # nix build .#nixosConfigurations.NixOS-Raspi.config.system.build.sdImage -vL
       nixosConfigurations."${rpi.hostName}" = nixpkgs.lib.nixosSystem {
