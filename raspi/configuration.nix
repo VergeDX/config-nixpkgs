@@ -13,7 +13,6 @@
   ] ++ [ "${self}/modules/nixFlakes.nix" ];
   nixFlakes.enable = true;
 
-  environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
   fileSystems = {
     "/" = {
