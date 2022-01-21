@@ -26,6 +26,10 @@
           ./configuration.nix
           nixos-hardware.nixosModules.raspberry-pi-4
         ];
+
+        specialArgs = {
+          inherit self;
+        };
       };
 
       deploy.nodes."${rpi.hostName}" = rec {

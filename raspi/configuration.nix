@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, self, ... }:
 {
   imports = [
     # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-918359063
@@ -7,13 +7,13 @@
     ./networking/hostName-domain.nix
 
     ./nix/binary-caches.nix
-    ./nix/flakes.nix
     ./nix/storage-optimization.nix
 
     ./users-immutable.nix
     ./boot.nix
     ./openssh.nix
-  ];
+  ] ++ [ "${self}/modules/nixFlakes.nix" ];
+  nixFlakes.enable = true;
 
   environment.systemPackages = with pkgs; [ git ];
   # https://nix.dev/tutorials/installing-nixos-on-a-raspberry-pi#installing-nixos
