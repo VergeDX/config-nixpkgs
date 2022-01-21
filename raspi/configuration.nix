@@ -8,7 +8,8 @@
 
     ./users-immutable.nix
     ./boot.nix
-    ./openssh.nix
+
+    ./services/openssh.nix
   ] ++ [ "${self}/modules/nixFlakes.nix" ];
   nixFlakes.enable = true;
 
