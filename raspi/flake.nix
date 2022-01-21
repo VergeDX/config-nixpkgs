@@ -10,11 +10,8 @@
   # https://github.com/serokell/deploy-rs
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
 
-  # https://github.com/nix-community/NUR#flake-support
-  inputs.nur.url = github:nix-community/NUR;
-
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, nur, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, deploy-rs, ... }:
     let rpi = {
       hostName = "NixOS-Raspi";
       arch = "aarch64-linux";
@@ -28,7 +25,6 @@
           # https://nixos.wiki/wiki/NixOS_on_ARM#Build_your_own_image
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
           { sdImage.compressImage = false; }
-          { nixpkgs.overlays = [ nur.overlay ]; }
 
           ./configuration.nix
           nixos-hardware.nixosModules.raspberry-pi-4

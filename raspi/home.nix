@@ -2,6 +2,5 @@
 { pkgs, home, ... }:
 {
   programs.htop.enable = true;
-  home.packages = with pkgs; [ android-tools ]
-    ++ [ pkgs.nur.repos.vanilla.arknights-mower ];
+  home.packages = with pkgs; [ android-tools ];
 }
