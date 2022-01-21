@@ -41,7 +41,6 @@
       ./hardware/yubikey.nix
       ./hardware/tablet.nix
       ./hardware/openrazer.nix
-      ./hardware/xpadneo.nix
     ];
 
   # https://github.com/ryantm/agenix#tutorial
