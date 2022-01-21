@@ -10,6 +10,12 @@
   hardware.bluetooth.settings = {
     "General" = {
       "Experimental" = true;
+
+      # https://github.com/atar-axis/xpadneo/issues/259#issuecomment-921052130
+      "Privacy" = "device";
+      "JustWorksRepairing" = "always";
+      "Class" = "0x000100";
+      "FastConnectable" = true;
     };
   };
 
