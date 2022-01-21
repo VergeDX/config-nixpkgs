@@ -6,9 +6,6 @@
     ./networking/networkmanager.nix
     ./networking/hostName-domain.nix
 
-    ./nix/binary-caches.nix
-    ./nix/storage-optimization.nix
-
     ./users-immutable.nix
     ./boot.nix
     ./openssh.nix
