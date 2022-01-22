@@ -18,4 +18,7 @@
     "ExecStart" = lib.mkForce ("${config.services.telegraf.package}/bin/telegraf" + " "
       + "--config" + " " + "http://127.0.0.1:8086/api/v2/telegrafs/08be32874d1a3000");
   };
+
+  systemd.services."telegraf".requires =
+    [ "influxdb2.service" ];
 }
