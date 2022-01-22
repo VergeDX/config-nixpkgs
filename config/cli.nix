@@ -1,6 +1,6 @@
 { home, pkgs, ... }:
 let unzip-fixed = pkgs.callPackage ../packages/patches/unzip-fixed.nix { }; in
-let sg_cli = pkgs.callPackage ../packages/cli/sg_cli.nix { }; in
+let sg_cli = pkgs.callPackage ../packages/rust/sg_cli.nix { }; in
 let nix-user-chroot = pkgs.callPackage ../packages/rust/nix-user-chroot.nix { }; in
 let distrobox = pkgs.callPackage ../packages/cli/distrobox.nix { }; in
 {
