@@ -12,6 +12,7 @@
     ./services/openssh.nix
     ./services/fail2ban.nix
     ./services/samba.nix
+    ./services/xserver.nix
 
     ./fileSystems.nix
   ] ++ [ "${self}/modules/nixFlakes.nix" ];
