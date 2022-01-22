@@ -10,6 +10,7 @@
     ./boot.nix
 
     ./services/openssh.nix
+    ./services/fail2ban.nix
 
     ./fileSystems.nix
   ] ++ [ "${self}/modules/nixFlakes.nix" ];
