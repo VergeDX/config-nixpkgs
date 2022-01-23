@@ -71,14 +71,7 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
     # pkgs.gnomeExtensions.desktop-icons-ng-ding
     # pkgs.gnomeExtensions.desktop-icons-neo
   ] ++ [ Schneegans.Fly-Pie ] ++ [
-    # https://gitlab.gnome.org/GNOME/nautilus/-/issues/2053
-    (pkgs.gnome.nautilus.overrideAttrs (old: {
-      patches = old.patches ++ (lib.singleton (pkgs.fetchurl {
-        url = "https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/722.patch";
-        hash = "sha256-ncB7WbHGcMJirLnkig4HQQM33aq0s2IeGzMNvvUVSTA=";
-      }));
-    }))
-
+    pkgs.gnome.nautilus
     pkgs.gnome.sushi
     pkgs.gnome.gnome-disk-utility
     pkgs.gnome.file-roller
