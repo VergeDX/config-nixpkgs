@@ -5,7 +5,7 @@
     nixosConfigurations."NixOS-Laptop" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       # modules = [ ./xmonad.nix ./users-nixosvmtest.nix ./systemPackages.nix ];
-      modules = [{ services.dnscrypt-proxy2.enable = true; }];
+      modules = [{ services.dnscrypt-proxy2.enable = true; }] ++ [ ./anbox.nix ];
     };
   };
 }
