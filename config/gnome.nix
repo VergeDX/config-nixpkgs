@@ -6,6 +6,7 @@ let forceGNOME41 = version: extension: (extension.overrideAttrs (old: {
 let Schneegans.Fly-Pie = pkgs.callPackage ../packages/gnome/Fly-Pie.nix { }; in
 let Fluent-gtk-theme = pkgs.callPackage ../packages/gnome/Fluent-gtk-theme.nix { }; in
 let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix { }; in
+let multi-monitors-add-on = pkgs.callPackage ../packages/gnome/multi-monitors-add-on.nix { }; in
 {
   home.packages = [
     pkgs.gnome.gnome-tweaks
@@ -70,7 +71,7 @@ let Fluent-icon-theme = pkgs.callPackage ../packages/gnome/Fluent-icon-theme.nix
 
     # pkgs.gnomeExtensions.desktop-icons-ng-ding
     # pkgs.gnomeExtensions.desktop-icons-neo
-  ] ++ [ Schneegans.Fly-Pie ] ++ [
+  ] ++ [ Schneegans.Fly-Pie multi-monitors-add-on ] ++ [
     pkgs.gnome.nautilus
     pkgs.gnome.sushi
     pkgs.gnome.gnome-disk-utility
