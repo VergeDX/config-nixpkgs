@@ -119,5 +119,7 @@ let multi-monitors-add-on = pkgs.callPackage ../packages/gnome/multi-monitors-ad
 
     "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
       [ "wps-office-wpp.desktop" ];
+
+    "video/mp4" = [ "vlc.desktop" ];
   };
 }
