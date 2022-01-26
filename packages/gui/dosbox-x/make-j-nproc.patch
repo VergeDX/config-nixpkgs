@@ -1,0 +1,11 @@
+diff --git a/build-debug b/build-debug
+index 8c6693622..f99d3d8f8 100755
+--- a/build-debug
++++ b/build-debug
+@@ -38,5 +38,5 @@ echo Compiling our internal SDLnet 1.x
+ echo Compiling DOSBox-X
+ chmod +x configure
+ ./configure --enable-core-inline --enable-debug=heavy --prefix=/usr "$@" $opt || exit 1
+-make -j3 || exit 1
++make -j$(nproc) || exit 1
+ 
