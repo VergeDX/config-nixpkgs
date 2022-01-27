@@ -97,7 +97,8 @@ let distrobox = pkgs.callPackage ../packages/cli/distrobox.nix { }; in
   ++ [ sg_cli nix-user-chroot ]
   ++ [ pkgs.ffmpeg ] ++ [ pkgs.powershell ]
   ++ [ pkgs.vitetris ] # `tetris`!
-  ++ [ distrobox ];
+  ++ [ distrobox ]
+  ++ [ pkgs.nodePackages.fkill-cli ];
 
   # https://nix-community.github.io/home-manager/options.html
   programs.exa.enable = true;
