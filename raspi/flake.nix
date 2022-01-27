@@ -1,7 +1,4 @@
 {
-  # https://github.com/NixOS/nixos-hardware#using-nix-flakes-support
-  inputs.nixos-hardware.url = github:NixOS/nixos-hardware/master;
-
   # https://github.com/NixOS/nixpkgs/issues/135828#issuecomment-935625041
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
 
@@ -9,7 +6,7 @@
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
 
   # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
-  outputs = { self, nixpkgs, nixos-hardware, deploy-rs, ... }:
+  outputs = { self, nixpkgs, deploy-rs, ... }:
     let rpi = { hostName = "NixOS-Raspi"; arch = "aarch64-linux"; }; in
     rec {
       # nix build .#nixosConfigurations.NixOS-Raspi.config.system.build.sdImage -vL
@@ -21,7 +18,6 @@
           { sdImage.compressImage = false; }
 
           ./configuration.nix
-          nixos-hardware.nixosModules.raspberry-pi-4
         ];
 
         specialArgs = {
