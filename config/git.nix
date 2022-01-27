@@ -1,6 +1,4 @@
 { pkgs, programs, ... }:
-let gitalias = (pkgs.callPackage ../packages/resources/gitalias.nix) { };
-in
 {
   # https://github.com/nix-community/home-manager#keeping-your--safe-from-harm
   programs.git.enable = true;
@@ -8,8 +6,6 @@ in
 
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "osu_Vanilla@126.com";
-  # https://github.com/GitAlias/gitalias#install-with-typical-usage
-  # programs.git.includes = [{ path = "${gitalias}/${gitalias.fileName}"; }];
 
   # https://nixos.wiki/wiki/Git
   programs.git.extraConfig = {
