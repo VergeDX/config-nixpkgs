@@ -10,8 +10,9 @@ let cfg = config.nixFlakes; in
 
   config = lib.mkIf cfg.enable {
     nix.package = pkgs.nixFlakes;
-    nix.extraOptions =
-      "experimental-features = nix-command flakes";
+    nix.extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
 
     environment.systemPackages =
       with pkgs; [ git ];
