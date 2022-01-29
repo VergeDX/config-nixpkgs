@@ -3,6 +3,7 @@
   inputs.nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   # https://github.com/ryantm/agenix/releases/tag/0.10.0
   inputs.agenix.url = "github:ryantm/agenix/0.10.1";
+  inputs.Vanilla.url = "github:Vanilla-s-Lab/Vanilla";
 
   outputs = { self, nixpkgs, agenix, ... }@inputs: {
     # https://nixos.wiki/wiki/Flakes#Using_nix_flakes_with_NixOS
