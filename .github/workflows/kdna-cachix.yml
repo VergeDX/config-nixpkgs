@@ -1,4 +1,4 @@
-name: Workflow - build kdna and push to cachix
+name: "[Automatic] - build kdna and push to cachix every 2 hours"
 on:
   push:
     paths:
@@ -7,8 +7,7 @@ on:
       - packages/patches/no-sponsored_messages.patch
   workflow_dispatch:
   schedule:
-    - cron: "0 16 * * *"
-    - cron: "0 4 * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   Build-and-Cachix:
