@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-old.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-21.11";
 
     # https://hydra.nixos.org/build/143801064#tabs-buildinputs
     nixpkgs-29f57e4.url = "github:NixOS/nixpkgs/29f57e475266edbb57d995c044aba3adf7f71298";
@@ -24,7 +25,7 @@
     Barbfish.url = "github:MidAutumnMoon/Barbfish";
   };
 
-  outputs = { self, home-manager, nixpkgs, agenix, nur, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, nixpkgs-stable, agenix, nur, ... }@inputs:
     let system = "x86_64-linux";
     in
     {
@@ -51,7 +52,7 @@
         };
       };
 
-      kdna = let pkgs = import nixpkgs { inherit system; overlays = [ nur.overlay ]; }; in
+      kdna = let pkgs = import nixpkgs-stable { inherit system; overlays = [ nur.overlay ]; }; in
         (pkgs.callPackage ./packages/patches/kotatogram-desktop-no-ad.nix { });
     };
 }
