@@ -4,7 +4,6 @@ let
   metro-for-steam = (pkgs.callPackage ./packages/resources/metro-for-steam.nix { });
   subconverter-bin = (pkgs.callPackage ./packages/services/subconverter-bin.nix { });
   pkgsOld = import inputs.nixpkgs-old { inherit system; };
-  kotatogram-desktop-no-ad = (pkgs.callPackage ./packages/patches/kotatogram-desktop-no-ad.nix { });
 in
 rec {
   # https://github.com/shadowsocks/libQtShadowsocks
@@ -27,10 +26,10 @@ rec {
     (pkgs.callPackage ./packages/cli/navicat-keygen-tools.nix { })
 
     # https://github.com/NixOS/nixpkgs/pull/148672
-    kotatogram-desktop-no-ad
+    pkgs.nur.repos.ilya-fedin.kotatogram-desktop;
     (pkgs.makeAutostartItem {
       name = "kotatogramdesktop";
-      package = kotatogram-desktop-no-ad;
+      package = pkgs.nur.repos.ilya-fedin.kotatogram-desktop;
     })
 
     (pkgs.callPackage ./packages/gui/olympus.nix { })
