@@ -5,6 +5,7 @@ on:
       - .github/workflows/kdna-cachix.yml
       - packages/patches/kotatogram-desktop-no-ad.nix
       - packages/patches/no-sponsored_messages.patch
+      - flake.nix
   workflow_dispatch:
   schedule:
     - cron: "0 */2 * * *"
